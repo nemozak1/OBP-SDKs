@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400GetAllDynamicResourceDocs200ResponseProperties**](OBPv400GetAllDynamicResourceDocs200ResponseProperties.md) |  | 
+**dynamic_resource_docs** | [**List[OBPv400GetBankLevelDynamicResourceDoc200Response]**](OBPv400GetBankLevelDynamicResourceDoc200Response.md) |  | [optional] 
 
 ## Example
 

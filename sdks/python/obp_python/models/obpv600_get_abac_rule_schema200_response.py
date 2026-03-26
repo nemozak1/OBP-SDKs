@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -19,8 +19,10 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv600_get_abac_rule_schema200_response_properties import OBPv600GetAbacRuleSchema200ResponseProperties
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv600_get_abac_rule_schema200_response_object_types_inner import OBPv600GetAbacRuleSchema200ResponseObjectTypesInner
+from obp_python.models.obpv600_get_abac_rule_schema200_response_parameters_inner import OBPv600GetAbacRuleSchema200ResponseParametersInner
+from obp_python.models.obpv600_update_abac_rule_request import OBPv600UpdateAbacRuleRequest
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +30,12 @@ class OBPv600GetAbacRuleSchema200Response(BaseModel):
     """
     OBPv600GetAbacRuleSchema200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv600GetAbacRuleSchema200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    examples: Optional[List[OBPv600UpdateAbacRuleRequest]] = None
+    available_operators: Optional[List[StrictStr]] = None
+    object_types: Optional[List[OBPv600GetAbacRuleSchema200ResponseObjectTypesInner]] = None
+    notes: Optional[List[StrictStr]] = None
+    parameters: Optional[List[OBPv600GetAbacRuleSchema200ResponseParametersInner]] = None
+    __properties: ClassVar[List[str]] = ["examples", "available_operators", "object_types", "notes", "parameters"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +76,27 @@ class OBPv600GetAbacRuleSchema200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in examples (list)
+        _items = []
+        if self.examples:
+            for _item_examples in self.examples:
+                if _item_examples:
+                    _items.append(_item_examples.to_dict())
+            _dict['examples'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in object_types (list)
+        _items = []
+        if self.object_types:
+            for _item_object_types in self.object_types:
+                if _item_object_types:
+                    _items.append(_item_object_types.to_dict())
+            _dict['object_types'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in parameters (list)
+        _items = []
+        if self.parameters:
+            for _item_parameters in self.parameters:
+                if _item_parameters:
+                    _items.append(_item_parameters.to_dict())
+            _dict['parameters'] = _items
         return _dict
 
     @classmethod
@@ -86,8 +109,11 @@ class OBPv600GetAbacRuleSchema200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv600GetAbacRuleSchema200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "examples": [OBPv600UpdateAbacRuleRequest.from_dict(_item) for _item in obj["examples"]] if obj.get("examples") is not None else None,
+            "available_operators": obj.get("available_operators"),
+            "object_types": [OBPv600GetAbacRuleSchema200ResponseObjectTypesInner.from_dict(_item) for _item in obj["object_types"]] if obj.get("object_types") is not None else None,
+            "notes": obj.get("notes"),
+            "parameters": [OBPv600GetAbacRuleSchema200ResponseParametersInner.from_dict(_item) for _item in obj["parameters"]] if obj.get("parameters") is not None else None
         })
         return _obj
 

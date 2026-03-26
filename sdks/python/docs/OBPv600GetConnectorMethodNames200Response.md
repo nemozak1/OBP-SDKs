@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetConnectorMethodNames200ResponseProperties**](OBPv600GetConnectorMethodNames200ResponseProperties.md) |  | 
+**connector_method_names** | **List[str]** |  | [optional] 
 
 ## Example
 

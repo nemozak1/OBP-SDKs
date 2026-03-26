@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetTransactionsForBankAccount200ResponseProperties**](OBPv600GetTransactionsForBankAccount200ResponseProperties.md) |  | 
+**transactions** | [**List[OBPv600GetTransactionsForBankAccount200ResponseTransactionsInner]**](OBPv600GetTransactionsForBankAccount200ResponseTransactionsInner.md) |  | [optional] 
 
 ## Example
 

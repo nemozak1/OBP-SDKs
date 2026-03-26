@@ -5,8 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400CreateTransactionRequestSimpleRequestProperties**](OBPv400CreateTransactionRequestSimpleRequestProperties.md) |  | 
+**description** | **str** |  | [optional] 
+**future_date** | **str** |  | [optional] 
+**to** | [**OBPv400CreateTransactionRequestSimpleRequestTo**](OBPv400CreateTransactionRequestSimpleRequestTo.md) |  | [optional] 
+**charge_policy** | **str** |  | [optional] 
+**value** | [**OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit**](OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit.md) |  | [optional] 
 
 ## Example
 

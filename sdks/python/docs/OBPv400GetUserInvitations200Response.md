@@ -5,8 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400GetUserInvitations200ResponseProperties**](OBPv400GetUserInvitations200ResponseProperties.md) |  | 
+**first_name** | **str** |  | [optional] 
+**email** | **str** |  | [optional] 
+**country** | **str** |  | [optional] 
+**purpose** | **str** |  | [optional] 
+**company** | **str** |  | [optional] 
+**last_name** | **str** |  | [optional] 
+**status** | **str** |  | [optional] 
 
 ## Example
 

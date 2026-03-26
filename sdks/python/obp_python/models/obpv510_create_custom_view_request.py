@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv510_create_custom_view_request_properties import OBPv510CreateCustomViewRequestProperties
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +27,14 @@ class OBPv510CreateCustomViewRequest(BaseModel):
     """
     OBPv510CreateCustomViewRequest
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv510CreateCustomViewRequestProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    name: Optional[StrictStr] = None
+    description: Optional[StrictStr] = None
+    allowed_permissions: Optional[List[StrictStr]] = None
+    is_public: Optional[StrictBool] = None
+    hide_metadata_if_alias_used: Optional[StrictBool] = None
+    which_alias_to_use: Optional[StrictStr] = None
+    metadata_view: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["name", "description", "allowed_permissions", "is_public", "hide_metadata_if_alias_used", "which_alias_to_use", "metadata_view"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +75,6 @@ class OBPv510CreateCustomViewRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +87,13 @@ class OBPv510CreateCustomViewRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv510CreateCustomViewRequestProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "name": obj.get("name"),
+            "description": obj.get("description"),
+            "allowed_permissions": obj.get("allowed_permissions"),
+            "is_public": obj.get("is_public"),
+            "hide_metadata_if_alias_used": obj.get("hide_metadata_if_alias_used"),
+            "which_alias_to_use": obj.get("which_alias_to_use"),
+            "metadata_view": obj.get("metadata_view")
         })
         return _obj
 

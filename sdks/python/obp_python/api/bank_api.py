@@ -1,7 +1,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -19,11 +19,11 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
 from obp_python.models.obpv200_get_transaction_types200_response import OBPv200GetTransactionTypes200Response
-from obp_python.models.obpv200_get_transaction_types200_response_properties_transaction_types_items import OBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems
+from obp_python.models.obpv200_get_transaction_types200_response_transaction_types_inner import OBPv200GetTransactionTypes200ResponseTransactionTypesInner
 from obp_python.models.obpv210_create_transaction_type200_response import OBPv210CreateTransactionType200Response
 from obp_python.models.obpv210_get_transaction_request_types_supported_by_bank200_response import OBPv210GetTransactionRequestTypesSupportedByBank200Response
 from obp_python.models.obpv300_get_branches200_response import OBPv300GetBranches200Response
-from obp_python.models.obpv300_get_branches200_response_properties_branches_items import OBPv300GetBranches200ResponsePropertiesBranchesItems
+from obp_python.models.obpv300_get_branches200_response_branches_inner import OBPv300GetBranches200ResponseBranchesInner
 from obp_python.models.obpv310_create_account_webhook_request import OBPv310CreateAccountWebhookRequest
 from obp_python.models.obpv310_enable_disable_account_webhook200_response import OBPv310EnableDisableAccountWebhook200Response
 from obp_python.models.obpv310_enable_disable_account_webhook_request import OBPv310EnableDisableAccountWebhookRequest
@@ -35,9 +35,9 @@ from obp_python.models.obpv400_create_settlement_account_request import OBPv400C
 from obp_python.models.obpv400_create_system_account_notification_webhook200_response import OBPv400CreateSystemAccountNotificationWebhook200Response
 from obp_python.models.obpv400_create_system_account_notification_webhook_request import OBPv400CreateSystemAccountNotificationWebhookRequest
 from obp_python.models.obpv400_get_bank_attributes200_response import OBPv400GetBankAttributes200Response
-from obp_python.models.obpv400_get_bank_attributes200_response_properties_bank_attributes_items import OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems
+from obp_python.models.obpv400_get_bank_attributes200_response_bank_attributes_inner import OBPv400GetBankAttributes200ResponseBankAttributesInner
 from obp_python.models.obpv400_get_settlement_accounts200_response import OBPv400GetSettlementAccounts200Response
-from obp_python.models.obpv400_get_transaction_request_attribute_definition200_response_properties_attributes_items import OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
+from obp_python.models.obpv400_get_transaction_request_attribute_definition200_response_attributes_inner import OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner
 from obp_python.models.obpv500_update_bank200_response import OBPv500UpdateBank200Response
 from obp_python.models.obpv500_update_bank_request import OBPv500UpdateBankRequest
 from obp_python.models.obpv510_update_atm_attribute_request import OBPv510UpdateAtmAttributeRequest
@@ -333,7 +333,7 @@ class BankApi:
     def o_bpv2_1_0_create_transaction_type(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv200_get_transaction_types200_response_properties_transaction_types_items: Annotated[OBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems, Field(description="Request body")],
+        obpv200_get_transaction_types200_response_transaction_types_inner: Annotated[OBPv200GetTransactionTypes200ResponseTransactionTypesInner, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -353,8 +353,8 @@ class BankApi:
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv200_get_transaction_types200_response_properties_transaction_types_items: Request body (required)
-        :type obpv200_get_transaction_types200_response_properties_transaction_types_items: OBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems
+        :param obpv200_get_transaction_types200_response_transaction_types_inner: Request body (required)
+        :type obpv200_get_transaction_types200_response_transaction_types_inner: OBPv200GetTransactionTypes200ResponseTransactionTypesInner
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -379,7 +379,7 @@ class BankApi:
 
         _param = self._o_bpv2_1_0_create_transaction_type_serialize(
             bankid=bankid,
-            obpv200_get_transaction_types200_response_properties_transaction_types_items=obpv200_get_transaction_types200_response_properties_transaction_types_items,
+            obpv200_get_transaction_types200_response_transaction_types_inner=obpv200_get_transaction_types200_response_transaction_types_inner,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -407,7 +407,7 @@ class BankApi:
     def o_bpv2_1_0_create_transaction_type_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv200_get_transaction_types200_response_properties_transaction_types_items: Annotated[OBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems, Field(description="Request body")],
+        obpv200_get_transaction_types200_response_transaction_types_inner: Annotated[OBPv200GetTransactionTypes200ResponseTransactionTypesInner, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -427,8 +427,8 @@ class BankApi:
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv200_get_transaction_types200_response_properties_transaction_types_items: Request body (required)
-        :type obpv200_get_transaction_types200_response_properties_transaction_types_items: OBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems
+        :param obpv200_get_transaction_types200_response_transaction_types_inner: Request body (required)
+        :type obpv200_get_transaction_types200_response_transaction_types_inner: OBPv200GetTransactionTypes200ResponseTransactionTypesInner
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -453,7 +453,7 @@ class BankApi:
 
         _param = self._o_bpv2_1_0_create_transaction_type_serialize(
             bankid=bankid,
-            obpv200_get_transaction_types200_response_properties_transaction_types_items=obpv200_get_transaction_types200_response_properties_transaction_types_items,
+            obpv200_get_transaction_types200_response_transaction_types_inner=obpv200_get_transaction_types200_response_transaction_types_inner,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -481,7 +481,7 @@ class BankApi:
     def o_bpv2_1_0_create_transaction_type_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv200_get_transaction_types200_response_properties_transaction_types_items: Annotated[OBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems, Field(description="Request body")],
+        obpv200_get_transaction_types200_response_transaction_types_inner: Annotated[OBPv200GetTransactionTypes200ResponseTransactionTypesInner, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -501,8 +501,8 @@ class BankApi:
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv200_get_transaction_types200_response_properties_transaction_types_items: Request body (required)
-        :type obpv200_get_transaction_types200_response_properties_transaction_types_items: OBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems
+        :param obpv200_get_transaction_types200_response_transaction_types_inner: Request body (required)
+        :type obpv200_get_transaction_types200_response_transaction_types_inner: OBPv200GetTransactionTypes200ResponseTransactionTypesInner
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -527,7 +527,7 @@ class BankApi:
 
         _param = self._o_bpv2_1_0_create_transaction_type_serialize(
             bankid=bankid,
-            obpv200_get_transaction_types200_response_properties_transaction_types_items=obpv200_get_transaction_types200_response_properties_transaction_types_items,
+            obpv200_get_transaction_types200_response_transaction_types_inner=obpv200_get_transaction_types200_response_transaction_types_inner,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -550,7 +550,7 @@ class BankApi:
     def _o_bpv2_1_0_create_transaction_type_serialize(
         self,
         bankid,
-        obpv200_get_transaction_types200_response_properties_transaction_types_items,
+        obpv200_get_transaction_types200_response_transaction_types_inner,
         _request_auth,
         _content_type,
         _headers,
@@ -578,8 +578,8 @@ class BankApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv200_get_transaction_types200_response_properties_transaction_types_items is not None:
-            _body_params = obpv200_get_transaction_types200_response_properties_transaction_types_items
+        if obpv200_get_transaction_types200_response_transaction_types_inner is not None:
+            _body_params = obpv200_get_transaction_types200_response_transaction_types_inner
 
 
         # set the HTTP header `Accept`
@@ -909,7 +909,7 @@ class BankApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv300GetBranches200ResponsePropertiesBranchesItems:
+    ) -> OBPv300GetBranches200ResponseBranchesInner:
         """Get Branch
 
         <p>Returns information about a single Branch specified by BANK_ID and BRANCH_ID including:</p> <ul> <li>Name</li> <li>Address</li> <li>Geo Location</li> <li>License the data under this endpoint is released under.</li> </ul> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">BRANCH_ID</a>: DERBY6</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#accessiblefeatures\"><strong>accessibleFeatures</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#branch_routing\"><strong>branch_routing</strong></a>:</p> <p><a href=\"/glossary#branch_type\"><strong>branch_type</strong></a>:</p> <p><a href=\"/glossary#city\"><strong>city</strong></a>:</p> <p><a href=\"/glossary#closing_time\"><strong>closing_time</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#country_code\"><strong>country_code</strong></a>: 1254</p> <p><a href=\"/glossary#county\"><strong>county</strong></a>:</p> <p><a href=\"/glossary#drive_up\"><strong>drive_up</strong></a>:</p> <p><a href=\"/glossary#friday\"><strong>friday</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#\"><strong>is_accessible</strong></a>: false</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#license\"><strong>license</strong></a>:</p> <p><a href=\"/glossary#\"><strong>line_1</strong></a>:</p> <p><a href=\"/glossary#\"><strong>line_2</strong></a>:</p> <p><a href=\"/glossary#\"><strong>line_3</strong></a>:</p> <p><a href=\"/glossary#lobby\"><strong>lobby</strong></a>:</p> <p><a href=\"/glossary#location\"><strong>location</strong></a>:</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#meta\"><strong>meta</strong></a>:</p> <p><a href=\"/glossary#monday\"><strong>monday</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#opening_time\"><strong>opening_time</strong></a>:</p> <p><a href=\"/glossary#phone_number\"><strong>phone_number</strong></a>:</p> <p><a href=\"/glossary#postcode\"><strong>postcode</strong></a>:</p> <p><a href=\"/glossary#saturday\"><strong>saturday</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#state\"><strong>state</strong></a>:</p> <p><a href=\"/glossary#sunday\"><strong>sunday</strong></a>:</p> <p><a href=\"/glossary#thursday\"><strong>thursday</strong></a>:</p> <p><a href=\"/glossary#tuesday\"><strong>tuesday</strong></a>:</p> <p><a href=\"/glossary#wednesday\"><strong>wednesday</strong></a>:</p> 
@@ -950,7 +950,7 @@ class BankApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv300GetBranches200ResponsePropertiesBranchesItems",
+            '200': "OBPv300GetBranches200ResponseBranchesInner",
             '404': None,
             '500': None,
         }
@@ -982,7 +982,7 @@ class BankApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv300GetBranches200ResponsePropertiesBranchesItems]:
+    ) -> ApiResponse[OBPv300GetBranches200ResponseBranchesInner]:
         """Get Branch
 
         <p>Returns information about a single Branch specified by BANK_ID and BRANCH_ID including:</p> <ul> <li>Name</li> <li>Address</li> <li>Geo Location</li> <li>License the data under this endpoint is released under.</li> </ul> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">BRANCH_ID</a>: DERBY6</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#accessiblefeatures\"><strong>accessibleFeatures</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#branch_routing\"><strong>branch_routing</strong></a>:</p> <p><a href=\"/glossary#branch_type\"><strong>branch_type</strong></a>:</p> <p><a href=\"/glossary#city\"><strong>city</strong></a>:</p> <p><a href=\"/glossary#closing_time\"><strong>closing_time</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#country_code\"><strong>country_code</strong></a>: 1254</p> <p><a href=\"/glossary#county\"><strong>county</strong></a>:</p> <p><a href=\"/glossary#drive_up\"><strong>drive_up</strong></a>:</p> <p><a href=\"/glossary#friday\"><strong>friday</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#\"><strong>is_accessible</strong></a>: false</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#license\"><strong>license</strong></a>:</p> <p><a href=\"/glossary#\"><strong>line_1</strong></a>:</p> <p><a href=\"/glossary#\"><strong>line_2</strong></a>:</p> <p><a href=\"/glossary#\"><strong>line_3</strong></a>:</p> <p><a href=\"/glossary#lobby\"><strong>lobby</strong></a>:</p> <p><a href=\"/glossary#location\"><strong>location</strong></a>:</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#meta\"><strong>meta</strong></a>:</p> <p><a href=\"/glossary#monday\"><strong>monday</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#opening_time\"><strong>opening_time</strong></a>:</p> <p><a href=\"/glossary#phone_number\"><strong>phone_number</strong></a>:</p> <p><a href=\"/glossary#postcode\"><strong>postcode</strong></a>:</p> <p><a href=\"/glossary#saturday\"><strong>saturday</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#state\"><strong>state</strong></a>:</p> <p><a href=\"/glossary#sunday\"><strong>sunday</strong></a>:</p> <p><a href=\"/glossary#thursday\"><strong>thursday</strong></a>:</p> <p><a href=\"/glossary#tuesday\"><strong>tuesday</strong></a>:</p> <p><a href=\"/glossary#wednesday\"><strong>wednesday</strong></a>:</p> 
@@ -1023,7 +1023,7 @@ class BankApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv300GetBranches200ResponsePropertiesBranchesItems",
+            '200': "OBPv300GetBranches200ResponseBranchesInner",
             '404': None,
             '500': None,
         }
@@ -1096,7 +1096,7 @@ class BankApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv300GetBranches200ResponsePropertiesBranchesItems",
+            '200': "OBPv300GetBranches200ResponseBranchesInner",
             '404': None,
             '500': None,
         }
@@ -2607,7 +2607,7 @@ class BankApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems:
+    ) -> OBPv400GetBankAttributes200ResponseBankAttributesInner:
         """Create Bank Attribute
 
         <p>Create Bank Attribute</p> <p>Typical product attributes might be:</p> <p>ISIN (for International bonds)<br /> VKN (for German bonds)<br /> REDCODE (markit short code for credit derivative)<br /> LOAN_ID (e.g. used for Anacredit reporting)</p> <p>ISSUE_DATE (When the bond was issued in the market)<br /> MATURITY_DATE (End of life time of a product)<br /> TRADABLE</p> <p>See <a href=\"http://www.fpml.org/\">FPML</a> for more examples.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_attribute_id</strong></a>: bank_attribute_id</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -2648,7 +2648,7 @@ class BankApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems",
+            '200': "OBPv400GetBankAttributes200ResponseBankAttributesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2679,7 +2679,7 @@ class BankApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems]:
+    ) -> ApiResponse[OBPv400GetBankAttributes200ResponseBankAttributesInner]:
         """Create Bank Attribute
 
         <p>Create Bank Attribute</p> <p>Typical product attributes might be:</p> <p>ISIN (for International bonds)<br /> VKN (for German bonds)<br /> REDCODE (markit short code for credit derivative)<br /> LOAN_ID (e.g. used for Anacredit reporting)</p> <p>ISSUE_DATE (When the bond was issued in the market)<br /> MATURITY_DATE (End of life time of a product)<br /> TRADABLE</p> <p>See <a href=\"http://www.fpml.org/\">FPML</a> for more examples.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_attribute_id</strong></a>: bank_attribute_id</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -2720,7 +2720,7 @@ class BankApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems",
+            '200': "OBPv400GetBankAttributes200ResponseBankAttributesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2792,7 +2792,7 @@ class BankApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems",
+            '200': "OBPv400GetBankAttributes200ResponseBankAttributesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2901,7 +2901,7 @@ class BankApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems:
+    ) -> OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner:
         """Create or Update Bank Attribute Definition
 
         <p>Create or Update Bank Attribute Definition</p> <p>The category field must be Bank</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
@@ -2942,7 +2942,7 @@ class BankApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems",
+            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
             '404': None,
             '500': None,
         }
@@ -2974,7 +2974,7 @@ class BankApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems]:
+    ) -> ApiResponse[OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner]:
         """Create or Update Bank Attribute Definition
 
         <p>Create or Update Bank Attribute Definition</p> <p>The category field must be Bank</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
@@ -3015,7 +3015,7 @@ class BankApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems",
+            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
             '404': None,
             '500': None,
         }
@@ -3088,7 +3088,7 @@ class BankApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems",
+            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
             '404': None,
             '500': None,
         }
@@ -4313,7 +4313,7 @@ class BankApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems:
+    ) -> OBPv400GetBankAttributes200ResponseBankAttributesInner:
         """Get Bank Attribute By BANK_ATTRIBUTE_ID
 
         <p>Get Bank Attribute By BANK_ATTRIBUTE_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">BANK_ATTRIBUTE_ID</a>: BANK_ATTRIBUTE_ID</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_attribute_id</strong></a>: bank_attribute_id</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -4354,7 +4354,7 @@ class BankApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems",
+            '200': "OBPv400GetBankAttributes200ResponseBankAttributesInner",
             '404': None,
             '500': None,
         }
@@ -4386,7 +4386,7 @@ class BankApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems]:
+    ) -> ApiResponse[OBPv400GetBankAttributes200ResponseBankAttributesInner]:
         """Get Bank Attribute By BANK_ATTRIBUTE_ID
 
         <p>Get Bank Attribute By BANK_ATTRIBUTE_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">BANK_ATTRIBUTE_ID</a>: BANK_ATTRIBUTE_ID</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_attribute_id</strong></a>: bank_attribute_id</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -4427,7 +4427,7 @@ class BankApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems",
+            '200': "OBPv400GetBankAttributes200ResponseBankAttributesInner",
             '404': None,
             '500': None,
         }
@@ -4500,7 +4500,7 @@ class BankApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems",
+            '200': "OBPv400GetBankAttributes200ResponseBankAttributesInner",
             '404': None,
             '500': None,
         }

@@ -1,6 +1,6 @@
 # obp_python.AccountAttributeApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **o_bpv3_1_0_create_account_attribute**
-> OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems o_bpv3_1_0_create_account_attribute(bankid, accountid, productcode, obpv310_update_account_attribute_request)
+> OBPv400GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner o_bpv3_1_0_create_account_attribute(bankid, accountid, productcode, obpv310_update_account_attribute_request)
 
 Create Account Attribute
 
@@ -57,14 +57,14 @@ TRADABLE</p>
 ```python
 import obp_python
 from obp_python.models.obpv310_update_account_attribute_request import OBPv310UpdateAccountAttributeRequest
-from obp_python.models.obpv400_get_private_account_by_id_full200_response_properties_account_attributes_items import OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems
+from obp_python.models.obpv400_get_accounts_by_account_routing_regex200_response_accounts_inner_account_attributes_inner import OBPv400GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems**](OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems.md)
+[**OBPv400GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner**](OBPv400GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner.md)
 
 ### Authorization
 
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv3_1_0_update_account_attribute**
-> OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems o_bpv3_1_0_update_account_attribute(bankid, accountid, productcode, accountattributeid, obpv310_update_account_attribute_request)
+> OBPv400GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner o_bpv3_1_0_update_account_attribute(bankid, accountid, productcode, accountattributeid, obpv310_update_account_attribute_request)
 
 Update Account Attribute
 
@@ -179,14 +179,14 @@ TRADABLE</p>
 ```python
 import obp_python
 from obp_python.models.obpv310_update_account_attribute_request import OBPv310UpdateAccountAttributeRequest
-from obp_python.models.obpv400_get_private_account_by_id_full200_response_properties_account_attributes_items import OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems
+from obp_python.models.obpv400_get_accounts_by_account_routing_regex200_response_accounts_inner_account_attributes_inner import OBPv400GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -242,7 +242,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems**](OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems.md)
+[**OBPv400GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner**](OBPv400GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner.md)
 
 ### Authorization
 
@@ -263,7 +263,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_create_or_update_account_attribute_definition**
-> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems o_bpv4_0_0_create_or_update_account_attribute_definition(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request)
+> OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner o_bpv4_0_0_create_or_update_account_attribute_definition(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request)
 
 Create or Update Account Attribute Definition
 
@@ -294,14 +294,14 @@ Create or Update Account Attribute Definition
 ```python
 import obp_python
 from obp_python.models.obpv400_create_or_update_transaction_request_attribute_definition_request import OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
-from obp_python.models.obpv400_get_transaction_request_attribute_definition200_response_properties_attributes_items import OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
+from obp_python.models.obpv400_get_transaction_request_attribute_definition200_response_attributes_inner import OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
+[**OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -396,10 +396,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -502,10 +502,10 @@ from obp_python.models.obpv400_get_transaction_request_attribute_definition200_r
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters

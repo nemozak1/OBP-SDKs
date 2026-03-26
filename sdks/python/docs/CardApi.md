@@ -1,6 +1,6 @@
 # obp_python.CardApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -128,10 +128,10 @@ from obp_python.models.obpv130_get_cards200_response import OBPv130GetCards200Re
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -230,10 +230,10 @@ from obp_python.models.obpv600_create_personal_data_field_request import OBPv600
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -329,10 +329,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -457,10 +457,10 @@ from obp_python.models.obpv310_get_card_for_bank200_response import OBPv310GetCa
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -649,10 +649,10 @@ from obp_python.models.obpv310_get_cards_for_bank200_response import OBPv310GetC
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -752,10 +752,10 @@ from obp_python.models.obpv310_get_status_of_credit_card_order200_response impor
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -859,10 +859,10 @@ from obp_python.models.obpv600_create_personal_data_field_request import OBPv600
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -937,7 +937,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv3_1_0_updated_card_for_bank**
-> OBPv310GetCardsForBank200ResponsePropertiesCardsItems o_bpv3_1_0_updated_card_for_bank(bankid, cardid, obpv310_updated_card_for_bank_request)
+> OBPv310GetCardsForBank200ResponseCardsInner o_bpv3_1_0_updated_card_for_bank(bankid, cardid, obpv310_updated_card_for_bank_request)
 
 Update Card
 
@@ -1047,15 +1047,15 @@ User Authentication is Required. The User must be logged in. The Application mus
 
 ```python
 import obp_python
-from obp_python.models.obpv310_get_cards_for_bank200_response_properties_cards_items import OBPv310GetCardsForBank200ResponsePropertiesCardsItems
+from obp_python.models.obpv310_get_cards_for_bank200_response_cards_inner import OBPv310GetCardsForBank200ResponseCardsInner
 from obp_python.models.obpv310_updated_card_for_bank_request import OBPv310UpdatedCardForBankRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1083,7 +1083,7 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.CardApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
     cardid = 'cardid_example' # str | The CARDID identifier
-    obpv310_updated_card_for_bank_request = {"type":"object","properties":{"enabled":{"type":"boolean"},"allows":{"type":"array","items":{"type":"string"}},"technology":{"type":"string"},"collected":{"type":"string","format":"date-time"},"pin_reset":{"type":"array","items":{"type":"object","properties":{"reason_requested":{"type":"string"},"requested_date":{"type":"string","format":"date-time"}}}},"card_type":{"type":"string"},"replacement":{"type":"object","properties":{"reason_requested":{"type":"string"},"requested_date":{"type":"string","format":"date-time"}}},"name_on_card":{"type":"string"},"expires_date":{"type":"string","format":"date-time"},"posted":{"type":"string","format":"date-time"},"customer_id":{"type":"string"},"networks":{"type":"array","items":{"type":"string"}},"issue_number":{"type":"string"},"serial_number":{"type":"string"},"account_id":{"type":"string"},"valid_from_date":{"type":"string","format":"date-time"}}} # OBPv310UpdatedCardForBankRequest | Request body
+    obpv310_updated_card_for_bank_request = {"type":"object","properties":{"enabled":{"type":"boolean"},"expires_date":{"type":"string","format":"date-time"},"allows":{"type":"array","items":{"type":"string"}},"replacement":{"type":"object","properties":{"requested_date":{"type":"string","format":"date-time"},"reason_requested":{"type":"string"}}},"collected":{"type":"string","format":"date-time"},"technology":{"type":"string"},"valid_from_date":{"type":"string","format":"date-time"},"card_type":{"type":"string"},"name_on_card":{"type":"string"},"pin_reset":{"type":"array","items":{"type":"object","properties":{"requested_date":{"type":"string","format":"date-time"},"reason_requested":{"type":"string"}}}},"customer_id":{"type":"string"},"networks":{"type":"array","items":{"type":"string"}},"issue_number":{"type":"string"},"posted":{"type":"string","format":"date-time"},"serial_number":{"type":"string"},"account_id":{"type":"string"}}} # OBPv310UpdatedCardForBankRequest | Request body
 
     try:
         # Update Card
@@ -1107,7 +1107,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv310GetCardsForBank200ResponsePropertiesCardsItems**](OBPv310GetCardsForBank200ResponsePropertiesCardsItems.md)
+[**OBPv310GetCardsForBank200ResponseCardsInner**](OBPv310GetCardsForBank200ResponseCardsInner.md)
 
 ### Authorization
 
@@ -1128,7 +1128,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_create_or_update_card_attribute_definition**
-> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems o_bpv4_0_0_create_or_update_card_attribute_definition(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request)
+> OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner o_bpv4_0_0_create_or_update_card_attribute_definition(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request)
 
 Create or Update Card Attribute Definition
 
@@ -1159,14 +1159,14 @@ Create or Update Card Attribute Definition
 ```python
 import obp_python
 from obp_python.models.obpv400_create_or_update_transaction_request_attribute_definition_request import OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
-from obp_python.models.obpv400_get_transaction_request_attribute_definition200_response_properties_attributes_items import OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
+from obp_python.models.obpv400_get_transaction_request_attribute_definition200_response_attributes_inner import OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1216,7 +1216,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
+[**OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -1261,10 +1261,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1367,10 +1367,10 @@ from obp_python.models.obpv400_get_transaction_request_attribute_definition200_r
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1577,10 +1577,10 @@ from obp_python.models.obpv500_add_card_for_bank_request import OBPv500AddCardFo
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1607,7 +1607,7 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.CardApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
-    obpv500_add_card_for_bank_request = {"type":"object","properties":{"posted":{"type":"string","format":"date-time"},"card_number":{"type":"string"},"enabled":{"type":"boolean"},"allows":{"type":"array","items":{"type":"string"}},"technology":{"type":"string"},"pin_reset":{"type":"array","items":{"type":"object","properties":{"reason_requested":{"type":"string"},"requested_date":{"type":"string","format":"date-time"}}}},"card_type":{"type":"string"},"name_on_card":{"type":"string"},"expires_date":{"type":"string","format":"date-time"},"customer_id":{"type":"string"},"collected":{"type":"string","format":"date-time"},"replacement":{"type":"object","properties":{"reason_requested":{"type":"string"},"requested_date":{"type":"string","format":"date-time"}}},"brand":{"type":"string"},"issue_number":{"type":"string"},"serial_number":{"type":"string"},"networks":{"type":"array","items":{"type":"string"}},"account_id":{"type":"string"},"valid_from_date":{"type":"string","format":"date-time"}}} # OBPv500AddCardForBankRequest | Request body
+    obpv500_add_card_for_bank_request = {"type":"object","properties":{"card_number":{"type":"string"},"enabled":{"type":"boolean"},"expires_date":{"type":"string","format":"date-time"},"allows":{"type":"array","items":{"type":"string"}},"technology":{"type":"string"},"valid_from_date":{"type":"string","format":"date-time"},"card_type":{"type":"string"},"name_on_card":{"type":"string"},"pin_reset":{"type":"array","items":{"type":"object","properties":{"requested_date":{"type":"string","format":"date-time"},"reason_requested":{"type":"string"}}}},"customer_id":{"type":"string"},"brand":{"type":"string"},"collected":{"type":"string","format":"date-time"},"issue_number":{"type":"string"},"serial_number":{"type":"string"},"networks":{"type":"array","items":{"type":"string"}},"replacement":{"type":"object","properties":{"requested_date":{"type":"string","format":"date-time"},"reason_requested":{"type":"string"}}},"posted":{"type":"string","format":"date-time"},"account_id":{"type":"string"}}} # OBPv500AddCardForBankRequest | Request body
 
     try:
         # Create Card

@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv121AddImageForViewOnTransactionRequestProperties**](OBPv121AddImageForViewOnTransactionRequestProperties.md) |  | 
+**url** | **str** |  | [optional] 
+**label** | **str** |  | [optional] 
 
 ## Example
 

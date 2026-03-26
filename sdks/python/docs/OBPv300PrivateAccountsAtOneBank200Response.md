@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv300PrivateAccountsAtOneBank200ResponseProperties**](OBPv300PrivateAccountsAtOneBank200ResponseProperties.md) |  | 
+**accounts** | [**List[OBPv300PrivateAccountsAtOneBank200ResponseAccountsInner]**](OBPv300PrivateAccountsAtOneBank200ResponseAccountsInner.md) |  | [optional] 
 
 ## Example
 

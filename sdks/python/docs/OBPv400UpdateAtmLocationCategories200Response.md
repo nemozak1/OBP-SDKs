@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400UpdateAtmLocationCategories200ResponseProperties**](OBPv400UpdateAtmLocationCategories200ResponseProperties.md) |  | 
+**atm_id** | **str** |  | [optional] 
+**location_categories** | **List[str]** |  | [optional] 
 
 ## Example
 

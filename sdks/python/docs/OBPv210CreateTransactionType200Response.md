@@ -5,8 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv210CreateTransactionType200ResponseProperties**](OBPv210CreateTransactionType200ResponseProperties.md) |  | 
+**short_code** | **str** |  | [optional] 
+**description** | **str** |  | [optional] 
+**id** | [**OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId**](OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId.md) |  | [optional] 
+**charge** | [**OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit**](OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit.md) |  | [optional] 
+**bank_id** | [**OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId**](OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId.md) |  | [optional] 
+**summary** | **str** |  | [optional] 
 
 ## Example
 

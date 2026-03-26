@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600UpdateFeaturedApiCollectionRequestProperties**](OBPv600UpdateFeaturedApiCollectionRequestProperties.md) |  | 
+**sort_order** | **int** |  | [optional] 
 
 ## Example
 

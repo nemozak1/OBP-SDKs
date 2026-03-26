@@ -5,8 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400CreateSystemAccountNotificationWebhook200ResponseProperties**](OBPv400CreateSystemAccountNotificationWebhook200ResponseProperties.md) |  | 
+**created_by_user_id** | **str** |  | [optional] 
+**url** | **str** |  | [optional] 
+**trigger_name** | **str** |  | [optional] 
+**http_protocol** | **str** |  | [optional] 
+**http_method** | **str** |  | [optional] 
+**webhook_id** | **str** |  | [optional] 
 
 ## Example
 

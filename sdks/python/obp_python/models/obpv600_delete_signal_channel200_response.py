@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv600_delete_signal_channel200_response_properties import OBPv600DeleteSignalChannel200ResponseProperties
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +27,9 @@ class OBPv600DeleteSignalChannel200Response(BaseModel):
     """
     OBPv600DeleteSignalChannel200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv600DeleteSignalChannel200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    channel_name: Optional[StrictStr] = None
+    deleted: Optional[StrictBool] = None
+    __properties: ClassVar[List[str]] = ["channel_name", "deleted"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +70,6 @@ class OBPv600DeleteSignalChannel200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +82,8 @@ class OBPv600DeleteSignalChannel200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv600DeleteSignalChannel200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "channel_name": obj.get("channel_name"),
+            "deleted": obj.get("deleted")
         })
         return _obj
 

@@ -1,7 +1,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,7 +18,7 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from obp_python.models.obpv121_update_transaction_narrative200_response import OBPv121UpdateTransactionNarrative200Response
+from obp_python.models.obpv510_account_access_unique_index_check200_response import OBPv510AccountAccessUniqueIndexCheck200Response
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -53,7 +53,7 @@ class SystemIntegrityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv121UpdateTransactionNarrative200Response:
+    ) -> OBPv510AccountAccessUniqueIndexCheck200Response:
         """Check Unique Index at Account Access
 
         <p>Check unique index at account access table.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
@@ -88,7 +88,7 @@ class SystemIntegrityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "OBPv510AccountAccessUniqueIndexCheck200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -117,7 +117,7 @@ class SystemIntegrityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv121UpdateTransactionNarrative200Response]:
+    ) -> ApiResponse[OBPv510AccountAccessUniqueIndexCheck200Response]:
         """Check Unique Index at Account Access
 
         <p>Check unique index at account access table.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
@@ -152,7 +152,7 @@ class SystemIntegrityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "OBPv510AccountAccessUniqueIndexCheck200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -216,7 +216,7 @@ class SystemIntegrityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "OBPv510AccountAccessUniqueIndexCheck200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -305,7 +305,7 @@ class SystemIntegrityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv121UpdateTransactionNarrative200Response:
+    ) -> OBPv510AccountAccessUniqueIndexCheck200Response:
         """Check for Sensible Currencies
 
         <p>Check for sensible currencies at Bank Account model</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
@@ -343,7 +343,7 @@ class SystemIntegrityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "OBPv510AccountAccessUniqueIndexCheck200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -373,7 +373,7 @@ class SystemIntegrityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv121UpdateTransactionNarrative200Response]:
+    ) -> ApiResponse[OBPv510AccountAccessUniqueIndexCheck200Response]:
         """Check for Sensible Currencies
 
         <p>Check for sensible currencies at Bank Account model</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
@@ -411,7 +411,7 @@ class SystemIntegrityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "OBPv510AccountAccessUniqueIndexCheck200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -479,7 +479,7 @@ class SystemIntegrityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "OBPv510AccountAccessUniqueIndexCheck200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -570,7 +570,7 @@ class SystemIntegrityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv121UpdateTransactionNarrative200Response:
+    ) -> OBPv510AccountAccessUniqueIndexCheck200Response:
         """Check Custom View Names
 
         <p>Check custom view names.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
@@ -605,7 +605,7 @@ class SystemIntegrityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "OBPv510AccountAccessUniqueIndexCheck200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -634,7 +634,7 @@ class SystemIntegrityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv121UpdateTransactionNarrative200Response]:
+    ) -> ApiResponse[OBPv510AccountAccessUniqueIndexCheck200Response]:
         """Check Custom View Names
 
         <p>Check custom view names.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
@@ -669,7 +669,7 @@ class SystemIntegrityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "OBPv510AccountAccessUniqueIndexCheck200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -733,7 +733,7 @@ class SystemIntegrityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "OBPv510AccountAccessUniqueIndexCheck200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -822,7 +822,7 @@ class SystemIntegrityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv121UpdateTransactionNarrative200Response:
+    ) -> OBPv510AccountAccessUniqueIndexCheck200Response:
         """Check for Orphaned Accounts
 
         <p>Check for orphaned accounts at Bank Account model</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
@@ -860,7 +860,7 @@ class SystemIntegrityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "OBPv510AccountAccessUniqueIndexCheck200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -890,7 +890,7 @@ class SystemIntegrityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv121UpdateTransactionNarrative200Response]:
+    ) -> ApiResponse[OBPv510AccountAccessUniqueIndexCheck200Response]:
         """Check for Orphaned Accounts
 
         <p>Check for orphaned accounts at Bank Account model</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
@@ -928,7 +928,7 @@ class SystemIntegrityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "OBPv510AccountAccessUniqueIndexCheck200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -996,7 +996,7 @@ class SystemIntegrityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "OBPv510AccountAccessUniqueIndexCheck200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1087,7 +1087,7 @@ class SystemIntegrityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv121UpdateTransactionNarrative200Response:
+    ) -> OBPv510AccountAccessUniqueIndexCheck200Response:
         """Check System View Names
 
         <p>Check system view names.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
@@ -1122,7 +1122,7 @@ class SystemIntegrityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "OBPv510AccountAccessUniqueIndexCheck200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1151,7 +1151,7 @@ class SystemIntegrityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv121UpdateTransactionNarrative200Response]:
+    ) -> ApiResponse[OBPv510AccountAccessUniqueIndexCheck200Response]:
         """Check System View Names
 
         <p>Check system view names.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
@@ -1186,7 +1186,7 @@ class SystemIntegrityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "OBPv510AccountAccessUniqueIndexCheck200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1250,7 +1250,7 @@ class SystemIntegrityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "OBPv510AccountAccessUniqueIndexCheck200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(

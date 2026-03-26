@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400UpdateAccountLabelRequestProperties**](OBPv400UpdateAccountLabelRequestProperties.md) |  | 
+**label** | **str** |  | [optional] 
 
 ## Example
 

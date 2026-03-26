@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -19,8 +19,8 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv310_get_calls_limit200_response_properties import OBPv310GetCallsLimit200ResponseProperties
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv310_get_calls_limit200_response_current_state import OBPv310GetCallsLimit200ResponseCurrentState
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,14 @@ class OBPv310GetCallsLimit200Response(BaseModel):
     """
     OBPv310GetCallsLimit200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv310GetCallsLimit200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    current_state: Optional[OBPv310GetCallsLimit200ResponseCurrentState] = None
+    per_month_call_limit: Optional[StrictStr] = None
+    per_week_call_limit: Optional[StrictStr] = None
+    per_hour_call_limit: Optional[StrictStr] = None
+    per_second_call_limit: Optional[StrictStr] = None
+    per_minute_call_limit: Optional[StrictStr] = None
+    per_day_call_limit: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["current_state", "per_month_call_limit", "per_week_call_limit", "per_hour_call_limit", "per_second_call_limit", "per_minute_call_limit", "per_day_call_limit"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +76,9 @@ class OBPv310GetCallsLimit200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of current_state
+        if self.current_state:
+            _dict['current_state'] = self.current_state.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +91,13 @@ class OBPv310GetCallsLimit200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv310GetCallsLimit200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "current_state": OBPv310GetCallsLimit200ResponseCurrentState.from_dict(obj["current_state"]) if obj.get("current_state") is not None else None,
+            "per_month_call_limit": obj.get("per_month_call_limit"),
+            "per_week_call_limit": obj.get("per_week_call_limit"),
+            "per_hour_call_limit": obj.get("per_hour_call_limit"),
+            "per_second_call_limit": obj.get("per_second_call_limit"),
+            "per_minute_call_limit": obj.get("per_minute_call_limit"),
+            "per_day_call_limit": obj.get("per_day_call_limit")
         })
         return _obj
 

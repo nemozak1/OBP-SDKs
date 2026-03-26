@@ -1,6 +1,6 @@
 # obp_python.CorporateCustomerApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **o_bpv6_0_0_create_corporate_customer**
-> OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems o_bpv6_0_0_create_corporate_customer(bankid, obpv600_create_corporate_customer_request)
+> OBPv600GetCustomerChildren200ResponseCustomersInner o_bpv6_0_0_create_corporate_customer(bankid, obpv600_create_corporate_customer_request)
 
 Create Corporate Customer
 
@@ -47,9 +47,9 @@ Individual-oriented fields (relationship_status, dependants, highest_education_a
 <p><a href="/glossary#credit_rating">credit_rating</a>:</p>
 <p><a href="/glossary#">customer_number</a>: 5987953</p>
 <p><a href="/glossary#">customer_type</a>: INDIVIDUAL</p>
-<p><a href="/glossary#">email</a>: <a href="&#109;&#97;&#x69;&#108;&#116;&#x6f;:&#102;&#101;&#108;i&#x78;s&#x6d;it&#x68;&#x40;&#x65;x&#x61;&#x6d;&#x70;&#108;&#x65;&#46;&#x63;om">&#x66;&#101;&#108;&#105;&#x78;&#115;m&#x69;t&#104;&#x40;e&#120;a&#109;&#x70;&#x6c;e.&#99;om</a></p>
+<p><a href="/glossary#">email</a>: <a href="&#x6d;a&#105;&#x6c;&#116;&#x6f;&#58;fe&#x6c;&#105;&#x78;&#x73;&#109;&#105;&#116;&#x68;&#64;e&#x78;&#x61;&#109;&#x70;&#x6c;e&#46;&#x63;&#x6f;&#109;">&#102;&#101;&#108;&#105;&#x78;&#x73;&#x6d;&#x69;&#x74;&#104;&#64;&#101;&#120;&#97;&#109;&#112;le.c&#111;m</a></p>
 <p><a href="/glossary#">kyc_status</a>: false</p>
-<p><a href="/glossary#last_ok_date">last_ok_date</a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date">last_ok_date</a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#">parent_customer_id</a>:</p>
 <p><strong>JSON response body fields:</strong></p>
 <p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
@@ -63,12 +63,12 @@ Individual-oriented fields (relationship_status, dependants, highest_education_a
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#x61;i&#108;&#x74;o&#58;&#102;&#101;&#x6c;&#x69;&#x78;s&#109;i&#116;&#x68;@&#x65;&#x78;&#97;&#x6d;&#112;&#x6c;&#x65;.c&#x6f;&#x6d;">&#x66;&#x65;&#x6c;&#105;&#x78;&#115;&#x6d;&#105;&#116;&#x68;&#x40;&#101;x&#x61;&#109;&#x70;&#x6c;&#101;.&#x63;&#x6f;&#109;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#x61;i&#108;&#x74;o&#58;f&#101;&#108;&#105;&#120;&#115;&#109;&#x69;t&#104;&#x40;e&#x78;&#97;&#x6d;&#112;&#x6c;&#x65;.&#x63;&#111;&#109;">&#x66;&#101;&#x6c;&#105;xs&#109;&#105;&#116;h&#x40;&#101;&#120;&#x61;&#109;&#112;&#108;&#101;&#x2e;&#x63;&#111;&#x6d;</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#"><strong>name_suffix</strong></a>: Sr</p>
@@ -91,14 +91,14 @@ Individual-oriented fields (relationship_status, dependants, highest_education_a
 ```python
 import obp_python
 from obp_python.models.obpv600_create_corporate_customer_request import OBPv600CreateCorporateCustomerRequest
-from obp_python.models.obpv600_get_customer_children200_response_properties_customers_items import OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems
+from obp_python.models.obpv600_get_customer_children200_response_customers_inner import OBPv600GetCustomerChildren200ResponseCustomersInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -125,7 +125,7 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.CorporateCustomerApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
-    obpv600_create_corporate_customer_request = {"type":"object","properties":{"customer_type":{"type":"string"},"credit_limit":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"last_ok_date":{"type":"string","format":"date-time"},"credit_rating":{"type":"object","properties":{"rating":{"type":"string"},"source":{"type":"string"}}},"email":{"type":"string"},"customer_number":{"type":"string"},"kyc_status":{"type":"boolean"},"legal_name":{"type":"string"},"branch_id":{"type":"string"},"mobile_phone_number":{"type":"string"}}} # OBPv600CreateCorporateCustomerRequest | Request body
+    obpv600_create_corporate_customer_request = {"type":"object","properties":{"customer_type":{"type":"string"},"credit_limit":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"credit_rating":{"type":"object","properties":{"rating":{"type":"string"},"source":{"type":"string"}}},"email":{"type":"string"},"customer_number":{"type":"string"},"kyc_status":{"type":"boolean"},"legal_name":{"type":"string"},"branch_id":{"type":"string"},"mobile_phone_number":{"type":"string"},"last_ok_date":{"type":"string","format":"date-time"}}} # OBPv600CreateCorporateCustomerRequest | Request body
 
     try:
         # Create Corporate Customer
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems**](OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems.md)
+[**OBPv600GetCustomerChildren200ResponseCustomersInner**](OBPv600GetCustomerChildren200ResponseCustomersInner.md)
 
 ### Authorization
 
@@ -198,12 +198,12 @@ date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <stron
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#x61;&#105;&#108;t&#x6f;&#x3a;&#x66;&#x65;&#x6c;&#x69;x&#115;&#x6d;&#105;&#x74;&#x68;&#64;&#x65;&#x78;&#x61;m&#x70;l&#101;&#x2e;&#x63;&#111;&#109;">&#x66;&#x65;&#x6c;&#x69;&#x78;&#115;&#109;&#x69;th&#x40;&#x65;&#x78;&#97;&#109;&#x70;&#108;&#101;.co&#x6d;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;&#x61;i&#108;&#116;&#x6f;&#58;&#x66;&#101;l&#105;&#x78;&#115;&#x6d;i&#x74;&#104;@e&#x78;a&#x6d;&#112;l&#101;.&#99;&#x6f;&#109;">&#102;&#101;&#x6c;&#105;&#120;&#x73;&#109;i&#x74;&#104;&#x40;&#x65;&#120;&#x61;&#109;&#112;&#108;&#x65;&#x2e;&#x63;&#x6f;&#109;</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
@@ -232,10 +232,10 @@ from obp_python.models.obpv600_get_customer_by_customer_number200_response impor
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -331,12 +331,12 @@ The specified customer must be of type CORPORATE or SUBSIDIARY.</p>
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;a&#x69;&#108;&#x74;&#x6f;&#x3a;f&#x65;&#x6c;&#105;&#x78;&#115;&#109;&#105;&#x74;&#104;&#x40;&#101;&#x78;&#x61;&#x6d;&#112;&#108;e&#46;&#x63;o&#x6d;">&#x66;&#101;&#x6c;&#x69;&#x78;sm&#105;&#x74;h@&#x65;&#120;a&#109;&#112;&#108;&#101;.&#99;&#x6f;&#109;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="ma&#105;l&#x74;&#111;&#x3a;&#x66;&#x65;l&#105;x&#x73;&#x6d;&#105;&#x74;&#104;&#x40;&#x65;&#x78;&#97;m&#112;&#x6c;&#101;&#x2e;&#99;o&#x6d;">&#x66;e&#108;&#105;&#x78;&#115;mi&#x74;h@&#x65;&#x78;&#97;&#109;p&#108;&#101;.&#x63;o&#x6d;</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#"><strong>name_suffix</strong></a>: Sr</p>
@@ -362,10 +362,10 @@ from obp_python.models.obpv600_get_customer_children200_response import OBPv600G
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -466,12 +466,12 @@ date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <stron
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="m&#x61;&#x69;&#x6c;&#x74;&#111;:f&#101;l&#105;&#120;&#115;&#109;&#105;t&#104;@&#101;x&#97;&#109;&#x70;&#108;&#x65;&#x2e;c&#111;&#109;">fe&#108;&#x69;&#x78;&#x73;mi&#116;h&#64;&#101;x&#97;&#109;&#x70;&#x6c;e&#x2e;&#99;&#111;&#x6d;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#97;il&#x74;&#x6f;:f&#101;&#x6c;&#105;&#x78;&#x73;&#x6d;&#x69;&#x74;&#104;&#64;e&#x78;&#x61;&#x6d;&#112;&#108;&#101;&#x2e;&#x63;&#x6f;m">&#102;&#101;&#108;&#105;&#x78;&#115;&#x6d;i&#116;&#104;@&#x65;x&#x61;&#x6d;p&#108;&#101;&#46;&#x63;&#x6f;m</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#"><strong>name_suffix</strong></a>: Sr</p>
@@ -497,10 +497,10 @@ from obp_python.models.obpv600_get_customer_children200_response import OBPv600G
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters

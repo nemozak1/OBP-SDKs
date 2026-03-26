@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310UpdateCustomerEmailRequestProperties**](OBPv310UpdateCustomerEmailRequestProperties.md) |  | 
+**email** | **str** |  | [optional] 
 
 ## Example
 

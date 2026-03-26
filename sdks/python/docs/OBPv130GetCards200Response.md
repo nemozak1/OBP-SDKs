@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv130GetCards200ResponseProperties**](OBPv130GetCards200ResponseProperties.md) |  | 
+**cards** | [**List[OBPv130GetCards200ResponseCardsInner]**](OBPv130GetCards200ResponseCardsInner.md) |  | [optional] 
 
 ## Example
 

@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600ValidateAbacRule200ResponseProperties**](OBPv600ValidateAbacRule200ResponseProperties.md) |  | 
+**message** | **str** |  | [optional] 
+**valid** | **bool** |  | [optional] 
 
 ## Example
 

@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv121GetTransactionNarrative200ResponseProperties**](OBPv121GetTransactionNarrative200ResponseProperties.md) |  | 
+**narrative** | **str** |  | [optional] 
 
 ## Example
 

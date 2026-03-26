@@ -5,8 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510CreateVRPConsentRequest200ResponseProperties**](OBPv510CreateVRPConsentRequest200ResponseProperties.md) |  | 
+**consumer_id** | **str** |  | [optional] 
+**payload** | [**OBPv510CreateVRPConsentRequest200ResponsePayload**](OBPv510CreateVRPConsentRequest200ResponsePayload.md) |  | [optional] 
+**consent_request_id** | **str** |  | [optional] 
 
 ## Example
 

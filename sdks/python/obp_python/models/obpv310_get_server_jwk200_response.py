@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -19,8 +19,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv310_get_server_jwk200_response_properties import OBPv310GetServerJWK200ResponseProperties
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +27,12 @@ class OBPv310GetServerJWK200Response(BaseModel):
     """
     OBPv310GetServerJWK200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv310GetServerJWK200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    e: Optional[StrictStr] = None
+    n: Optional[StrictStr] = None
+    kty: Optional[StrictStr] = None
+    use: Optional[StrictStr] = None
+    kid: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["e", "n", "kty", "use", "kid"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +73,6 @@ class OBPv310GetServerJWK200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +85,11 @@ class OBPv310GetServerJWK200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv310GetServerJWK200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "e": obj.get("e"),
+            "n": obj.get("n"),
+            "kty": obj.get("kty"),
+            "use": obj.get("use"),
+            "kid": obj.get("kid")
         })
         return _obj
 

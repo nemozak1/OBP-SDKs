@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv500_get_adapter_info200_response_properties import OBPv500GetAdapterInfo200ResponseProperties
+from datetime import datetime
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
+from obp_python.models.obpv500_get_adapter_info200_response_backend_messages_inner import OBPv500GetAdapterInfo200ResponseBackendMessagesInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +29,13 @@ class OBPv500GetAdapterInfo200Response(BaseModel):
     """
     OBPv500GetAdapterInfo200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv500GetAdapterInfo200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    name: Optional[StrictStr] = None
+    backend_messages: Optional[List[OBPv500GetAdapterInfo200ResponseBackendMessagesInner]] = None
+    total_duration: Optional[Union[StrictFloat, StrictInt]] = None
+    version: Optional[StrictStr] = None
+    var_date: Optional[datetime] = Field(default=None, alias="date")
+    git_commit: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["name", "backend_messages", "total_duration", "version", "date", "git_commit"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +76,13 @@ class OBPv500GetAdapterInfo200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in backend_messages (list)
+        _items = []
+        if self.backend_messages:
+            for _item_backend_messages in self.backend_messages:
+                if _item_backend_messages:
+                    _items.append(_item_backend_messages.to_dict())
+            _dict['backend_messages'] = _items
         return _dict
 
     @classmethod
@@ -86,8 +95,12 @@ class OBPv500GetAdapterInfo200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv500GetAdapterInfo200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "name": obj.get("name"),
+            "backend_messages": [OBPv500GetAdapterInfo200ResponseBackendMessagesInner.from_dict(_item) for _item in obj["backend_messages"]] if obj.get("backend_messages") is not None else None,
+            "total_duration": obj.get("total_duration"),
+            "version": obj.get("version"),
+            "date": obj.get("date"),
+            "git_commit": obj.get("git_commit")
         })
         return _obj
 

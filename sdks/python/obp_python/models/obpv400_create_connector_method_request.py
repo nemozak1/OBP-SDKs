@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -19,8 +19,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv400_create_connector_method_request_properties import OBPv400CreateConnectorMethodRequestProperties
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +27,10 @@ class OBPv400CreateConnectorMethodRequest(BaseModel):
     """
     OBPv400CreateConnectorMethodRequest
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv400CreateConnectorMethodRequestProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    method_name: Optional[StrictStr] = None
+    programming_lang: Optional[StrictStr] = None
+    method_body: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["method_name", "programming_lang", "method_body"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +71,6 @@ class OBPv400CreateConnectorMethodRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +83,9 @@ class OBPv400CreateConnectorMethodRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv400CreateConnectorMethodRequestProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "method_name": obj.get("method_name"),
+            "programming_lang": obj.get("programming_lang"),
+            "method_body": obj.get("method_body")
         })
         return _obj
 

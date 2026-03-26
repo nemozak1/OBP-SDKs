@@ -5,8 +5,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510GetTransactionRequestById200ResponseProperties**](OBPv510GetTransactionRequestById200ResponseProperties.md) |  | 
+**challenge** | [**OBPv510GetTransactionRequestById200ResponseChallenge**](OBPv510GetTransactionRequestById200ResponseChallenge.md) |  | [optional] 
+**start_date** | **datetime** |  | [optional] 
+**id** | **str** |  | [optional] 
+**end_date** | **datetime** |  | [optional] 
+**status** | **str** |  | [optional] 
+**var_from** | [**OBPv400CreateTransactionRequestCounterparty200ResponseFrom**](OBPv400CreateTransactionRequestCounterparty200ResponseFrom.md) |  | [optional] 
+**details** | [**OBPv400CreateTransactionRequestCounterparty200ResponseDetails**](OBPv400CreateTransactionRequestCounterparty200ResponseDetails.md) |  | [optional] 
+**charge** | [**OBPv400CreateTransactionRequestCounterparty200ResponseCharge**](OBPv400CreateTransactionRequestCounterparty200ResponseCharge.md) |  | [optional] 
+**type** | **str** |  | [optional] 
+**transaction_ids** | **List[str]** |  | [optional] 
 
 ## Example
 

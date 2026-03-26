@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510AddSystemViewPermissionRequestProperties**](OBPv510AddSystemViewPermissionRequestProperties.md) |  | 
+**extra_data** | **List[str]** |  | [optional] 
+**permission_name** | **str** |  | [optional] 
 
 ## Example
 

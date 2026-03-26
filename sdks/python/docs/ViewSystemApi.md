@@ -1,6 +1,6 @@
 # obp_python.ViewSystemApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**o_bpv5_0_0_get_system_views_ids**](ViewSystemApi.md#o_bpv5_0_0_get_system_views_ids) | **GET** /obp/v5.0.0/system-views-ids | Get Ids of System Views
 [**o_bpv5_1_0_add_system_view_permission**](ViewSystemApi.md#o_bpv5_1_0_add_system_view_permission) | **POST** /obp/v5.1.0/system-views/{viewid}/permissions | Add Permission to a System View
 [**o_bpv5_1_0_delete_system_view_permission**](ViewSystemApi.md#o_bpv5_1_0_delete_system_view_permission) | **DELETE** /obp/v5.1.0/system-views/{viewid}/permissions/{permissionname} | Delete Permission to a System View
+[**o_bpv6_0_0_get_custom_view_by_id**](ViewSystemApi.md#o_bpv6_0_0_get_custom_view_by_id) | **GET** /obp/v6.0.0/management/banks/{bankid}/accounts/{accountid}/views/{viewid} | Get Custom View
 [**o_bpv6_0_0_get_custom_views**](ViewSystemApi.md#o_bpv6_0_0_get_custom_views) | **GET** /obp/v6.0.0/management/custom-views | Get Custom Views
 [**o_bpv6_0_0_get_system_view_by_id**](ViewSystemApi.md#o_bpv6_0_0_get_system_view_by_id) | **GET** /obp/v6.0.0/management/system-views/{viewid} | Get System View
 [**o_bpv6_0_0_get_system_views**](ViewSystemApi.md#o_bpv6_0_0_get_system_views) | **GET** /obp/v6.0.0/management/system-views | Get System Views
@@ -18,7 +19,7 @@ Method | HTTP request | Description
 
 
 # **o_bpv5_0_0_create_system_view**
-> OBPv500GetViewsForBankAccount200ResponsePropertiesViewsItems o_bpv5_0_0_create_system_view(obpv500_create_system_view_request)
+> OBPv500GetViewsForBankAccount200ResponseViewsInner o_bpv5_0_0_create_system_view(obpv500_create_system_view_request)
 
 Create System View
 
@@ -33,6 +34,7 @@ All the actions contained in the list will be set to <code>true</code> on the vi
 <li><em>''(empty string)</em>: to use no alias; the view shows the real name of the other account.</li>
 </ul>
 <p>The 'hide_metadata_if_alias_used' field in the JSON can take boolean values. If it is set to <code>true</code> and there is an alias on the other account then the other accounts' metadata (like more_info, url, image_url, open_corporates_url, etc.) will be hidden. Otherwise the metadata will be shown.</p>
+<p>The 'metadata_view' field determines where metadata (comments, tags, images, where tags) for transactions are stored and retrieved. If set to another view's ID (e.g. 'owner'), metadata added through this view will be shared with all other views that also use the same metadata_view value. If left empty, metadata is stored under this view's own ID and is not shared with other views.</p>
 <p>System views cannot be public. In case you try to set it you will get the error OBP-30258: System view cannot be public</p>
 <p><strong>JSON request body fields:</strong></p>
 <p><a href="/glossary#allowed_actions"><strong>allowed_actions</strong></a>:</p>
@@ -141,14 +143,14 @@ All the actions contained in the list will be set to <code>true</code> on the vi
 ```python
 import obp_python
 from obp_python.models.obpv500_create_system_view_request import OBPv500CreateSystemViewRequest
-from obp_python.models.obpv500_get_views_for_bank_account200_response_properties_views_items import OBPv500GetViewsForBankAccount200ResponsePropertiesViewsItems
+from obp_python.models.obpv500_get_views_for_bank_account200_response_views_inner import OBPv500GetViewsForBankAccount200ResponseViewsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -196,7 +198,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv500GetViewsForBankAccount200ResponsePropertiesViewsItems**](OBPv500GetViewsForBankAccount200ResponsePropertiesViewsItems.md)
+[**OBPv500GetViewsForBankAccount200ResponseViewsInner**](OBPv500GetViewsForBankAccount200ResponseViewsInner.md)
 
 ### Authorization
 
@@ -239,10 +241,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -310,7 +312,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv5_0_0_get_system_view**
-> OBPv500GetViewsForBankAccount200ResponsePropertiesViewsItems o_bpv5_0_0_get_system_view(viewid)
+> OBPv500GetViewsForBankAccount200ResponseViewsInner o_bpv5_0_0_get_system_view(viewid)
 
 Get System View
 
@@ -414,14 +416,14 @@ Get System View
 
 ```python
 import obp_python
-from obp_python.models.obpv500_get_views_for_bank_account200_response_properties_views_items import OBPv500GetViewsForBankAccount200ResponsePropertiesViewsItems
+from obp_python.models.obpv500_get_views_for_bank_account200_response_views_inner import OBPv500GetViewsForBankAccount200ResponseViewsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -469,7 +471,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv500GetViewsForBankAccount200ResponsePropertiesViewsItems**](OBPv500GetViewsForBankAccount200ResponsePropertiesViewsItems.md)
+[**OBPv500GetViewsForBankAccount200ResponseViewsInner**](OBPv500GetViewsForBankAccount200ResponseViewsInner.md)
 
 ### Authorization
 
@@ -514,10 +516,10 @@ from obp_python.models.obpv500_get_system_views_ids200_response import OBPv500Ge
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -613,10 +615,10 @@ from obp_python.models.obpv510_add_system_view_permission_request import OBPv510
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -710,10 +712,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -781,6 +783,128 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **o_bpv6_0_0_get_custom_view_by_id**
+> OBPv600GetSystemViewById200Response o_bpv6_0_0_get_custom_view_by_id(bankid, accountid, viewid)
+
+Get Custom View
+
+<p>Get a single custom view by bank, account, and view ID.</p>
+<p>Custom views are user-created views with names starting with underscore (_), such as:<br />
+- _work<br />
+- _personal<br />
+- _audit</p>
+<p>Custom views are unique per bank_id, account_id, and view_id combination.</p>
+<p>The view is returned with an <code>allowed_actions</code> array containing all permissions for that view.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
+<p><a href="/glossary#allowed_actions"><strong>allowed_actions</strong></a>:</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>can_grant_access_to_views</strong></a>: can_grant_access_to_views</p>
+<p><a href="/glossary#"><strong>can_revoke_access_to_views</strong></a>: can_revoke_access_to_views</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
+<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
+<p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
+<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
+<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
+<p><a href="/glossary#"><strong>view_name</strong></a>: owner</p>
+<p><a href="/glossary#is_firehose">is_firehose</a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.obpv600_get_system_view_by_id200_response import OBPv600GetSystemViewById200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ViewSystemApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    viewid = 'viewid_example' # str | The VIEWID identifier
+
+    try:
+        # Get Custom View
+        api_response = api_instance.o_bpv6_0_0_get_custom_view_by_id(bankid, accountid, viewid)
+        print("The response of ViewSystemApi->o_bpv6_0_0_get_custom_view_by_id:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ViewSystemApi->o_bpv6_0_0_get_custom_view_by_id: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **viewid** | **str**| The VIEWID identifier | 
+
+### Return type
+
+[**OBPv600GetSystemViewById200Response**](OBPv600GetSystemViewById200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **o_bpv6_0_0_get_custom_views**
 > OBPv600GetCustomViews200Response o_bpv6_0_0_get_custom_views()
 
@@ -808,10 +932,10 @@ from obp_python.models.obpv600_get_custom_views200_response import OBPv600GetCus
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -891,8 +1015,10 @@ Get System View
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
 <p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
 <p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
 <p><a href="/glossary#allowed_actions"><strong>allowed_actions</strong></a>:</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
 <p><a href="/glossary#"><strong>can_grant_access_to_views</strong></a>: can_grant_access_to_views</p>
 <p><a href="/glossary#"><strong>can_revoke_access_to_views</strong></a>: can_revoke_access_to_views</p>
 <p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
@@ -900,8 +1026,8 @@ Get System View
 <p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
 <p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
 <p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
-<p><a href="/glossary#short_name"><strong>short_name</strong></a>:</p>
 <p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
+<p><a href="/glossary#"><strong>view_name</strong></a>: owner</p>
 <p><a href="/glossary#is_firehose">is_firehose</a>:</p>
 
 
@@ -917,10 +1043,10 @@ from obp_python.models.obpv600_get_system_view_by_id200_response import OBPv600G
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1003,8 +1129,10 @@ Get System Views
 <p>Each view is returned with an <code>allowed_actions</code> array containing all permissions for that view.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 <p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
 <p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
 <p><a href="/glossary#allowed_actions"><strong>allowed_actions</strong></a>:</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
 <p><a href="/glossary#"><strong>can_grant_access_to_views</strong></a>: can_grant_access_to_views</p>
 <p><a href="/glossary#"><strong>can_revoke_access_to_views</strong></a>: can_revoke_access_to_views</p>
 <p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
@@ -1012,8 +1140,8 @@ Get System Views
 <p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
 <p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
 <p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
-<p><a href="/glossary#short_name"><strong>short_name</strong></a>:</p>
 <p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
+<p><a href="/glossary#"><strong>view_name</strong></a>: owner</p>
 <p><a href="/glossary#views"><strong>views</strong></a>:</p>
 <p><a href="/glossary#is_firehose">is_firehose</a>:</p>
 
@@ -1030,10 +1158,10 @@ from obp_python.models.obpv600_get_system_views200_response import OBPv600GetSys
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1127,10 +1255,10 @@ from obp_python.models.obpv600_get_view_permissions200_response import OBPv600Ge
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1203,12 +1331,15 @@ Update System View
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 <p>The JSON sent is the same as during view creation, with one difference: the 'name' field<br />
 of a view is not editable (it is only set when a view is created).</p>
+<p>The 'metadata_view' field determines where metadata (comments, tags, images, where tags) for transactions are stored and retrieved. If set to another view's ID (e.g. 'owner'), metadata added through this view will be shared with all other views that also use the same metadata_view value. If left empty, metadata is stored under this view's own ID and is not shared with other views.</p>
 <p>The response contains the updated view with an <code>allowed_actions</code> array.</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
 <p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
 <p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
 <p><a href="/glossary#allowed_actions"><strong>allowed_actions</strong></a>:</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
 <p><a href="/glossary#"><strong>can_grant_access_to_views</strong></a>: can_grant_access_to_views</p>
 <p><a href="/glossary#"><strong>can_revoke_access_to_views</strong></a>: can_revoke_access_to_views</p>
 <p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
@@ -1216,8 +1347,8 @@ of a view is not editable (it is only set when a view is created).</p>
 <p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
 <p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
 <p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
-<p><a href="/glossary#short_name"><strong>short_name</strong></a>:</p>
 <p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
+<p><a href="/glossary#"><strong>view_name</strong></a>: owner</p>
 <p><a href="/glossary#is_firehose">is_firehose</a>:</p>
 
 
@@ -1234,10 +1365,10 @@ from obp_python.models.obpv600_update_system_view_request import OBPv600UpdateSy
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters

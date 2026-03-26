@@ -5,8 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv220CreateFxRequestProperties**](OBPv220CreateFxRequestProperties.md) |  | 
+**inverse_conversion_value** | **float** |  | [optional] 
+**to_currency_code** | **str** |  | [optional] 
+**effective_date** | **datetime** |  | [optional] 
+**conversion_value** | **float** |  | [optional] 
+**bank_id** | **str** |  | [optional] 
+**from_currency_code** | **str** |  | [optional] 
 
 ## Example
 

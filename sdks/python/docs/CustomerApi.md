@@ -1,6 +1,6 @@
 # obp_python.CustomerApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -117,10 +117,10 @@ from obp_python.models.obpv140_add_customer_message_request import OBPv140AddCus
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -226,10 +226,10 @@ from obp_python.models.obpv140_get_crm_events200_response import OBPv140GetCrmEv
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -330,10 +330,10 @@ from obp_python.models.obpv140_get_customers_messages200_response import OBPv140
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv2_0_0_add_kyc_check**
-> OBPv200GetKycChecks200ResponsePropertiesChecksItems o_bpv2_0_0_add_kyc_check(bankid, customerid, kyccheckid, obpv200_add_kyc_check_request)
+> OBPv200GetKycChecks200ResponseChecksInner o_bpv2_0_0_add_kyc_check(bankid, customerid, kyccheckid, obpv200_add_kyc_check_request)
 
 Add KYC Check
 
@@ -434,14 +434,14 @@ Add KYC Check
 ```python
 import obp_python
 from obp_python.models.obpv200_add_kyc_check_request import OBPv200AddKycCheckRequest
-from obp_python.models.obpv200_get_kyc_checks200_response_properties_checks_items import OBPv200GetKycChecks200ResponsePropertiesChecksItems
+from obp_python.models.obpv200_get_kyc_checks200_response_checks_inner import OBPv200GetKycChecks200ResponseChecksInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -470,7 +470,7 @@ with obp_python.ApiClient(configuration) as api_client:
     bankid = 'bankid_example' # str | The BANKID identifier
     customerid = 'customerid_example' # str | The CUSTOMERID identifier
     kyccheckid = 'kyccheckid_example' # str | The KYCCHECKID identifier
-    obpv200_add_kyc_check_request = {"type":"object","properties":{"customer_number":{"type":"string"},"date":{"type":"string","format":"date-time"},"staff_user_id":{"type":"string"},"staff_name":{"type":"string"},"comments":{"type":"string"},"how":{"type":"string"},"satisfied":{"type":"boolean"}}} # OBPv200AddKycCheckRequest | Request body
+    obpv200_add_kyc_check_request = {"type":"object","properties":{"customer_number":{"type":"string"},"staff_user_id":{"type":"string"},"date":{"type":"string","format":"date-time"},"staff_name":{"type":"string"},"comments":{"type":"string"},"how":{"type":"string"},"satisfied":{"type":"boolean"}}} # OBPv200AddKycCheckRequest | Request body
 
     try:
         # Add KYC Check
@@ -495,7 +495,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv200GetKycChecks200ResponsePropertiesChecksItems**](OBPv200GetKycChecks200ResponsePropertiesChecksItems.md)
+[**OBPv200GetKycChecks200ResponseChecksInner**](OBPv200GetKycChecks200ResponseChecksInner.md)
 
 ### Authorization
 
@@ -552,10 +552,10 @@ from obp_python.models.obpv200_add_kyc_document_request import OBPv200AddKycDocu
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -584,7 +584,7 @@ with obp_python.ApiClient(configuration) as api_client:
     bankid = 'bankid_example' # str | The BANKID identifier
     customerid = 'customerid_example' # str | The CUSTOMERID identifier
     kycdocumentid = 'kycdocumentid_example' # str | The KYCDOCUMENTID identifier
-    obpv200_add_kyc_document_request = {"type":"object","properties":{"issue_place":{"type":"string"},"expiry_date":{"type":"string","format":"date-time"},"issue_date":{"type":"string","format":"date-time"},"customer_number":{"type":"string"},"type":{"type":"string"},"number":{"type":"string"}}} # OBPv200AddKycDocumentRequest | Request body
+    obpv200_add_kyc_document_request = {"type":"object","properties":{"issue_place":{"type":"string"},"issue_date":{"type":"string","format":"date-time"},"expiry_date":{"type":"string","format":"date-time"},"customer_number":{"type":"string"},"type":{"type":"string"},"number":{"type":"string"}}} # OBPv200AddKycDocumentRequest | Request body
 
     try:
         # Add KYC Document
@@ -666,10 +666,10 @@ from obp_python.models.obpv200_add_kyc_media_request import OBPv200AddKycMediaRe
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -745,7 +745,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv2_0_0_add_kyc_status**
-> OBPv200GetKycStatuses200ResponsePropertiesStatusesItems o_bpv2_0_0_add_kyc_status(bankid, customerid, obpv200_add_kyc_status_request)
+> OBPv200GetKycStatuses200ResponseStatusesInner o_bpv2_0_0_add_kyc_status(bankid, customerid, obpv200_add_kyc_status_request)
 
 Add KYC Status
 
@@ -770,14 +770,14 @@ Add KYC Status
 ```python
 import obp_python
 from obp_python.models.obpv200_add_kyc_status_request import OBPv200AddKycStatusRequest
-from obp_python.models.obpv200_get_kyc_statuses200_response_properties_statuses_items import OBPv200GetKycStatuses200ResponsePropertiesStatusesItems
+from obp_python.models.obpv200_get_kyc_statuses200_response_statuses_inner import OBPv200GetKycStatuses200ResponseStatusesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -805,7 +805,7 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.CustomerApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
     customerid = 'customerid_example' # str | The CUSTOMERID identifier
-    obpv200_add_kyc_status_request = {"type":"object","properties":{"customer_number":{"type":"string"},"date":{"type":"string","format":"date-time"},"ok":{"type":"boolean"}}} # OBPv200AddKycStatusRequest | Request body
+    obpv200_add_kyc_status_request = {"type":"object","properties":{"customer_number":{"type":"string"},"ok":{"type":"boolean"},"date":{"type":"string","format":"date-time"}}} # OBPv200AddKycStatusRequest | Request body
 
     try:
         # Add KYC Status
@@ -829,7 +829,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv200GetKycStatuses200ResponsePropertiesStatusesItems**](OBPv200GetKycStatuses200ResponsePropertiesStatusesItems.md)
+[**OBPv200GetKycStatuses200ResponseStatusesInner**](OBPv200GetKycStatuses200ResponseStatusesInner.md)
 
 ### Authorization
 
@@ -851,7 +851,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv2_0_0_add_social_media_handle**
-> OBPv121UpdateTransactionNarrative200Response o_bpv2_0_0_add_social_media_handle(bankid, customerid, obpv200_get_social_media_handles200_response_properties_checks_items)
+> OBPv121UpdateTransactionNarrative200Response o_bpv2_0_0_add_social_media_handle(bankid, customerid, obpv200_get_social_media_handles200_response_checks_inner)
 
 Create Customer Social Media Handle
 
@@ -879,14 +879,14 @@ Create Customer Social Media Handle
 ```python
 import obp_python
 from obp_python.models.obpv121_update_transaction_narrative200_response import OBPv121UpdateTransactionNarrative200Response
-from obp_python.models.obpv200_get_social_media_handles200_response_properties_checks_items import OBPv200GetSocialMediaHandles200ResponsePropertiesChecksItems
+from obp_python.models.obpv200_get_social_media_handles200_response_checks_inner import OBPv200GetSocialMediaHandles200ResponseChecksInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -914,11 +914,11 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.CustomerApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
     customerid = 'customerid_example' # str | The CUSTOMERID identifier
-    obpv200_get_social_media_handles200_response_properties_checks_items = {"type":"object","properties":{"date_added":{"type":"string","format":"date-time"},"date_activated":{"type":"string","format":"date-time"},"type":{"type":"string"},"customer_number":{"type":"string"},"handle":{"type":"string"}}} # OBPv200GetSocialMediaHandles200ResponsePropertiesChecksItems | Request body
+    obpv200_get_social_media_handles200_response_checks_inner = {"type":"object","properties":{"date_activated":{"type":"string","format":"date-time"},"type":{"type":"string"},"customer_number":{"type":"string"},"date_added":{"type":"string","format":"date-time"},"handle":{"type":"string"}}} # OBPv200GetSocialMediaHandles200ResponseChecksInner | Request body
 
     try:
         # Create Customer Social Media Handle
-        api_response = api_instance.o_bpv2_0_0_add_social_media_handle(bankid, customerid, obpv200_get_social_media_handles200_response_properties_checks_items)
+        api_response = api_instance.o_bpv2_0_0_add_social_media_handle(bankid, customerid, obpv200_get_social_media_handles200_response_checks_inner)
         print("The response of CustomerApi->o_bpv2_0_0_add_social_media_handle:\n")
         pprint(api_response)
     except Exception as e:
@@ -934,7 +934,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
  **customerid** | **str**| The CUSTOMERID identifier | 
- **obpv200_get_social_media_handles200_response_properties_checks_items** | [**OBPv200GetSocialMediaHandles200ResponsePropertiesChecksItems**](OBPv200GetSocialMediaHandles200ResponsePropertiesChecksItems.md)| Request body | 
+ **obpv200_get_social_media_handles200_response_checks_inner** | [**OBPv200GetSocialMediaHandles200ResponseChecksInner**](OBPv200GetSocialMediaHandles200ResponseChecksInner.md)| Request body | 
 
 ### Return type
 
@@ -994,10 +994,10 @@ from obp_python.models.obpv200_get_kyc_checks200_response import OBPv200GetKycCh
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1103,10 +1103,10 @@ from obp_python.models.obpv200_get_kyc_documents200_response import OBPv200GetKy
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1209,10 +1209,10 @@ from obp_python.models.obpv200_get_kyc_media200_response import OBPv200GetKycMed
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1310,10 +1310,10 @@ from obp_python.models.obpv200_get_kyc_statuses200_response import OBPv200GetKyc
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1413,10 +1413,10 @@ from obp_python.models.obpv200_get_social_media_handles200_response import OBPv2
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1508,12 +1508,12 @@ Get Customers for Current User
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="ma&#105;l&#116;&#111;&#58;&#x66;&#x65;&#108;&#x69;xs&#109;&#x69;th&#x40;&#x65;&#x78;&#97;&#x6d;&#x70;l&#101;&#46;c&#x6f;&#109;">&#x66;&#101;&#108;&#x69;&#x78;s&#109;&#105;&#116;&#x68;@e&#x78;&#97;mpl&#101;&#46;c&#x6f;&#109;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#97;&#x69;&#108;&#x74;o&#58;&#102;&#x65;&#108;&#105;&#120;&#115;&#109;&#105;&#x74;h@e&#x78;&#x61;m&#112;&#x6c;&#x65;&#46;&#x63;&#x6f;&#x6d;">&#x66;&#101;&#108;&#x69;&#120;&#115;&#109;&#105;&#116;&#x68;@&#101;&#120;&#x61;&#x6d;&#x70;&#x6c;&#x65;&#x2e;&#99;&#x6f;&#109;</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
@@ -1541,10 +1541,10 @@ from obp_python.models.obpv300_get_customers_for_user200_response import OBPv300
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1659,10 +1659,10 @@ from obp_python.models.obpv310_create_customer_address_request import OBPv310Cre
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1794,10 +1794,10 @@ from obp_python.models.obpv310_get_meeting200_response import OBPv310GetMeeting2
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1824,7 +1824,7 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.CustomerApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
-    obpv310_create_meeting_request = {"type":"object","properties":{"invitees":{"type":"array","items":{"type":"object","properties":{"status":{"type":"string"},"contact_details":{"type":"object","properties":{"name":{"type":"string"},"mobile_phone":{"type":"string"},"email_address":{"type":"string"}}}}}},"provider_id":{"type":"string"},"purpose_id":{"type":"string"},"creator":{"type":"object","properties":{"name":{"type":"string"},"mobile_phone":{"type":"string"},"email_address":{"type":"string"}}},"date":{"type":"string","format":"date-time"}}} # OBPv310CreateMeetingRequest | Request body
+    obpv310_create_meeting_request = {"type":"object","properties":{"date":{"type":"string","format":"date-time"},"invitees":{"type":"array","items":{"type":"object","properties":{"status":{"type":"string"},"contact_details":{"type":"object","properties":{"name":{"type":"string"},"mobile_phone":{"type":"string"},"email_address":{"type":"string"}}}}}},"provider_id":{"type":"string"},"purpose_id":{"type":"string"},"creator":{"type":"object","properties":{"name":{"type":"string"},"mobile_phone":{"type":"string"},"email_address":{"type":"string"}}}}} # OBPv310CreateMeetingRequest | Request body
 
     try:
         # Create Meeting (video conference/call)
@@ -1900,10 +1900,10 @@ from obp_python.models.obpv310_create_tax_residence_request import OBPv310Create
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2000,10 +2000,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2098,10 +2098,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2210,10 +2210,10 @@ from obp_python.models.obpv310_get_customer_addresses200_response import OBPv310
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2303,7 +2303,7 @@ User must have the CanUseFirehoseAtAnyBank Role</p>
 <p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p>
 <ul>
 <li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li>
-<li>to_date=DATE =&gt; example value: 2026-03-16T19:25:56.893Z. NOTE! The default value is now (2026-03-16T19:25:56.893Z).</li>
+<li>to_date=DATE =&gt; example value: 2026-03-25T12:16:24.499Z. NOTE! The default value is now (2026-03-25T12:16:24.499Z).</li>
 </ul>
 <p>Date format parameter: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p>
 <p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p>
@@ -2321,12 +2321,12 @@ User must have the CanUseFirehoseAtAnyBank Role</p>
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#97;&#105;&#108;&#x74;&#111;&#58;&#102;&#x65;&#108;&#105;&#120;&#115;&#x6d;&#105;&#116;&#104;&#x40;&#101;&#x78;&#97;m&#x70;&#108;&#x65;&#46;&#x63;&#x6f;&#109;">&#102;&#101;&#108;&#x69;&#x78;smit&#x68;&#x40;&#x65;&#x78;&#97;&#x6d;p&#x6c;&#x65;&#x2e;&#x63;&#111;&#109;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#x61;&#105;&#108;&#x74;&#111;&#x3a;f&#x65;&#108;&#x69;&#x78;&#115;&#109;&#x69;&#116;&#x68;@&#x65;&#120;a&#x6d;p&#x6c;&#x65;&#46;&#x63;o&#x6d;">&#102;&#x65;&#108;&#x69;xs&#x6d;&#105;t&#104;@&#x65;&#120;&#x61;&#x6d;&#x70;l&#x65;&#x2e;&#99;om</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#"><strong>rating</strong></a>:</p>
@@ -2349,10 +2349,10 @@ from obp_python.models.obpv500_get_my_customers_at_bank200_response import OBPv5
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2468,10 +2468,10 @@ from obp_python.models.obpv310_get_meeting200_response import OBPv310GetMeeting2
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2589,10 +2589,10 @@ from obp_python.models.obpv310_get_meetings200_response import OBPv310GetMeeting
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2690,10 +2690,10 @@ from obp_python.models.obpv310_get_tax_residence200_response import OBPv310GetTa
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2803,10 +2803,10 @@ from obp_python.models.obpv310_create_customer_address_request import OBPv310Cre
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2901,12 +2901,12 @@ Update the Branch of a Customer
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;&#97;&#x69;&#108;&#116;&#x6f;:fe&#x6c;&#x69;&#x78;&#115;&#109;&#105;&#x74;&#104;@e&#x78;&#x61;&#109;&#112;&#108;&#101;.&#99;&#111;&#109;">&#102;&#101;l&#x69;&#x78;&#115;&#x6d;&#105;&#x74;&#x68;@&#x65;x&#97;&#x6d;&#x70;&#x6c;e&#x2e;&#x63;&#x6f;&#x6d;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#97;i&#x6c;&#116;&#x6f;&#58;&#x66;&#101;&#x6c;&#105;&#120;s&#x6d;&#x69;&#116;h&#64;&#x65;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#x63;&#x6f;&#109;">&#x66;&#101;lix&#x73;&#109;&#105;t&#104;@&#101;&#x78;&#x61;mp&#108;&#101;&#46;c&#111;m</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#"><strong>name_suffix</strong></a>: Sr</p>
@@ -2932,10 +2932,10 @@ from obp_python.models.obpv310_update_customer_branch_request import OBPv310Upda
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3028,12 +3028,12 @@ Update the credit limit of a Customer
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="m&#97;&#x69;&#108;&#116;&#111;&#58;&#102;&#x65;&#x6c;&#x69;&#x78;&#x73;&#x6d;&#105;t&#x68;&#64;&#101;&#120;&#97;&#109;ple&#x2e;c&#111;m">&#102;&#x65;&#108;&#x69;&#x78;&#115;&#x6d;&#x69;&#116;&#x68;&#64;&#x65;x&#x61;&#x6d;&#x70;&#108;&#x65;&#x2e;&#x63;o&#x6d;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;a&#105;lt&#x6f;&#x3a;&#102;&#x65;&#x6c;i&#120;&#x73;&#x6d;i&#x74;&#104;&#x40;&#x65;&#120;a&#109;&#112;le&#x2e;&#x63;&#x6f;&#109;">f&#x65;&#108;&#x69;&#x78;&#x73;&#x6d;&#x69;t&#x68;&#x40;&#101;&#x78;&#x61;&#109;&#x70;&#x6c;&#101;&#x2e;c&#111;&#109;</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#"><strong>name_suffix</strong></a>: Sr</p>
@@ -3059,10 +3059,10 @@ from obp_python.models.obpv310_update_customer_credit_limit_request import OBPv3
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3155,12 +3155,12 @@ Update the credit rating and source of a Customer
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#102;&#101;li&#x78;s&#109;&#x69;&#x74;&#104;@&#x65;&#120;&#97;&#109;&#x70;&#x6c;&#101;&#x2e;&#99;&#x6f;&#109;">f&#x65;&#x6c;&#x69;&#x78;&#x73;&#x6d;&#105;&#116;&#104;&#x40;&#x65;x&#97;&#x6d;&#112;&#x6c;&#x65;&#46;&#99;&#111;&#109;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="m&#x61;&#105;&#108;t&#111;&#x3a;f&#101;&#x6c;&#x69;&#120;&#115;&#x6d;&#105;&#116;&#x68;&#x40;e&#120;&#x61;&#x6d;&#x70;&#108;&#101;.c&#x6f;&#x6d;">&#x66;&#x65;li&#x78;&#115;&#x6d;&#105;&#116;&#x68;&#x40;&#101;&#120;&#97;&#x6d;&#112;&#x6c;&#101;&#x2e;&#99;&#x6f;&#109;</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#"><strong>name_suffix</strong></a>: Sr</p>
@@ -3186,10 +3186,10 @@ from obp_python.models.obpv310_update_customer_credit_rating_and_source_request 
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3282,12 +3282,12 @@ Update the other data of a Customer
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#x61;&#x69;&#108;&#x74;&#111;&#x3a;fe&#108;&#105;&#x78;&#x73;&#x6d;&#105;t&#104;&#64;&#101;&#x78;a&#x6d;&#x70;&#108;&#101;&#46;&#99;&#x6f;&#x6d;">&#102;&#x65;&#x6c;&#x69;x&#115;&#x6d;ith&#64;&#101;x&#x61;m&#x70;&#108;&#x65;&#x2e;&#99;&#111;&#x6d;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#97;&#105;&#108;&#116;&#x6f;&#58;f&#101;&#108;&#105;&#120;&#x73;&#109;&#105;&#x74;h&#64;&#101;&#120;&#97;&#x6d;&#112;&#x6c;e&#46;c&#111;&#x6d;">f&#101;&#x6c;i&#120;&#115;m&#105;th@&#x65;&#x78;&#97;&#x6d;&#x70;&#108;&#101;&#x2e;&#x63;&#111;m</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#"><strong>name_suffix</strong></a>: Sr</p>
@@ -3313,10 +3313,10 @@ from obp_python.models.obpv310_update_customer_data_request import OBPv310Update
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3409,12 +3409,12 @@ Update the email of a Customer
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="m&#97;i&#x6c;&#116;&#x6f;&#x3a;fe&#108;&#105;&#120;&#x73;&#x6d;&#105;t&#104;&#64;e&#x78;&#x61;mp&#108;e&#x2e;&#99;&#x6f;&#109;">&#102;&#101;&#x6c;&#105;&#x78;&#x73;&#x6d;&#105;t&#104;&#64;&#101;&#120;&#x61;&#x6d;&#x70;&#108;&#101;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;a&#x69;&#x6c;&#x74;&#111;:&#x66;&#x65;&#108;&#x69;&#x78;&#115;&#109;&#x69;&#x74;&#104;&#64;&#101;x&#x61;&#109;&#x70;l&#x65;&#x2e;&#99;&#111;&#109;">&#102;&#x65;&#108;&#x69;&#120;&#x73;&#109;i&#x74;&#104;&#64;e&#x78;&#x61;&#x6d;&#112;&#108;e&#46;&#x63;om</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#"><strong>name_suffix</strong></a>: Sr</p>
@@ -3440,10 +3440,10 @@ from obp_python.models.obpv310_update_customer_email_request import OBPv310Updat
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3536,12 +3536,12 @@ Update the identity data of a Customer
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#x61;&#105;&#108;&#116;&#x6f;&#x3a;&#x66;&#101;&#108;i&#120;&#115;&#x6d;&#x69;t&#104;@&#x65;&#120;&#x61;&#x6d;p&#x6c;e.&#x63;&#x6f;&#109;">f&#x65;&#x6c;&#x69;&#120;&#x73;mi&#116;&#104;@e&#x78;&#97;&#109;&#x70;&#x6c;&#101;&#46;c&#x6f;&#109;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#x6f;&#58;&#x66;el&#105;&#120;&#115;&#109;&#x69;&#116;h&#x40;&#101;&#120;amp&#x6c;&#101;.&#99;&#111;&#109;">&#102;&#101;l&#105;&#120;&#115;&#109;&#x69;&#116;h@&#101;&#x78;&#x61;mp&#x6c;&#101;&#x2e;&#x63;&#x6f;&#109;</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#"><strong>name_suffix</strong></a>: Sr</p>
@@ -3567,10 +3567,10 @@ from obp_python.models.obpv310_update_customer_identity_request import OBPv310Up
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3598,7 +3598,7 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.CustomerApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
     customerid = 'customerid_example' # str | The CUSTOMERID identifier
-    obpv310_update_customer_identity_request = {"type":"object","properties":{"name_suffix":{"type":"string"},"legal_name":{"type":"string"},"title":{"type":"string"},"date_of_birth":{"type":"string","format":"date-time"}}} # OBPv310UpdateCustomerIdentityRequest | Request body
+    obpv310_update_customer_identity_request = {"type":"object","properties":{"date_of_birth":{"type":"string","format":"date-time"},"name_suffix":{"type":"string"},"legal_name":{"type":"string"},"title":{"type":"string"}}} # OBPv310UpdateCustomerIdentityRequest | Request body
 
     try:
         # Update the identity data of a Customer
@@ -3643,7 +3643,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv3_1_0_update_customer_mobile_number**
-> OBPv310UpdateCustomerBranch200Response o_bpv3_1_0_update_customer_mobile_number(bankid, customerid, obpv400_create_transaction_request_counterparty200_response_properties_details_properties_to_transfer_to_phone_properties_to)
+> OBPv310UpdateCustomerBranch200Response o_bpv3_1_0_update_customer_mobile_number(bankid, customerid, obpv400_create_transaction_request_counterparty200_response_details_to_transfer_to_phone_to)
 
 Update the mobile number of a Customer
 
@@ -3663,12 +3663,12 @@ Update the mobile number of a Customer
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;a&#x69;&#x6c;&#x74;o&#x3a;&#x66;e&#108;&#105;&#x78;&#x73;&#x6d;&#x69;&#116;&#x68;@&#101;&#120;&#x61;&#109;&#x70;&#x6c;e&#x2e;&#99;&#x6f;&#109;">&#102;&#101;&#x6c;&#x69;&#120;&#115;&#x6d;&#x69;&#116;&#104;&#64;&#x65;&#120;&#97;&#109;&#x70;&#x6c;&#101;&#46;&#x63;&#x6f;&#x6d;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;&#x61;&#105;&#108;&#x74;&#x6f;&#x3a;&#x66;&#x65;li&#x78;s&#109;&#105;&#x74;h@&#x65;x&#x61;&#109;&#112;&#108;&#101;&#46;&#99;&#111;m">&#102;e&#x6c;i&#x78;s&#109;&#105;&#x74;&#x68;&#64;&#101;x&#97;&#109;p&#108;&#x65;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#"><strong>name_suffix</strong></a>: Sr</p>
@@ -3690,14 +3690,14 @@ Update the mobile number of a Customer
 ```python
 import obp_python
 from obp_python.models.obpv310_update_customer_branch200_response import OBPv310UpdateCustomerBranch200Response
-from obp_python.models.obpv400_create_transaction_request_counterparty200_response_properties_details_properties_to_transfer_to_phone_properties_to import OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo
+from obp_python.models.obpv400_create_transaction_request_counterparty200_response_details_to_transfer_to_phone_to import OBPv400CreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3725,11 +3725,11 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.CustomerApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
     customerid = 'customerid_example' # str | The CUSTOMERID identifier
-    obpv400_create_transaction_request_counterparty200_response_properties_details_properties_to_transfer_to_phone_properties_to = {type=object, properties={mobile_phone_number={type=string}}} # OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo | Request body
+    obpv400_create_transaction_request_counterparty200_response_details_to_transfer_to_phone_to = {type=object, properties={mobile_phone_number={type=string}}} # OBPv400CreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo | Request body
 
     try:
         # Update the mobile number of a Customer
-        api_response = api_instance.o_bpv3_1_0_update_customer_mobile_number(bankid, customerid, obpv400_create_transaction_request_counterparty200_response_properties_details_properties_to_transfer_to_phone_properties_to)
+        api_response = api_instance.o_bpv3_1_0_update_customer_mobile_number(bankid, customerid, obpv400_create_transaction_request_counterparty200_response_details_to_transfer_to_phone_to)
         print("The response of CustomerApi->o_bpv3_1_0_update_customer_mobile_number:\n")
         pprint(api_response)
     except Exception as e:
@@ -3745,7 +3745,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
  **customerid** | **str**| The CUSTOMERID identifier | 
- **obpv400_create_transaction_request_counterparty200_response_properties_details_properties_to_transfer_to_phone_properties_to** | [**OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo**](OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo.md)| Request body | 
+ **obpv400_create_transaction_request_counterparty200_response_details_to_transfer_to_phone_to** | [**OBPv400CreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo**](OBPv400CreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo.md)| Request body | 
 
 ### Return type
 
@@ -3790,12 +3790,12 @@ Update the number of a Customer
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;a&#105;&#x6c;&#x74;&#x6f;&#58;f&#101;&#x6c;&#x69;x&#115;&#x6d;&#x69;t&#104;&#x40;&#x65;&#120;&#97;&#109;&#112;&#108;&#x65;&#x2e;&#x63;&#x6f;&#x6d;">&#102;e&#108;&#105;&#x78;&#115;&#109;&#105;&#x74;&#104;@&#101;&#x78;&#x61;&#109;&#112;&#x6c;&#101;.&#99;&#111;&#x6d;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;a&#x69;&#108;&#116;&#x6f;:&#102;&#101;&#x6c;&#x69;&#120;&#x73;mi&#116;&#104;@&#x65;&#120;&#97;&#109;&#112;&#x6c;&#x65;&#x2e;&#x63;&#111;&#x6d;">&#x66;&#101;&#108;&#x69;&#x78;&#x73;&#x6d;&#x69;&#116;h&#64;&#101;&#120;&#x61;m&#x70;&#108;&#x65;.&#x63;&#111;&#109;</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#"><strong>name_suffix</strong></a>: Sr</p>
@@ -3821,10 +3821,10 @@ from obp_python.models.obpv500_get_customer_overview_flat_request import OBPv500
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3897,7 +3897,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_create_customer_attribute**
-> OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems o_bpv4_0_0_create_customer_attribute(bankid, customerid, obpv600_create_personal_data_field_request)
+> OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner o_bpv4_0_0_create_customer_attribute(bankid, customerid, obpv600_create_personal_data_field_request)
 
 Create Customer Attribute
 
@@ -3926,15 +3926,15 @@ Create Customer Attribute
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_customer_attributes200_response_properties_customer_attributes_items import OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems
+from obp_python.models.obpv400_get_customer_attributes200_response_customer_attributes_inner import OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner
 from obp_python.models.obpv600_create_personal_data_field_request import OBPv600CreatePersonalDataFieldRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3986,7 +3986,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems**](OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems.md)
+[**OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner**](OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner.md)
 
 ### Authorization
 
@@ -4039,10 +4039,10 @@ from obp_python.models.obpv400_create_customer_message_request import OBPv400Cre
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4116,7 +4116,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition**
-> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request)
+> OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request)
 
 Create or Update Customer Attribute Definition
 
@@ -4147,14 +4147,14 @@ Create or Update Customer Attribute Definition
 ```python
 import obp_python
 from obp_python.models.obpv400_create_or_update_transaction_request_attribute_definition_request import OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
-from obp_python.models.obpv400_get_transaction_request_attribute_definition200_response_properties_attributes_items import OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
+from obp_python.models.obpv400_get_transaction_request_attribute_definition200_response_attributes_inner import OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4204,7 +4204,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
+[**OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -4226,7 +4226,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_create_user_customer_links**
-> OBPv400GetUserCustomerLinksByCustomerId200ResponsePropertiesUserCustomerLinksItems o_bpv4_0_0_create_user_customer_links(bankid, obpv400_create_user_customer_links_request)
+> OBPv400GetUserCustomerLinksByCustomerId200ResponseUserCustomerLinksInner o_bpv4_0_0_create_user_customer_links(bankid, obpv400_create_user_customer_links_request)
 
 Create User Customer Link
 
@@ -4254,14 +4254,14 @@ Create User Customer Link
 ```python
 import obp_python
 from obp_python.models.obpv400_create_user_customer_links_request import OBPv400CreateUserCustomerLinksRequest
-from obp_python.models.obpv400_get_user_customer_links_by_customer_id200_response_properties_user_customer_links_items import OBPv400GetUserCustomerLinksByCustomerId200ResponsePropertiesUserCustomerLinksItems
+from obp_python.models.obpv400_get_user_customer_links_by_customer_id200_response_user_customer_links_inner import OBPv400GetUserCustomerLinksByCustomerId200ResponseUserCustomerLinksInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4311,7 +4311,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetUserCustomerLinksByCustomerId200ResponsePropertiesUserCustomerLinksItems**](OBPv400GetUserCustomerLinksByCustomerId200ResponsePropertiesUserCustomerLinksItems.md)
+[**OBPv400GetUserCustomerLinksByCustomerId200ResponseUserCustomerLinksInner**](OBPv400GetUserCustomerLinksByCustomerId200ResponseUserCustomerLinksInner.md)
 
 ### Authorization
 
@@ -4359,10 +4359,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4457,10 +4457,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4553,10 +4553,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4649,10 +4649,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4722,7 +4722,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_get_correlated_users_info_by_customer_id**
-> OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItems o_bpv4_0_0_get_correlated_users_info_by_customer_id(bankid, customerid)
+> OBPv400GetMyCorrelatedEntities200ResponseCorrelatedEntitiesInner o_bpv4_0_0_get_correlated_users_info_by_customer_id(bankid, customerid)
 
 Get Correlated User Info by Customer
 
@@ -4743,13 +4743,13 @@ Get Correlated User Info by Customer
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#x61;&#105;&#108;&#x74;&#x6f;&#x3a;&#x66;e&#108;&#105;&#120;&#115;&#109;i&#116;&#104;&#x40;&#101;&#x78;&#97;&#x6d;&#112;l&#x65;&#x2e;&#99;om">&#x66;&#101;&#x6c;&#105;&#120;&#x73;&#x6d;&#x69;&#x74;&#x68;&#64;&#x65;&#x78;am&#112;&#x6c;&#101;.&#x63;&#x6f;&#109;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="m&#x61;&#x69;&#x6c;&#116;o:&#x66;e&#108;&#105;xs&#109;&#x69;&#x74;&#x68;&#x40;&#101;&#120;&#x61;&#x6d;&#x70;&#x6c;&#x65;.&#99;&#x6f;&#x6d;">&#102;&#101;&#x6c;&#105;xs&#109;&#x69;t&#104;&#x40;&#101;&#x78;&#x61;&#x6d;&#112;l&#101;&#x2e;&#x63;&#111;&#x6d;</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>insert_date</strong></a>: 2020-01-27</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
@@ -4780,14 +4780,14 @@ Get Correlated User Info by Customer
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_my_correlated_entities200_response_properties_correlated_entities_items import OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItems
+from obp_python.models.obpv400_get_my_correlated_entities200_response_correlated_entities_inner import OBPv400GetMyCorrelatedEntities200ResponseCorrelatedEntitiesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4837,7 +4837,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItems**](OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItems.md)
+[**OBPv400GetMyCorrelatedEntities200ResponseCorrelatedEntitiesInner**](OBPv400GetMyCorrelatedEntities200ResponseCorrelatedEntitiesInner.md)
 
 ### Authorization
 
@@ -4859,7 +4859,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_get_customer_attribute_by_id**
-> OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems o_bpv4_0_0_get_customer_attribute_by_id(bankid, customerid, attributeid)
+> OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner o_bpv4_0_0_get_customer_attribute_by_id(bankid, customerid, attributeid)
 
 Get Customer Attribute By Id
 
@@ -4884,14 +4884,14 @@ Get Customer Attribute By Id
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_customer_attributes200_response_properties_customer_attributes_items import OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems
+from obp_python.models.obpv400_get_customer_attributes200_response_customer_attributes_inner import OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4943,7 +4943,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems**](OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems.md)
+[**OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner**](OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner.md)
 
 ### Authorization
 
@@ -4998,10 +4998,10 @@ from obp_python.models.obpv400_get_transaction_request_attribute_definition200_r
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -5100,10 +5100,10 @@ from obp_python.models.obpv400_get_customer_attributes200_response import OBPv40
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -5206,10 +5206,10 @@ from obp_python.models.obpv400_get_customer_messages200_response import OBPv400G
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -5281,7 +5281,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_get_customers_by_customer_phone_number**
-> OBPv310UpdateCustomerBranch200Response o_bpv4_0_0_get_customers_by_customer_phone_number(bankid, obpv400_create_transaction_request_counterparty200_response_properties_details_properties_to_transfer_to_phone_properties_to)
+> OBPv310UpdateCustomerBranch200Response o_bpv4_0_0_get_customers_by_customer_phone_number(bankid, obpv400_create_transaction_request_counterparty200_response_details_to_transfer_to_phone_to)
 
 Get Customers by MOBILE_PHONE_NUMBER
 
@@ -5306,12 +5306,12 @@ For example {&quot;customer_phone_number&quot;:&quot;%381%&quot;} lists all numb
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;&#x61;i&#x6c;&#116;&#x6f;:&#102;&#101;&#x6c;i&#x78;&#115;&#109;&#105;&#116;&#104;&#64;&#x65;&#x78;&#x61;&#x6d;&#112;&#108;&#x65;.&#x63;o&#x6d;">&#102;&#x65;&#108;&#105;&#x78;s&#x6d;&#x69;&#x74;&#104;&#64;&#101;&#120;&#x61;&#x6d;&#112;&#108;e&#46;&#99;&#111;&#x6d;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#x61;i&#108;t&#111;&#58;f&#x65;&#x6c;i&#x78;smi&#116;&#104;&#x40;&#101;x&#97;&#x6d;&#112;le&#46;&#x63;&#x6f;&#x6d;">&#102;&#101;&#x6c;&#x69;&#120;&#x73;&#x6d;&#x69;&#116;&#x68;&#64;&#101;&#120;&#97;&#109;p&#x6c;&#101;&#x2e;&#99;&#111;m</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#"><strong>name_suffix</strong></a>: Sr</p>
@@ -5333,14 +5333,14 @@ For example {&quot;customer_phone_number&quot;:&quot;%381%&quot;} lists all numb
 ```python
 import obp_python
 from obp_python.models.obpv310_update_customer_branch200_response import OBPv310UpdateCustomerBranch200Response
-from obp_python.models.obpv400_create_transaction_request_counterparty200_response_properties_details_properties_to_transfer_to_phone_properties_to import OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo
+from obp_python.models.obpv400_create_transaction_request_counterparty200_response_details_to_transfer_to_phone_to import OBPv400CreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -5367,11 +5367,11 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.CustomerApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
-    obpv400_create_transaction_request_counterparty200_response_properties_details_properties_to_transfer_to_phone_properties_to = {"type":"object","properties":{"mobile_phone_number":{"type":"string"}}} # OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo | Request body
+    obpv400_create_transaction_request_counterparty200_response_details_to_transfer_to_phone_to = {"type":"object","properties":{"mobile_phone_number":{"type":"string"}}} # OBPv400CreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo | Request body
 
     try:
         # Get Customers by MOBILE_PHONE_NUMBER
-        api_response = api_instance.o_bpv4_0_0_get_customers_by_customer_phone_number(bankid, obpv400_create_transaction_request_counterparty200_response_properties_details_properties_to_transfer_to_phone_properties_to)
+        api_response = api_instance.o_bpv4_0_0_get_customers_by_customer_phone_number(bankid, obpv400_create_transaction_request_counterparty200_response_details_to_transfer_to_phone_to)
         print("The response of CustomerApi->o_bpv4_0_0_get_customers_by_customer_phone_number:\n")
         pprint(api_response)
     except Exception as e:
@@ -5386,7 +5386,7 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
- **obpv400_create_transaction_request_counterparty200_response_properties_details_properties_to_transfer_to_phone_properties_to** | [**OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo**](OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo.md)| Request body | 
+ **obpv400_create_transaction_request_counterparty200_response_details_to_transfer_to_phone_to** | [**OBPv400CreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo**](OBPv400CreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo.md)| Request body | 
 
 ### Return type
 
@@ -5436,10 +5436,10 @@ from obp_python.models.obpv400_get_customers_minimal_at_any_bank200_response imp
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -5524,13 +5524,13 @@ Get Correlated Entities for the current User
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;&#97;&#x69;&#x6c;&#x74;&#111;&#58;&#x66;&#x65;li&#120;&#115;&#109;&#105;&#x74;h&#x40;&#x65;&#120;&#x61;&#x6d;p&#x6c;&#x65;&#x2e;&#99;&#111;&#109;">&#102;&#101;&#x6c;&#x69;&#120;s&#x6d;&#105;t&#104;&#64;&#101;&#120;&#x61;m&#x70;&#108;&#x65;&#x2e;&#x63;o&#109;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="ma&#105;&#x6c;&#x74;&#x6f;:&#x66;e&#108;&#x69;&#120;s&#x6d;&#105;t&#104;&#x40;&#x65;&#120;am&#112;&#x6c;e&#46;&#x63;o&#109;">f&#x65;&#108;&#105;x&#x73;&#109;&#105;&#116;&#x68;&#64;&#x65;x&#97;m&#112;&#x6c;e&#x2e;c&#x6f;&#109;</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>insert_date</strong></a>: 2020-01-27</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
@@ -5565,10 +5565,10 @@ from obp_python.models.obpv400_get_my_correlated_entities200_response import OBP
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -5664,10 +5664,10 @@ from obp_python.models.obpv400_get_user_customer_links_by_customer_id200_respons
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -5769,10 +5769,10 @@ from obp_python.models.obpv400_get_user_customer_links_by_customer_id200_respons
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -5844,7 +5844,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_update_customer_attribute**
-> OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems o_bpv4_0_0_update_customer_attribute(bankid, customerid, customerattributeid, obpv600_create_personal_data_field_request)
+> OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner o_bpv4_0_0_update_customer_attribute(bankid, customerid, customerattributeid, obpv600_create_personal_data_field_request)
 
 Update Customer Attribute
 
@@ -5869,15 +5869,15 @@ Update Customer Attribute
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_customer_attributes200_response_properties_customer_attributes_items import OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems
+from obp_python.models.obpv400_get_customer_attributes200_response_customer_attributes_inner import OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner
 from obp_python.models.obpv600_create_personal_data_field_request import OBPv600CreatePersonalDataFieldRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -5931,7 +5931,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems**](OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems.md)
+[**OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner**](OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner.md)
 
 ### Authorization
 
@@ -5953,7 +5953,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv5_0_0_create_customer_account_link**
-> OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems o_bpv5_0_0_create_customer_account_link(bankid, obpv500_create_customer_account_link_request)
+> OBPv500GetCustomerAccountLinksByCustomerId200ResponseLinksInner o_bpv5_0_0_create_customer_account_link(bankid, obpv500_create_customer_account_link_request)
 
 Create Customer Account Link
 
@@ -5983,14 +5983,14 @@ Create Customer Account Link
 ```python
 import obp_python
 from obp_python.models.obpv500_create_customer_account_link_request import OBPv500CreateCustomerAccountLinkRequest
-from obp_python.models.obpv500_get_customer_account_links_by_customer_id200_response_properties_links_items import OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems
+from obp_python.models.obpv500_get_customer_account_links_by_customer_id200_response_links_inner import OBPv500GetCustomerAccountLinksByCustomerId200ResponseLinksInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -6040,7 +6040,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems**](OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems.md)
+[**OBPv500GetCustomerAccountLinksByCustomerId200ResponseLinksInner**](OBPv500GetCustomerAccountLinksByCustomerId200ResponseLinksInner.md)
 
 ### Authorization
 
@@ -6085,10 +6085,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -6158,7 +6158,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv5_0_0_get_customer_account_link_by_id**
-> OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems o_bpv5_0_0_get_customer_account_link_by_id(bankid, customeraccountlinkid)
+> OBPv500GetCustomerAccountLinksByCustomerId200ResponseLinksInner o_bpv5_0_0_get_customer_account_link_by_id(bankid, customeraccountlinkid)
 
 Get Customer Account Link by Id
 
@@ -6183,14 +6183,14 @@ Get Customer Account Link by Id
 
 ```python
 import obp_python
-from obp_python.models.obpv500_get_customer_account_links_by_customer_id200_response_properties_links_items import OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems
+from obp_python.models.obpv500_get_customer_account_links_by_customer_id200_response_links_inner import OBPv500GetCustomerAccountLinksByCustomerId200ResponseLinksInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -6240,7 +6240,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems**](OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems.md)
+[**OBPv500GetCustomerAccountLinksByCustomerId200ResponseLinksInner**](OBPv500GetCustomerAccountLinksByCustomerId200ResponseLinksInner.md)
 
 ### Authorization
 
@@ -6292,10 +6292,10 @@ from obp_python.models.obpv500_get_customer_account_links_by_customer_id200_resp
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -6397,10 +6397,10 @@ from obp_python.models.obpv500_get_customer_account_links_by_customer_id200_resp
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -6502,13 +6502,13 @@ Get Customer Overview
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;&#97;i&#x6c;&#x74;&#111;:&#102;&#x65;&#x6c;&#x69;&#120;&#115;&#x6d;&#x69;&#116;&#104;&#64;&#101;&#120;&#97;&#109;&#x70;&#108;e&#46;c&#x6f;&#109;">&#x66;&#101;&#108;&#105;&#x78;s&#109;&#105;&#x74;&#104;@&#101;&#x78;&#x61;&#x6d;&#112;&#108;e&#x2e;&#99;&#x6f;&#109;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;a&#105;&#x6c;t&#x6f;&#58;f&#x65;&#x6c;&#105;&#120;&#x73;&#x6d;&#x69;t&#104;&#64;&#101;x&#x61;&#109;&#x70;&#108;&#101;&#x2e;&#x63;&#111;&#109;">&#x66;&#101;&#108;&#x69;&#120;&#115;&#x6d;i&#116;&#104;@&#x65;x&#97;&#109;&#x70;&#x6c;&#101;&#46;&#x63;&#111;&#x6d;</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
 <p><a href="/glossary#"><strong>label</strong></a>: My Account</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
@@ -6541,10 +6541,10 @@ from obp_python.models.obpv500_get_customer_overview_flat_request import OBPv500
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -6644,7 +6644,7 @@ Get Customer Overview Flat
 <p><a href="/glossary#"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
 <p><a href="/glossary#"><strong>customer_number</strong></a>: 5987953</p>
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#111;&#58;&#102;&#x65;&#x6c;&#x69;x&#x73;&#x6d;&#x69;&#x74;&#104;&#x40;&#x65;&#120;&#x61;&#109;&#112;&#x6c;&#x65;&#46;&#99;&#111;&#x6d;">fe&#108;&#x69;&#x78;s&#109;i&#x74;&#x68;&#64;&#101;&#120;&#x61;&#x6d;&#x70;&#108;&#101;.&#99;&#111;&#x6d;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;a&#105;&#108;t&#x6f;&#58;&#x66;&#x65;&#108;&#x69;&#120;sm&#105;&#x74;&#x68;&#64;&#101;&#x78;&#97;&#x6d;&#x70;&#x6c;&#101;.c&#x6f;m">&#102;&#x65;&#108;&#105;&#x78;&#115;&#109;&#x69;&#x74;h&#x40;e&#120;&#x61;&#x6d;&#x70;&#x6c;&#101;&#x2e;&#x63;o&#109;</a></p>
 <p><a href="/glossary#"><strong>label</strong></a>: My Account</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
@@ -6687,10 +6687,10 @@ from obp_python.models.obpv500_get_customer_overview_flat_request import OBPv500
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -6788,10 +6788,10 @@ from obp_python.models.obpv400_get_customers_minimal_at_any_bank200_response imp
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -6861,7 +6861,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv5_0_0_get_my_customers_at_any_bank**
-> OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItems o_bpv5_0_0_get_my_customers_at_any_bank()
+> OBPv500GetMyCustomersAtBank200ResponseCustomersInner o_bpv5_0_0_get_my_customers_at_any_bank()
 
 Get My Customers
 
@@ -6878,12 +6878,12 @@ Get My Customers
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#97;&#105;&#x6c;&#x74;&#111;:&#102;&#x65;&#x6c;&#105;&#x78;&#x73;&#x6d;ith&#x40;&#101;&#120;&#x61;mp&#108;e&#x2e;c&#111;&#x6d;">&#102;e&#108;&#x69;&#120;&#115;&#x6d;&#x69;&#x74;&#104;&#x40;&#101;&#x78;&#97;&#109;&#112;le.&#99;&#111;&#109;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#x61;&#x69;&#108;&#116;o&#58;&#102;&#x65;&#x6c;&#105;x&#115;&#109;&#x69;&#116;h@&#101;&#120;a&#109;&#112;l&#101;&#x2e;&#99;&#x6f;&#x6d;">f&#x65;&#108;&#x69;&#x78;s&#109;&#x69;&#116;&#x68;&#64;&#x65;x&#97;&#109;&#x70;&#x6c;&#x65;&#46;&#x63;&#x6f;&#109;</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#"><strong>rating</strong></a>:</p>
@@ -6902,14 +6902,14 @@ Get My Customers
 
 ```python
 import obp_python
-from obp_python.models.obpv500_get_my_customers_at_bank200_response_properties_customers_items import OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItems
+from obp_python.models.obpv500_get_my_customers_at_bank200_response_customers_inner import OBPv500GetMyCustomersAtBank200ResponseCustomersInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -6953,7 +6953,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItems**](OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItems.md)
+[**OBPv500GetMyCustomersAtBank200ResponseCustomersInner**](OBPv500GetMyCustomersAtBank200ResponseCustomersInner.md)
 
 ### Authorization
 
@@ -6994,12 +6994,12 @@ Get My Customers at Bank
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#97;&#x69;&#x6c;&#x74;&#x6f;&#58;&#x66;&#x65;&#x6c;i&#x78;smi&#x74;&#104;@&#x65;&#120;&#x61;&#109;&#x70;&#108;e&#x2e;&#99;o&#x6d;">&#x66;&#101;&#108;&#105;x&#x73;&#109;i&#116;&#x68;&#64;e&#x78;&#97;&#109;&#x70;&#108;&#x65;&#46;&#x63;&#111;&#109;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#x3a;f&#x65;&#108;&#105;&#x78;&#115;&#109;i&#116;&#x68;&#64;&#x65;&#120;&#x61;m&#x70;&#x6c;&#101;&#x2e;&#x63;&#x6f;&#109;">&#x66;&#x65;&#108;&#x69;&#120;s&#109;i&#x74;&#x68;&#x40;&#101;&#120;&#97;&#109;&#112;&#108;e&#46;&#x63;&#111;&#x6d;</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#"><strong>rating</strong></a>:</p>
@@ -7022,10 +7022,10 @@ from obp_python.models.obpv500_get_my_customers_at_bank200_response import OBPv5
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -7095,7 +7095,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv5_0_0_update_customer_account_link_by_id**
-> OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems o_bpv5_0_0_update_customer_account_link_by_id(bankid, customeraccountlinkid, obpv500_update_customer_account_link_by_id_request)
+> OBPv500GetCustomerAccountLinksByCustomerId200ResponseLinksInner o_bpv5_0_0_update_customer_account_link_by_id(bankid, customeraccountlinkid, obpv500_update_customer_account_link_by_id_request)
 
 Update Customer Account Link by Id
 
@@ -7120,15 +7120,15 @@ Update Customer Account Link by Id
 
 ```python
 import obp_python
-from obp_python.models.obpv500_get_customer_account_links_by_customer_id200_response_properties_links_items import OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems
+from obp_python.models.obpv500_get_customer_account_links_by_customer_id200_response_links_inner import OBPv500GetCustomerAccountLinksByCustomerId200ResponseLinksInner
 from obp_python.models.obpv500_update_customer_account_link_by_id_request import OBPv500UpdateCustomerAccountLinkByIdRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -7180,7 +7180,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems**](OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems.md)
+[**OBPv500GetCustomerAccountLinksByCustomerId200ResponseLinksInner**](OBPv500GetCustomerAccountLinksByCustomerId200ResponseLinksInner.md)
 
 ### Authorization
 
@@ -7238,10 +7238,10 @@ from obp_python.models.obpv510_get_agent200_response import OBPv510GetAgent200Re
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -7333,12 +7333,12 @@ Get Customers for Current User (IDs only)
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#97;&#x69;l&#116;&#111;&#58;&#x66;&#101;&#108;&#105;xs&#109;&#105;&#116;&#104;&#64;&#x65;&#x78;&#x61;&#109;p&#x6c;&#101;&#46;c&#x6f;m">f&#101;&#108;&#105;&#120;&#x73;&#x6d;&#x69;&#116;&#x68;&#x40;&#x65;xa&#x6d;ple.&#99;&#x6f;&#x6d;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;&#97;i&#108;&#116;&#111;:&#x66;&#x65;&#x6c;&#105;x&#x73;&#x6d;&#x69;&#116;&#104;@&#101;&#120;&#x61;&#109;&#x70;&#108;&#x65;&#x2e;&#x63;&#111;&#x6d;">&#102;&#x65;&#108;&#105;&#120;&#x73;&#109;&#105;&#x74;&#x68;@&#101;x&#97;&#x6d;&#112;&#x6c;&#x65;&#46;c&#x6f;&#x6d;</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
@@ -7366,10 +7366,10 @@ from obp_python.models.obpv300_get_customers_for_user200_response import OBPv300
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -7467,10 +7467,10 @@ from obp_python.models.obpv510_update_agent_status_request import OBPv510UpdateA
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -7544,7 +7544,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv6_0_0_create_corporate_customer**
-> OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems o_bpv6_0_0_create_corporate_customer(bankid, obpv600_create_corporate_customer_request)
+> OBPv600GetCustomerChildren200ResponseCustomersInner o_bpv6_0_0_create_corporate_customer(bankid, obpv600_create_corporate_customer_request)
 
 Create Corporate Customer
 
@@ -7580,9 +7580,9 @@ Individual-oriented fields (relationship_status, dependants, highest_education_a
 <p><a href="/glossary#credit_rating">credit_rating</a>:</p>
 <p><a href="/glossary#">customer_number</a>: 5987953</p>
 <p><a href="/glossary#">customer_type</a>: INDIVIDUAL</p>
-<p><a href="/glossary#">email</a>: <a href="&#109;&#97;&#x69;&#108;&#116;&#x6f;:&#102;&#101;&#108;i&#x78;s&#x6d;it&#x68;&#x40;&#x65;x&#x61;&#x6d;&#x70;&#108;&#x65;&#46;&#x63;om">&#x66;&#101;&#108;&#105;&#x78;&#115;m&#x69;t&#104;&#x40;e&#120;a&#109;&#x70;&#x6c;e.&#99;om</a></p>
+<p><a href="/glossary#">email</a>: <a href="&#x6d;a&#105;&#x6c;&#116;&#x6f;&#58;fe&#x6c;&#105;&#x78;&#x73;&#109;&#105;&#116;&#x68;&#64;e&#x78;&#x61;&#109;&#x70;&#x6c;e&#46;&#x63;&#x6f;&#109;">&#102;&#101;&#108;&#105;&#x78;&#x73;&#x6d;&#x69;&#x74;&#104;&#64;&#101;&#120;&#97;&#109;&#112;le.c&#111;m</a></p>
 <p><a href="/glossary#">kyc_status</a>: false</p>
-<p><a href="/glossary#last_ok_date">last_ok_date</a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date">last_ok_date</a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#">parent_customer_id</a>:</p>
 <p><strong>JSON response body fields:</strong></p>
 <p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
@@ -7596,12 +7596,12 @@ Individual-oriented fields (relationship_status, dependants, highest_education_a
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#x61;i&#108;&#x74;o&#58;&#102;&#101;&#x6c;&#x69;&#x78;s&#109;i&#116;&#x68;@&#x65;&#x78;&#97;&#x6d;&#112;&#x6c;&#x65;.c&#x6f;&#x6d;">&#x66;&#x65;&#x6c;&#105;&#x78;&#115;&#x6d;&#105;&#116;&#x68;&#x40;&#101;x&#x61;&#109;&#x70;&#x6c;&#101;.&#x63;&#x6f;&#109;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#x61;i&#108;&#x74;o&#58;f&#101;&#108;&#105;&#120;&#115;&#109;&#x69;t&#104;&#x40;e&#x78;&#97;&#x6d;&#112;&#x6c;&#x65;.&#x63;&#111;&#109;">&#x66;&#101;&#x6c;&#105;xs&#109;&#105;&#116;h&#x40;&#101;&#120;&#x61;&#109;&#112;&#108;&#101;&#x2e;&#x63;&#111;&#x6d;</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#"><strong>name_suffix</strong></a>: Sr</p>
@@ -7624,14 +7624,14 @@ Individual-oriented fields (relationship_status, dependants, highest_education_a
 ```python
 import obp_python
 from obp_python.models.obpv600_create_corporate_customer_request import OBPv600CreateCorporateCustomerRequest
-from obp_python.models.obpv600_get_customer_children200_response_properties_customers_items import OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems
+from obp_python.models.obpv600_get_customer_children200_response_customers_inner import OBPv600GetCustomerChildren200ResponseCustomersInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -7658,7 +7658,7 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.CustomerApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
-    obpv600_create_corporate_customer_request = {"type":"object","properties":{"customer_type":{"type":"string"},"credit_limit":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"last_ok_date":{"type":"string","format":"date-time"},"credit_rating":{"type":"object","properties":{"rating":{"type":"string"},"source":{"type":"string"}}},"email":{"type":"string"},"customer_number":{"type":"string"},"kyc_status":{"type":"boolean"},"legal_name":{"type":"string"},"branch_id":{"type":"string"},"mobile_phone_number":{"type":"string"}}} # OBPv600CreateCorporateCustomerRequest | Request body
+    obpv600_create_corporate_customer_request = {"type":"object","properties":{"customer_type":{"type":"string"},"credit_limit":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"credit_rating":{"type":"object","properties":{"rating":{"type":"string"},"source":{"type":"string"}}},"email":{"type":"string"},"customer_number":{"type":"string"},"kyc_status":{"type":"boolean"},"legal_name":{"type":"string"},"branch_id":{"type":"string"},"mobile_phone_number":{"type":"string"},"last_ok_date":{"type":"string","format":"date-time"}}} # OBPv600CreateCorporateCustomerRequest | Request body
 
     try:
         # Create Corporate Customer
@@ -7681,7 +7681,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems**](OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems.md)
+[**OBPv600GetCustomerChildren200ResponseCustomersInner**](OBPv600GetCustomerChildren200ResponseCustomersInner.md)
 
 ### Authorization
 
@@ -7703,7 +7703,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv6_0_0_create_customer**
-> OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems o_bpv6_0_0_create_customer(bankid, obpv600_create_customer_request)
+> OBPv600GetCustomerChildren200ResponseCustomersInner o_bpv6_0_0_create_customer(bankid, obpv600_create_customer_request)
 
 Create Customer
 
@@ -7762,12 +7762,12 @@ Dates are stored with time set to midnight (00:00:00) UTC for consistency.</p>
 <p><a href="/glossary#">date_of_birth</a>: 2018-03-09</p>
 <p><a href="/glossary#">dependants</a>: 1</p>
 <p><a href="/glossary#dob_of_dependants">dob_of_dependants</a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#">email</a>: <a href="&#x6d;a&#105;&#108;to&#58;&#102;e&#108;&#x69;&#120;&#x73;&#x6d;&#x69;t&#x68;&#64;&#101;&#120;&#97;&#x6d;&#112;&#108;&#101;.c&#111;m">&#x66;&#101;&#108;i&#120;s&#x6d;&#x69;&#116;h&#x40;&#101;&#x78;&#x61;mpl&#101;&#x2e;c&#x6f;m</a></p>
+<p><a href="/glossary#">email</a>: <a href="&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#x3a;&#x66;&#x65;&#x6c;&#x69;x&#x73;&#x6d;&#x69;&#116;h&#64;&#x65;&#x78;&#x61;&#109;&#x70;&#x6c;&#101;&#46;&#x63;&#x6f;&#x6d;">&#x66;&#101;&#108;&#x69;&#x78;&#115;&#109;&#105;&#116;h&#64;&#x65;&#120;&#97;mp&#x6c;&#x65;&#46;&#x63;&#x6f;&#x6d;</a></p>
 <p><a href="/glossary#">employment_status</a>: worker</p>
 <p><a href="/glossary#face_image">face_image</a>:</p>
 <p><a href="/glossary#">highest_education_attained</a>: Master</p>
 <p><a href="/glossary#">kyc_status</a>: false</p>
-<p><a href="/glossary#last_ok_date">last_ok_date</a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date">last_ok_date</a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#">name_suffix</a>: Sr</p>
 <p><a href="/glossary#">parent_customer_id</a>:</p>
 <p><a href="/glossary#">relationship_status</a>: single</p>
@@ -7784,12 +7784,12 @@ Dates are stored with time set to midnight (00:00:00) UTC for consistency.</p>
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;ail&#116;&#111;&#58;&#102;&#101;&#x6c;&#105;x&#x73;&#109;it&#x68;&#x40;&#101;x&#97;&#109;&#112;&#108;&#x65;.&#99;&#111;&#x6d;">&#102;&#x65;&#108;&#105;&#x78;&#x73;&#x6d;&#x69;&#116;&#x68;&#x40;&#x65;&#120;&#97;&#x6d;&#112;&#x6c;&#x65;&#x2e;&#99;&#x6f;&#109;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#x61;&#105;&#x6c;&#x74;&#111;&#58;&#x66;&#101;l&#x69;&#x78;&#115;&#x6d;&#x69;&#x74;&#104;@&#101;&#x78;a&#109;&#x70;&#x6c;&#101;&#46;c&#111;&#109;">&#102;&#x65;&#x6c;&#105;&#120;&#x73;&#109;&#x69;&#116;h@&#101;&#x78;&#x61;mp&#x6c;&#x65;&#x2e;&#x63;&#111;&#109;</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#"><strong>name_suffix</strong></a>: Sr</p>
@@ -7812,14 +7812,14 @@ Dates are stored with time set to midnight (00:00:00) UTC for consistency.</p>
 ```python
 import obp_python
 from obp_python.models.obpv600_create_customer_request import OBPv600CreateCustomerRequest
-from obp_python.models.obpv600_get_customer_children200_response_properties_customers_items import OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems
+from obp_python.models.obpv600_get_customer_children200_response_customers_inner import OBPv600GetCustomerChildren200ResponseCustomersInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -7846,7 +7846,7 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.CustomerApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
-    obpv600_create_customer_request = {"type":"object","properties":{"relationship_status":{"type":"string"},"name_suffix":{"type":"string"},"highest_education_attained":{"type":"string"},"credit_limit":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"date_of_birth":{"type":"string","format":"date-time"},"title":{"type":"string"},"face_image":{"type":"object","properties":{"url":{"type":"string"},"date":{"type":"string","format":"date-time"}}},"dob_of_dependants":{"type":"array","items":{"type":"string"}},"last_ok_date":{"type":"string","format":"date-time"},"credit_rating":{"type":"object","properties":{"rating":{"type":"string"},"source":{"type":"string"}}},"email":{"type":"string"},"customer_number":{"type":"string"},"kyc_status":{"type":"boolean"},"customer_type":{"type":"string"},"legal_name":{"type":"string"},"branch_id":{"type":"string"},"employment_status":{"type":"string"},"mobile_phone_number":{"type":"string"},"dependants":{"type":"integer"}}} # OBPv600CreateCustomerRequest | Request body
+    obpv600_create_customer_request = {"type":"object","properties":{"relationship_status":{"type":"string"},"name_suffix":{"type":"string"},"highest_education_attained":{"type":"string"},"last_ok_date":{"type":"string","format":"date-time"},"credit_limit":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"date_of_birth":{"type":"string","format":"date-time"},"title":{"type":"string"},"face_image":{"type":"object","properties":{"url":{"type":"string"},"date":{"type":"string","format":"date-time"}}},"dob_of_dependants":{"type":"array","items":{"type":"string"}},"credit_rating":{"type":"object","properties":{"rating":{"type":"string"},"source":{"type":"string"}}},"email":{"type":"string"},"customer_number":{"type":"string"},"kyc_status":{"type":"boolean"},"customer_type":{"type":"string"},"legal_name":{"type":"string"},"branch_id":{"type":"string"},"employment_status":{"type":"string"},"mobile_phone_number":{"type":"string"},"dependants":{"type":"integer"}}} # OBPv600CreateCustomerRequest | Request body
 
     try:
         # Create Customer
@@ -7869,7 +7869,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems**](OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems.md)
+[**OBPv600GetCustomerChildren200ResponseCustomersInner**](OBPv600GetCustomerChildren200ResponseCustomersInner.md)
 
 ### Authorization
 
@@ -7891,7 +7891,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv6_0_0_create_retail_customer**
-> OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems o_bpv6_0_0_create_retail_customer(bankid, obpv600_create_retail_customer_request)
+> OBPv600GetCustomerChildren200ResponseCustomersInner o_bpv6_0_0_create_retail_customer(bankid, obpv600_create_retail_customer_request)
 
 Create Retail Customer
 
@@ -7932,12 +7932,12 @@ date_of_birth and dob_of_dependants must be in ISO 8601 date format: <strong>YYY
 <p><a href="/glossary#">date_of_birth</a>: 2018-03-09</p>
 <p><a href="/glossary#">dependants</a>: 1</p>
 <p><a href="/glossary#dob_of_dependants">dob_of_dependants</a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#">email</a>: <a href="&#109;&#x61;i&#x6c;to&#x3a;&#x66;&#x65;&#108;&#x69;x&#x73;&#109;i&#x74;h@&#101;&#x78;&#x61;&#109;pl&#101;.&#x63;&#111;&#109;">&#102;&#101;l&#105;x&#115;&#x6d;&#105;&#116;&#x68;&#x40;e&#x78;&#x61;&#x6d;&#x70;&#108;e.&#x63;o&#x6d;</a></p>
+<p><a href="/glossary#">email</a>: <a href="&#109;&#97;i&#x6c;t&#x6f;:&#x66;&#101;&#x6c;&#105;&#120;&#115;&#x6d;&#x69;&#116;&#104;&#64;&#x65;&#120;a&#109;p&#108;&#x65;&#46;&#99;&#111;&#109;">&#102;&#x65;&#x6c;&#x69;&#x78;&#x73;&#109;&#x69;&#x74;&#x68;@&#x65;&#120;a&#x6d;&#x70;&#108;&#101;&#x2e;&#x63;o&#x6d;</a></p>
 <p><a href="/glossary#">employment_status</a>: worker</p>
 <p><a href="/glossary#face_image">face_image</a>:</p>
 <p><a href="/glossary#">highest_education_attained</a>: Master</p>
 <p><a href="/glossary#">kyc_status</a>: false</p>
-<p><a href="/glossary#last_ok_date">last_ok_date</a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date">last_ok_date</a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#">name_suffix</a>: Sr</p>
 <p><a href="/glossary#">relationship_status</a>: single</p>
 <p><a href="/glossary#">title</a>: Dr.</p>
@@ -7953,12 +7953,12 @@ date_of_birth and dob_of_dependants must be in ISO 8601 date format: <strong>YYY
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#97;&#x69;&#108;to&#x3a;&#x66;&#x65;&#108;&#105;&#x78;&#x73;&#x6d;&#105;t&#104;&#x40;e&#x78;&#x61;&#x6d;p&#108;&#x65;.&#x63;&#x6f;m">&#102;&#x65;&#108;&#105;&#x78;&#115;&#109;&#x69;&#x74;&#x68;&#x40;&#x65;x&#97;&#x6d;&#x70;&#x6c;&#101;&#x2e;&#99;&#111;&#109;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;a&#105;&#108;&#x74;&#111;&#x3a;&#x66;&#101;&#x6c;&#x69;&#x78;&#115;&#x6d;&#x69;&#116;&#104;@e&#x78;&#x61;&#109;&#x70;&#x6c;e&#x2e;&#99;&#x6f;&#109;">&#102;&#x65;&#108;i&#x78;&#x73;m&#105;&#x74;h&#64;&#101;&#120;a&#109;&#x70;&#x6c;&#101;.&#x63;&#111;m</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#"><strong>name_suffix</strong></a>: Sr</p>
@@ -7981,14 +7981,14 @@ date_of_birth and dob_of_dependants must be in ISO 8601 date format: <strong>YYY
 ```python
 import obp_python
 from obp_python.models.obpv600_create_retail_customer_request import OBPv600CreateRetailCustomerRequest
-from obp_python.models.obpv600_get_customer_children200_response_properties_customers_items import OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems
+from obp_python.models.obpv600_get_customer_children200_response_customers_inner import OBPv600GetCustomerChildren200ResponseCustomersInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -8015,7 +8015,7 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.CustomerApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
-    obpv600_create_retail_customer_request = {"type":"object","properties":{"relationship_status":{"type":"string"},"name_suffix":{"type":"string"},"highest_education_attained":{"type":"string"},"credit_limit":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"date_of_birth":{"type":"string","format":"date-time"},"title":{"type":"string"},"face_image":{"type":"object","properties":{"url":{"type":"string"},"date":{"type":"string","format":"date-time"}}},"dob_of_dependants":{"type":"array","items":{"type":"string"}},"credit_rating":{"type":"object","properties":{"rating":{"type":"string"},"source":{"type":"string"}}},"email":{"type":"string"},"customer_number":{"type":"string"},"kyc_status":{"type":"boolean"},"legal_name":{"type":"string"},"branch_id":{"type":"string"},"employment_status":{"type":"string"},"mobile_phone_number":{"type":"string"},"dependants":{"type":"integer"},"last_ok_date":{"type":"string","format":"date-time"}}} # OBPv600CreateRetailCustomerRequest | Request body
+    obpv600_create_retail_customer_request = {"type":"object","properties":{"relationship_status":{"type":"string"},"name_suffix":{"type":"string"},"highest_education_attained":{"type":"string"},"credit_limit":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"date_of_birth":{"type":"string","format":"date-time"},"title":{"type":"string"},"last_ok_date":{"type":"string","format":"date-time"},"face_image":{"type":"object","properties":{"url":{"type":"string"},"date":{"type":"string","format":"date-time"}}},"dob_of_dependants":{"type":"array","items":{"type":"string"}},"credit_rating":{"type":"object","properties":{"rating":{"type":"string"},"source":{"type":"string"}}},"email":{"type":"string"},"customer_number":{"type":"string"},"kyc_status":{"type":"boolean"},"legal_name":{"type":"string"},"branch_id":{"type":"string"},"employment_status":{"type":"string"},"mobile_phone_number":{"type":"string"},"dependants":{"type":"integer"}}} # OBPv600CreateRetailCustomerRequest | Request body
 
     try:
         # Create Retail Customer
@@ -8038,7 +8038,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems**](OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems.md)
+[**OBPv600GetCustomerChildren200ResponseCustomersInner**](OBPv600GetCustomerChildren200ResponseCustomersInner.md)
 
 ### Authorization
 
@@ -8088,12 +8088,12 @@ date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <stron
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#x61;&#105;&#108;t&#x6f;&#x3a;&#x66;&#x65;&#x6c;&#x69;x&#115;&#x6d;&#105;&#x74;&#x68;&#64;&#x65;&#x78;&#x61;m&#x70;l&#101;&#x2e;&#x63;&#111;&#109;">&#x66;&#x65;&#x6c;&#x69;&#x78;&#115;&#109;&#x69;th&#x40;&#x65;&#x78;&#97;&#109;&#x70;&#108;&#101;.co&#x6d;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;&#x61;i&#108;&#116;&#x6f;&#58;&#x66;&#101;l&#105;&#x78;&#115;&#x6d;i&#x74;&#104;@e&#x78;a&#x6d;&#112;l&#101;.&#99;&#x6f;&#109;">&#102;&#101;&#x6c;&#105;&#120;&#x73;&#109;i&#x74;&#104;&#x40;&#x65;&#120;&#x61;&#109;&#112;&#108;&#x65;&#x2e;&#x63;&#x6f;&#109;</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
@@ -8122,10 +8122,10 @@ from obp_python.models.obpv600_get_customer_by_customer_number200_response impor
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -8221,12 +8221,12 @@ The specified customer must be of type CORPORATE or SUBSIDIARY.</p>
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;a&#x69;&#108;&#x74;&#x6f;&#x3a;f&#x65;&#x6c;&#105;&#x78;&#115;&#109;&#105;&#x74;&#104;&#x40;&#101;&#x78;&#x61;&#x6d;&#112;&#108;e&#46;&#x63;o&#x6d;">&#x66;&#101;&#x6c;&#x69;&#x78;sm&#105;&#x74;h@&#x65;&#120;a&#109;&#112;&#108;&#101;.&#99;&#x6f;&#109;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="ma&#105;l&#x74;&#111;&#x3a;&#x66;&#x65;l&#105;x&#x73;&#x6d;&#105;&#x74;&#104;&#x40;&#x65;&#x78;&#97;m&#112;&#x6c;&#101;&#x2e;&#99;o&#x6d;">&#x66;e&#108;&#105;&#x78;&#115;mi&#x74;h@&#x65;&#x78;&#97;&#109;p&#108;&#101;.&#x63;o&#x6d;</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#"><strong>name_suffix</strong></a>: Sr</p>
@@ -8252,10 +8252,10 @@ from obp_python.models.obpv600_get_customer_children200_response import OBPv600G
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -8356,12 +8356,12 @@ date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <stron
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="m&#x61;&#x69;&#x6c;&#x74;&#111;:f&#101;l&#105;&#120;&#115;&#109;&#105;t&#104;@&#101;x&#97;&#109;&#x70;&#108;&#x65;&#x2e;c&#111;&#109;">fe&#108;&#x69;&#x78;&#x73;mi&#116;h&#64;&#101;x&#97;&#109;&#x70;&#x6c;e&#x2e;&#99;&#111;&#x6d;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#97;il&#x74;&#x6f;:f&#101;&#x6c;&#105;&#x78;&#x73;&#x6d;&#x69;&#x74;&#104;&#64;e&#x78;&#x61;&#x6d;&#112;&#108;&#101;&#x2e;&#x63;&#x6f;m">&#102;&#101;&#108;&#105;&#x78;&#115;&#x6d;i&#116;&#104;@&#x65;x&#x61;&#x6d;p&#108;&#101;&#46;&#x63;&#x6f;m</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#"><strong>name_suffix</strong></a>: Sr</p>
@@ -8387,10 +8387,10 @@ from obp_python.models.obpv600_get_customer_children200_response import OBPv600G
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -8484,12 +8484,12 @@ In v6.0.0, date_of_birth and dob_of_dependants are returned in ISO 8601 date for
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;a&#x69;&#x6c;&#116;&#111;&#58;&#102;&#x65;&#x6c;ixs&#x6d;&#105;&#116;&#104;&#x40;ex&#97;&#x6d;&#x70;&#108;&#x65;&#x2e;&#x63;&#111;m">f&#101;&#108;&#105;&#x78;&#x73;&#x6d;&#x69;&#x74;&#104;@&#x65;xa&#109;&#112;l&#x65;&#46;&#x63;&#111;m</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#x61;&#x69;&#108;t&#111;&#x3a;fel&#105;&#x78;s&#x6d;&#105;&#x74;&#104;&#x40;&#x65;x&#x61;m&#x70;l&#101;&#46;&#x63;&#x6f;&#x6d;">f&#101;&#x6c;&#x69;&#x78;s&#x6d;&#x69;&#116;&#104;@&#101;&#120;a&#x6d;&#x70;&#108;&#x65;&#46;c&#x6f;&#x6d;</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
@@ -8518,10 +8518,10 @@ from obp_python.models.obpv600_get_customer_by_customer_number200_response impor
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -8619,12 +8619,12 @@ In v6.0.0, date_of_birth and dob_of_dependants are returned in ISO 8601 date for
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#x61;&#105;l&#x74;&#111;&#x3a;&#x66;el&#x69;&#x78;&#x73;m&#105;&#116;&#104;&#64;e&#120;&#x61;m&#x70;le&#46;&#99;&#111;m">f&#101;&#x6c;&#x69;xs&#x6d;&#x69;&#x74;&#x68;&#x40;&#101;x&#97;&#x6d;&#112;&#108;&#101;&#x2e;&#99;&#x6f;&#109;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;&#97;&#x69;&#108;&#116;&#111;:&#x66;&#x65;&#108;&#x69;&#x78;&#115;&#109;&#x69;&#x74;h@&#x65;&#x78;a&#x6d;&#112;&#x6c;e&#46;&#99;&#111;&#x6d;">&#102;&#101;l&#x69;&#x78;s&#109;&#105;t&#104;@&#101;&#x78;&#97;&#x6d;&#112;&#x6c;&#101;&#46;&#99;&#x6f;&#x6d;</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
@@ -8654,10 +8654,10 @@ from obp_python.models.obpv600_get_customer_by_customer_number200_response impor
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -8754,12 +8754,12 @@ This is useful for corporate banking where a corporate customer may have subsidi
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#x61;&#x69;l&#x74;&#x6f;&#58;&#x66;&#x65;&#108;&#x69;&#120;&#115;&#x6d;&#105;th@&#101;&#x78;&#x61;&#x6d;&#x70;l&#101;&#46;c&#x6f;m">&#x66;&#x65;&#x6c;&#105;x&#115;&#x6d;&#x69;&#116;&#104;@&#101;&#x78;&#x61;&#109;&#112;l&#x65;.&#x63;o&#109;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#x61;i&#108;t&#x6f;:&#102;&#x65;&#x6c;i&#120;&#x73;&#x6d;&#105;&#116;h&#x40;&#x65;&#120;&#x61;&#x6d;pl&#x65;&#x2e;&#x63;&#111;&#x6d;">&#102;&#101;&#108;i&#120;&#115;&#x6d;&#x69;&#116;h&#x40;&#101;&#120;&#97;&#x6d;&#x70;&#x6c;&#x65;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#"><strong>name_suffix</strong></a>: Sr</p>
@@ -8785,10 +8785,10 @@ from obp_python.models.obpv600_get_customer_children200_response import OBPv600G
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -8886,12 +8886,12 @@ In v6.0.0, date_of_birth and dob_of_dependants are returned in ISO 8601 date for
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;&#97;&#105;l&#x74;o&#58;&#102;&#101;l&#105;&#x78;&#x73;&#109;i&#116;h&#x40;&#x65;&#120;a&#x6d;p&#108;&#x65;&#x2e;c&#111;&#x6d;">&#x66;&#101;&#x6c;&#x69;&#x78;&#115;&#109;&#x69;t&#104;&#64;&#101;x&#x61;&#x6d;&#x70;&#x6c;&#101;.&#99;&#111;m</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;a&#105;&#108;&#x74;&#111;&#x3a;&#x66;&#101;li&#x78;&#115;m&#x69;&#x74;&#x68;&#x40;&#101;&#x78;&#x61;mpl&#x65;&#x2e;&#x63;&#x6f;&#109;">&#102;&#101;&#108;&#105;&#x78;&#115;&#x6d;&#105;&#x74;&#x68;&#x40;&#x65;&#x78;&#97;&#109;&#112;&#108;&#101;&#46;&#99;o&#x6d;</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#"><strong>name_suffix</strong></a>: Sr</p>
@@ -8917,10 +8917,10 @@ from obp_python.models.obpv600_get_customer_children200_response import OBPv600G
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -9014,12 +9014,12 @@ In v6.0.0, date_of_birth and dob_of_dependants are returned in ISO 8601 date for
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#x61;&#x69;&#x6c;t&#x6f;:&#x66;&#x65;&#x6c;&#105;&#x78;&#115;&#x6d;&#x69;t&#x68;&#64;&#101;&#120;&#x61;m&#112;&#x6c;e&#46;&#x63;&#x6f;&#109;">&#102;&#x65;l&#105;&#120;&#x73;&#109;&#x69;&#x74;&#104;@&#x65;xamp&#x6c;&#x65;&#46;&#x63;&#x6f;&#x6d;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="m&#x61;i&#108;&#x74;&#x6f;:&#102;e&#x6c;&#105;&#x78;s&#x6d;&#105;&#x74;&#x68;&#x40;&#101;&#x78;&#97;&#x6d;&#112;&#108;&#101;.&#x63;&#111;m">&#102;&#101;li&#120;&#115;&#x6d;&#105;&#x74;&#x68;@e&#120;&#x61;&#109;&#x70;&#x6c;&#101;&#46;&#x63;&#111;m</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#"><strong>name_suffix</strong></a>: Sr</p>
@@ -9045,10 +9045,10 @@ from obp_python.models.obpv600_get_customer_children200_response import OBPv600G
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -9144,12 +9144,12 @@ In v6.0.0, date_of_birth and dob_of_dependants are returned in ISO 8601 date for
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="m&#x61;i&#x6c;&#116;&#111;&#58;&#102;&#101;&#108;i&#x78;&#x73;&#x6d;&#105;t&#104;&#64;e&#120;a&#x6d;&#x70;&#108;e&#x2e;&#x63;&#111;&#x6d;">fel&#105;xs&#109;&#105;t&#x68;&#x40;&#101;&#120;a&#x6d;&#112;l&#101;&#x2e;&#99;&#111;m</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#58;&#x66;&#101;&#x6c;&#x69;x&#115;m&#105;&#x74;&#104;&#x40;&#x65;x&#97;&#109;&#112;&#x6c;&#x65;&#x2e;&#x63;&#111;m">&#102;&#x65;&#x6c;&#x69;&#120;&#x73;&#109;&#x69;&#x74;&#104;&#64;&#101;&#x78;&#x61;&#x6d;&#112;&#x6c;e&#46;&#99;&#x6f;&#x6d;</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#"><strong>name_suffix</strong></a>: Sr</p>
@@ -9176,10 +9176,10 @@ from obp_python.models.obpv600_get_customers_by_legal_name_request import OBPv60
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -9279,12 +9279,12 @@ date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <stron
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="m&#97;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#102;&#x65;&#x6c;&#x69;x&#x73;&#109;&#x69;&#116;&#104;&#64;&#x65;x&#x61;&#x6d;&#112;&#108;&#101;.&#x63;&#x6f;&#109;">&#x66;&#101;l&#x69;&#120;&#x73;&#x6d;&#105;&#116;h&#x40;&#101;&#x78;&#x61;&#x6d;p&#x6c;&#101;.&#99;o&#x6d;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#x61;&#105;&#108;t&#111;&#x3a;&#102;&#101;l&#x69;&#x78;&#115;&#109;&#x69;&#116;&#104;&#64;&#101;xa&#109;&#x70;&#108;&#x65;&#x2e;&#99;&#x6f;&#x6d;">&#102;&#x65;&#x6c;&#x69;&#x78;&#x73;&#109;&#x69;&#116;&#104;&#64;&#x65;xam&#x70;&#x6c;&#x65;&#x2e;c&#x6f;&#x6d;</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
@@ -9313,10 +9313,10 @@ from obp_python.models.obpv600_get_customer_by_customer_number200_response impor
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -9416,12 +9416,12 @@ date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <stron
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#x61;&#x69;l&#116;&#111;&#58;&#102;&#x65;&#108;&#105;&#x78;&#115;&#x6d;&#105;&#x74;&#x68;&#64;&#101;x&#x61;mp&#x6c;&#x65;&#46;c&#x6f;&#109;">f&#101;&#x6c;&#x69;&#120;s&#109;&#105;&#116;&#104;&#64;&#x65;&#x78;&#x61;m&#112;&#108;&#x65;&#x2e;c&#x6f;&#109;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;&#x61;&#105;&#108;&#x74;&#x6f;&#x3a;&#x66;&#101;&#108;ix&#x73;&#109;&#x69;&#116;&#x68;&#64;&#101;&#120;&#x61;&#x6d;&#x70;&#x6c;&#101;&#x2e;&#99;&#111;m">&#x66;&#x65;l&#x69;x&#x73;&#x6d;it&#104;&#x40;e&#x78;&#97;&#109;&#112;&#108;&#x65;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#"><strong>name_suffix</strong></a>: Sr</p>
@@ -9447,10 +9447,10 @@ from obp_python.models.obpv600_get_customer_children200_response import OBPv600G
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters

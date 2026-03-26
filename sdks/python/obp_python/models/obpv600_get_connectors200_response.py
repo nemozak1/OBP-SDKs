@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv600_get_connectors200_response_properties import OBPv600GetConnectors200ResponseProperties
+from pydantic import BaseModel, ConfigDict
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv600_get_connectors200_response_connectors_inner import OBPv600GetConnectors200ResponseConnectorsInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,8 @@ class OBPv600GetConnectors200Response(BaseModel):
     """
     OBPv600GetConnectors200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv600GetConnectors200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    connectors: Optional[List[OBPv600GetConnectors200ResponseConnectorsInner]] = None
+    __properties: ClassVar[List[str]] = ["connectors"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +70,13 @@ class OBPv600GetConnectors200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in connectors (list)
+        _items = []
+        if self.connectors:
+            for _item_connectors in self.connectors:
+                if _item_connectors:
+                    _items.append(_item_connectors.to_dict())
+            _dict['connectors'] = _items
         return _dict
 
     @classmethod
@@ -86,8 +89,7 @@ class OBPv600GetConnectors200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv600GetConnectors200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "connectors": [OBPv600GetConnectors200ResponseConnectorsInner.from_dict(_item) for _item in obj["connectors"]] if obj.get("connectors") is not None else None
         })
         return _obj
 

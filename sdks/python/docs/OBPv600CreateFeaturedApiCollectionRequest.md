@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600CreateFeaturedApiCollectionRequestProperties**](OBPv600CreateFeaturedApiCollectionRequestProperties.md) |  | 
+**api_collection_id** | **str** |  | [optional] 
+**sort_order** | **int** |  | [optional] 
 
 ## Example
 

@@ -5,8 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv200AddKycCheckRequestProperties**](OBPv200AddKycCheckRequestProperties.md) |  | 
+**customer_number** | **str** |  | [optional] 
+**how** | **str** |  | [optional] 
+**var_date** | **datetime** |  | [optional] 
+**satisfied** | **bool** |  | [optional] 
+**staff_user_id** | **str** |  | [optional] 
+**staff_name** | **str** |  | [optional] 
+**comments** | **str** |  | [optional] 
 
 ## Example
 

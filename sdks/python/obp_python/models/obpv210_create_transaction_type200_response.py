@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv210_create_transaction_type200_response_properties import OBPv210CreateTransactionType200ResponseProperties
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv200_get_transaction_types200_response_transaction_types_inner_id import OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId
+from obp_python.models.obpv500_get_my_customers_at_bank200_response_customers_inner_credit_limit import OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +29,13 @@ class OBPv210CreateTransactionType200Response(BaseModel):
     """
     OBPv210CreateTransactionType200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv210CreateTransactionType200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    short_code: Optional[StrictStr] = Field(default=None, alias="shortCode")
+    description: Optional[StrictStr] = None
+    id: Optional[OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId] = None
+    charge: Optional[OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit] = None
+    bank_id: Optional[OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId] = Field(default=None, alias="bankId")
+    summary: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["shortCode", "description", "id", "charge", "bankId", "summary"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +76,15 @@ class OBPv210CreateTransactionType200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of id
+        if self.id:
+            _dict['id'] = self.id.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of charge
+        if self.charge:
+            _dict['charge'] = self.charge.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of bank_id
+        if self.bank_id:
+            _dict['bankId'] = self.bank_id.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +97,12 @@ class OBPv210CreateTransactionType200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv210CreateTransactionType200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "shortCode": obj.get("shortCode"),
+            "description": obj.get("description"),
+            "id": OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId.from_dict(obj["id"]) if obj.get("id") is not None else None,
+            "charge": OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit.from_dict(obj["charge"]) if obj.get("charge") is not None else None,
+            "bankId": OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId.from_dict(obj["bankId"]) if obj.get("bankId") is not None else None,
+            "summary": obj.get("summary")
         })
         return _obj
 

@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetSystemDynamicEntities200ResponseProperties**](OBPv600GetSystemDynamicEntities200ResponseProperties.md) |  | 
+**dynamic_entities** | [**List[OBPv600GetSystemDynamicEntities200ResponseDynamicEntitiesInner]**](OBPv600GetSystemDynamicEntities200ResponseDynamicEntitiesInner.md) |  | [optional] 
 
 ## Example
 

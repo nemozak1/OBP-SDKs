@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -19,8 +19,12 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv310_get_transaction_by_id_for_bank_account200_response_properties import OBPv310GetTransactionByIdForBankAccount200ResponseProperties
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv300_get_core_transactions_for_bank_account200_response_transactions_inner_details import OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerDetails
+from obp_python.models.obpv300_get_core_transactions_for_bank_account200_response_transactions_inner_this_account import OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerThisAccount
+from obp_python.models.obpv300_get_core_transactions_for_bank_account200_response_transactions_inner_transaction_attributes_inner import OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner
+from obp_python.models.obpv310_get_transaction_by_id_for_bank_account200_response_metadata import OBPv310GetTransactionByIdForBankAccount200ResponseMetadata
+from obp_python.models.obpv310_get_transaction_by_id_for_bank_account200_response_other_account import OBPv310GetTransactionByIdForBankAccount200ResponseOtherAccount
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +32,13 @@ class OBPv310GetTransactionByIdForBankAccount200Response(BaseModel):
     """
     OBPv310GetTransactionByIdForBankAccount200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv310GetTransactionByIdForBankAccount200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    this_account: Optional[OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerThisAccount] = None
+    id: Optional[StrictStr] = None
+    details: Optional[OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerDetails] = None
+    metadata: Optional[OBPv310GetTransactionByIdForBankAccount200ResponseMetadata] = None
+    other_account: Optional[OBPv310GetTransactionByIdForBankAccount200ResponseOtherAccount] = None
+    transaction_attributes: Optional[List[OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner]] = None
+    __properties: ClassVar[List[str]] = ["this_account", "id", "details", "metadata", "other_account", "transaction_attributes"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +79,25 @@ class OBPv310GetTransactionByIdForBankAccount200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of this_account
+        if self.this_account:
+            _dict['this_account'] = self.this_account.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of details
+        if self.details:
+            _dict['details'] = self.details.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of metadata
+        if self.metadata:
+            _dict['metadata'] = self.metadata.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of other_account
+        if self.other_account:
+            _dict['other_account'] = self.other_account.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in transaction_attributes (list)
+        _items = []
+        if self.transaction_attributes:
+            for _item_transaction_attributes in self.transaction_attributes:
+                if _item_transaction_attributes:
+                    _items.append(_item_transaction_attributes.to_dict())
+            _dict['transaction_attributes'] = _items
         return _dict
 
     @classmethod
@@ -86,8 +110,12 @@ class OBPv310GetTransactionByIdForBankAccount200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv310GetTransactionByIdForBankAccount200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "this_account": OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerThisAccount.from_dict(obj["this_account"]) if obj.get("this_account") is not None else None,
+            "id": obj.get("id"),
+            "details": OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerDetails.from_dict(obj["details"]) if obj.get("details") is not None else None,
+            "metadata": OBPv310GetTransactionByIdForBankAccount200ResponseMetadata.from_dict(obj["metadata"]) if obj.get("metadata") is not None else None,
+            "other_account": OBPv310GetTransactionByIdForBankAccount200ResponseOtherAccount.from_dict(obj["other_account"]) if obj.get("other_account") is not None else None,
+            "transaction_attributes": [OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner.from_dict(_item) for _item in obj["transaction_attributes"]] if obj.get("transaction_attributes") is not None else None
         })
         return _obj
 

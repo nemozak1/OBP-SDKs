@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -19,8 +19,8 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv500_update_bank_request_properties import OBPv500UpdateBankRequestProperties
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv310_get_checkbook_orders200_response_account_account_routings_inner import OBPv310GetCheckbookOrders200ResponseAccountAccountRoutingsInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,13 @@ class OBPv500UpdateBankRequest(BaseModel):
     """
     OBPv500UpdateBankRequest
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv500UpdateBankRequestProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    bank_routings: Optional[List[OBPv310GetCheckbookOrders200ResponseAccountAccountRoutingsInner]] = None
+    website: Optional[StrictStr] = None
+    full_name: Optional[StrictStr] = None
+    logo: Optional[StrictStr] = None
+    id: Optional[StrictStr] = None
+    bank_code: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["bank_routings", "website", "full_name", "logo", "id", "bank_code"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +75,13 @@ class OBPv500UpdateBankRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in bank_routings (list)
+        _items = []
+        if self.bank_routings:
+            for _item_bank_routings in self.bank_routings:
+                if _item_bank_routings:
+                    _items.append(_item_bank_routings.to_dict())
+            _dict['bank_routings'] = _items
         return _dict
 
     @classmethod
@@ -86,8 +94,12 @@ class OBPv500UpdateBankRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv500UpdateBankRequestProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "bank_routings": [OBPv310GetCheckbookOrders200ResponseAccountAccountRoutingsInner.from_dict(_item) for _item in obj["bank_routings"]] if obj.get("bank_routings") is not None else None,
+            "website": obj.get("website"),
+            "full_name": obj.get("full_name"),
+            "logo": obj.get("logo"),
+            "id": obj.get("id"),
+            "bank_code": obj.get("bank_code")
         })
         return _obj
 

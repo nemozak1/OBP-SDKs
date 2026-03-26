@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600AddUserToGroupRequestProperties**](OBPv600AddUserToGroupRequestProperties.md) |  | 
+**group_id** | **str** |  | [optional] 
 
 ## Example
 

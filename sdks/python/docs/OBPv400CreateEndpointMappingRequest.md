@@ -5,8 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400CreateEndpointMappingRequestProperties**](OBPv400CreateEndpointMappingRequestProperties.md) |  | 
+**operation_id** | **str** |  | [optional] 
+**request_mapping** | **object** |  | [optional] 
+**response_mapping** | [**OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInnerResponseMapping**](OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInnerResponseMapping.md) |  | [optional] 
 
 ## Example
 

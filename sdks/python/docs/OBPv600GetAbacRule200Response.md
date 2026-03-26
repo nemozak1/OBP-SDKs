@@ -5,8 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetAbacRule200ResponseProperties**](OBPv600GetAbacRule200ResponseProperties.md) |  | 
+**rule_code** | **str** |  | [optional] 
+**created_by_user_id** | **str** |  | [optional] 
+**is_active** | **bool** |  | [optional] 
+**description** | **str** |  | [optional] 
+**updated_by_user_id** | **datetime** |  | [optional] 
+**rule_name** | **str** |  | [optional] 
+**abac_rule_id** | **str** |  | [optional] 
+**policy** | **str** |  | [optional] 
 
 ## Example
 

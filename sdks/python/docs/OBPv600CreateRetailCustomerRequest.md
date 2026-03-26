@@ -5,8 +5,24 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600CreateRetailCustomerRequestProperties**](OBPv600CreateRetailCustomerRequestProperties.md) |  | 
+**name_suffix** | **str** |  | [optional] 
+**email** | **str** |  | [optional] 
+**branch_id** | **str** |  | [optional] 
+**mobile_phone_number** | **str** |  | [optional] 
+**customer_number** | **str** |  | [optional] 
+**highest_education_attained** | **str** |  | [optional] 
+**dob_of_dependants** | **List[str]** |  | [optional] 
+**date_of_birth** | **datetime** |  | [optional] 
+**credit_rating** | [**OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditRating**](OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditRating.md) |  | [optional] 
+**last_ok_date** | **datetime** |  | [optional] 
+**employment_status** | **str** |  | [optional] 
+**legal_name** | **str** |  | [optional] 
+**credit_limit** | [**OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit**](OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit.md) |  | [optional] 
+**title** | **str** |  | [optional] 
+**face_image** | [**OBPv500GetMyCustomersAtBank200ResponseCustomersInnerFaceImage**](OBPv500GetMyCustomersAtBank200ResponseCustomersInnerFaceImage.md) |  | [optional] 
+**dependants** | **int** |  | [optional] 
+**relationship_status** | **str** |  | [optional] 
+**kyc_status** | **bool** |  | [optional] 
 
 ## Example
 

@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510GetApiTags200ResponseProperties**](OBPv510GetApiTags200ResponseProperties.md) |  | 
+**accounts** | [**List[OBPv510GetApiTags200ResponseAccountsInner]**](OBPv510GetApiTags200ResponseAccountsInner.md) |  | [optional] 
 
 ## Example
 

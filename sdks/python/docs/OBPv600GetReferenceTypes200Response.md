@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetReferenceTypes200ResponseProperties**](OBPv600GetReferenceTypes200ResponseProperties.md) |  | 
+**reference_types** | [**List[OBPv600GetReferenceTypes200ResponseReferenceTypesInner]**](OBPv600GetReferenceTypes200ResponseReferenceTypesInner.md) |  | [optional] 
 
 ## Example
 

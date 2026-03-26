@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv121UpdateCounterpartyUrlRequestProperties**](OBPv121UpdateCounterpartyUrlRequestProperties.md) |  | 
+**url** | **str** |  | [optional] 
 
 ## Example
 

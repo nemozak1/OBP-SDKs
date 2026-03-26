@@ -5,8 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310GetRateLimitingInfo200ResponseProperties**](OBPv310GetRateLimitingInfo200ResponseProperties.md) |  | 
+**enabled** | **bool** |  | [optional] 
+**is_active** | **bool** |  | [optional] 
+**technology** | **str** |  | [optional] 
+**service_available** | **bool** |  | [optional] 
 
 ## Example
 

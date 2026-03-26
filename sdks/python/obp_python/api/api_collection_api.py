@@ -1,7 +1,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -22,12 +22,12 @@ from obp_python.models.obpv400_create_my_api_collection_endpoint_request import 
 from obp_python.models.obpv400_create_my_api_collection_request import OBPv400CreateMyApiCollectionRequest
 from obp_python.models.obpv400_delete_system_level_endpoint_tag200_response import OBPv400DeleteSystemLevelEndpointTag200Response
 from obp_python.models.obpv400_get_api_collections_for_user200_response import OBPv400GetApiCollectionsForUser200Response
-from obp_python.models.obpv400_get_api_collections_for_user200_response_properties_api_collections_items import OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
+from obp_python.models.obpv400_get_api_collections_for_user200_response_api_collections_inner import OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner
 from obp_python.models.obpv400_get_my_api_collection_endpoints200_response import OBPv400GetMyApiCollectionEndpoints200Response
-from obp_python.models.obpv400_get_my_api_collection_endpoints200_response_properties_api_collection_endpoints_items import OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems
+from obp_python.models.obpv400_get_my_api_collection_endpoints200_response_api_collection_endpoints_inner import OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner
 from obp_python.models.obpv600_create_featured_api_collection_request import OBPv600CreateFeaturedApiCollectionRequest
 from obp_python.models.obpv600_get_featured_api_collections_admin200_response import OBPv600GetFeaturedApiCollectionsAdmin200Response
-from obp_python.models.obpv600_get_featured_api_collections_admin200_response_properties_featured_api_collections_items import OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems
+from obp_python.models.obpv600_get_featured_api_collections_admin200_response_featured_api_collections_inner import OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner
 from obp_python.models.obpv600_update_featured_api_collection_request import OBPv600UpdateFeaturedApiCollectionRequest
 
 from obp_python.api_client import ApiClient, RequestSerialized
@@ -64,7 +64,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems:
+    ) -> OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner:
         """Create My Api Collection
 
         <p>Create Api Collection for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#description\">description</a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
@@ -102,7 +102,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems",
+            '200': "OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner",
             '404': None,
             '500': None,
         }
@@ -133,7 +133,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems]:
+    ) -> ApiResponse[OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner]:
         """Create My Api Collection
 
         <p>Create Api Collection for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#description\">description</a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
@@ -171,7 +171,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems",
+            '200': "OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner",
             '404': None,
             '500': None,
         }
@@ -240,7 +240,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems",
+            '200': "OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner",
             '404': None,
             '500': None,
         }
@@ -347,7 +347,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems:
+    ) -> OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner:
         """Create My Api Collection Endpoint
 
         <p>Create Api Collection Endpoint.</p> <p>glossary-item-not-found</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
@@ -388,7 +388,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems",
+            '200': "OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -419,7 +419,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems]:
+    ) -> ApiResponse[OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner]:
         """Create My Api Collection Endpoint
 
         <p>Create Api Collection Endpoint.</p> <p>glossary-item-not-found</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
@@ -460,7 +460,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems",
+            '200': "OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -532,7 +532,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems",
+            '200': "OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -641,7 +641,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems:
+    ) -> OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner:
         """Create My Api Collection Endpoint By Id
 
         <p>Create Api Collection Endpoint By Id.</p> <p>glossary-item-not-found</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
@@ -682,7 +682,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems",
+            '200': "OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -713,7 +713,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems]:
+    ) -> ApiResponse[OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner]:
         """Create My Api Collection Endpoint By Id
 
         <p>Create Api Collection Endpoint By Id.</p> <p>glossary-item-not-found</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
@@ -754,7 +754,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems",
+            '200': "OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -826,7 +826,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems",
+            '200': "OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2835,7 +2835,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems:
+    ) -> OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner:
         """Get My Api Collection By Id
 
         <p>Get Api Collection By API_COLLECTION_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
@@ -2873,7 +2873,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems",
+            '200': "OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner",
             '404': None,
             '500': None,
         }
@@ -2904,7 +2904,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems]:
+    ) -> ApiResponse[OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner]:
         """Get My Api Collection By Id
 
         <p>Get Api Collection By API_COLLECTION_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
@@ -2942,7 +2942,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems",
+            '200': "OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner",
             '404': None,
             '500': None,
         }
@@ -3011,7 +3011,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems",
+            '200': "OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner",
             '404': None,
             '500': None,
         }
@@ -3104,7 +3104,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems:
+    ) -> OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner:
         """Get My Api Collection By Name
 
         <p>Get Api Collection By API_COLLECTION_NAME.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
@@ -3142,7 +3142,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems",
+            '200': "OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner",
             '404': None,
             '500': None,
         }
@@ -3173,7 +3173,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems]:
+    ) -> ApiResponse[OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner]:
         """Get My Api Collection By Name
 
         <p>Get Api Collection By API_COLLECTION_NAME.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
@@ -3211,7 +3211,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems",
+            '200': "OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner",
             '404': None,
             '500': None,
         }
@@ -3280,7 +3280,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems",
+            '200': "OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner",
             '404': None,
             '500': None,
         }
@@ -3374,7 +3374,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems:
+    ) -> OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner:
         """Get My Api Collection Endpoint
 
         <p>Get Api Collection Endpoint By API_COLLECTION_NAME and OPERATION_ID.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
@@ -3415,7 +3415,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems",
+            '200': "OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner",
             '404': None,
             '500': None,
         }
@@ -3447,7 +3447,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems]:
+    ) -> ApiResponse[OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner]:
         """Get My Api Collection Endpoint
 
         <p>Get Api Collection Endpoint By API_COLLECTION_NAME and OPERATION_ID.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
@@ -3488,7 +3488,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems",
+            '200': "OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner",
             '404': None,
             '500': None,
         }
@@ -3561,7 +3561,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems",
+            '200': "OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner",
             '404': None,
             '500': None,
         }
@@ -4194,7 +4194,7 @@ class ApiCollectionApi:
     ) -> OBPv400GetApiCollectionsForUser200Response:
         """Get My Api Collections
 
-        <p>Get all the apiCollections for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+        <p>Get all the apiCollections for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>1 limit (for pagination: defaults to 50)  eg:limit=200</p> <p>2 offset (for pagination: zero index, defaults to 0) eg: offset=10</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -4258,7 +4258,7 @@ class ApiCollectionApi:
     ) -> ApiResponse[OBPv400GetApiCollectionsForUser200Response]:
         """Get My Api Collections
 
-        <p>Get all the apiCollections for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+        <p>Get all the apiCollections for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>1 limit (for pagination: defaults to 50)  eg:limit=200</p> <p>2 offset (for pagination: zero index, defaults to 0) eg: offset=10</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -4322,7 +4322,7 @@ class ApiCollectionApi:
     ) -> RESTResponseType:
         """Get My Api Collections
 
-        <p>Get all the apiCollections for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+        <p>Get all the apiCollections for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>1 limit (for pagination: defaults to 50)  eg:limit=200</p> <p>2 offset (for pagination: zero index, defaults to 0) eg: offset=10</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -4443,7 +4443,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems:
+    ) -> OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner:
         """Get Sharable Api Collection By Id
 
         <p>Get Sharable Api Collection By Id.<br /> User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
@@ -4481,7 +4481,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems",
+            '200': "OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -4511,7 +4511,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems]:
+    ) -> ApiResponse[OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner]:
         """Get Sharable Api Collection By Id
 
         <p>Get Sharable Api Collection By Id.<br /> User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
@@ -4549,7 +4549,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems",
+            '200': "OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -4617,7 +4617,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems",
+            '200': "OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -4958,7 +4958,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems:
+    ) -> OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner:
         """Update My Api Collection By API_COLLECTION_ID
 
         <p>Update Api Collection for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
@@ -4999,7 +4999,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems",
+            '200': "OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner",
             '404': None,
             '500': None,
         }
@@ -5031,7 +5031,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems]:
+    ) -> ApiResponse[OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner]:
         """Update My Api Collection By API_COLLECTION_ID
 
         <p>Update Api Collection for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
@@ -5072,7 +5072,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems",
+            '200': "OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner",
             '404': None,
             '500': None,
         }
@@ -5145,7 +5145,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems",
+            '200': "OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner",
             '404': None,
             '500': None,
         }
@@ -5254,7 +5254,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems:
+    ) -> OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner:
         """Create Featured Api Collection
 
         <p>Add an API Collection to the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
@@ -5292,7 +5292,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems",
+            '200': "OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner",
             '404': None,
             '500': None,
             '401': None,
@@ -5324,7 +5324,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems]:
+    ) -> ApiResponse[OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner]:
         """Create Featured Api Collection
 
         <p>Add an API Collection to the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
@@ -5362,7 +5362,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems",
+            '200': "OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner",
             '404': None,
             '500': None,
             '401': None,
@@ -5432,7 +5432,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems",
+            '200': "OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner",
             '404': None,
             '500': None,
             '401': None,
@@ -6059,7 +6059,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems:
+    ) -> OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner:
         """Update Featured Api Collection
 
         <p>Update the sort order of a featured API collection.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
@@ -6100,7 +6100,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems",
+            '200': "OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner",
             '400': None,
             '404': None,
             '500': None,
@@ -6133,7 +6133,7 @@ class ApiCollectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems]:
+    ) -> ApiResponse[OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner]:
         """Update Featured Api Collection
 
         <p>Update the sort order of a featured API collection.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
@@ -6174,7 +6174,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems",
+            '200': "OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner",
             '400': None,
             '404': None,
             '500': None,
@@ -6248,7 +6248,7 @@ class ApiCollectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems",
+            '200': "OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner",
             '400': None,
             '404': None,
             '500': None,

@@ -1,6 +1,6 @@
 # obp_python.DataWarehouseApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **o_bpv3_0_0_data_warehouse_search**
-> OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage o_bpv3_0_0_data_warehouse_search(index, obpv300_data_warehouse_search_request)
+> object o_bpv3_0_0_data_warehouse_search(index, obpv300_data_warehouse_search_request)
 
 Data Warehouse Search
 
@@ -44,14 +44,13 @@ Data Warehouse Search
 ```python
 import obp_python
 from obp_python.models.obpv300_data_warehouse_search_request import OBPv300DataWarehouseSearchRequest
-from obp_python.models.obpv400_get_dynamic_message_doc200_response_properties_example_inbound_message import OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -101,7 +100,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage**](OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.md)
+**object**
 
 ### Authorization
 
@@ -122,7 +121,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv3_0_0_data_warehouse_statistics**
-> OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage o_bpv3_0_0_data_warehouse_statistics(index, var_field, obpv300_data_warehouse_search_request)
+> object o_bpv3_0_0_data_warehouse_statistics(index, var_field, obpv300_data_warehouse_search_request)
 
 Data Warehouse Statistics
 
@@ -159,14 +158,13 @@ Data Warehouse Statistics
 ```python
 import obp_python
 from obp_python.models.obpv300_data_warehouse_search_request import OBPv300DataWarehouseSearchRequest
-from obp_python.models.obpv400_get_dynamic_message_doc200_response_properties_example_inbound_message import OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -218,7 +216,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage**](OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.md)
+**object**
 
 ### Authorization
 

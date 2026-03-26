@@ -5,8 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600PublishSignalMessage200ResponseProperties**](OBPv600PublishSignalMessage200ResponseProperties.md) |  | 
+**message_id** | **str** |  | [optional] 
+**timestamp** | **str** |  | [optional] 
+**channel_message_count** | **int** |  | [optional] 
+**channel_name** | **str** |  | [optional] 
 
 ## Example
 

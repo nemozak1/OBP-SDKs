@@ -5,8 +5,29 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv500AddCardForBank200ResponseProperties**](OBPv500AddCardForBank200ResponseProperties.md) |  | 
+**allows** | **List[str]** |  | [optional] 
+**cvv** | **str** |  | [optional] 
+**expires_date** | **datetime** |  | [optional] 
+**networks** | **List[str]** |  | [optional] 
+**customer_id** | **str** |  | [optional] 
+**issue_number** | **str** |  | [optional] 
+**replacement** | [**OBPv310GetCardsForBank200ResponseCardsInnerReplacement**](OBPv310GetCardsForBank200ResponseCardsInnerReplacement.md) |  | [optional] 
+**enabled** | **bool** |  | [optional] 
+**collected** | **datetime** |  | [optional] 
+**brand** | **str** |  | [optional] 
+**card_number** | **str** |  | [optional] 
+**technology** | **str** |  | [optional] 
+**cancelled** | **bool** |  | [optional] 
+**bank_id** | **str** |  | [optional] 
+**card_id** | **str** |  | [optional] 
+**pin_reset** | [**List[OBPv310GetCardsForBank200ResponseCardsInnerReplacement]**](OBPv310GetCardsForBank200ResponseCardsInnerReplacement.md) |  | [optional] 
+**serial_number** | **str** |  | [optional] 
+**account** | [**OBPv310GetCardsForBank200ResponseCardsInnerAccount**](OBPv310GetCardsForBank200ResponseCardsInnerAccount.md) |  | [optional] 
+**valid_from_date** | **datetime** |  | [optional] 
+**name_on_card** | **str** |  | [optional] 
+**posted** | **datetime** |  | [optional] 
+**card_type** | **str** |  | [optional] 
+**on_hot_list** | **bool** |  | [optional] 
 
 ## Example
 

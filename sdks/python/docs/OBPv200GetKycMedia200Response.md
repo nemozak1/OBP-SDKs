@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv200GetKycMedia200ResponseProperties**](OBPv200GetKycMedia200ResponseProperties.md) |  | 
+**medias** | [**List[OBPv200AddKycMedia200Response]**](OBPv200AddKycMedia200Response.md) |  | [optional] 
 
 ## Example
 

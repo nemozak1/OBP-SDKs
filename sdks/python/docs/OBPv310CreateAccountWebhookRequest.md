@@ -5,8 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310CreateAccountWebhookRequestProperties**](OBPv310CreateAccountWebhookRequestProperties.md) |  | 
+**is_active** | **str** |  | [optional] 
+**url** | **str** |  | [optional] 
+**trigger_name** | **str** |  | [optional] 
+**http_protocol** | **str** |  | [optional] 
+**http_method** | **str** |  | [optional] 
+**account_id** | **str** |  | [optional] 
 
 ## Example
 

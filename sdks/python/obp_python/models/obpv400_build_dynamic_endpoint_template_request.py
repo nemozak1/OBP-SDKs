@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -19,8 +19,9 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv400_build_dynamic_endpoint_template_request_properties import OBPv400BuildDynamicEndpointTemplateRequestProperties
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv400_get_bank_level_dynamic_resource_doc200_response_example_request_body import OBPv400GetBankLevelDynamicResourceDoc200ResponseExampleRequestBody
+from obp_python.models.obpv400_get_bank_level_dynamic_resource_doc200_response_success_response_body import OBPv400GetBankLevelDynamicResourceDoc200ResponseSuccessResponseBody
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +29,11 @@ class OBPv400BuildDynamicEndpointTemplateRequest(BaseModel):
     """
     OBPv400BuildDynamicEndpointTemplateRequest
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv400BuildDynamicEndpointTemplateRequestProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    request_verb: Optional[StrictStr] = None
+    example_request_body: Optional[OBPv400GetBankLevelDynamicResourceDoc200ResponseExampleRequestBody] = None
+    success_response_body: Optional[OBPv400GetBankLevelDynamicResourceDoc200ResponseSuccessResponseBody] = None
+    request_url: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["request_verb", "example_request_body", "success_response_body", "request_url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +74,12 @@ class OBPv400BuildDynamicEndpointTemplateRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of example_request_body
+        if self.example_request_body:
+            _dict['example_request_body'] = self.example_request_body.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of success_response_body
+        if self.success_response_body:
+            _dict['success_response_body'] = self.success_response_body.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +92,10 @@ class OBPv400BuildDynamicEndpointTemplateRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv400BuildDynamicEndpointTemplateRequestProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "request_verb": obj.get("request_verb"),
+            "example_request_body": OBPv400GetBankLevelDynamicResourceDoc200ResponseExampleRequestBody.from_dict(obj["example_request_body"]) if obj.get("example_request_body") is not None else None,
+            "success_response_body": OBPv400GetBankLevelDynamicResourceDoc200ResponseSuccessResponseBody.from_dict(obj["success_response_body"]) if obj.get("success_response_body") is not None else None,
+            "request_url": obj.get("request_url")
         })
         return _obj
 

@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310GetCardsForBank200ResponseProperties**](OBPv310GetCardsForBank200ResponseProperties.md) |  | 
+**cards** | [**List[OBPv310GetCardsForBank200ResponseCardsInner]**](OBPv310GetCardsForBank200ResponseCardsInner.md) |  | [optional] 
 
 ## Example
 

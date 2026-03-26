@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetCustomViews200ResponseProperties**](OBPv600GetCustomViews200ResponseProperties.md) |  | 
+**views** | **object** |  | [optional] 
 
 ## Example
 

@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv510_get_agent200_response_properties import OBPv510GetAgent200ResponseProperties
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +27,15 @@ class OBPv510GetAgent200Response(BaseModel):
     """
     OBPv510GetAgent200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv510GetAgent200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    agent_number: Optional[StrictStr] = None
+    mobile_phone_number: Optional[StrictStr] = None
+    bank_id: Optional[StrictStr] = None
+    currency: Optional[StrictStr] = None
+    legal_name: Optional[StrictStr] = None
+    is_confirmed_agent: Optional[StrictBool] = None
+    is_pending_agent: Optional[StrictBool] = None
+    agent_id: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["agent_number", "mobile_phone_number", "bank_id", "currency", "legal_name", "is_confirmed_agent", "is_pending_agent", "agent_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +76,6 @@ class OBPv510GetAgent200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +88,14 @@ class OBPv510GetAgent200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv510GetAgent200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "agent_number": obj.get("agent_number"),
+            "mobile_phone_number": obj.get("mobile_phone_number"),
+            "bank_id": obj.get("bank_id"),
+            "currency": obj.get("currency"),
+            "legal_name": obj.get("legal_name"),
+            "is_confirmed_agent": obj.get("is_confirmed_agent"),
+            "is_pending_agent": obj.get("is_pending_agent"),
+            "agent_id": obj.get("agent_id")
         })
         return _obj
 

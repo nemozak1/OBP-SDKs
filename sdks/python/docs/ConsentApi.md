@@ -1,6 +1,6 @@
 # obp_python.ConsentApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -73,7 +73,7 @@ cache-control: no-cache</p>
 }<br />
 ],<br />
 &quot;consumer_id&quot;: &quot;7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&quot;,<br />
-&quot;email&quot;: &quot;<a href="&#109;&#97;&#x69;&#x6c;t&#111;&#x3a;&#101;&#x76;el&#105;n&#x65;&#64;&#101;x&#97;&#x6d;&#x70;&#108;&#x65;&#x2e;&#99;&#111;&#x6d;">e&#x76;&#x65;&#x6c;i&#110;&#x65;&#64;e&#120;&#x61;&#x6d;&#112;&#x6c;&#101;&#x2e;co&#109;</a>&quot;,<br />
+&quot;email&quot;: &quot;<a href="&#109;&#x61;&#105;l&#116;o&#x3a;&#101;&#118;&#x65;&#x6c;&#x69;&#110;e&#64;&#x65;&#x78;&#97;&#109;&#112;&#108;&#101;&#x2e;&#99;o&#109;">&#101;&#x76;&#101;&#108;&#105;n&#101;&#64;e&#x78;a&#x6d;&#112;&#x6c;&#x65;.&#x63;&#111;&#x6d;</a>&quot;,<br />
 &quot;valid_from&quot;: &quot;2020-02-07T08:43:34Z&quot;,<br />
 &quot;time_to_live&quot;: 3600<br />
 }<br />
@@ -109,10 +109,10 @@ from obp_python.models.obpv510_create_consent_implicit200_response import OBPv51
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -229,7 +229,7 @@ cache-control: no-cache</p>
 }<br />
 ],<br />
 &quot;consumer_id&quot;: &quot;7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&quot;,<br />
-&quot;email&quot;: &quot;<a href="m&#97;i&#108;t&#x6f;&#58;ev&#101;&#108;&#105;&#110;e@e&#x78;&#x61;&#x6d;pl&#x65;&#46;&#x63;&#x6f;&#109;">&#101;&#118;&#x65;&#x6c;&#x69;&#x6e;e&#64;&#101;&#x78;&#97;&#x6d;&#x70;&#x6c;e&#46;&#99;&#x6f;&#x6d;</a>&quot;,<br />
+&quot;email&quot;: &quot;<a href="&#109;ai&#108;&#x74;o&#x3a;&#101;&#118;e&#108;&#105;&#x6e;&#x65;@&#x65;x&#97;&#x6d;p&#108;&#101;.&#99;&#111;m">&#x65;&#118;&#x65;&#x6c;&#105;&#110;&#x65;&#64;&#101;&#x78;&#x61;&#109;&#112;&#108;&#x65;.&#x63;&#111;&#x6d;</a>&quot;,<br />
 &quot;valid_from&quot;: &quot;2020-02-07T08:43:34Z&quot;,<br />
 &quot;time_to_live&quot;: 3600<br />
 }<br />
@@ -277,11 +277,11 @@ Example 3:<br />
 }</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#">EMAIL</a>: <a href="&#109;&#x61;i&#x6c;&#116;&#111;&#x3a;&#x66;&#101;&#108;ixs&#109;&#x69;&#x74;&#x68;&#x40;&#x65;&#x78;&#97;&#x6d;p&#x6c;&#101;.&#x63;o&#109;">f&#x65;l&#x69;&#x78;s&#109;&#x69;&#116;&#104;&#x40;&#x65;&#x78;&#x61;m&#x70;&#108;e&#46;&#x63;&#111;&#x6d;</a></p>
+<p><a href="/glossary#">EMAIL</a>: <a href="&#x6d;&#x61;&#105;&#108;&#116;o:&#102;&#x65;&#x6c;&#x69;&#x78;&#115;&#109;&#x69;&#x74;&#104;&#x40;&#101;x&#x61;&#x6d;&#112;&#108;&#x65;&#x2e;&#x63;&#x6f;&#x6d;">&#102;&#101;&#x6c;i&#120;&#x73;m&#105;&#x74;&#x68;&#x40;&#101;&#120;&#x61;&#109;&#112;l&#x65;&#x2e;&#99;&#x6f;&#x6d;</a></p>
 <p><strong>JSON request body fields:</strong></p>
 <p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
 <p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#97;i&#x6c;t&#x6f;&#58;&#x66;&#x65;&#x6c;&#105;&#120;&#115;mi&#x74;&#x68;&#64;&#x65;&#120;&#97;m&#112;&#108;&#101;&#x2e;&#x63;&#x6f;m">&#x66;&#x65;&#108;&#105;x&#115;&#109;&#105;&#116;h&#x40;&#x65;&#x78;&#97;mp&#x6c;&#101;&#46;&#x63;&#111;m</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#x61;&#105;l&#116;&#x6f;&#58;&#x66;&#x65;l&#x69;&#120;&#x73;&#x6d;&#105;th&#64;&#x65;&#120;&#x61;&#x6d;&#112;&#108;&#101;&#x2e;&#x63;&#x6f;&#x6d;">&#x66;&#x65;l&#x69;&#120;&#115;&#x6d;&#x69;t&#104;&#x40;&#101;&#120;&#x61;&#109;&#x70;&#108;&#x65;&#x2e;&#99;&#x6f;&#x6d;</a></p>
 <p><a href="/glossary#entitlements"><strong>entitlements</strong></a>:</p>
 <p><a href="/glossary#everything"><strong>everything</strong></a>:</p>
 <p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
@@ -309,10 +309,10 @@ from obp_python.models.obpv510_create_consent_implicit200_response import OBPv51
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -429,7 +429,7 @@ cache-control: no-cache</p>
 }<br />
 ],<br />
 &quot;consumer_id&quot;: &quot;7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&quot;,<br />
-&quot;email&quot;: &quot;<a href="&#109;&#97;&#105;&#x6c;&#116;&#x6f;&#58;&#101;&#x76;&#101;l&#105;&#x6e;&#x65;&#64;&#101;&#120;&#97;&#109;p&#108;&#x65;&#46;&#99;&#x6f;&#109;">&#x65;vel&#x69;&#110;&#101;&#x40;&#101;&#x78;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#x6f;&#x6d;</a>&quot;,<br />
+&quot;email&quot;: &quot;<a href="&#x6d;&#97;&#105;&#x6c;&#x74;&#x6f;&#58;&#x65;&#x76;e&#108;i&#110;&#x65;&#64;&#101;&#x78;&#x61;&#x6d;&#112;&#108;&#101;&#x2e;&#x63;&#x6f;&#109;">&#x65;&#118;e&#108;ine&#64;&#101;&#120;&#x61;&#x6d;&#x70;l&#x65;&#46;&#99;&#x6f;&#x6d;</a>&quot;,<br />
 &quot;valid_from&quot;: &quot;2020-02-07T08:43:34Z&quot;,<br />
 &quot;time_to_live&quot;: 3600<br />
 }<br />
@@ -505,10 +505,10 @@ from obp_python.models.obpv510_create_consent_implicit_request import OBPv510Cre
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -536,7 +536,7 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.ConsentApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
     implicit = 'implicit_example' # str | The IMPLICIT identifier
-    obpv510_create_consent_implicit_request = {type=object, properties={entitlements={type=array, items={type=object, properties={bank_id={type=string}, role_name={type=string}}}}, valid_from={type=string, format=date-time}, everything={type=boolean}, views={type=array, items={type=object, properties={bank_id={type=string}, view_id={type=string}, account_id={type=string}}}}, consumer_id={type=string}, time_to_live={type=integer}}} # OBPv510CreateConsentImplicitRequest | Request body
+    obpv510_create_consent_implicit_request = {type=object, properties={valid_from={type=string, format=date-time}, entitlements={type=array, items={type=object, properties={bank_id={type=string}, role_name={type=string}}}}, everything={type=boolean}, views={type=array, items={type=object, properties={bank_id={type=string}, view_id={type=string}, account_id={type=string}}}}, consumer_id={type=string}, time_to_live={type=integer}}} # OBPv510CreateConsentImplicitRequest | Request body
 
     try:
         # Create Consent (IMPLICIT)
@@ -625,7 +625,7 @@ cache-control: no-cache</p>
 }<br />
 ],<br />
 &quot;consumer_id&quot;: &quot;7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&quot;,<br />
-&quot;email&quot;: &quot;<a href="&#x6d;&#97;&#x69;&#108;&#116;&#111;&#58;&#x65;&#x76;&#101;&#108;&#105;&#x6e;&#x65;&#64;&#101;&#120;a&#109;&#x70;l&#101;&#x2e;&#x63;&#111;&#109;">&#x65;&#118;&#101;l&#105;&#x6e;&#101;@&#101;x&#97;&#x6d;&#112;&#108;&#x65;.&#99;&#111;m</a>&quot;,<br />
+&quot;email&quot;: &quot;<a href="&#109;&#x61;&#105;&#108;&#116;&#111;&#x3a;&#101;&#x76;&#x65;&#108;&#x69;&#110;&#x65;&#64;&#101;&#x78;&#97;m&#x70;&#108;&#x65;&#x2e;c&#x6f;&#x6d;">&#101;&#x76;&#101;&#x6c;i&#x6e;e&#x40;&#101;&#120;am&#x70;&#108;e.&#x63;&#x6f;&#x6d;</a>&quot;,<br />
 &quot;valid_from&quot;: &quot;2020-02-07T08:43:34Z&quot;,<br />
 &quot;time_to_live&quot;: 3600<br />
 }<br />
@@ -641,7 +641,7 @@ time_to_live = consents.max_time_to_live</p>
 &quot;views&quot;: [],<br />
 &quot;entitlements&quot;: [],<br />
 &quot;consumer_id&quot;: &quot;7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&quot;,<br />
-&quot;email&quot;: &quot;<a href="&#x6d;&#97;&#x69;&#108;t&#x6f;&#x3a;&#101;&#x76;&#x65;&#108;&#x69;&#110;&#x65;&#x40;&#101;&#120;&#97;m&#112;&#x6c;&#x65;.&#99;&#x6f;&#109;">&#x65;&#118;&#x65;&#108;&#x69;ne@&#101;x&#x61;&#x6d;p&#x6c;&#x65;&#x2e;&#99;o&#109;</a>&quot;<br />
+&quot;email&quot;: &quot;<a href="&#109;&#97;&#x69;&#x6c;t&#111;&#x3a;&#x65;&#118;&#101;&#108;&#105;n&#x65;&#64;&#x65;&#x78;&#x61;m&#x70;l&#101;.c&#x6f;&#109;">&#x65;&#x76;&#101;&#108;&#x69;n&#x65;&#x40;&#101;x&#x61;&#x6d;&#112;l&#101;.&#99;&#x6f;&#109;</a>&quot;<br />
 }</p>
 <p>Please note that consumer_id is optional field<br />
 Example 2:<br />
@@ -649,7 +649,7 @@ Example 2:<br />
 &quot;everything&quot;: true,<br />
 &quot;views&quot;: [],<br />
 &quot;entitlements&quot;: [],<br />
-&quot;email&quot;: &quot;<a href="&#x6d;&#x61;&#105;&#x6c;t&#x6f;&#58;&#101;&#x76;&#x65;&#108;&#105;&#x6e;&#x65;&#64;&#x65;&#120;&#97;&#109;&#x70;l&#101;&#x2e;&#99;&#111;&#x6d;">&#101;&#118;&#x65;&#108;&#x69;&#110;e&#64;&#101;&#120;&#x61;mpl&#x65;.&#99;&#111;&#x6d;</a>&quot;<br />
+&quot;email&quot;: &quot;<a href="&#109;&#97;&#x69;&#108;&#116;&#111;:&#101;&#x76;&#x65;&#x6c;&#105;&#110;&#x65;&#64;&#101;&#x78;&#97;&#109;&#x70;l&#x65;.c&#111;&#109;">&#x65;&#118;&#101;&#108;&#x69;&#x6e;&#101;&#64;&#x65;x&#x61;&#109;&#112;&#108;e&#46;&#99;om</a>&quot;<br />
 }</p>
 <p>Please note if everything=false you need to explicitly specify views and entitlements<br />
 Example 3:<br />
@@ -669,7 +669,7 @@ Example 3:<br />
 }<br />
 ],<br />
 &quot;consumer_id&quot;: &quot;7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&quot;,<br />
-&quot;email&quot;: &quot;<a href="&#109;&#x61;&#105;&#x6c;&#x74;&#x6f;&#58;&#x65;&#x76;&#101;&#108;&#105;n&#x65;&#x40;&#101;&#120;&#97;&#109;&#x70;&#108;e&#x2e;&#99;&#x6f;&#109;">&#x65;&#x76;&#101;l&#105;&#110;&#101;&#x40;&#101;&#x78;&#x61;m&#x70;l&#101;&#46;&#99;&#111;&#x6d;</a>&quot;<br />
+&quot;email&quot;: &quot;<a href="m&#97;&#105;&#x6c;t&#111;:&#x65;&#118;&#101;&#108;&#x69;&#110;e&#x40;&#x65;x&#x61;m&#x70;&#108;&#x65;&#46;&#99;&#x6f;&#109;">&#101;&#118;e&#x6c;&#105;n&#x65;&#64;&#101;&#120;&#97;m&#x70;&#x6c;&#x65;&#46;&#99;&#111;&#x6d;</a>&quot;<br />
 }</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
@@ -705,10 +705,10 @@ from obp_python.models.obpv510_create_consent_implicit200_response import OBPv51
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -811,10 +811,10 @@ from obp_python.models.obpv510_create_consent_implicit200_response import OBPv51
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -918,10 +918,10 @@ from obp_python.models.obpv400_get_consent_infos200_response import OBPv400GetCo
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1019,10 +1019,10 @@ from obp_python.models.obpv400_get_consent_infos200_response import OBPv400GetCo
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1121,10 +1121,10 @@ from obp_python.models.obpv510_update_transaction_request_status_request import 
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1208,7 +1208,7 @@ Create Consent By CONSENT_REQUEST_ID (EMAIL)
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#consent_request_id">CONSENT_REQUEST_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#">EMAIL</a>: <a href="m&#97;&#x69;&#108;&#116;&#111;&#58;&#102;&#101;&#108;ix&#x73;&#109;i&#x74;h&#64;e&#x78;&#x61;&#x6d;&#x70;&#108;&#x65;&#46;&#99;&#111;&#x6d;">&#102;&#101;&#x6c;i&#x78;&#115;&#109;&#x69;&#x74;&#104;@&#x65;&#120;&#97;mp&#x6c;&#101;.&#99;&#111;&#109;</a></p>
+<p><a href="/glossary#">EMAIL</a>: <a href="ma&#105;&#108;&#x74;&#x6f;&#58;&#102;e&#x6c;&#105;&#120;&#115;&#x6d;&#105;&#x74;&#x68;@&#x65;x&#x61;&#x6d;&#x70;l&#x65;&#46;com">fe&#108;&#x69;&#x78;&#x73;&#109;&#x69;&#x74;&#104;@&#x65;xa&#109;&#112;&#x6c;&#x65;&#46;&#99;&#x6f;&#x6d;</a></p>
 <p><strong>JSON request body fields:</strong></p>
 <p><strong>JSON response body fields:</strong></p>
 <p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
@@ -1235,10 +1235,10 @@ from obp_python.models.obpv500_get_consent_by_consent_request_id200_response imp
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1346,10 +1346,10 @@ from obp_python.models.obpv500_get_consent_by_consent_request_id200_response imp
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1457,10 +1457,10 @@ from obp_python.models.obpv500_get_consent_by_consent_request_id200_response imp
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1557,7 +1557,7 @@ Authorization: Bearer eXtneO-THbQtn3zvK_kQtXXfvOZyZFdBCItlPDbR2Bk.dOWqtXCtFX-tqG
 <p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
 <p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
 <p><a href="/glossary#">consumer_id</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#">email</a>: <a href="&#109;&#x61;&#105;l&#x74;&#x6f;&#x3a;&#102;&#x65;&#x6c;i&#x78;s&#109;i&#x74;&#104;&#x40;&#x65;&#x78;&#97;&#109;&#112;&#x6c;e&#46;&#x63;&#x6f;&#109;">&#x66;&#101;&#108;&#105;&#x78;&#x73;&#109;&#x69;&#x74;&#104;&#64;&#101;&#x78;&#x61;&#109;&#112;&#108;e&#x2e;&#x63;&#x6f;m</a></p>
+<p><a href="/glossary#">email</a>: <a href="ma&#x69;&#108;t&#x6f;&#x3a;&#x66;&#x65;l&#x69;x&#115;&#x6d;&#x69;&#116;&#104;&#x40;&#101;&#120;a&#109;&#x70;&#x6c;&#x65;&#x2e;&#99;&#111;&#109;">&#x66;&#x65;&#108;&#105;&#120;&#x73;m&#x69;&#116;&#104;@&#x65;&#x78;&#x61;&#x6d;&#x70;&#x6c;e&#46;c&#x6f;&#109;</a></p>
 <p><a href="/glossary#entitlements">entitlements</a>:</p>
 <p><a href="/glossary#phone_number">phone_number</a>:</p>
 <p><a href="/glossary#time_to_live">time_to_live</a>:</p>
@@ -1570,6 +1570,9 @@ Authorization: Bearer eXtneO-THbQtn3zvK_kQtXXfvOZyZFdBCItlPDbR2Bk.dOWqtXCtFX-tqG
 
 ### Example
 
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
 
 ```python
 import obp_python
@@ -1578,18 +1581,36 @@ from obp_python.models.obpv500_get_consent_request200_response import OBPv500Get
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.ConsentApi(api_client)
-    obpv500_create_consent_request_request = {"type":"object","properties":{"entitlements":{"type":"array","items":{"type":"object","properties":{"bank_id":{"type":"string"},"role_name":{"type":"string"}}}},"account_access":{"type":"array","items":{"type":"object","properties":{"view_id":{"type":"string"},"account_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}}}}},"valid_from":{"type":"string","format":"date-time"},"everything":{"type":"boolean"},"phone_number":{"type":"string"},"email":{"type":"string"},"consumer_id":{"type":"string"},"time_to_live":{"type":"integer"}}} # OBPv500CreateConsentRequestRequest | Request body
+    obpv500_create_consent_request_request = {"type":"object","properties":{"entitlements":{"type":"array","items":{"type":"object","properties":{"bank_id":{"type":"string"},"role_name":{"type":"string"}}}},"valid_from":{"type":"string","format":"date-time"},"account_access":{"type":"array","items":{"type":"object","properties":{"view_id":{"type":"string"},"account_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}}}}},"everything":{"type":"boolean"},"phone_number":{"type":"string"},"email":{"type":"string"},"consumer_id":{"type":"string"},"time_to_live":{"type":"integer"}}} # OBPv500CreateConsentRequestRequest | Request body
 
     try:
         # Create Consent Request
@@ -1615,7 +1636,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
 
 ### HTTP request headers
 
@@ -1665,10 +1686,10 @@ from obp_python.models.obpv500_get_consent_by_consent_request_id200_response imp
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1759,10 +1780,10 @@ from obp_python.models.obpv500_get_consent_request200_response import OBPv500Get
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -1857,7 +1878,7 @@ cache-control: no-cache</p>
 }<br />
 ],<br />
 &quot;consumer_id&quot;: &quot;7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&quot;,<br />
-&quot;email&quot;: &quot;<a href="&#109;&#97;&#105;&#108;t&#x6f;:&#x65;&#x76;&#101;&#108;&#105;n&#x65;&#x40;&#101;&#x78;&#97;&#109;&#112;&#x6c;&#101;&#46;&#99;&#x6f;&#109;">&#101;&#118;&#101;&#x6c;&#105;&#x6e;&#x65;&#x40;&#101;&#x78;&#x61;&#x6d;&#x70;&#x6c;e.&#99;&#x6f;&#x6d;</a>&quot;,<br />
+&quot;email&quot;: &quot;<a href="&#109;a&#105;lto&#x3a;&#x65;&#x76;e&#108;i&#110;&#x65;&#x40;&#x65;&#x78;ampl&#x65;&#x2e;&#x63;o&#x6d;">&#101;&#118;e&#x6c;&#x69;&#110;&#x65;@&#x65;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#101;&#46;&#99;&#x6f;&#109;</a>&quot;,<br />
 &quot;valid_from&quot;: &quot;2020-02-07T08:43:34Z&quot;,<br />
 &quot;time_to_live&quot;: 3600<br />
 }<br />
@@ -1932,10 +1953,10 @@ from obp_python.models.obpv510_create_consent_implicit_request import OBPv510Cre
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1962,7 +1983,7 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.ConsentApi(api_client)
     implicit = 'implicit_example' # str | The IMPLICIT identifier
-    obpv510_create_consent_implicit_request = {"type":"object","properties":{"entitlements":{"type":"array","items":{"type":"object","properties":{"bank_id":{"type":"string"},"role_name":{"type":"string"}}}},"valid_from":{"type":"string","format":"date-time"},"everything":{"type":"boolean"},"views":{"type":"array","items":{"type":"object","properties":{"bank_id":{"type":"string"},"view_id":{"type":"string"},"account_id":{"type":"string"}}}},"consumer_id":{"type":"string"},"time_to_live":{"type":"integer"}}} # OBPv510CreateConsentImplicitRequest | Request body
+    obpv510_create_consent_implicit_request = {"type":"object","properties":{"valid_from":{"type":"string","format":"date-time"},"entitlements":{"type":"array","items":{"type":"object","properties":{"bank_id":{"type":"string"},"role_name":{"type":"string"}}}},"everything":{"type":"boolean"},"views":{"type":"array","items":{"type":"object","properties":{"bank_id":{"type":"string"},"view_id":{"type":"string"},"account_id":{"type":"string"}}}},"consumer_id":{"type":"string"},"time_to_live":{"type":"integer"}}} # OBPv510CreateConsentImplicitRequest | Request body
 
     try:
         # Create Consent (IMPLICIT)
@@ -2047,7 +2068,7 @@ Authorization: Bearer eXtneO-THbQtn3zvK_kQtXXfvOZyZFdBCItlPDbR2Bk.dOWqtXCtFX-tqG
 <p><a href="/glossary#max_yearly_amount"><strong>max_yearly_amount</strong></a>: 12000.11</p>
 <p><a href="/glossary#scheme"><strong>scheme</strong></a>: OBP</p>
 <p><a href="/glossary#"><strong>to_account</strong></a>: to_account</p>
-<p><a href="/glossary#">email</a>: <a href="m&#97;&#x69;l&#x74;o&#x3a;f&#101;&#x6c;i&#120;&#115;&#109;&#x69;&#116;&#x68;&#x40;&#x65;&#120;a&#x6d;&#112;&#x6c;&#101;&#x2e;&#x63;&#x6f;&#109;">&#102;&#101;&#x6c;i&#120;&#115;&#109;&#x69;&#x74;&#104;&#x40;&#x65;x&#x61;&#109;&#x70;&#108;&#x65;&#46;&#x63;&#x6f;&#109;</a></p>
+<p><a href="/glossary#">email</a>: <a href="&#109;&#x61;i&#x6c;&#116;&#111;:&#102;&#x65;l&#x69;&#x78;sm&#x69;t&#104;@&#x65;&#120;&#x61;&#x6d;ple&#x2e;&#99;&#111;m">&#102;&#x65;&#x6c;&#x69;&#120;&#x73;m&#105;t&#x68;&#64;&#101;&#x78;&#x61;m&#112;&#x6c;e&#x2e;&#x63;&#111;&#x6d;</a></p>
 <p><a href="/glossary#phone_number">phone_number</a>:</p>
 <p><a href="/glossary#time_to_live">time_to_live</a>:</p>
 <p><a href="/glossary#valid_from">valid_from</a>: 2020-01-27</p>
@@ -2059,6 +2080,9 @@ Authorization: Bearer eXtneO-THbQtn3zvK_kQtXXfvOZyZFdBCItlPDbR2Bk.dOWqtXCtFX-tqG
 
 ### Example
 
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
 
 ```python
 import obp_python
@@ -2067,18 +2091,36 @@ from obp_python.models.obpv510_create_vrp_consent_request_request import OBPv510
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.ConsentApi(api_client)
-    obpv510_create_vrp_consent_request_request = {"type":"object","properties":{"to_account":{"type":"object","properties":{"bank_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"counterparty_name":{"type":"string"},"limit":{"type":"object","properties":{"max_total_amount":{"type":"string"},"currency":{"type":"string"},"max_number_of_yearly_transactions":{"type":"integer"},"max_monthly_amount":{"type":"string"},"max_single_amount":{"type":"string"},"max_number_of_monthly_transactions":{"type":"integer"},"max_yearly_amount":{"type":"string"},"max_number_of_transactions":{"type":"integer"}}},"account_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"branch_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}}}},"valid_from":{"type":"string","format":"date-time"},"phone_number":{"type":"string"},"email":{"type":"string"},"from_account":{"type":"object","properties":{"bank_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"account_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"branch_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}}}},"time_to_live":{"type":"integer"}}} # OBPv510CreateVRPConsentRequestRequest | Request body
+    obpv510_create_vrp_consent_request_request = {"type":"object","properties":{"to_account":{"type":"object","properties":{"bank_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"counterparty_name":{"type":"string"},"limit":{"type":"object","properties":{"max_total_amount":{"type":"string"},"currency":{"type":"string"},"max_number_of_yearly_transactions":{"type":"integer"},"max_monthly_amount":{"type":"string"},"max_single_amount":{"type":"string"},"max_number_of_monthly_transactions":{"type":"integer"},"max_yearly_amount":{"type":"string"},"max_number_of_transactions":{"type":"integer"}}},"account_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"branch_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}}}},"phone_number":{"type":"string"},"email":{"type":"string"},"from_account":{"type":"object","properties":{"bank_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"account_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"branch_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}}}},"time_to_live":{"type":"integer"},"valid_from":{"type":"string","format":"date-time"}}} # OBPv510CreateVRPConsentRequestRequest | Request body
 
     try:
         # Create Consent Request VRP
@@ -2104,7 +2146,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
 
 ### HTTP request headers
 
@@ -2152,10 +2194,10 @@ from obp_python.models.obpv510_get_consent_by_consent_id200_response import OBPv
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2257,10 +2299,10 @@ from obp_python.models.obpv500_get_consent_by_consent_request_id200_response imp
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2384,7 +2426,7 @@ eg: provider_provider_id=http%3A%2F%2Flocalhost%3A7070%2Frealms%2Fmaster|7837ee9
 <p><a href="/glossary#">balances</a>: balances</p>
 <p><a href="/glossary#">bban</a>: bban</p>
 <p><a href="/glossary#">currency</a>: EUR</p>
-<p><a href="/glossary#">email</a>: <a href="&#x6d;&#97;&#105;l&#x74;&#111;:&#x66;&#101;&#x6c;i&#x78;&#x73;&#x6d;it&#x68;&#64;&#101;xa&#x6d;p&#x6c;e&#x2e;&#x63;&#x6f;&#x6d;">&#102;e&#108;&#105;&#120;&#x73;m&#105;&#116;&#104;&#64;e&#x78;&#x61;&#x6d;&#x70;l&#x65;.&#x63;&#x6f;&#109;</a></p>
+<p><a href="/glossary#">email</a>: <a href="&#109;a&#105;&#x6c;&#x74;&#x6f;&#x3a;&#102;&#x65;&#x6c;i&#120;&#x73;&#109;i&#116;&#104;&#64;e&#120;a&#x6d;&#112;&#x6c;&#x65;&#46;&#99;o&#x6d;">&#x66;e&#108;&#x69;&#x78;&#115;&#109;&#105;&#116;&#104;&#x40;&#x65;&#120;&#97;&#109;&#112;&#x6c;&#101;&#46;&#99;&#x6f;&#109;</a></p>
 <p><a href="/glossary#">frequency_per_day</a>: frequency_per_day</p>
 <p><a href="/glossary#">helper_info</a>: helper_info</p>
 <p><a href="/glossary#">iban</a>: DE91 1000 0000 0123 4567 89</p>
@@ -2410,10 +2452,10 @@ from obp_python.models.obpv510_get_consents200_response import OBPv510GetConsent
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2531,7 +2573,7 @@ Get Consents at Bank
 <p><a href="/glossary#">balances</a>: balances</p>
 <p><a href="/glossary#">bban</a>: bban</p>
 <p><a href="/glossary#">currency</a>: EUR</p>
-<p><a href="/glossary#">email</a>: <a href="ma&#105;&#x6c;t&#x6f;&#58;&#x66;&#x65;&#108;i&#x78;&#x73;&#x6d;&#x69;&#x74;&#104;&#64;&#x65;&#120;am&#112;&#108;&#x65;.&#x63;&#x6f;&#109;">feli&#120;&#x73;&#109;i&#x74;&#104;&#x40;&#x65;&#120;&#x61;&#109;&#x70;&#x6c;&#x65;.&#x63;&#111;&#109;</a></p>
+<p><a href="/glossary#">email</a>: <a href="&#109;&#x61;&#105;lto:&#x66;&#101;&#108;i&#120;s&#109;&#105;&#x74;&#104;&#64;&#x65;&#x78;&#x61;&#109;&#112;&#108;&#101;&#x2e;&#99;&#111;&#x6d;">f&#x65;&#108;i&#x78;&#x73;&#109;&#x69;&#x74;&#104;&#64;&#x65;x&#97;&#109;&#x70;&#x6c;&#x65;&#x2e;&#99;&#x6f;&#109;</a></p>
 <p><a href="/glossary#">frequency_per_day</a>: frequency_per_day</p>
 <p><a href="/glossary#">helper_info</a>: helper_info</p>
 <p><a href="/glossary#">iban</a>: DE91 1000 0000 0123 4567 89</p>
@@ -2557,10 +2599,10 @@ from obp_python.models.obpv510_get_consents200_response import OBPv510GetConsent
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2634,54 +2676,27 @@ Name | Type | Description  | Notes
 
 Get My Consents
 
-<p>This endpoint gets the Consents created by a current User.</p>
+<p>This endpoint gets the Consents created by the current User.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>1 limit (for pagination: defaults to 50)  eg:limit=200</p>
+<p>2 offset (for pagination: zero index, defaults to 0) eg: offset=10</p>
+<p>3 status  (ignore if omitted)</p>
+<p>4 sort_by (defaults to created_date:desc)  eg: sort_by=created_date:desc</p>
+<p>eg: /my/consents?limit=10&amp;offset=0&amp;sort_by=created_date:desc</p>
 <p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
 <p><a href="/glossary#"><strong>api_standard</strong></a>: api_standard</p>
 <p><a href="/glossary#api_version"><strong>api_version</strong></a>:</p>
-<p><a href="/glossary#"><strong>aud</strong></a>: String</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
 <p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
 <p><a href="/glossary#"><strong>consent_reference_id</strong></a>: 123456</p>
 <p><a href="/glossary#consents"><strong>consents</strong></a>:</p>
 <p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>counterparty_ids</strong></a>: counterparty_ids</p>
-<p><a href="/glossary#"><strong>createdByUserId</strong></a>: createdByUserId</p>
 <p><a href="/glossary#created_by_user_id"><strong>created_by_user_id</strong></a>:</p>
-<p><a href="/glossary#entitlements"><strong>entitlements</strong></a>:</p>
-<p><a href="/glossary#"><strong>exp</strong></a>: 60</p>
-<p><a href="/glossary#"><strong>iat</strong></a>: 60</p>
-<p><a href="/glossary#"><strong>iss</strong></a>: String</p>
-<p><a href="/glossary#"><strong>jti</strong></a>: String</p>
 <p><a href="/glossary#jwt"><strong>jwt</strong></a>: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOltdLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIyMWUxYzhjYy1mOTE4LTRlYWMtYjhlMy01ZTVlZWM2YjNiNGIiLCJhdWQiOiJlanpuazUwNWQxMzJyeW9tbmhieDFxbXRvaHVyYnNiYjBraWphanNrIiwibmJmIjoxNTUzNTU0ODk5LCJpc3MiOiJodHRwczpcL1wvd3d3Lm9wZW5iYW5rcHJvamVjdC5jb20iLCJleHAiOjE1NTM1NTg0OTksImlhdCI6MTU1MzU1NDg5OSwianRpIjoiMDlmODhkNWYtZWNlNi00Mzk4LThlOTktNjYxMWZhMWNkYmQ1Iiwidmlld3MiOlt7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAxIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifSx7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAyIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifV19.8cc7cBEf2NyQvJoukBCmDLT7LXYcuzTcSYLqSpbxLp4</p>
+<p><a href="/glossary#"><strong>jwt_expires_at</strong></a>: jwt_expires_at</p>
 <p><a href="/glossary#"><strong>jwt_payload</strong></a>: jwt_payload</p>
 <p><a href="/glossary#"><strong>last_action_date</strong></a>: last_action_date</p>
 <p><a href="/glossary#"><strong>last_usage_date</strong></a>: last_usage_date</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#"><strong>nbf</strong></a>: 60</p>
-<p><a href="/glossary#"><strong>request_headers</strong></a>: request_headers</p>
-<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
 <p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#"><strong>sub</strong></a>: felixsmith</p>
-<p><a href="/glossary#"><strong>values</strong></a>: values</p>
-<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
-<p><a href="/glossary#views"><strong>views</strong></a>:</p>
-<p><a href="/glossary#">access</a>: access</p>
-<p><a href="/glossary#accounts">accounts</a>:</p>
-<p><a href="/glossary#">allPsd2</a>: allPsd2</p>
-<p><a href="/glossary#">availableAccounts</a>: availableAccounts</p>
-<p><a href="/glossary#">balances</a>: balances</p>
-<p><a href="/glossary#">bban</a>: bban</p>
-<p><a href="/glossary#">currency</a>: EUR</p>
-<p><a href="/glossary#">email</a>: <a href="&#109;a&#x69;&#108;&#x74;&#111;&#58;f&#101;&#108;&#105;&#120;&#x73;&#x6d;&#105;t&#x68;&#x40;&#101;&#x78;a&#109;&#x70;&#x6c;&#x65;&#46;&#x63;&#x6f;&#x6d;">&#x66;el&#x69;&#x78;&#115;&#x6d;&#x69;&#x74;&#104;&#x40;exa&#109;&#112;&#x6c;&#x65;&#46;&#x63;&#x6f;&#x6d;</a></p>
-<p><a href="/glossary#">helper_info</a>: helper_info</p>
-<p><a href="/glossary#">iban</a>: DE91 1000 0000 0123 4567 89</p>
-<p><a href="/glossary#">maskedPan</a>: maskedPan</p>
-<p><a href="/glossary#">msisdn</a>: msisdn</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#">pan</a>: pan</p>
-<p><a href="/glossary#transactions">transactions</a>:</p>
 
 
 ### Example
@@ -2696,10 +2711,10 @@ from obp_python.models.obpv510_get_my_consents_by_bank200_response import OBPv51
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2759,7 +2774,6 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
-**404** | Not Found |  -  |
 **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -2769,56 +2783,31 @@ This endpoint does not need any parameter.
 
 Get My Consents at Bank
 
-<p>This endpoint gets the Consents created by a current User.</p>
+<p>This endpoint gets the Consents created by a current User at the specified Bank.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>1 limit (for pagination: defaults to 50)  eg:limit=200</p>
+<p>2 offset (for pagination: zero index, defaults to 0) eg: offset=10</p>
+<p>3 status  (ignore if omitted)</p>
+<p>4 sort_by (defaults to created_date:desc)  eg: sort_by=created_date:desc</p>
+<p>Note: This endpoint only returns consents that explicitly reference the specified BANK_ID.<br />
+Consents created before the consent_item join table was introduced will not appear in results.</p>
+<p>eg: /banks/BANK_ID/my/consents?limit=10&amp;offset=0&amp;sort_by=created_date:desc</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
 <p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
 <p><a href="/glossary#"><strong>api_standard</strong></a>: api_standard</p>
 <p><a href="/glossary#api_version"><strong>api_version</strong></a>:</p>
-<p><a href="/glossary#"><strong>aud</strong></a>: String</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
 <p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
 <p><a href="/glossary#"><strong>consent_reference_id</strong></a>: 123456</p>
 <p><a href="/glossary#consents"><strong>consents</strong></a>:</p>
 <p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>counterparty_ids</strong></a>: counterparty_ids</p>
-<p><a href="/glossary#"><strong>createdByUserId</strong></a>: createdByUserId</p>
 <p><a href="/glossary#created_by_user_id"><strong>created_by_user_id</strong></a>:</p>
-<p><a href="/glossary#entitlements"><strong>entitlements</strong></a>:</p>
-<p><a href="/glossary#"><strong>exp</strong></a>: 60</p>
-<p><a href="/glossary#"><strong>iat</strong></a>: 60</p>
-<p><a href="/glossary#"><strong>iss</strong></a>: String</p>
-<p><a href="/glossary#"><strong>jti</strong></a>: String</p>
 <p><a href="/glossary#jwt"><strong>jwt</strong></a>: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOltdLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIyMWUxYzhjYy1mOTE4LTRlYWMtYjhlMy01ZTVlZWM2YjNiNGIiLCJhdWQiOiJlanpuazUwNWQxMzJyeW9tbmhieDFxbXRvaHVyYnNiYjBraWphanNrIiwibmJmIjoxNTUzNTU0ODk5LCJpc3MiOiJodHRwczpcL1wvd3d3Lm9wZW5iYW5rcHJvamVjdC5jb20iLCJleHAiOjE1NTM1NTg0OTksImlhdCI6MTU1MzU1NDg5OSwianRpIjoiMDlmODhkNWYtZWNlNi00Mzk4LThlOTktNjYxMWZhMWNkYmQ1Iiwidmlld3MiOlt7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAxIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifSx7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAyIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifV19.8cc7cBEf2NyQvJoukBCmDLT7LXYcuzTcSYLqSpbxLp4</p>
+<p><a href="/glossary#"><strong>jwt_expires_at</strong></a>: jwt_expires_at</p>
 <p><a href="/glossary#"><strong>jwt_payload</strong></a>: jwt_payload</p>
 <p><a href="/glossary#"><strong>last_action_date</strong></a>: last_action_date</p>
 <p><a href="/glossary#"><strong>last_usage_date</strong></a>: last_usage_date</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#"><strong>nbf</strong></a>: 60</p>
-<p><a href="/glossary#"><strong>request_headers</strong></a>: request_headers</p>
-<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
 <p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#"><strong>sub</strong></a>: felixsmith</p>
-<p><a href="/glossary#"><strong>values</strong></a>: values</p>
-<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
-<p><a href="/glossary#views"><strong>views</strong></a>:</p>
-<p><a href="/glossary#">access</a>: access</p>
-<p><a href="/glossary#accounts">accounts</a>:</p>
-<p><a href="/glossary#">allPsd2</a>: allPsd2</p>
-<p><a href="/glossary#">availableAccounts</a>: availableAccounts</p>
-<p><a href="/glossary#">balances</a>: balances</p>
-<p><a href="/glossary#">bban</a>: bban</p>
-<p><a href="/glossary#">currency</a>: EUR</p>
-<p><a href="/glossary#">email</a>: <a href="&#x6d;ai&#108;&#x74;&#x6f;:&#102;&#101;l&#105;x&#115;&#x6d;&#x69;&#x74;&#104;@e&#x78;a&#x6d;&#112;&#108;&#x65;&#x2e;&#x63;&#x6f;&#109;">&#x66;e&#x6c;&#x69;&#x78;s&#109;&#x69;&#x74;&#104;@&#101;&#x78;&#97;&#x6d;&#x70;l&#x65;&#x2e;co&#109;</a></p>
-<p><a href="/glossary#">helper_info</a>: helper_info</p>
-<p><a href="/glossary#">iban</a>: DE91 1000 0000 0123 4567 89</p>
-<p><a href="/glossary#">maskedPan</a>: maskedPan</p>
-<p><a href="/glossary#">msisdn</a>: msisdn</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#">pan</a>: pan</p>
-<p><a href="/glossary#transactions">transactions</a>:</p>
 
 
 ### Example
@@ -2833,10 +2822,10 @@ from obp_python.models.obpv510_get_my_consents_by_bank200_response import OBPv51
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2906,7 +2895,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv5_1_0_mtls_client_certificate_info**
-> OBPv510UpdateConsumerName200ResponsePropertiesCertificateInfo o_bpv5_1_0_mtls_client_certificate_info()
+> OBPv510UpdateConsumerName200ResponseCertificateInfo o_bpv5_1_0_mtls_client_certificate_info()
 
 Provide client's certificate info of a current call
 
@@ -2929,14 +2918,14 @@ Provide client's certificate info of a current call
 
 ```python
 import obp_python
-from obp_python.models.obpv510_update_consumer_name200_response_properties_certificate_info import OBPv510UpdateConsumerName200ResponsePropertiesCertificateInfo
+from obp_python.models.obpv510_update_consumer_name200_response_certificate_info import OBPv510UpdateConsumerName200ResponseCertificateInfo
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2980,7 +2969,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv510UpdateConsumerName200ResponsePropertiesCertificateInfo**](OBPv510UpdateConsumerName200ResponsePropertiesCertificateInfo.md)
+[**OBPv510UpdateConsumerName200ResponseCertificateInfo**](OBPv510UpdateConsumerName200ResponseCertificateInfo.md)
 
 ### Authorization
 
@@ -3035,10 +3024,10 @@ from obp_python.models.obpv510_create_consent_implicit200_response import OBPv51
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3143,10 +3132,10 @@ from obp_python.models.obpv510_create_consent_implicit200_response import OBPv51
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3245,10 +3234,10 @@ from obp_python.models.obpv510_create_consent_implicit200_response import OBPv51
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3342,10 +3331,10 @@ from obp_python.models.obpv510_update_consent_account_access_by_consent_id_reque
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3448,10 +3437,10 @@ from obp_python.models.obpv510_update_transaction_request_status_request import 
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3556,10 +3545,10 @@ from obp_python.models.obpv510_create_consent_implicit200_response import OBPv51
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters

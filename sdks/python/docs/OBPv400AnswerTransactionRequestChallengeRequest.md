@@ -5,8 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400AnswerTransactionRequestChallengeRequestProperties**](OBPv400AnswerTransactionRequestChallengeRequestProperties.md) |  | 
+**additional_information** | **str** |  | [optional] 
+**answer** | **str** |  | [optional] 
+**reason_code** | **str** |  | [optional] 
+**id** | **str** |  | [optional] 
 
 ## Example
 

@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510UpdateConsentAccountAccessByConsentIdRequestProperties**](OBPv510UpdateConsentAccountAccessByConsentIdRequestProperties.md) |  | 
+**access** | [**OBPv510UpdateConsentAccountAccessByConsentIdRequestAccess**](OBPv510UpdateConsentAccountAccessByConsentIdRequestAccess.md) |  | [optional] 
 
 ## Example
 

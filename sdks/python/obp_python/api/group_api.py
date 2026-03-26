@@ -1,7 +1,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -23,7 +23,7 @@ from obp_python.models.obpv600_add_user_to_group_request import OBPv600AddUserTo
 from obp_python.models.obpv600_create_group_request import OBPv600CreateGroupRequest
 from obp_python.models.obpv600_get_group_entitlements200_response import OBPv600GetGroupEntitlements200Response
 from obp_python.models.obpv600_get_groups200_response import OBPv600GetGroups200Response
-from obp_python.models.obpv600_get_groups200_response_properties_groups_items import OBPv600GetGroups200ResponsePropertiesGroupsItems
+from obp_python.models.obpv600_get_groups200_response_groups_inner import OBPv600GetGroups200ResponseGroupsInner
 from obp_python.models.obpv600_get_user_group_memberships200_response import OBPv600GetUserGroupMemberships200Response
 from obp_python.models.obpv600_update_group_request import OBPv600UpdateGroupRequest
 
@@ -355,7 +355,7 @@ class GroupApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetGroups200ResponsePropertiesGroupsItems:
+    ) -> OBPv600GetGroups200ResponseGroupsInner:
         """Create Group
 
         <p>Create a new group of roles.</p> <p>Groups can be either:<br /> - System-level (bank_id = null) - requires CanCreateGroupAtAllBanks role<br /> - Bank-level (bank_id provided) - requires CanCreateGroupAtOneBank role</p> <p>A group contains a list of role names that can be assigned together.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
@@ -393,7 +393,7 @@ class GroupApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetGroups200ResponsePropertiesGroupsItems",
+            '200': "OBPv600GetGroups200ResponseGroupsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -423,7 +423,7 @@ class GroupApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetGroups200ResponsePropertiesGroupsItems]:
+    ) -> ApiResponse[OBPv600GetGroups200ResponseGroupsInner]:
         """Create Group
 
         <p>Create a new group of roles.</p> <p>Groups can be either:<br /> - System-level (bank_id = null) - requires CanCreateGroupAtAllBanks role<br /> - Bank-level (bank_id provided) - requires CanCreateGroupAtOneBank role</p> <p>A group contains a list of role names that can be assigned together.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
@@ -461,7 +461,7 @@ class GroupApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetGroups200ResponsePropertiesGroupsItems",
+            '200': "OBPv600GetGroups200ResponseGroupsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -529,7 +529,7 @@ class GroupApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetGroups200ResponsePropertiesGroupsItems",
+            '200': "OBPv600GetGroups200ResponseGroupsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -893,7 +893,7 @@ class GroupApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetGroups200ResponsePropertiesGroupsItems:
+    ) -> OBPv600GetGroups200ResponseGroupsInner:
         """Get Group
 
         <p>Get a group by its ID.</p> <p>Requires either:<br /> - CanGetGroupsAtAllBanks (for any group)<br /> - CanGetGroupsAtOneBank (for groups at specific bank)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">GROUP_ID</a>: GROUP_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
@@ -931,7 +931,7 @@ class GroupApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetGroups200ResponsePropertiesGroupsItems",
+            '200': "OBPv600GetGroups200ResponseGroupsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -961,7 +961,7 @@ class GroupApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetGroups200ResponsePropertiesGroupsItems]:
+    ) -> ApiResponse[OBPv600GetGroups200ResponseGroupsInner]:
         """Get Group
 
         <p>Get a group by its ID.</p> <p>Requires either:<br /> - CanGetGroupsAtAllBanks (for any group)<br /> - CanGetGroupsAtOneBank (for groups at specific bank)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">GROUP_ID</a>: GROUP_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
@@ -999,7 +999,7 @@ class GroupApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetGroups200ResponsePropertiesGroupsItems",
+            '200': "OBPv600GetGroups200ResponseGroupsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1067,7 +1067,7 @@ class GroupApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetGroups200ResponsePropertiesGroupsItems",
+            '200': "OBPv600GetGroups200ResponseGroupsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2217,7 +2217,7 @@ class GroupApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetGroups200ResponsePropertiesGroupsItems:
+    ) -> OBPv600GetGroups200ResponseGroupsInner:
         """Update Group
 
         <p>Update a group. All fields are optional.</p> <p>Requires either:<br /> - CanUpdateGroupAtAllBanks (for any group)<br /> - CanUpdateGroupAtOneBank (for groups at specific bank)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">GROUP_ID</a>: GROUP_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
@@ -2258,7 +2258,7 @@ class GroupApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetGroups200ResponsePropertiesGroupsItems",
+            '200': "OBPv600GetGroups200ResponseGroupsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2289,7 +2289,7 @@ class GroupApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetGroups200ResponsePropertiesGroupsItems]:
+    ) -> ApiResponse[OBPv600GetGroups200ResponseGroupsInner]:
         """Update Group
 
         <p>Update a group. All fields are optional.</p> <p>Requires either:<br /> - CanUpdateGroupAtAllBanks (for any group)<br /> - CanUpdateGroupAtOneBank (for groups at specific bank)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">GROUP_ID</a>: GROUP_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
@@ -2330,7 +2330,7 @@ class GroupApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetGroups200ResponsePropertiesGroupsItems",
+            '200': "OBPv600GetGroups200ResponseGroupsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2402,7 +2402,7 @@ class GroupApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetGroups200ResponsePropertiesGroupsItems",
+            '200': "OBPv600GetGroups200ResponseGroupsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(

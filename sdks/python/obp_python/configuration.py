@@ -1,7 +1,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -214,7 +214,7 @@ conf = obp_python.Configuration(
     ) -> None:
         """Constructor
         """
-        self._base_path = "https://apisandbox.openbankproject.com" if host is None else host
+        self._base_path = "http://127.0.0.1:8080" if host is None else host
         """Default Base url
         """
         self.server_index = 0 if server_index is None and host is None else server_index
@@ -521,7 +521,7 @@ conf = obp_python.Configuration(
             auth['DirectLogin'] = {
                 'type': 'api_key',
                 'in': 'header',
-                'key': 'Authorization',
+                'key': 'DirectLogin',
                 'value': self.get_api_key_with_prefix(
                     'DirectLogin',
                 ),
@@ -563,7 +563,7 @@ conf = obp_python.Configuration(
         """
         return [
             {
-                'url': "https://apisandbox.openbankproject.com",
+                'url': "http://127.0.0.1:8080",
                 'description': "Back-end server",
             }
         ]

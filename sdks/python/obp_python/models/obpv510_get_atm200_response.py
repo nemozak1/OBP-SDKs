@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -19,8 +19,12 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv510_get_atm200_response_properties import OBPv510GetAtm200ResponseProperties
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv300_get_branches200_response_branches_inner_address import OBPv300GetBranches200ResponseBranchesInnerAddress
+from obp_python.models.obpv300_get_branches200_response_branches_inner_drive_up_sunday import OBPv300GetBranches200ResponseBranchesInnerDriveUpSunday
+from obp_python.models.obpv300_get_branches200_response_branches_inner_location import OBPv300GetBranches200ResponseBranchesInnerLocation
+from obp_python.models.obpv310_get_product_tree200_response_parent_product_parent_product_meta import OBPv310GetProductTree200ResponseParentProductParentProductMeta
+from obp_python.models.obpv510_get_atm_attribute200_response import OBPv510GetAtmAttribute200Response
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +32,40 @@ class OBPv510GetAtm200Response(BaseModel):
     """
     OBPv510GetAtm200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv510GetAtm200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    sunday: Optional[OBPv300GetBranches200ResponseBranchesInnerDriveUpSunday] = None
+    services: Optional[List[StrictStr]] = None
+    name: Optional[StrictStr] = None
+    location: Optional[OBPv300GetBranches200ResponseBranchesInnerLocation] = None
+    tuesday: Optional[OBPv300GetBranches200ResponseBranchesInnerDriveUpSunday] = None
+    cash_withdrawal_international_fee: Optional[StrictStr] = None
+    wednesday: Optional[OBPv300GetBranches200ResponseBranchesInnerDriveUpSunday] = None
+    branch_identification: Optional[StrictStr] = None
+    location_categories: Optional[List[StrictStr]] = None
+    attributes: Optional[List[OBPv510GetAtmAttribute200Response]] = None
+    site_identification: Optional[StrictStr] = None
+    monday: Optional[OBPv300GetBranches200ResponseBranchesInnerDriveUpSunday] = None
+    has_deposit_capability: Optional[StrictStr] = None
+    balance_inquiry_fee: Optional[StrictStr] = None
+    site_name: Optional[StrictStr] = None
+    more_info: Optional[StrictStr] = None
+    bank_id: Optional[StrictStr] = None
+    id: Optional[StrictStr] = None
+    meta: Optional[OBPv310GetProductTree200ResponseParentProductParentProductMeta] = None
+    supported_languages: Optional[List[StrictStr]] = None
+    supported_currencies: Optional[List[StrictStr]] = None
+    accessibility_features: Optional[List[StrictStr]] = None
+    address: Optional[OBPv300GetBranches200ResponseBranchesInnerAddress] = None
+    cash_withdrawal_national_fee: Optional[StrictStr] = None
+    friday: Optional[OBPv300GetBranches200ResponseBranchesInnerDriveUpSunday] = None
+    notes: Optional[List[StrictStr]] = None
+    is_accessible: Optional[StrictStr] = None
+    atm_type: Optional[StrictStr] = None
+    thursday: Optional[OBPv300GetBranches200ResponseBranchesInnerDriveUpSunday] = None
+    saturday: Optional[OBPv300GetBranches200ResponseBranchesInnerDriveUpSunday] = None
+    located_at: Optional[StrictStr] = None
+    minimum_withdrawal: Optional[StrictStr] = None
+    phone: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["sunday", "services", "name", "location", "tuesday", "cash_withdrawal_international_fee", "wednesday", "branch_identification", "location_categories", "attributes", "site_identification", "monday", "has_deposit_capability", "balance_inquiry_fee", "site_name", "more_info", "bank_id", "id", "meta", "supported_languages", "supported_currencies", "accessibility_features", "address", "cash_withdrawal_national_fee", "friday", "notes", "is_accessible", "atm_type", "thursday", "saturday", "located_at", "minimum_withdrawal", "phone"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +106,43 @@ class OBPv510GetAtm200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of sunday
+        if self.sunday:
+            _dict['sunday'] = self.sunday.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of location
+        if self.location:
+            _dict['location'] = self.location.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of tuesday
+        if self.tuesday:
+            _dict['tuesday'] = self.tuesday.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of wednesday
+        if self.wednesday:
+            _dict['wednesday'] = self.wednesday.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in attributes (list)
+        _items = []
+        if self.attributes:
+            for _item_attributes in self.attributes:
+                if _item_attributes:
+                    _items.append(_item_attributes.to_dict())
+            _dict['attributes'] = _items
+        # override the default output from pydantic by calling `to_dict()` of monday
+        if self.monday:
+            _dict['monday'] = self.monday.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of meta
+        if self.meta:
+            _dict['meta'] = self.meta.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of address
+        if self.address:
+            _dict['address'] = self.address.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of friday
+        if self.friday:
+            _dict['friday'] = self.friday.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of thursday
+        if self.thursday:
+            _dict['thursday'] = self.thursday.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of saturday
+        if self.saturday:
+            _dict['saturday'] = self.saturday.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +155,39 @@ class OBPv510GetAtm200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv510GetAtm200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "sunday": OBPv300GetBranches200ResponseBranchesInnerDriveUpSunday.from_dict(obj["sunday"]) if obj.get("sunday") is not None else None,
+            "services": obj.get("services"),
+            "name": obj.get("name"),
+            "location": OBPv300GetBranches200ResponseBranchesInnerLocation.from_dict(obj["location"]) if obj.get("location") is not None else None,
+            "tuesday": OBPv300GetBranches200ResponseBranchesInnerDriveUpSunday.from_dict(obj["tuesday"]) if obj.get("tuesday") is not None else None,
+            "cash_withdrawal_international_fee": obj.get("cash_withdrawal_international_fee"),
+            "wednesday": OBPv300GetBranches200ResponseBranchesInnerDriveUpSunday.from_dict(obj["wednesday"]) if obj.get("wednesday") is not None else None,
+            "branch_identification": obj.get("branch_identification"),
+            "location_categories": obj.get("location_categories"),
+            "attributes": [OBPv510GetAtmAttribute200Response.from_dict(_item) for _item in obj["attributes"]] if obj.get("attributes") is not None else None,
+            "site_identification": obj.get("site_identification"),
+            "monday": OBPv300GetBranches200ResponseBranchesInnerDriveUpSunday.from_dict(obj["monday"]) if obj.get("monday") is not None else None,
+            "has_deposit_capability": obj.get("has_deposit_capability"),
+            "balance_inquiry_fee": obj.get("balance_inquiry_fee"),
+            "site_name": obj.get("site_name"),
+            "more_info": obj.get("more_info"),
+            "bank_id": obj.get("bank_id"),
+            "id": obj.get("id"),
+            "meta": OBPv310GetProductTree200ResponseParentProductParentProductMeta.from_dict(obj["meta"]) if obj.get("meta") is not None else None,
+            "supported_languages": obj.get("supported_languages"),
+            "supported_currencies": obj.get("supported_currencies"),
+            "accessibility_features": obj.get("accessibility_features"),
+            "address": OBPv300GetBranches200ResponseBranchesInnerAddress.from_dict(obj["address"]) if obj.get("address") is not None else None,
+            "cash_withdrawal_national_fee": obj.get("cash_withdrawal_national_fee"),
+            "friday": OBPv300GetBranches200ResponseBranchesInnerDriveUpSunday.from_dict(obj["friday"]) if obj.get("friday") is not None else None,
+            "notes": obj.get("notes"),
+            "is_accessible": obj.get("is_accessible"),
+            "atm_type": obj.get("atm_type"),
+            "thursday": OBPv300GetBranches200ResponseBranchesInnerDriveUpSunday.from_dict(obj["thursday"]) if obj.get("thursday") is not None else None,
+            "saturday": OBPv300GetBranches200ResponseBranchesInnerDriveUpSunday.from_dict(obj["saturday"]) if obj.get("saturday") is not None else None,
+            "located_at": obj.get("located_at"),
+            "minimum_withdrawal": obj.get("minimum_withdrawal"),
+            "phone": obj.get("phone")
         })
         return _obj
 

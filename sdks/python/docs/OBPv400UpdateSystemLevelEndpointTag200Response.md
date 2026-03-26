@@ -5,8 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400UpdateSystemLevelEndpointTag200ResponseProperties**](OBPv400UpdateSystemLevelEndpointTag200ResponseProperties.md) |  | 
+**operation_id** | **str** |  | [optional] 
+**tag_name** | **str** |  | [optional] 
+**bank_id** | **str** |  | [optional] 
+**endpoint_tag_id** | **str** |  | [optional] 
 
 ## Example
 

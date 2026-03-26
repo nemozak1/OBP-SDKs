@@ -5,8 +5,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310GetProductTree200ResponseProperties**](OBPv310GetProductTree200ResponseProperties.md) |  | 
+**name** | **str** |  | [optional] 
+**description** | **str** |  | [optional] 
+**parent_product** | [**OBPv310GetProductTree200ResponseParentProduct**](OBPv310GetProductTree200ResponseParentProduct.md) |  | [optional] 
+**more_info_url** | **str** |  | [optional] 
+**super_family** | **str** |  | [optional] 
+**code** | **str** |  | [optional] 
+**bank_id** | **str** |  | [optional] 
+**meta** | [**OBPv310GetProductTree200ResponseParentProductParentProductMeta**](OBPv310GetProductTree200ResponseParentProductParentProductMeta.md) |  | [optional] 
+**details** | **str** |  | [optional] 
+**category** | **str** |  | [optional] 
+**family** | **str** |  | [optional] 
 
 ## Example
 

@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,11 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv510_update_consumer_name200_response_properties import OBPv510UpdateConsumerName200ResponseProperties
+from datetime import datetime
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv510_update_consumer_name200_response_certificate_info import OBPv510UpdateConsumerName200ResponseCertificateInfo
+from obp_python.models.obpv510_update_consumer_name200_response_created_by_user import OBPv510UpdateConsumerName200ResponseCreatedByUser
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +30,21 @@ class OBPv510UpdateConsumerName200Response(BaseModel):
     """
     OBPv510UpdateConsumerName200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv510UpdateConsumerName200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    app_type: Optional[StrictStr] = None
+    description: Optional[StrictStr] = None
+    certificate_pem: Optional[StrictStr] = None
+    created_by_user: Optional[OBPv510UpdateConsumerName200ResponseCreatedByUser] = None
+    enabled: Optional[StrictBool] = None
+    consumer_key: Optional[StrictStr] = None
+    certificate_info: Optional[OBPv510UpdateConsumerName200ResponseCertificateInfo] = None
+    redirect_url: Optional[StrictStr] = None
+    logo_url: Optional[StrictStr] = None
+    company: Optional[StrictStr] = None
+    developer_email: Optional[StrictStr] = None
+    consumer_id: Optional[StrictStr] = None
+    app_name: Optional[StrictStr] = None
+    created: Optional[datetime] = None
+    __properties: ClassVar[List[str]] = ["app_type", "description", "certificate_pem", "created_by_user", "enabled", "consumer_key", "certificate_info", "redirect_url", "logo_url", "company", "developer_email", "consumer_id", "app_name", "created"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +85,12 @@ class OBPv510UpdateConsumerName200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of created_by_user
+        if self.created_by_user:
+            _dict['created_by_user'] = self.created_by_user.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of certificate_info
+        if self.certificate_info:
+            _dict['certificate_info'] = self.certificate_info.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +103,20 @@ class OBPv510UpdateConsumerName200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv510UpdateConsumerName200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "app_type": obj.get("app_type"),
+            "description": obj.get("description"),
+            "certificate_pem": obj.get("certificate_pem"),
+            "created_by_user": OBPv510UpdateConsumerName200ResponseCreatedByUser.from_dict(obj["created_by_user"]) if obj.get("created_by_user") is not None else None,
+            "enabled": obj.get("enabled"),
+            "consumer_key": obj.get("consumer_key"),
+            "certificate_info": OBPv510UpdateConsumerName200ResponseCertificateInfo.from_dict(obj["certificate_info"]) if obj.get("certificate_info") is not None else None,
+            "redirect_url": obj.get("redirect_url"),
+            "logo_url": obj.get("logo_url"),
+            "company": obj.get("company"),
+            "developer_email": obj.get("developer_email"),
+            "consumer_id": obj.get("consumer_id"),
+            "app_name": obj.get("app_name"),
+            "created": obj.get("created")
         })
         return _obj
 

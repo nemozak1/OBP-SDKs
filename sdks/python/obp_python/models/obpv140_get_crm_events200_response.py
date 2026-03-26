@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv140_get_crm_events200_response_properties import OBPv140GetCrmEvents200ResponseProperties
+from pydantic import BaseModel, ConfigDict
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv140_get_crm_events200_response_crm_events_inner import OBPv140GetCrmEvents200ResponseCrmEventsInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,8 @@ class OBPv140GetCrmEvents200Response(BaseModel):
     """
     OBPv140GetCrmEvents200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv140GetCrmEvents200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    crm_events: Optional[List[OBPv140GetCrmEvents200ResponseCrmEventsInner]] = None
+    __properties: ClassVar[List[str]] = ["crm_events"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +70,13 @@ class OBPv140GetCrmEvents200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in crm_events (list)
+        _items = []
+        if self.crm_events:
+            for _item_crm_events in self.crm_events:
+                if _item_crm_events:
+                    _items.append(_item_crm_events.to_dict())
+            _dict['crm_events'] = _items
         return _dict
 
     @classmethod
@@ -86,8 +89,7 @@ class OBPv140GetCrmEvents200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv140GetCrmEvents200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "crm_events": [OBPv140GetCrmEvents200ResponseCrmEventsInner.from_dict(_item) for _item in obj["crm_events"]] if obj.get("crm_events") is not None else None
         })
         return _obj
 

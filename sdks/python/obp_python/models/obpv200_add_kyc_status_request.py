@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv200_add_kyc_status_request_properties import OBPv200AddKycStatusRequestProperties
+from datetime import datetime
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,10 @@ class OBPv200AddKycStatusRequest(BaseModel):
     """
     OBPv200AddKycStatusRequest
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv200AddKycStatusRequestProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    customer_number: Optional[StrictStr] = None
+    ok: Optional[StrictBool] = None
+    var_date: Optional[datetime] = Field(default=None, alias="date")
+    __properties: ClassVar[List[str]] = ["customer_number", "ok", "date"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +72,6 @@ class OBPv200AddKycStatusRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +84,9 @@ class OBPv200AddKycStatusRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv200AddKycStatusRequestProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "customer_number": obj.get("customer_number"),
+            "ok": obj.get("ok"),
+            "date": obj.get("date")
         })
         return _obj
 

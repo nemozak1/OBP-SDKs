@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400UpdateAtmSupportedCurrencies200ResponseProperties**](OBPv400UpdateAtmSupportedCurrencies200ResponseProperties.md) |  | 
+**supported_currencies** | **List[str]** |  | [optional] 
+**atm_id** | **str** |  | [optional] 
 
 ## Example
 

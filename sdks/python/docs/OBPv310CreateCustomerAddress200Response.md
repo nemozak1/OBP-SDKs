@@ -5,8 +5,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310CreateCustomerAddress200ResponseProperties**](OBPv310CreateCustomerAddress200ResponseProperties.md) |  | 
+**city** | **str** |  | [optional] 
+**line_2** | **str** |  | [optional] 
+**customer_id** | **str** |  | [optional] 
+**state** | **str** |  | [optional] 
+**insert_date** | **datetime** |  | [optional] 
+**tags** | **List[str]** |  | [optional] 
+**customer_address_id** | **str** |  | [optional] 
+**postcode** | **str** |  | [optional] 
+**county** | **str** |  | [optional] 
+**country_code** | **str** |  | [optional] 
+**status** | **str** |  | [optional] 
+**line_3** | **str** |  | [optional] 
+**line_1** | **str** |  | [optional] 
 
 ## Example
 

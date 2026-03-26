@@ -5,8 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510CreateUserWithAccountAccessByIdRequestProperties**](OBPv510CreateUserWithAccountAccessByIdRequestProperties.md) |  | 
+**views** | [**List[OBPv510CreateUserWithAccountAccessByIdRequestViewsInner]**](OBPv510CreateUserWithAccountAccessByIdRequestViewsInner.md) |  | [optional] 
+**provider** | **str** |  | [optional] 
+**username** | **str** |  | [optional] 
 
 ## Example
 

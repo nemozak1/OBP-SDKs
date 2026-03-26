@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310GetCheckbookOrders200ResponseProperties**](OBPv310GetCheckbookOrders200ResponseProperties.md) |  | 
+**account** | [**OBPv310GetCheckbookOrders200ResponseAccount**](OBPv310GetCheckbookOrders200ResponseAccount.md) |  | [optional] 
+**orders** | [**List[OBPv310GetCheckbookOrders200ResponseOrdersInner]**](OBPv310GetCheckbookOrders200ResponseOrdersInner.md) |  | [optional] 
 
 ## Example
 

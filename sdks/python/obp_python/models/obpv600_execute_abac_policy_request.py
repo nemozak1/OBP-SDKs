@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -19,8 +19,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv600_execute_abac_policy_request_properties import OBPv600ExecuteAbacPolicyRequestProperties
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +27,16 @@ class OBPv600ExecuteAbacPolicyRequest(BaseModel):
     """
     OBPv600ExecuteAbacPolicyRequest
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv600ExecuteAbacPolicyRequestProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    transaction_request_id: Optional[StrictStr] = None
+    customer_id: Optional[StrictStr] = None
+    user_id: Optional[StrictStr] = None
+    on_behalf_of_user_id: Optional[StrictStr] = None
+    view_id: Optional[StrictStr] = None
+    bank_id: Optional[StrictStr] = None
+    transaction_id: Optional[StrictStr] = None
+    account_id: Optional[StrictStr] = None
+    authenticated_user_id: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["transaction_request_id", "customer_id", "user_id", "on_behalf_of_user_id", "view_id", "bank_id", "transaction_id", "account_id", "authenticated_user_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +77,6 @@ class OBPv600ExecuteAbacPolicyRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +89,15 @@ class OBPv600ExecuteAbacPolicyRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv600ExecuteAbacPolicyRequestProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "transaction_request_id": obj.get("transaction_request_id"),
+            "customer_id": obj.get("customer_id"),
+            "user_id": obj.get("user_id"),
+            "on_behalf_of_user_id": obj.get("on_behalf_of_user_id"),
+            "view_id": obj.get("view_id"),
+            "bank_id": obj.get("bank_id"),
+            "transaction_id": obj.get("transaction_id"),
+            "account_id": obj.get("account_id"),
+            "authenticated_user_id": obj.get("authenticated_user_id")
         })
         return _obj
 

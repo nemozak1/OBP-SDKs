@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510CreateUserWithAccountAccessById200ResponseProperties**](OBPv510CreateUserWithAccountAccessById200ResponseProperties.md) |  | 
+**head** | [**OBPv510CreateUserWithAccountAccessById200ResponseHead**](OBPv510CreateUserWithAccountAccessById200ResponseHead.md) |  | [optional] 
+**tl** | **object** |  | [optional] 
 
 ## Example
 

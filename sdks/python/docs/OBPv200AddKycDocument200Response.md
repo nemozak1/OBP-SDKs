@@ -5,8 +5,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv200AddKycDocument200ResponseProperties**](OBPv200AddKycDocument200ResponseProperties.md) |  | 
+**number** | **str** |  | [optional] 
+**customer_id** | **str** |  | [optional] 
+**customer_number** | **str** |  | [optional] 
+**issue_date** | **datetime** |  | [optional] 
+**bank_id** | **str** |  | [optional] 
+**id** | **str** |  | [optional] 
+**type** | **str** |  | [optional] 
+**issue_place** | **str** |  | [optional] 
+**expiry_date** | **datetime** |  | [optional] 
 
 ## Example
 

@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400UpdateConnectorMethodRequestProperties**](OBPv400UpdateConnectorMethodRequestProperties.md) |  | 
+**programming_lang** | **str** |  | [optional] 
+**method_body** | **str** |  | [optional] 
 
 ## Example
 

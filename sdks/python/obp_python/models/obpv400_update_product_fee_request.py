@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv400_update_product_fee_request_properties import OBPv400UpdateProductFeeRequestProperties
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv400_get_product_fee200_response_value import OBPv400GetProductFee200ResponseValue
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,11 @@ class OBPv400UpdateProductFeeRequest(BaseModel):
     """
     OBPv400UpdateProductFeeRequest
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv400UpdateProductFeeRequestProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    is_active: Optional[StrictBool] = None
+    name: Optional[StrictStr] = None
+    more_info: Optional[StrictStr] = None
+    value: Optional[OBPv400GetProductFee200ResponseValue] = None
+    __properties: ClassVar[List[str]] = ["is_active", "name", "more_info", "value"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +73,9 @@ class OBPv400UpdateProductFeeRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of value
+        if self.value:
+            _dict['value'] = self.value.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +88,10 @@ class OBPv400UpdateProductFeeRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv400UpdateProductFeeRequestProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "is_active": obj.get("is_active"),
+            "name": obj.get("name"),
+            "more_info": obj.get("more_info"),
+            "value": OBPv400GetProductFee200ResponseValue.from_dict(obj["value"]) if obj.get("value") is not None else None
         })
         return _obj
 

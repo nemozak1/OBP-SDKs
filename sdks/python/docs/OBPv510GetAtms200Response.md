@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510GetAtms200ResponseProperties**](OBPv510GetAtms200ResponseProperties.md) |  | 
+**atms** | [**List[OBPv510GetAtm200Response]**](OBPv510GetAtm200Response.md) |  | [optional] 
 
 ## Example
 

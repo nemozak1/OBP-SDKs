@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv500GetMyCustomersAtBank200ResponseProperties**](OBPv500GetMyCustomersAtBank200ResponseProperties.md) |  | 
+**customers** | [**List[OBPv500GetMyCustomersAtBank200ResponseCustomersInner]**](OBPv500GetMyCustomersAtBank200ResponseCustomersInner.md) |  | [optional] 
 
 ## Example
 

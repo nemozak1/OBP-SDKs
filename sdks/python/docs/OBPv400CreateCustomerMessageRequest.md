@@ -5,8 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400CreateCustomerMessageRequestProperties**](OBPv400CreateCustomerMessageRequestProperties.md) |  | 
+**message** | **str** |  | [optional] 
+**transport** | **str** |  | [optional] 
+**from_person** | **str** |  | [optional] 
+**from_department** | **str** |  | [optional] 
 
 ## Example
 

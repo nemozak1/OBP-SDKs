@@ -5,8 +5,20 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetSystemViewById200ResponseProperties**](OBPv600GetSystemViewById200ResponseProperties.md) |  | 
+**can_grant_access_to_views** | **List[str]** |  | [optional] 
+**is_system** | **bool** |  | [optional] 
+**description** | **str** |  | [optional] 
+**view_name** | **str** |  | [optional] 
+**is_public** | **bool** |  | [optional] 
+**hide_metadata_if_alias_used** | **bool** |  | [optional] 
+**view_id** | **str** |  | [optional] 
+**alias** | **str** |  | [optional] 
+**bank_id** | **str** |  | [optional] 
+**account_id** | **str** |  | [optional] 
+**can_revoke_access_to_views** | **List[str]** |  | [optional] 
+**is_firehose** | **bool** |  | [optional] 
+**metadata_view** | **str** |  | [optional] 
+**allowed_actions** | **List[str]** |  | [optional] 
 
 ## Example
 

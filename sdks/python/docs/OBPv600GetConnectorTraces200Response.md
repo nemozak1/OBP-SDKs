@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetConnectorTraces200ResponseProperties**](OBPv600GetConnectorTraces200ResponseProperties.md) |  | 
+**connector_traces** | [**List[OBPv600GetConnectorTraces200ResponseConnectorTracesInner]**](OBPv600GetConnectorTraces200ResponseConnectorTracesInner.md) |  | [optional] 
 
 ## Example
 

@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400GetFirehoseAccountsAtOneBank200ResponseProperties**](OBPv400GetFirehoseAccountsAtOneBank200ResponseProperties.md) |  | 
+**accounts** | [**List[OBPv400GetFirehoseAccountsAtOneBank200ResponseAccountsInner]**](OBPv400GetFirehoseAccountsAtOneBank200ResponseAccountsInner.md) |  | [optional] 
 
 ## Example
 

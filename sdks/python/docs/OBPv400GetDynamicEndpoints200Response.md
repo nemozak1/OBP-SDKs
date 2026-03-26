@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400GetDynamicEndpoints200ResponseProperties**](OBPv400GetDynamicEndpoints200ResponseProperties.md) |  | 
+**dynamic_endpoints** | [**List[OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner]**](OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner.md) |  | [optional] 
 
 ## Example
 

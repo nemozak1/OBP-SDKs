@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400GetLogoutLink200ResponseProperties**](OBPv400GetLogoutLink200ResponseProperties.md) |  | 
+**link** | **str** |  | [optional] 
 
 ## Example
 

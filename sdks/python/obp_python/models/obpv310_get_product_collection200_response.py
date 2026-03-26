@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -19,8 +19,8 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv310_get_product_collection200_response_properties import OBPv310GetProductCollection200ResponseProperties
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv310_get_product_collection200_response_products_inner import OBPv310GetProductCollection200ResponseProductsInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,9 @@ class OBPv310GetProductCollection200Response(BaseModel):
     """
     OBPv310GetProductCollection200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv310GetProductCollection200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    products: Optional[List[OBPv310GetProductCollection200ResponseProductsInner]] = None
+    collection_code: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["products", "collection_code"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +71,13 @@ class OBPv310GetProductCollection200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in products (list)
+        _items = []
+        if self.products:
+            for _item_products in self.products:
+                if _item_products:
+                    _items.append(_item_products.to_dict())
+            _dict['products'] = _items
         return _dict
 
     @classmethod
@@ -86,8 +90,8 @@ class OBPv310GetProductCollection200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv310GetProductCollection200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "products": [OBPv310GetProductCollection200ResponseProductsInner.from_dict(_item) for _item in obj["products"]] if obj.get("products") is not None else None,
+            "collection_code": obj.get("collection_code")
         })
         return _obj
 

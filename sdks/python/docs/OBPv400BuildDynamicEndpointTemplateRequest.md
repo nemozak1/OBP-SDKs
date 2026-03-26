@@ -5,8 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400BuildDynamicEndpointTemplateRequestProperties**](OBPv400BuildDynamicEndpointTemplateRequestProperties.md) |  | 
+**request_verb** | **str** |  | [optional] 
+**example_request_body** | [**OBPv400GetBankLevelDynamicResourceDoc200ResponseExampleRequestBody**](OBPv400GetBankLevelDynamicResourceDoc200ResponseExampleRequestBody.md) |  | [optional] 
+**success_response_body** | [**OBPv400GetBankLevelDynamicResourceDoc200ResponseSuccessResponseBody**](OBPv400GetBankLevelDynamicResourceDoc200ResponseSuccessResponseBody.md) |  | [optional] 
+**request_url** | **str** |  | [optional] 
 
 ## Example
 

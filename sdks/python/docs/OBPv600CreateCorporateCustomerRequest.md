@@ -5,8 +5,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600CreateCorporateCustomerRequestProperties**](OBPv600CreateCorporateCustomerRequestProperties.md) |  | 
+**email** | **str** |  | [optional] 
+**branch_id** | **str** |  | [optional] 
+**mobile_phone_number** | **str** |  | [optional] 
+**customer_number** | **str** |  | [optional] 
+**credit_rating** | [**OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditRating**](OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditRating.md) |  | [optional] 
+**last_ok_date** | **datetime** |  | [optional] 
+**customer_type** | **str** |  | [optional] 
+**legal_name** | **str** |  | [optional] 
+**credit_limit** | [**OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit**](OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit.md) |  | [optional] 
+**kyc_status** | **bool** |  | [optional] 
 
 ## Example
 

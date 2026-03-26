@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400UpdateAtmSupportedLanguagesRequestProperties**](OBPv400UpdateAtmSupportedLanguagesRequestProperties.md) |  | 
+**supported_languages** | **List[str]** |  | [optional] 
 
 ## Example
 

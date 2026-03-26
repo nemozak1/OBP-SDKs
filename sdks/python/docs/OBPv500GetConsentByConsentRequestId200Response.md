@@ -5,8 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv500GetConsentByConsentRequestId200ResponseProperties**](OBPv500GetConsentByConsentRequestId200ResponseProperties.md) |  | 
+**jwt** | **str** |  | [optional] 
+**account_access** | [**OBPv510GetConsents200ResponseConsentsInnerJwtPayloadViewsInner**](OBPv510GetConsents200ResponseConsentsInnerJwtPayloadViewsInner.md) |  | [optional] 
+**consent_request_id** | **str** |  | [optional] 
+**status** | **str** |  | [optional] 
+**consent_id** | **str** |  | [optional] 
 
 ## Example
 

@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetConfigProps200ResponseProperties**](OBPv600GetConfigProps200ResponseProperties.md) |  | 
+**config_props** | [**List[OBPv400CreateTransactionRequestCounterparty200ResponseAttributesInner]**](OBPv400CreateTransactionRequestCounterparty200ResponseAttributesInner.md) |  | [optional] 
 
 ## Example
 

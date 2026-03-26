@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310GetConsumersForCurrentUser200ResponseProperties**](OBPv310GetConsumersForCurrentUser200ResponseProperties.md) |  | 
+**consumers** | [**List[OBPv310GetConsumersForCurrentUser200ResponseConsumersInner]**](OBPv310GetConsumersForCurrentUser200ResponseConsumersInner.md) |  | [optional] 
 
 ## Example
 

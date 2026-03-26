@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400GetProducts200ResponseProperties**](OBPv400GetProducts200ResponseProperties.md) |  | 
+**products** | [**List[OBPv500CreateProduct200Response]**](OBPv500CreateProduct200Response.md) |  | [optional] 
 
 ## Example
 

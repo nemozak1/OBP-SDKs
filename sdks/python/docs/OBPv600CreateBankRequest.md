@@ -5,8 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600CreateBankRequestProperties**](OBPv600CreateBankRequestProperties.md) |  | 
+**bank_routings** | [**List[OBPv310GetCheckbookOrders200ResponseAccountAccountRoutingsInner]**](OBPv310GetCheckbookOrders200ResponseAccountAccountRoutingsInner.md) |  | [optional] 
+**website** | **str** |  | [optional] 
+**full_name** | **str** |  | [optional] 
+**logo** | **str** |  | [optional] 
+**bank_id** | **str** |  | [optional] 
+**bank_code** | **str** |  | [optional] 
 
 ## Example
 

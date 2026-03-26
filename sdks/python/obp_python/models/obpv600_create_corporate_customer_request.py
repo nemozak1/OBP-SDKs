@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,11 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv600_create_corporate_customer_request_properties import OBPv600CreateCorporateCustomerRequestProperties
+from datetime import datetime
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv500_get_my_customers_at_bank200_response_customers_inner_credit_limit import OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit
+from obp_python.models.obpv500_get_my_customers_at_bank200_response_customers_inner_credit_rating import OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditRating
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +30,17 @@ class OBPv600CreateCorporateCustomerRequest(BaseModel):
     """
     OBPv600CreateCorporateCustomerRequest
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv600CreateCorporateCustomerRequestProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    email: Optional[StrictStr] = None
+    branch_id: Optional[StrictStr] = None
+    mobile_phone_number: Optional[StrictStr] = None
+    customer_number: Optional[StrictStr] = None
+    credit_rating: Optional[OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditRating] = None
+    last_ok_date: Optional[datetime] = None
+    customer_type: Optional[StrictStr] = None
+    legal_name: Optional[StrictStr] = None
+    credit_limit: Optional[OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit] = None
+    kyc_status: Optional[StrictBool] = None
+    __properties: ClassVar[List[str]] = ["email", "branch_id", "mobile_phone_number", "customer_number", "credit_rating", "last_ok_date", "customer_type", "legal_name", "credit_limit", "kyc_status"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +81,12 @@ class OBPv600CreateCorporateCustomerRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of credit_rating
+        if self.credit_rating:
+            _dict['credit_rating'] = self.credit_rating.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of credit_limit
+        if self.credit_limit:
+            _dict['credit_limit'] = self.credit_limit.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +99,16 @@ class OBPv600CreateCorporateCustomerRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv600CreateCorporateCustomerRequestProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "email": obj.get("email"),
+            "branch_id": obj.get("branch_id"),
+            "mobile_phone_number": obj.get("mobile_phone_number"),
+            "customer_number": obj.get("customer_number"),
+            "credit_rating": OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditRating.from_dict(obj["credit_rating"]) if obj.get("credit_rating") is not None else None,
+            "last_ok_date": obj.get("last_ok_date"),
+            "customer_type": obj.get("customer_type"),
+            "legal_name": obj.get("legal_name"),
+            "credit_limit": OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit.from_dict(obj["credit_limit"]) if obj.get("credit_limit") is not None else None,
+            "kyc_status": obj.get("kyc_status")
         })
         return _obj
 

@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv300DataWarehouseSearchRequestProperties**](OBPv300DataWarehouseSearchRequestProperties.md) |  | 
+**query** | [**OBPv300DataWarehouseSearchRequestQuery**](OBPv300DataWarehouseSearchRequestQuery.md) |  | [optional] 
 
 ## Example
 

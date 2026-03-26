@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv121UpdateCounterpartyPhysicalLocationRequestProperties**](OBPv121UpdateCounterpartyPhysicalLocationRequestProperties.md) |  | 
+**physical_location** | [**OBPv300GetBranches200ResponseBranchesInnerLocation**](OBPv300GetBranches200ResponseBranchesInnerLocation.md) |  | [optional] 
 
 ## Example
 

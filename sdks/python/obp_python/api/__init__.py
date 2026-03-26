@@ -36,6 +36,7 @@ from obp_python.api.consent_api import ConsentApi
 from obp_python.api.consumer_api import ConsumerApi
 from obp_python.api.corporate_customer_api import CorporateCustomerApi
 from obp_python.api.counterparty_api import CounterpartyApi
+from obp_python.api.counterparty_attribute_api import CounterpartyAttributeApi
 from obp_python.api.counterparty_limits_api import CounterpartyLimitsApi
 from obp_python.api.counterparty_metadata_api import CounterpartyMetadataApi
 from obp_python.api.customer_api import CustomerApi
@@ -61,6 +62,7 @@ from obp_python.api.group_api import GroupApi
 from obp_python.api.json_schema_validation_api import JSONSchemaValidationApi
 from obp_python.api.kyc_api import KYCApi
 from obp_python.api.log_cache_api import LogCacheApi
+from obp_python.api.mandate_api import MandateApi
 from obp_python.api.message_doc_api import MessageDocApi
 from obp_python.api.method_routing_api import MethodRoutingApi
 from obp_python.api.metric_api import MetricApi

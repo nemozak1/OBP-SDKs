@@ -5,8 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510GetEntitlementsAndPermissions200ResponseProperties**](OBPv510GetEntitlementsAndPermissions200ResponseProperties.md) |  | 
+**provider** | **str** |  | [optional] 
+**email** | **str** |  | [optional] 
+**username** | **str** |  | [optional] 
+**provider_id** | **str** |  | [optional] 
+**user_id** | **str** |  | [optional] 
+**views** | [**OBPv510GetUserByProviderAndUsername200ResponseViews**](OBPv510GetUserByProviderAndUsername200ResponseViews.md) |  | [optional] 
+**entitlements** | [**OBPv510GetUserByProviderAndUsername200ResponseEntitlements**](OBPv510GetUserByProviderAndUsername200ResponseEntitlements.md) |  | [optional] 
 
 ## Example
 

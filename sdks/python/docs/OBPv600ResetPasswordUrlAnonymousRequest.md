@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600ResetPasswordUrlAnonymousRequestProperties**](OBPv600ResetPasswordUrlAnonymousRequestProperties.md) |  | 
+**email** | **str** |  | [optional] 
+**username** | **str** |  | [optional] 
 
 ## Example
 

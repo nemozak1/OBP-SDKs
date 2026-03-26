@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400GetApiCollectionsForUser200ResponseProperties**](OBPv400GetApiCollectionsForUser200ResponseProperties.md) |  | 
+**api_collections** | [**List[OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner]**](OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner.md) |  | [optional] 
 
 ## Example
 

@@ -5,8 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600CreateTransactionRequestEthereumeSendTransactionRequestProperties**](OBPv600CreateTransactionRequestEthereumeSendTransactionRequestProperties.md) |  | 
+**value** | [**OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit**](OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit.md) |  | [optional] 
+**description** | **str** |  | [optional] 
+**to** | **str** |  | [optional] 
 
 ## Example
 

@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,11 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv510_create_consent_implicit_request_properties import OBPv510CreateConsentImplicitRequestProperties
+from datetime import datetime
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv510_create_consent_implicit_request_entitlements_inner import OBPv510CreateConsentImplicitRequestEntitlementsInner
+from obp_python.models.obpv510_get_api_tags200_response_accounts_inner import OBPv510GetApiTags200ResponseAccountsInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +30,13 @@ class OBPv510CreateConsentImplicitRequest(BaseModel):
     """
     OBPv510CreateConsentImplicitRequest
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv510CreateConsentImplicitRequestProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    time_to_live: Optional[StrictInt] = None
+    everything: Optional[StrictBool] = None
+    consumer_id: Optional[StrictStr] = None
+    valid_from: Optional[datetime] = None
+    views: Optional[List[OBPv510GetApiTags200ResponseAccountsInner]] = None
+    entitlements: Optional[List[OBPv510CreateConsentImplicitRequestEntitlementsInner]] = None
+    __properties: ClassVar[List[str]] = ["time_to_live", "everything", "consumer_id", "valid_from", "views", "entitlements"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +77,20 @@ class OBPv510CreateConsentImplicitRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in views (list)
+        _items = []
+        if self.views:
+            for _item_views in self.views:
+                if _item_views:
+                    _items.append(_item_views.to_dict())
+            _dict['views'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in entitlements (list)
+        _items = []
+        if self.entitlements:
+            for _item_entitlements in self.entitlements:
+                if _item_entitlements:
+                    _items.append(_item_entitlements.to_dict())
+            _dict['entitlements'] = _items
         return _dict
 
     @classmethod
@@ -86,8 +103,12 @@ class OBPv510CreateConsentImplicitRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv510CreateConsentImplicitRequestProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "time_to_live": obj.get("time_to_live"),
+            "everything": obj.get("everything"),
+            "consumer_id": obj.get("consumer_id"),
+            "valid_from": obj.get("valid_from"),
+            "views": [OBPv510GetApiTags200ResponseAccountsInner.from_dict(_item) for _item in obj["views"]] if obj.get("views") is not None else None,
+            "entitlements": [OBPv510CreateConsentImplicitRequestEntitlementsInner.from_dict(_item) for _item in obj["entitlements"]] if obj.get("entitlements") is not None else None
         })
         return _obj
 

@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv600_root200_response_properties import OBPv600Root200ResponseProperties
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv600_root200_response_hosted_at import OBPv600Root200ResponseHostedAt
+from obp_python.models.obpv600_root200_response_hosted_by import OBPv600Root200ResponseHostedBy
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +29,17 @@ class OBPv600Root200Response(BaseModel):
     """
     OBPv600Root200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv600Root200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    local_identity_provider: Optional[StrictStr] = None
+    resource_docs_requires_role: Optional[StrictBool] = None
+    hostname: Optional[StrictStr] = None
+    version_status: Optional[StrictStr] = None
+    version: Optional[StrictStr] = None
+    hosted_at: Optional[OBPv600Root200ResponseHostedAt] = None
+    connector: Optional[StrictStr] = None
+    energy_source: Optional[OBPv600Root200ResponseHostedAt] = None
+    hosted_by: Optional[OBPv600Root200ResponseHostedBy] = None
+    git_commit: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["local_identity_provider", "resource_docs_requires_role", "hostname", "version_status", "version", "hosted_at", "connector", "energy_source", "hosted_by", "git_commit"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +80,15 @@ class OBPv600Root200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of hosted_at
+        if self.hosted_at:
+            _dict['hosted_at'] = self.hosted_at.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of energy_source
+        if self.energy_source:
+            _dict['energy_source'] = self.energy_source.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of hosted_by
+        if self.hosted_by:
+            _dict['hosted_by'] = self.hosted_by.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +101,16 @@ class OBPv600Root200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv600Root200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "local_identity_provider": obj.get("local_identity_provider"),
+            "resource_docs_requires_role": obj.get("resource_docs_requires_role"),
+            "hostname": obj.get("hostname"),
+            "version_status": obj.get("version_status"),
+            "version": obj.get("version"),
+            "hosted_at": OBPv600Root200ResponseHostedAt.from_dict(obj["hosted_at"]) if obj.get("hosted_at") is not None else None,
+            "connector": obj.get("connector"),
+            "energy_source": OBPv600Root200ResponseHostedAt.from_dict(obj["energy_source"]) if obj.get("energy_source") is not None else None,
+            "hosted_by": OBPv600Root200ResponseHostedBy.from_dict(obj["hosted_by"]) if obj.get("hosted_by") is not None else None,
+            "git_commit": obj.get("git_commit")
         })
         return _obj
 

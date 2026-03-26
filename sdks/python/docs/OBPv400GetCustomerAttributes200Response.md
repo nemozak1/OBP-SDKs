@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400GetCustomerAttributes200ResponseProperties**](OBPv400GetCustomerAttributes200ResponseProperties.md) |  | 
+**customer_attributes** | [**List[OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner]**](OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner.md) |  | [optional] 
 
 ## Example
 

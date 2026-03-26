@@ -5,8 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600UpdateSystemDynamicEntityRequestProperties**](OBPv600UpdateSystemDynamicEntityRequestProperties.md) |  | 
+**var_schema** | [**OBPv600UpdateSystemDynamicEntityRequestSchema**](OBPv600UpdateSystemDynamicEntityRequestSchema.md) |  | [optional] 
+**has_personal_entity** | **bool** |  | [optional] 
+**entity_name** | **str** |  | [optional] 
+**has_public_access** | **bool** |  | [optional] 
 
 ## Example
 

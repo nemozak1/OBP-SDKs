@@ -9,7 +9,12 @@ import os
 import sys
 
 import obp_python
-from obp_python.rest import ApiException
+from obp_python.api.bank_api import BankApi
+from obp_python.api.user_api import UserApi
+from obp_python.exceptions import ApiException
+from dotenv import load_dotenv
+
+load_dotenv()  # Load environment variables from .env file
 
 
 def get_direct_login_token(configuration, username, password, consumer_key):
@@ -45,28 +50,37 @@ def main():
     if username and password and consumer_key:
         token = get_direct_login_token(configuration, username, password, consumer_key)
         print(f"Obtained DirectLogin token: {token[:8]}...")
-        configuration.api_key["DirectLogin"] = token
-        configuration.api_key_prefix["DirectLogin"] = "DirectLogin token="
+        configuration.api_key["DirectLogin"] = f'token="{token}"'
     elif os.environ.get("OBP_DIRECT_LOGIN_TOKEN"):
-        configuration.api_key["DirectLogin"] = os.environ["OBP_DIRECT_LOGIN_TOKEN"]
-        configuration.api_key_prefix["DirectLogin"] = "DirectLogin token="
+        token = os.environ["OBP_DIRECT_LOGIN_TOKEN"]
+        configuration.api_key["DirectLogin"] = f'token="{token}"'
     else:
         print("No credentials set — using public endpoints only.\n")
 
-    # List banks (public endpoint, no auth required)
     with obp_python.ApiClient(configuration) as api_client:
+        # List banks (public endpoint, no auth required)
+        bank_api = BankApi(api_client)
         try:
-            response = api_client.call_api(
-                "GET", f"{host}/obp/v6.0.0/banks"
-            )
-            data = json.loads(response.read())
-            banks = data.get("banks", [])
+            response = bank_api.o_bpv6_0_0_get_banks()
             print("Available banks:")
-            for bank in banks:
-                print(f"  - {bank['full_name']} (id: {bank['bank_id']})")
+            for bank in response.banks or []:
+                print(f"  - {bank.full_name} (id: {bank.bank_id})")
         except ApiException as e:
             print(f"API error ({e.status}): {e.reason}", file=sys.stderr)
             sys.exit(1)
+
+        # If authenticated, get current user info
+        if "DirectLogin" in configuration.api_key:
+            user_api = UserApi(api_client)
+            try:
+                user = user_api.o_bpv6_0_0_get_current_user()
+                print(f"\nAuthenticated as:")
+                print(f"  Username:  {user.username}")
+                print(f"  User ID:   {user.user_id}")
+                print(f"  Email:     {user.email}")
+                print(f"  Provider:  {user.provider}")
+            except ApiException as e:
+                print(f"\nFailed to get current user ({e.status}): {e.body}", file=sys.stderr)
 
 
 if __name__ == "__main__":

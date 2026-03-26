@@ -5,8 +5,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510GetRegulatedEntityById200ResponseProperties**](OBPv510GetRegulatedEntityById200ResponseProperties.md) |  | 
+**services** | [**List[OBPv510GetRegulatedEntityById200ResponseServicesInner]**](OBPv510GetRegulatedEntityById200ResponseServicesInner.md) |  | [optional] 
+**entity_code** | **str** |  | [optional] 
+**entity_web_site** | **str** |  | [optional] 
+**entity_country** | **str** |  | [optional] 
+**entity_certificate_public_key** | **str** |  | [optional] 
+**entity_type** | **str** |  | [optional] 
+**attributes** | [**List[OBPv510GetRegulatedEntityById200ResponseAttributesInner]**](OBPv510GetRegulatedEntityById200ResponseAttributesInner.md) |  | [optional] 
+**entity_post_code** | **str** |  | [optional] 
+**entity_name** | **str** |  | [optional] 
+**entity_town_city** | **str** |  | [optional] 
+**entity_address** | **str** |  | [optional] 
+**entity_id** | **str** |  | [optional] 
+**certificate_authority_ca_owner_id** | **str** |  | [optional] 
 
 ## Example
 

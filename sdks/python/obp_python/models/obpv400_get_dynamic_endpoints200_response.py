@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv400_get_dynamic_endpoints200_response_properties import OBPv400GetDynamicEndpoints200ResponseProperties
+from pydantic import BaseModel, ConfigDict
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner import OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,8 @@ class OBPv400GetDynamicEndpoints200Response(BaseModel):
     """
     OBPv400GetDynamicEndpoints200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv400GetDynamicEndpoints200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    dynamic_endpoints: Optional[List[OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner]] = None
+    __properties: ClassVar[List[str]] = ["dynamic_endpoints"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +70,13 @@ class OBPv400GetDynamicEndpoints200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in dynamic_endpoints (list)
+        _items = []
+        if self.dynamic_endpoints:
+            for _item_dynamic_endpoints in self.dynamic_endpoints:
+                if _item_dynamic_endpoints:
+                    _items.append(_item_dynamic_endpoints.to_dict())
+            _dict['dynamic_endpoints'] = _items
         return _dict
 
     @classmethod
@@ -86,8 +89,7 @@ class OBPv400GetDynamicEndpoints200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv400GetDynamicEndpoints200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "dynamic_endpoints": [OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner.from_dict(_item) for _item in obj["dynamic_endpoints"]] if obj.get("dynamic_endpoints") is not None else None
         })
         return _obj
 

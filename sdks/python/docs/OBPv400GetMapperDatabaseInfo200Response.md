@@ -5,8 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400GetMapperDatabaseInfo200ResponseProperties**](OBPv400GetMapperDatabaseInfo200ResponseProperties.md) |  | 
+**var_date** | **datetime** |  | [optional] 
+**git_commit** | **str** |  | [optional] 
+**name** | **str** |  | [optional] 
+**version** | **str** |  | [optional] 
 
 ## Example
 

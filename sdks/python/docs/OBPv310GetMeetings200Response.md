@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310GetMeetings200ResponseProperties**](OBPv310GetMeetings200ResponseProperties.md) |  | 
+**meetings** | [**List[OBPv310GetMeeting200Response]**](OBPv310GetMeeting200Response.md) |  | [optional] 
 
 ## Example
 

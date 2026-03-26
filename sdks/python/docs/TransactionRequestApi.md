@@ -1,6 +1,6 @@
 # obp_python.TransactionRequestApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -79,10 +79,10 @@ from obp_python.models.obpv140_get_transaction_request_types200_response import 
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -497,10 +497,10 @@ from obp_python.models.obpv510_get_transaction_request_by_id200_response import 
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -601,10 +601,10 @@ from obp_python.models.obpv210_get_transaction_request_types_supported_by_bank20
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -767,10 +767,10 @@ from obp_python.models.obpv310_save_historical_transaction_request import OBPv31
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -954,10 +954,10 @@ from obp_python.models.obpv510_get_transaction_request_by_id200_response import 
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1104,10 +1104,10 @@ from obp_python.models.obpv400_create_historical_transaction_at_bank_request imp
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1180,7 +1180,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_create_or_update_transaction_request_attribute_definition**
-> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems o_bpv4_0_0_create_or_update_transaction_request_attribute_definition(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request)
+> OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner o_bpv4_0_0_create_or_update_transaction_request_attribute_definition(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request)
 
 Create or Update Transaction Request Attribute Definition
 
@@ -1211,14 +1211,14 @@ Create or Update Transaction Request Attribute Definition
 ```python
 import obp_python
 from obp_python.models.obpv400_create_or_update_transaction_request_attribute_definition_request import OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
-from obp_python.models.obpv400_get_transaction_request_attribute_definition200_response_properties_attributes_items import OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
+from obp_python.models.obpv400_get_transaction_request_attribute_definition200_response_attributes_inner import OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1268,7 +1268,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
+[**OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -1387,10 +1387,10 @@ from obp_python.models.obpv400_create_transaction_request_counterparty200_respon
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1566,10 +1566,10 @@ from obp_python.models.obpv400_create_transaction_request_counterparty200_respon
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1752,10 +1752,10 @@ from obp_python.models.obpv400_create_transaction_request_counterparty200_respon
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1834,7 +1834,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_create_transaction_request_attribute**
-> OBPv400GetTransactionRequestAttributeById200Response o_bpv4_0_0_create_transaction_request_attribute(bankid, accountid, transactionrequestid, obpv400_create_transaction_request_counterparty_request_properties_attributes_items)
+> OBPv400GetTransactionRequestAttributeById200Response o_bpv4_0_0_create_transaction_request_attribute(bankid, accountid, transactionrequestid, obpv400_create_transaction_request_counterparty_request_attributes_inner)
 
 Create Transaction Request Attribute
 
@@ -1864,15 +1864,15 @@ Create Transaction Request Attribute
 
 ```python
 import obp_python
-from obp_python.models.obpv400_create_transaction_request_counterparty_request_properties_attributes_items import OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems
+from obp_python.models.obpv400_create_transaction_request_counterparty_request_attributes_inner import OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner
 from obp_python.models.obpv400_get_transaction_request_attribute_by_id200_response import OBPv400GetTransactionRequestAttributeById200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1901,11 +1901,11 @@ with obp_python.ApiClient(configuration) as api_client:
     bankid = 'bankid_example' # str | The BANKID identifier
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     transactionrequestid = 'transactionrequestid_example' # str | The TRANSACTIONREQUESTID identifier
-    obpv400_create_transaction_request_counterparty_request_properties_attributes_items = {type=object, properties={attribute_type={type=string}, name={type=string}, value={type=string}}} # OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems | Request body
+    obpv400_create_transaction_request_counterparty_request_attributes_inner = {type=object, properties={attribute_type={type=string}, name={type=string}, value={type=string}}} # OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner | Request body
 
     try:
         # Create Transaction Request Attribute
-        api_response = api_instance.o_bpv4_0_0_create_transaction_request_attribute(bankid, accountid, transactionrequestid, obpv400_create_transaction_request_counterparty_request_properties_attributes_items)
+        api_response = api_instance.o_bpv4_0_0_create_transaction_request_attribute(bankid, accountid, transactionrequestid, obpv400_create_transaction_request_counterparty_request_attributes_inner)
         print("The response of TransactionRequestApi->o_bpv4_0_0_create_transaction_request_attribute:\n")
         pprint(api_response)
     except Exception as e:
@@ -1922,7 +1922,7 @@ Name | Type | Description  | Notes
  **bankid** | **str**| The BANKID identifier | 
  **accountid** | **str**| The ACCOUNTID identifier | 
  **transactionrequestid** | **str**| The TRANSACTIONREQUESTID identifier | 
- **obpv400_create_transaction_request_counterparty_request_properties_attributes_items** | [**OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems**](OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems.md)| Request body | 
+ **obpv400_create_transaction_request_counterparty_request_attributes_inner** | [**OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner**](OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner.md)| Request body | 
 
 ### Return type
 
@@ -2049,10 +2049,10 @@ from obp_python.models.obpv400_create_transaction_request_counterparty200_respon
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2132,7 +2132,7 @@ Create Transaction Request (COUNTERPARTY)
 <p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
 <p>When using a COUNTERPARTY to create a Transaction Request, specify the counterparty_id in the body of the request.<br />
 The routing details of the counterparty will be forwarded to the Core Banking System (CBS) for the transfer.</p>
-<p>COUNTERPARTY Transaction Requests are used for Variable Recurring Payments (VRP). Use the following <a href="https://apiexplorer-ii-sandbox.openbankproject.com//operationid/OBPv5.1.0-createVRPConsentRequest">endpoint</a> to create a consent for VRPs.</p>
+<p>COUNTERPARTY Transaction Requests are used for Variable Recurring Payments (VRP). Use the following <a href="http://localhost:5174/operationid/OBPv5.1.0-createVRPConsentRequest">endpoint</a> to create a consent for VRPs.</p>
 <p>For a general introduction to Counterparties in OBP, see <a href="/glossary#Counterparties">here</a></p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 <p><strong>URL Parameters:</strong></p>
@@ -2228,10 +2228,10 @@ from obp_python.models.obpv400_create_transaction_request_counterparty_request i
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2402,10 +2402,10 @@ from obp_python.models.obpv400_create_transaction_request_free_form_request impo
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2592,10 +2592,10 @@ from obp_python.models.obpv400_create_transaction_request_refund_request import 
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2779,10 +2779,10 @@ from obp_python.models.obpv400_create_transaction_request_sepa_request import OB
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2967,10 +2967,10 @@ from obp_python.models.obpv400_create_transaction_request_simple_request import 
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3073,10 +3073,10 @@ from obp_python.models.obpv400_delete_system_level_endpoint_tag200_response impo
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3246,10 +3246,10 @@ from obp_python.models.obpv510_get_transaction_request_by_id200_response import 
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3355,10 +3355,10 @@ from obp_python.models.obpv400_get_transaction_request_attribute_by_id200_respon
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3467,10 +3467,10 @@ from obp_python.models.obpv400_get_transaction_request_attribute_definition200_r
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3570,10 +3570,10 @@ from obp_python.models.obpv400_get_transaction_request_attributes200_response im
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3647,7 +3647,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_update_transaction_request_attribute**
-> OBPv400GetTransactionRequestAttributeById200Response o_bpv4_0_0_update_transaction_request_attribute(bankid, accountid, transactionrequestid, attributeid, obpv400_create_transaction_request_counterparty_request_properties_attributes_items)
+> OBPv400GetTransactionRequestAttributeById200Response o_bpv4_0_0_update_transaction_request_attribute(bankid, accountid, transactionrequestid, attributeid, obpv400_create_transaction_request_counterparty_request_attributes_inner)
 
 Update Transaction Request Attribute
 
@@ -3673,15 +3673,15 @@ Update Transaction Request Attribute
 
 ```python
 import obp_python
-from obp_python.models.obpv400_create_transaction_request_counterparty_request_properties_attributes_items import OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems
+from obp_python.models.obpv400_create_transaction_request_counterparty_request_attributes_inner import OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner
 from obp_python.models.obpv400_get_transaction_request_attribute_by_id200_response import OBPv400GetTransactionRequestAttributeById200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3711,11 +3711,11 @@ with obp_python.ApiClient(configuration) as api_client:
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     transactionrequestid = 'transactionrequestid_example' # str | The TRANSACTIONREQUESTID identifier
     attributeid = 'attributeid_example' # str | The ATTRIBUTEID identifier
-    obpv400_create_transaction_request_counterparty_request_properties_attributes_items = {"type":"object","properties":{"attribute_type":{"type":"string"},"name":{"type":"string"},"value":{"type":"string"}}} # OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems | Request body
+    obpv400_create_transaction_request_counterparty_request_attributes_inner = {"type":"object","properties":{"attribute_type":{"type":"string"},"name":{"type":"string"},"value":{"type":"string"}}} # OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner | Request body
 
     try:
         # Update Transaction Request Attribute
-        api_response = api_instance.o_bpv4_0_0_update_transaction_request_attribute(bankid, accountid, transactionrequestid, attributeid, obpv400_create_transaction_request_counterparty_request_properties_attributes_items)
+        api_response = api_instance.o_bpv4_0_0_update_transaction_request_attribute(bankid, accountid, transactionrequestid, attributeid, obpv400_create_transaction_request_counterparty_request_attributes_inner)
         print("The response of TransactionRequestApi->o_bpv4_0_0_update_transaction_request_attribute:\n")
         pprint(api_response)
     except Exception as e:
@@ -3733,7 +3733,7 @@ Name | Type | Description  | Notes
  **accountid** | **str**| The ACCOUNTID identifier | 
  **transactionrequestid** | **str**| The TRANSACTIONREQUESTID identifier | 
  **attributeid** | **str**| The ATTRIBUTEID identifier | 
- **obpv400_create_transaction_request_counterparty_request_properties_attributes_items** | [**OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems**](OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems.md)| Request body | 
+ **obpv400_create_transaction_request_counterparty_request_attributes_inner** | [**OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner**](OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner.md)| Request body | 
 
 ### Return type
 
@@ -3799,7 +3799,7 @@ Authorization: Bearer eXtneO-THbQtn3zvK_kQtXXfvOZyZFdBCItlPDbR2Bk.dOWqtXCtFX-tqG
 <p><a href="/glossary#max_yearly_amount"><strong>max_yearly_amount</strong></a>: 12000.11</p>
 <p><a href="/glossary#scheme"><strong>scheme</strong></a>: OBP</p>
 <p><a href="/glossary#"><strong>to_account</strong></a>: to_account</p>
-<p><a href="/glossary#">email</a>: <a href="m&#97;&#x69;l&#x74;o&#x3a;f&#101;&#x6c;i&#120;&#115;&#109;&#x69;&#116;&#x68;&#x40;&#x65;&#120;a&#x6d;&#112;&#x6c;&#101;&#x2e;&#x63;&#x6f;&#109;">&#102;&#101;&#x6c;i&#120;&#115;&#109;&#x69;&#x74;&#104;&#x40;&#x65;x&#x61;&#109;&#x70;&#108;&#x65;&#46;&#x63;&#x6f;&#109;</a></p>
+<p><a href="/glossary#">email</a>: <a href="&#109;&#x61;i&#x6c;&#116;&#111;:&#102;&#x65;l&#x69;&#x78;sm&#x69;t&#104;@&#x65;&#120;&#x61;&#x6d;ple&#x2e;&#99;&#111;m">&#102;&#x65;&#x6c;&#x69;&#120;&#x73;m&#105;t&#x68;&#64;&#101;&#x78;&#x61;m&#112;&#x6c;e&#x2e;&#x63;&#111;&#x6d;</a></p>
 <p><a href="/glossary#phone_number">phone_number</a>:</p>
 <p><a href="/glossary#time_to_live">time_to_live</a>:</p>
 <p><a href="/glossary#valid_from">valid_from</a>: 2020-01-27</p>
@@ -3811,6 +3811,9 @@ Authorization: Bearer eXtneO-THbQtn3zvK_kQtXXfvOZyZFdBCItlPDbR2Bk.dOWqtXCtFX-tqG
 
 ### Example
 
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
 
 ```python
 import obp_python
@@ -3819,18 +3822,36 @@ from obp_python.models.obpv510_create_vrp_consent_request_request import OBPv510
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.TransactionRequestApi(api_client)
-    obpv510_create_vrp_consent_request_request = {"type":"object","properties":{"to_account":{"type":"object","properties":{"bank_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"counterparty_name":{"type":"string"},"limit":{"type":"object","properties":{"max_total_amount":{"type":"string"},"currency":{"type":"string"},"max_number_of_yearly_transactions":{"type":"integer"},"max_monthly_amount":{"type":"string"},"max_single_amount":{"type":"string"},"max_number_of_monthly_transactions":{"type":"integer"},"max_yearly_amount":{"type":"string"},"max_number_of_transactions":{"type":"integer"}}},"account_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"branch_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}}}},"valid_from":{"type":"string","format":"date-time"},"phone_number":{"type":"string"},"email":{"type":"string"},"from_account":{"type":"object","properties":{"bank_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"account_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"branch_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}}}},"time_to_live":{"type":"integer"}}} # OBPv510CreateVRPConsentRequestRequest | Request body
+    obpv510_create_vrp_consent_request_request = {"type":"object","properties":{"to_account":{"type":"object","properties":{"bank_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"counterparty_name":{"type":"string"},"limit":{"type":"object","properties":{"max_total_amount":{"type":"string"},"currency":{"type":"string"},"max_number_of_yearly_transactions":{"type":"integer"},"max_monthly_amount":{"type":"string"},"max_single_amount":{"type":"string"},"max_number_of_monthly_transactions":{"type":"integer"},"max_yearly_amount":{"type":"string"},"max_number_of_transactions":{"type":"integer"}}},"account_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"branch_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}}}},"phone_number":{"type":"string"},"email":{"type":"string"},"from_account":{"type":"object","properties":{"bank_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"account_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"branch_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}}}},"time_to_live":{"type":"integer"},"valid_from":{"type":"string","format":"date-time"}}} # OBPv510CreateVRPConsentRequestRequest | Request body
 
     try:
         # Create Consent Request VRP
@@ -3856,7 +3877,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
 
 ### HTTP request headers
 
@@ -3953,10 +3974,10 @@ from obp_python.models.obpv510_get_transaction_request_by_id200_response import 
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4125,10 +4146,10 @@ from obp_python.models.obpv510_get_transaction_requests200_response import OBPv5
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4226,10 +4247,10 @@ from obp_python.models.obpv510_update_transaction_request_status_request import 
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4403,10 +4424,10 @@ from obp_python.models.obpv600_create_transaction_request_cardano_request import
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4574,10 +4595,10 @@ from obp_python.models.obpv600_create_transaction_request_eth_send_raw_transacti
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4749,10 +4770,10 @@ from obp_python.models.obpv600_create_transaction_request_ethereume_send_transac
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4922,10 +4943,10 @@ from obp_python.models.obpv400_create_transaction_request_free_form_request impo
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters

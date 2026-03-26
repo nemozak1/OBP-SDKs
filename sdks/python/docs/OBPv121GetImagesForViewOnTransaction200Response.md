@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv121GetImagesForViewOnTransaction200ResponseProperties**](OBPv121GetImagesForViewOnTransaction200ResponseProperties.md) |  | 
+**images** | [**List[OBPv310GetTransactionByIdForBankAccount200ResponseMetadataImagesInner]**](OBPv310GetTransactionByIdForBankAccount200ResponseMetadataImagesInner.md) |  | [optional] 
 
 ## Example
 

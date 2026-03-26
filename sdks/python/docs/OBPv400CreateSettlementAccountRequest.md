@@ -5,8 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400CreateSettlementAccountRequestProperties**](OBPv400CreateSettlementAccountRequestProperties.md) |  | 
+**branch_id** | **str** |  | [optional] 
+**account_routings** | [**List[OBPv310GetCheckbookOrders200ResponseAccountAccountRoutingsInner]**](OBPv310GetCheckbookOrders200ResponseAccountAccountRoutingsInner.md) |  | [optional] 
+**label** | **str** |  | [optional] 
+**balance** | [**OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit**](OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit.md) |  | [optional] 
+**payment_system** | **str** |  | [optional] 
+**user_id** | **str** |  | [optional] 
 
 ## Example
 

@@ -1,6 +1,6 @@
 # obp_python.FirehoseDataApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -32,7 +32,7 @@ User must have the CanUseFirehoseAtAnyBank Role</p>
 <p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p>
 <ul>
 <li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li>
-<li>to_date=DATE =&gt; example value: 2026-03-16T19:25:56.865Z. NOTE! The default value is now (2026-03-16T19:25:56.865Z).</li>
+<li>to_date=DATE =&gt; example value: 2026-03-25T12:16:24.487Z. NOTE! The default value is now (2026-03-25T12:16:24.487Z).</li>
 </ul>
 <p>Date format parameter: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p>
 <p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p>
@@ -100,10 +100,10 @@ from obp_python.models.obpv300_get_firehose_transactions_for_bank_account200_res
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -195,7 +195,7 @@ User must have the CanUseFirehoseAtAnyBank Role</p>
 <p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p>
 <ul>
 <li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li>
-<li>to_date=DATE =&gt; example value: 2026-03-16T19:25:56.893Z. NOTE! The default value is now (2026-03-16T19:25:56.893Z).</li>
+<li>to_date=DATE =&gt; example value: 2026-03-25T12:16:24.499Z. NOTE! The default value is now (2026-03-25T12:16:24.499Z).</li>
 </ul>
 <p>Date format parameter: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p>
 <p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p>
@@ -213,12 +213,12 @@ User must have the CanUseFirehoseAtAnyBank Role</p>
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#97;&#105;&#108;&#x74;&#111;&#58;&#102;&#x65;&#108;&#105;&#120;&#115;&#x6d;&#105;&#116;&#104;&#x40;&#101;&#x78;&#97;m&#x70;&#108;&#x65;&#46;&#x63;&#x6f;&#109;">&#102;&#101;&#108;&#x69;&#x78;smit&#x68;&#x40;&#x65;&#x78;&#97;&#x6d;p&#x6c;&#x65;&#x2e;&#x63;&#111;&#109;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#x61;&#105;&#108;&#x74;&#111;&#x3a;f&#x65;&#108;&#x69;&#x78;&#115;&#109;&#x69;&#116;&#x68;@&#x65;&#120;a&#x6d;p&#x6c;&#x65;&#46;&#x63;o&#x6d;">&#102;&#x65;&#108;&#x69;xs&#x6d;&#105;t&#104;@&#x65;&#120;&#x61;&#x6d;&#x70;l&#x65;&#x2e;&#99;om</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#"><strong>rating</strong></a>:</p>
@@ -241,10 +241,10 @@ from obp_python.models.obpv500_get_my_customers_at_bank200_response import OBPv5
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -366,10 +366,10 @@ from obp_python.models.obpv400_get_fast_firehose_accounts_at_one_bank200_respons
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -492,10 +492,10 @@ from obp_python.models.obpv400_get_firehose_accounts_at_one_bank200_response imp
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters

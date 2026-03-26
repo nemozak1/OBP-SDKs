@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -19,8 +19,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv400_update_dynamic_message_doc_request_properties import OBPv400UpdateDynamicMessageDocRequestProperties
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +27,20 @@ class OBPv400UpdateDynamicMessageDocRequest(BaseModel):
     """
     OBPv400UpdateDynamicMessageDocRequest
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv400UpdateDynamicMessageDocRequestProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    adapter_implementation: Optional[StrictStr] = None
+    example_inbound_message: Optional[Dict[str, Any]] = None
+    description: Optional[StrictStr] = None
+    process: Optional[StrictStr] = None
+    outbound_avro_schema: Optional[StrictStr] = None
+    message_format: Optional[StrictStr] = None
+    programming_lang: Optional[StrictStr] = None
+    example_outbound_message: Optional[Dict[str, Any]] = None
+    bank_id: Optional[StrictStr] = None
+    inbound_avro_schema: Optional[StrictStr] = None
+    method_body: Optional[StrictStr] = None
+    outbound_topic: Optional[StrictStr] = None
+    inbound_topic: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["adapter_implementation", "example_inbound_message", "description", "process", "outbound_avro_schema", "message_format", "programming_lang", "example_outbound_message", "bank_id", "inbound_avro_schema", "method_body", "outbound_topic", "inbound_topic"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +81,6 @@ class OBPv400UpdateDynamicMessageDocRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +93,19 @@ class OBPv400UpdateDynamicMessageDocRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv400UpdateDynamicMessageDocRequestProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "adapter_implementation": obj.get("adapter_implementation"),
+            "example_inbound_message": obj.get("example_inbound_message"),
+            "description": obj.get("description"),
+            "process": obj.get("process"),
+            "outbound_avro_schema": obj.get("outbound_avro_schema"),
+            "message_format": obj.get("message_format"),
+            "programming_lang": obj.get("programming_lang"),
+            "example_outbound_message": obj.get("example_outbound_message"),
+            "bank_id": obj.get("bank_id"),
+            "inbound_avro_schema": obj.get("inbound_avro_schema"),
+            "method_body": obj.get("method_body"),
+            "outbound_topic": obj.get("outbound_topic"),
+            "inbound_topic": obj.get("inbound_topic")
         })
         return _obj
 

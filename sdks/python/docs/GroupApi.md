@@ -1,6 +1,6 @@
 # obp_python.GroupApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -62,10 +62,10 @@ from obp_python.models.obpv600_add_user_to_group_request import OBPv600AddUserTo
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv6_0_0_create_group**
-> OBPv600GetGroups200ResponsePropertiesGroupsItems o_bpv6_0_0_create_group(obpv600_create_group_request)
+> OBPv600GetGroups200ResponseGroupsInner o_bpv6_0_0_create_group(obpv600_create_group_request)
 
 Create Group
 
@@ -170,14 +170,14 @@ Create Group
 ```python
 import obp_python
 from obp_python.models.obpv600_create_group_request import OBPv600CreateGroupRequest
-from obp_python.models.obpv600_get_groups200_response_properties_groups_items import OBPv600GetGroups200ResponsePropertiesGroupsItems
+from obp_python.models.obpv600_get_groups200_response_groups_inner import OBPv600GetGroups200ResponseGroupsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetGroups200ResponsePropertiesGroupsItems**](OBPv600GetGroups200ResponsePropertiesGroupsItems.md)
+[**OBPv600GetGroups200ResponseGroupsInner**](OBPv600GetGroups200ResponseGroupsInner.md)
 
 ### Authorization
 
@@ -271,10 +271,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -341,7 +341,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv6_0_0_get_group**
-> OBPv600GetGroups200ResponsePropertiesGroupsItems o_bpv6_0_0_get_group(groupid)
+> OBPv600GetGroups200ResponseGroupsInner o_bpv6_0_0_get_group(groupid)
 
 Get Group
 
@@ -369,14 +369,14 @@ Get Group
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_groups200_response_properties_groups_items import OBPv600GetGroups200ResponsePropertiesGroupsItems
+from obp_python.models.obpv600_get_groups200_response_groups_inner import OBPv600GetGroups200ResponseGroupsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -424,7 +424,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetGroups200ResponsePropertiesGroupsItems**](OBPv600GetGroups200ResponsePropertiesGroupsItems.md)
+[**OBPv600GetGroups200ResponseGroupsInner**](OBPv600GetGroups200ResponseGroupsInner.md)
 
 ### Authorization
 
@@ -479,10 +479,10 @@ from obp_python.models.obpv600_get_group_entitlements200_response import OBPv600
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -584,10 +584,10 @@ from obp_python.models.obpv600_get_groups200_response import OBPv600GetGroups200
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -687,10 +687,10 @@ from obp_python.models.obpv600_get_user_group_memberships200_response import OBP
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -788,10 +788,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -860,7 +860,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv6_0_0_update_group**
-> OBPv600GetGroups200ResponsePropertiesGroupsItems o_bpv6_0_0_update_group(groupid, obpv600_update_group_request)
+> OBPv600GetGroups200ResponseGroupsInner o_bpv6_0_0_update_group(groupid, obpv600_update_group_request)
 
 Update Group
 
@@ -888,15 +888,15 @@ Update Group
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_groups200_response_properties_groups_items import OBPv600GetGroups200ResponsePropertiesGroupsItems
+from obp_python.models.obpv600_get_groups200_response_groups_inner import OBPv600GetGroups200ResponseGroupsInner
 from obp_python.models.obpv600_update_group_request import OBPv600UpdateGroupRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -946,7 +946,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetGroups200ResponsePropertiesGroupsItems**](OBPv600GetGroups200ResponsePropertiesGroupsItems.md)
+[**OBPv600GetGroups200ResponseGroupsInner**](OBPv600GetGroups200ResponseGroupsInner.md)
 
 ### Authorization
 

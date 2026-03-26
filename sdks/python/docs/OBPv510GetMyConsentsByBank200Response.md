@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510GetMyConsentsByBank200ResponseProperties**](OBPv510GetMyConsentsByBank200ResponseProperties.md) |  | 
+**consents** | [**List[OBPv510GetMyConsentsByBank200ResponseConsentsInner]**](OBPv510GetMyConsentsByBank200ResponseConsentsInner.md) |  | [optional] 
 
 ## Example
 

@@ -1,6 +1,6 @@
 # obp_python.RateLimitsApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -39,10 +39,10 @@ from obp_python.models.obpv310_get_rate_limiting_info200_response import OBPv310
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -147,10 +147,10 @@ from obp_python.models.obpv600_update_rate_limits_request import OBPv600UpdateRa
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -177,7 +177,7 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.RateLimitsApi(api_client)
     consumerid = 'consumerid_example' # str | The CONSUMERID identifier
-    obpv600_update_rate_limits_request = {type=object, properties={to_date={type=string, format=date-time}, per_week_call_limit={type=string}, per_day_call_limit={type=string}, per_second_call_limit={type=string}, per_month_call_limit={type=string}, per_hour_call_limit={type=string}, per_minute_call_limit={type=string}, from_date={type=string, format=date-time}}} # OBPv600UpdateRateLimitsRequest | Request body
+    obpv600_update_rate_limits_request = {type=object, properties={per_week_call_limit={type=string}, per_day_call_limit={type=string}, per_second_call_limit={type=string}, per_month_call_limit={type=string}, from_date={type=string, format=date-time}, to_date={type=string, format=date-time}, per_hour_call_limit={type=string}, per_minute_call_limit={type=string}}} # OBPv600UpdateRateLimitsRequest | Request body
 
     try:
         # Set Rate Limits / Call Limits per Consumer
@@ -263,10 +263,10 @@ from obp_python.models.obpv600_update_rate_limits_request import OBPv600UpdateRa
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -294,7 +294,7 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.RateLimitsApi(api_client)
     consumerid = 'consumerid_example' # str | The CONSUMERID identifier
     ratelimitingid = 'ratelimitingid_example' # str | The RATELIMITINGID identifier
-    obpv600_update_rate_limits_request = {"type":"object","properties":{"to_date":{"type":"string","format":"date-time"},"per_week_call_limit":{"type":"string"},"per_day_call_limit":{"type":"string"},"per_second_call_limit":{"type":"string"},"per_month_call_limit":{"type":"string"},"per_hour_call_limit":{"type":"string"},"per_minute_call_limit":{"type":"string"},"from_date":{"type":"string","format":"date-time"}}} # OBPv600UpdateRateLimitsRequest | Request body
+    obpv600_update_rate_limits_request = {"type":"object","properties":{"per_week_call_limit":{"type":"string"},"per_day_call_limit":{"type":"string"},"per_second_call_limit":{"type":"string"},"per_month_call_limit":{"type":"string"},"from_date":{"type":"string","format":"date-time"},"to_date":{"type":"string","format":"date-time"},"per_hour_call_limit":{"type":"string"},"per_minute_call_limit":{"type":"string"}}} # OBPv600UpdateRateLimitsRequest | Request body
 
     try:
         # Set Rate Limits / Call Limits per Consumer

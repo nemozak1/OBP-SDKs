@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv210GetRoles200ResponseProperties**](OBPv210GetRoles200ResponseProperties.md) |  | 
+**roles** | [**List[OBPv210GetRoles200ResponseRolesInner]**](OBPv210GetRoles200ResponseRolesInner.md) |  | [optional] 
 
 ## Example
 

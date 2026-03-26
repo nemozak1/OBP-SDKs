@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetGroups200ResponseProperties**](OBPv600GetGroups200ResponseProperties.md) |  | 
+**groups** | [**List[OBPv600GetGroups200ResponseGroupsInner]**](OBPv600GetGroups200ResponseGroupsInner.md) |  | [optional] 
 
 ## Example
 

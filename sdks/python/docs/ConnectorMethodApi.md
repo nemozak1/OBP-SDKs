@@ -1,6 +1,6 @@
 # obp_python.ConnectorMethodApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **o_bpv4_0_0_create_connector_method**
-> OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems o_bpv4_0_0_create_connector_method(obpv400_create_connector_method_request)
+> OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner o_bpv4_0_0_create_connector_method(obpv400_create_connector_method_request)
 
 Create Connector Method
 
@@ -32,14 +32,14 @@ Create Connector Method
 ```python
 import obp_python
 from obp_python.models.obpv400_create_connector_method_request import OBPv400CreateConnectorMethodRequest
-from obp_python.models.obpv400_get_all_connector_methods200_response_properties_connectors_methods_items import OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems
+from obp_python.models.obpv400_get_all_connector_methods200_response_connectors_methods_inner import OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems**](OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems.md)
+[**OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner**](OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner.md)
 
 ### Authorization
 
@@ -129,10 +129,10 @@ from obp_python.models.obpv400_get_all_connector_methods200_response import OBPv
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -197,7 +197,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_get_connector_method**
-> OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems o_bpv4_0_0_get_connector_method(connectormethodid)
+> OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner o_bpv4_0_0_get_connector_method(connectormethodid)
 
 Get Connector Method by Id
 
@@ -216,14 +216,14 @@ Get Connector Method by Id
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_all_connector_methods200_response_properties_connectors_methods_items import OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems
+from obp_python.models.obpv400_get_all_connector_methods200_response_connectors_methods_inner import OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems**](OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems.md)
+[**OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner**](OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner.md)
 
 ### Authorization
 
@@ -292,7 +292,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_update_connector_method**
-> OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems o_bpv4_0_0_update_connector_method(connectormethodid, obpv400_update_connector_method_request)
+> OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner o_bpv4_0_0_update_connector_method(connectormethodid, obpv400_update_connector_method_request)
 
 Update Connector Method
 
@@ -312,15 +312,15 @@ Update Connector Method
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_all_connector_methods200_response_properties_connectors_methods_items import OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems
+from obp_python.models.obpv400_get_all_connector_methods200_response_connectors_methods_inner import OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner
 from obp_python.models.obpv400_update_connector_method_request import OBPv400UpdateConnectorMethodRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -370,7 +370,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems**](OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems.md)
+[**OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner**](OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner.md)
 
 ### Authorization
 
@@ -439,10 +439,10 @@ from obp_python.models.obpv600_get_connector_method_names200_response import OBP
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters

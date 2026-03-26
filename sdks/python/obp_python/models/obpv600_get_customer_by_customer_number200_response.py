@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,13 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv600_get_customer_by_customer_number200_response_properties import OBPv600GetCustomerByCustomerNumber200ResponseProperties
+from datetime import datetime
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv400_get_customer_attributes200_response_customer_attributes_inner import OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner
+from obp_python.models.obpv500_get_my_customers_at_bank200_response_customers_inner_credit_limit import OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit
+from obp_python.models.obpv500_get_my_customers_at_bank200_response_customers_inner_credit_rating import OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditRating
+from obp_python.models.obpv500_get_my_customers_at_bank200_response_customers_inner_face_image import OBPv500GetMyCustomersAtBank200ResponseCustomersInnerFaceImage
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +32,30 @@ class OBPv600GetCustomerByCustomerNumber200Response(BaseModel):
     """
     OBPv600GetCustomerByCustomerNumber200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv600GetCustomerByCustomerNumber200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    customer_id: Optional[StrictStr] = None
+    name_suffix: Optional[StrictStr] = None
+    email: Optional[StrictStr] = None
+    branch_id: Optional[StrictStr] = None
+    mobile_phone_number: Optional[StrictStr] = None
+    customer_number: Optional[StrictStr] = None
+    parent_customer_id: Optional[StrictStr] = None
+    customer_attributes: Optional[List[OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner]] = None
+    highest_education_attained: Optional[StrictStr] = None
+    dob_of_dependants: Optional[List[StrictStr]] = None
+    bank_id: Optional[StrictStr] = None
+    date_of_birth: Optional[datetime] = None
+    credit_rating: Optional[OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditRating] = None
+    last_ok_date: Optional[datetime] = None
+    employment_status: Optional[StrictStr] = None
+    customer_type: Optional[StrictStr] = None
+    legal_name: Optional[StrictStr] = None
+    credit_limit: Optional[OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit] = None
+    title: Optional[StrictStr] = None
+    face_image: Optional[OBPv500GetMyCustomersAtBank200ResponseCustomersInnerFaceImage] = None
+    dependants: Optional[StrictInt] = None
+    relationship_status: Optional[StrictStr] = None
+    kyc_status: Optional[StrictBool] = None
+    __properties: ClassVar[List[str]] = ["customer_id", "name_suffix", "email", "branch_id", "mobile_phone_number", "customer_number", "parent_customer_id", "customer_attributes", "highest_education_attained", "dob_of_dependants", "bank_id", "date_of_birth", "credit_rating", "last_ok_date", "employment_status", "customer_type", "legal_name", "credit_limit", "title", "face_image", "dependants", "relationship_status", "kyc_status"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +96,22 @@ class OBPv600GetCustomerByCustomerNumber200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in customer_attributes (list)
+        _items = []
+        if self.customer_attributes:
+            for _item_customer_attributes in self.customer_attributes:
+                if _item_customer_attributes:
+                    _items.append(_item_customer_attributes.to_dict())
+            _dict['customer_attributes'] = _items
+        # override the default output from pydantic by calling `to_dict()` of credit_rating
+        if self.credit_rating:
+            _dict['credit_rating'] = self.credit_rating.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of credit_limit
+        if self.credit_limit:
+            _dict['credit_limit'] = self.credit_limit.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of face_image
+        if self.face_image:
+            _dict['face_image'] = self.face_image.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +124,29 @@ class OBPv600GetCustomerByCustomerNumber200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv600GetCustomerByCustomerNumber200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "customer_id": obj.get("customer_id"),
+            "name_suffix": obj.get("name_suffix"),
+            "email": obj.get("email"),
+            "branch_id": obj.get("branch_id"),
+            "mobile_phone_number": obj.get("mobile_phone_number"),
+            "customer_number": obj.get("customer_number"),
+            "parent_customer_id": obj.get("parent_customer_id"),
+            "customer_attributes": [OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner.from_dict(_item) for _item in obj["customer_attributes"]] if obj.get("customer_attributes") is not None else None,
+            "highest_education_attained": obj.get("highest_education_attained"),
+            "dob_of_dependants": obj.get("dob_of_dependants"),
+            "bank_id": obj.get("bank_id"),
+            "date_of_birth": obj.get("date_of_birth"),
+            "credit_rating": OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditRating.from_dict(obj["credit_rating"]) if obj.get("credit_rating") is not None else None,
+            "last_ok_date": obj.get("last_ok_date"),
+            "employment_status": obj.get("employment_status"),
+            "customer_type": obj.get("customer_type"),
+            "legal_name": obj.get("legal_name"),
+            "credit_limit": OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit.from_dict(obj["credit_limit"]) if obj.get("credit_limit") is not None else None,
+            "title": obj.get("title"),
+            "face_image": OBPv500GetMyCustomersAtBank200ResponseCustomersInnerFaceImage.from_dict(obj["face_image"]) if obj.get("face_image") is not None else None,
+            "dependants": obj.get("dependants"),
+            "relationship_status": obj.get("relationship_status"),
+            "kyc_status": obj.get("kyc_status")
         })
         return _obj
 

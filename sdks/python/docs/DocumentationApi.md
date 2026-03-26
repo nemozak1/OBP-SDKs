@@ -1,6 +1,6 @@
 # obp_python.DocumentationApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -36,12 +36,12 @@ if set content=dynamic, only show dynamic endpoints, if content=static, only sho
 <p>Note: Dynamic Resource Docs are cached, TTL is 3600 seconds<br />
 Static Resource Docs are cached, TTL is 3600 seconds</p>
 <p>Following are more examples:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp">https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?tags=Account,Bank">https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?tags=Account,Bank</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?functions=getBanks,bankById">https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?functions=getBanks,bankById</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?locale=es_ES">https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?locale=es_ES</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?content=static,dynamic,all">https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?content=static,dynamic,all</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221">https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221</a></p>
+<a href="http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp">http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?tags=Account,Bank">http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?tags=Account,Bank</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?functions=getBanks,bankById">http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?functions=getBanks,bankById</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?locale=es_ES">http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?locale=es_ES</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?content=static,dynamic,all">http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?content=static,dynamic,all</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221">http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221</a></p>
 <ul>
 <li> operation_id is concatenation of "v", version and function and should be unique (used for DOM element IDs etc. maybe used to link to source code) </li>
 <li> version references the version that the API call is defined in.</li>
@@ -69,10 +69,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -161,12 +161,12 @@ if set content=dynamic, only show dynamic endpoints, if content=static, only sho
 <p>Note: Dynamic Resource Docs are cached, TTL is 3600 seconds<br />
 Static Resource Docs are cached, TTL is 3600 seconds</p>
 <p>Following are more examples:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp">https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?tags=Account,Bank">https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?tags=Account,Bank</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?functions=getBanks,bankById">https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?functions=getBanks,bankById</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?locale=es_ES">https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?locale=es_ES</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?content=static,dynamic,all">https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?content=static,dynamic,all</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221">https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221</a></p>
+<a href="http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp">http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?tags=Account,Bank">http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?tags=Account,Bank</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?functions=getBanks,bankById">http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?functions=getBanks,bankById</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?locale=es_ES">http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?locale=es_ES</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?content=static,dynamic,all">http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?content=static,dynamic,all</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221">http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221</a></p>
 <ul>
 <li> operation_id is concatenation of "v", version and function and should be unique (used for DOM element IDs etc. maybe used to link to source code) </li>
 <li> version references the version that the API call is defined in.</li>
@@ -193,10 +193,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -299,21 +299,21 @@ Get OpenAPI 3.1 documentation
 <p>Note: Resource Docs are cached, TTL is 3600 seconds</p>
 <h2><a href="#examples" id="examples">Examples</a></h2>
 <p>Basic usage:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi</a></p>
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi</a></p>
 <p>Filter by tags:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account,Bank">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account,Bank</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account-Firehose">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account-Firehose</a></p>
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account,Bank">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account,Bank</a><br />
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account-Firehose">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account-Firehose</a></p>
 <p>Filter by content type:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=dynamic">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=dynamic</a></p>
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static</a><br />
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=dynamic">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=dynamic</a></p>
 <p>Filter by functions:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?functions=getBanks,bankById">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?functions=getBanks,bankById</a></p>
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?functions=getBanks,bankById">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?functions=getBanks,bankById</a></p>
 <p>Combine multiple parameters:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static&amp;tags=Account-Firehose">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static&amp;tags=Account-Firehose</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account,Bank,PSD2&amp;functions=getBanks,bankById">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account,Bank,PSD2&amp;functions=getBanks,bankById</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static&amp;locale=en_GB&amp;tags=Account">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static&amp;locale=en_GB&amp;tags=Account</a></p>
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static&amp;tags=Account-Firehose">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static&amp;tags=Account-Firehose</a><br />
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account,Bank,PSD2&amp;functions=getBanks,bankById">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account,Bank,PSD2&amp;functions=getBanks,bankById</a><br />
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static&amp;locale=en_GB&amp;tags=Account">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static&amp;locale=en_GB&amp;tags=Account</a></p>
 <p>Filter by API collection:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221</a></p>
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221</a></p>
 <p>User Authentication is Optional. The User need not be logged in.</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#api_version">API_VERSION</a>:</p>
@@ -328,10 +328,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -393,10 +393,10 @@ Get Swagger documentation
 <p>See the Resource Doc endpoint for more information.</p>
 <p>Note: Resource Docs are cached, TTL is 3600 seconds</p>
 <p>Following are more examples:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger">https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags=Account,Bank">https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags=Account,Bank</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger?functions=getBanks,bankById">https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger?functions=getBanks,bankById</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags=Account,Bank,PSD2&amp;functions=getBanks,bankById">https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags=Account,Bank,PSD2&amp;functions=getBanks,bankById</a></p>
+<a href="http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger">http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger</a><br />
+<a href="http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags=Account,Bank">http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags=Account,Bank</a><br />
+<a href="http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger?functions=getBanks,bankById">http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger?functions=getBanks,bankById</a><br />
+<a href="http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags=Account,Bank,PSD2&amp;functions=getBanks,bankById">http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags=Account,Bank,PSD2&amp;functions=getBanks,bankById</a></p>
 <p>User Authentication is Optional. The User need not be logged in.</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#api_version">API_VERSION</a>:</p>
@@ -411,10 +411,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -503,10 +503,10 @@ from obp_python.models.obpv220_get_message_docs200_response import OBPv220GetMes
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -562,7 +562,14 @@ No authorization required
 Get Glossary of the API
 
 <p>Get API Glossary</p>
-<p>Returns the glossary of the API</p>
+<p>Returns the glossary of the API.</p>
+<p>The glossary content is static and only changes when the API is redeployed.<br />
+This endpoint supports HTTP caching:</p>
+<ul>
+<li>The response includes a <strong>Cache-Control</strong> header (max-age=3600) indicating clients should cache for 1 hour.</li>
+<li>The response includes an <strong>ETag</strong> header. Clients can send <strong>If-None-Match</strong> with the ETag value on subsequent requests to receive a <strong>304 Not Modified</strong> if the content has not changed.</li>
+</ul>
+<p>Clients and agents are encouraged to cache the glossary response locally.</p>
 <p>User Authentication is Optional. The User need not be logged in.</p>
 <p><strong>JSON response body fields:</strong></p>
 <p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
@@ -581,10 +588,10 @@ from obp_python.models.obpv300_get_api_glossary200_response import OBPv300GetApi
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -655,10 +662,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -755,10 +762,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -855,10 +862,10 @@ from obp_python.models.obpv600_get_scanned_api_versions200_response import OBPv6
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters

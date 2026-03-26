@@ -5,8 +5,22 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310UpdatedCardForBankRequestProperties**](OBPv310UpdatedCardForBankRequestProperties.md) |  | 
+**allows** | **List[str]** |  | [optional] 
+**expires_date** | **datetime** |  | [optional] 
+**networks** | **List[str]** |  | [optional] 
+**customer_id** | **str** |  | [optional] 
+**issue_number** | **str** |  | [optional] 
+**replacement** | [**OBPv310GetCardsForBank200ResponseCardsInnerReplacement**](OBPv310GetCardsForBank200ResponseCardsInnerReplacement.md) |  | [optional] 
+**enabled** | **bool** |  | [optional] 
+**collected** | **datetime** |  | [optional] 
+**technology** | **str** |  | [optional] 
+**account_id** | **str** |  | [optional] 
+**pin_reset** | [**List[OBPv310GetCardsForBank200ResponseCardsInnerReplacement]**](OBPv310GetCardsForBank200ResponseCardsInnerReplacement.md) |  | [optional] 
+**serial_number** | **str** |  | [optional] 
+**valid_from_date** | **datetime** |  | [optional] 
+**name_on_card** | **str** |  | [optional] 
+**posted** | **datetime** |  | [optional] 
+**card_type** | **str** |  | [optional] 
 
 ## Example
 

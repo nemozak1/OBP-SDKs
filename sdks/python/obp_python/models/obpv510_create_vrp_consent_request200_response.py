@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -19,8 +19,8 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv510_create_vrp_consent_request200_response_properties import OBPv510CreateVRPConsentRequest200ResponseProperties
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv510_create_vrp_consent_request200_response_payload import OBPv510CreateVRPConsentRequest200ResponsePayload
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,10 @@ class OBPv510CreateVRPConsentRequest200Response(BaseModel):
     """
     OBPv510CreateVRPConsentRequest200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv510CreateVRPConsentRequest200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    consumer_id: Optional[StrictStr] = None
+    payload: Optional[OBPv510CreateVRPConsentRequest200ResponsePayload] = None
+    consent_request_id: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["consumer_id", "payload", "consent_request_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +72,9 @@ class OBPv510CreateVRPConsentRequest200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of payload
+        if self.payload:
+            _dict['payload'] = self.payload.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +87,9 @@ class OBPv510CreateVRPConsentRequest200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv510CreateVRPConsentRequest200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "consumer_id": obj.get("consumer_id"),
+            "payload": OBPv510CreateVRPConsentRequest200ResponsePayload.from_dict(obj["payload"]) if obj.get("payload") is not None else None,
+            "consent_request_id": obj.get("consent_request_id")
         })
         return _obj
 

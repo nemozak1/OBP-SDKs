@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510GetAccountsHeldByUserAtBank200ResponseProperties**](OBPv510GetAccountsHeldByUserAtBank200ResponseProperties.md) |  | 
+**accounts** | [**List[OBPv510GetAccountsHeldByUserAtBank200ResponseAccountsInner]**](OBPv510GetAccountsHeldByUserAtBank200ResponseAccountsInner.md) |  | [optional] 
 
 ## Example
 

@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400DeleteSystemLevelEndpointTag200ResponseProperties**](OBPv400DeleteSystemLevelEndpointTag200ResponseProperties.md) |  | 
+**value** | **bool** |  | [optional] 
 
 ## Example
 

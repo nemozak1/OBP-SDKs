@@ -5,8 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600AddUserToGroup200ResponseProperties**](OBPv600AddUserToGroup200ResponseProperties.md) |  | 
+**group_id** | **str** |  | [optional] 
+**target_entitlements** | **List[str]** |  | [optional] 
+**user_id** | **str** |  | [optional] 
+**bank_id** | **str** |  | [optional] 
+**entitlements_skipped** | **List[str]** |  | [optional] 
+**group_name** | **str** |  | [optional] 
+**entitlements_created** | **List[str]** |  | [optional] 
 
 ## Example
 

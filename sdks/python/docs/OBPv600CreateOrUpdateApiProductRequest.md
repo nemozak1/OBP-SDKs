@@ -5,8 +5,21 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600CreateOrUpdateApiProductRequestProperties**](OBPv600CreateOrUpdateApiProductRequestProperties.md) |  | 
+**name** | **str** |  | [optional] 
+**monthly_subscription_currency** | **str** |  | [optional] 
+**per_month_call_limit** | **int** |  | [optional] 
+**description** | **str** |  | [optional] 
+**terms_and_conditions_url** | **str** |  | [optional] 
+**per_week_call_limit** | **int** |  | [optional] 
+**collection_id** | **str** |  | [optional] 
+**monthly_subscription_amount** | **str** |  | [optional] 
+**more_info_url** | **str** |  | [optional] 
+**per_hour_call_limit** | **int** |  | [optional] 
+**per_second_call_limit** | **int** |  | [optional] 
+**parent_api_product_code** | **str** |  | [optional] 
+**category** | **str** |  | [optional] 
+**per_minute_call_limit** | **int** |  | [optional] 
+**per_day_call_limit** | **int** |  | [optional] 
 
 ## Example
 

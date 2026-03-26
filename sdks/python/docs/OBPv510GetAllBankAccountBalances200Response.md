@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510GetAllBankAccountBalances200ResponseProperties**](OBPv510GetAllBankAccountBalances200ResponseProperties.md) |  | 
+**balances** | [**List[OBPv510GetAllBankAccountBalances200ResponseBalancesInner]**](OBPv510GetAllBankAccountBalances200ResponseBalancesInner.md) |  | [optional] 
 
 ## Example
 

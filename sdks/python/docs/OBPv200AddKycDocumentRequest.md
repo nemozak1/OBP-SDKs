@@ -5,8 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv200AddKycDocumentRequestProperties**](OBPv200AddKycDocumentRequestProperties.md) |  | 
+**number** | **str** |  | [optional] 
+**customer_number** | **str** |  | [optional] 
+**issue_date** | **datetime** |  | [optional] 
+**type** | **str** |  | [optional] 
+**issue_place** | **str** |  | [optional] 
+**expiry_date** | **datetime** |  | [optional] 
 
 ## Example
 

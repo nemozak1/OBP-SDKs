@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310GetWebUiProps200ResponseProperties**](OBPv310GetWebUiProps200ResponseProperties.md) |  | 
+**webui_props** | [**List[OBPv310GetWebUiProps200ResponseWebuiPropsInner]**](OBPv310GetWebUiProps200ResponseWebuiPropsInner.md) |  | [optional] 
 
 ## Example
 

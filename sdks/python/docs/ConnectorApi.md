@@ -1,6 +1,6 @@
 # obp_python.ConnectorApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -39,8 +39,8 @@ This depends on the <code>connector</code> and <code>starConnector_supported_typ
 <p>Use this endpoint to discover which connectors are available when configuring Method Routing.<br />
 A connector is available for method routing if it matches the <code>connector</code> prop setting,<br />
 or if <code>connector=star</code> and the connector is listed in <code>starConnector_supported_types</code>.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p>CanGetConnectorNames entitlement is required.</p>
+<p>Authentication is Optional.</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
 <p><strong>JSON response body fields:</strong></p>
 <p><a href="/glossary#connector_name"><strong>connector_name</strong></a>:</p>
 <p><a href="/glossary#"><strong>connectors</strong></a>: connectors</p>
@@ -49,9 +49,6 @@ or if <code>connector=star</code> and the connector is listed in <code>starConne
 
 ### Example
 
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
 
 ```python
 import obp_python
@@ -59,30 +56,12 @@ from obp_python.models.obpv600_get_connectors200_response import OBPv600GetConne
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with obp_python.ApiClient(configuration) as api_client:
@@ -110,7 +89,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+No authorization required
 
 ### HTTP request headers
 
@@ -168,10 +147,10 @@ from obp_python.models.obpv600_get_stored_procedure_connector_health200_response
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters

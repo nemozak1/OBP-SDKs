@@ -5,8 +5,25 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400GetExplicitCounterpartyById200ResponseProperties**](OBPv400GetExplicitCounterpartyById200ResponseProperties.md) |  | 
+**other_account_routing_address** | **str** |  | [optional] 
+**other_account_routing_scheme** | **str** |  | [optional] 
+**created_by_user_id** | **str** |  | [optional] 
+**name** | **str** |  | [optional] 
+**other_account_secondary_routing_address** | **str** |  | [optional] 
+**is_beneficiary** | **bool** |  | [optional] 
+**description** | **str** |  | [optional] 
+**other_branch_routing_address** | **str** |  | [optional] 
+**bespoke** | [**List[OBPv400GetExplicitCounterpartyById200ResponseBespokeInner]**](OBPv400GetExplicitCounterpartyById200ResponseBespokeInner.md) |  | [optional] 
+**other_bank_routing_scheme** | **str** |  | [optional] 
+**other_branch_routing_scheme** | **str** |  | [optional] 
+**this_account_id** | **str** |  | [optional] 
+**this_view_id** | **str** |  | [optional] 
+**currency** | **str** |  | [optional] 
+**metadata** | [**OBPv400GetExplicitCounterpartyById200ResponseMetadata**](OBPv400GetExplicitCounterpartyById200ResponseMetadata.md) |  | [optional] 
+**other_bank_routing_address** | **str** |  | [optional] 
+**this_bank_id** | **str** |  | [optional] 
+**counterparty_id** | **str** |  | [optional] 
+**other_account_secondary_routing_scheme** | **str** |  | [optional] 
 
 ## Example
 

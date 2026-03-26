@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400GetSettlementAccounts200ResponseProperties**](OBPv400GetSettlementAccounts200ResponseProperties.md) |  | 
+**settlement_accounts** | [**List[OBPv400GetSettlementAccounts200ResponseSettlementAccountsInner]**](OBPv400GetSettlementAccounts200ResponseSettlementAccountsInner.md) |  | [optional] 
 
 ## Example
 

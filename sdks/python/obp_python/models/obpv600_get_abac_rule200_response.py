@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv600_get_abac_rule200_response_properties import OBPv600GetAbacRule200ResponseProperties
+from datetime import datetime
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,15 @@ class OBPv600GetAbacRule200Response(BaseModel):
     """
     OBPv600GetAbacRule200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv600GetAbacRule200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    rule_code: Optional[StrictStr] = None
+    created_by_user_id: Optional[StrictStr] = None
+    is_active: Optional[StrictBool] = None
+    description: Optional[StrictStr] = None
+    updated_by_user_id: Optional[datetime] = None
+    rule_name: Optional[StrictStr] = None
+    abac_rule_id: Optional[StrictStr] = None
+    policy: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["rule_code", "created_by_user_id", "is_active", "description", "updated_by_user_id", "rule_name", "abac_rule_id", "policy"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +77,6 @@ class OBPv600GetAbacRule200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +89,14 @@ class OBPv600GetAbacRule200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv600GetAbacRule200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "rule_code": obj.get("rule_code"),
+            "created_by_user_id": obj.get("created_by_user_id"),
+            "is_active": obj.get("is_active"),
+            "description": obj.get("description"),
+            "updated_by_user_id": obj.get("updated_by_user_id"),
+            "rule_name": obj.get("rule_name"),
+            "abac_rule_id": obj.get("abac_rule_id"),
+            "policy": obj.get("policy")
         })
         return _obj
 

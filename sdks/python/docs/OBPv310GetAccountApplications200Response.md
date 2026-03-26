@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310GetAccountApplications200ResponseProperties**](OBPv310GetAccountApplications200ResponseProperties.md) |  | 
+**account_applications** | [**List[OBPv310GetAccountApplications200ResponseAccountApplicationsInner]**](OBPv310GetAccountApplications200ResponseAccountApplicationsInner.md) |  | [optional] 
 
 ## Example
 

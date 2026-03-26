@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
+from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv500_get_user_auth_contexts200_response_properties import OBPv500GetUserAuthContexts200ResponseProperties
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,13 @@ class OBPv500GetUserAuthContexts200Response(BaseModel):
     """
     OBPv500GetUserAuthContexts200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv500GetUserAuthContexts200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    time_stamp: Optional[datetime] = None
+    user_id: Optional[StrictStr] = None
+    key: Optional[StrictStr] = None
+    consumer_id: Optional[StrictStr] = None
+    user_auth_context_id: Optional[StrictStr] = None
+    value: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["time_stamp", "user_id", "key", "consumer_id", "user_auth_context_id", "value"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +75,6 @@ class OBPv500GetUserAuthContexts200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +87,12 @@ class OBPv500GetUserAuthContexts200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv500GetUserAuthContexts200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "time_stamp": obj.get("time_stamp"),
+            "user_id": obj.get("user_id"),
+            "key": obj.get("key"),
+            "consumer_id": obj.get("consumer_id"),
+            "user_auth_context_id": obj.get("user_auth_context_id"),
+            "value": obj.get("value")
         })
         return _obj
 

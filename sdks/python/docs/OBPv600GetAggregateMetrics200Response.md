@@ -5,8 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetAggregateMetrics200ResponseProperties**](OBPv600GetAggregateMetrics200ResponseProperties.md) |  | 
+**count** | **int** |  | [optional] 
+**average_response_time** | **float** |  | [optional] 
+**maximum_response_time** | **float** |  | [optional] 
+**minimum_response_time** | **float** |  | [optional] 
 
 ## Example
 

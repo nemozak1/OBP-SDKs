@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -19,8 +19,10 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv400_create_settlement_account200_response_properties import OBPv400CreateSettlementAccount200ResponseProperties
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv310_get_checkbook_orders200_response_account_account_routings_inner import OBPv310GetCheckbookOrders200ResponseAccountAccountRoutingsInner
+from obp_python.models.obpv400_get_accounts_by_account_routing_regex200_response_accounts_inner_account_attributes_inner import OBPv400GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner
+from obp_python.models.obpv500_get_my_customers_at_bank200_response_customers_inner_credit_limit import OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +30,15 @@ class OBPv400CreateSettlementAccount200Response(BaseModel):
     """
     OBPv400CreateSettlementAccount200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv400CreateSettlementAccount200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    account_attributes: Optional[List[OBPv400GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner]] = None
+    branch_id: Optional[StrictStr] = None
+    account_routings: Optional[List[OBPv310GetCheckbookOrders200ResponseAccountAccountRoutingsInner]] = None
+    label: Optional[StrictStr] = None
+    balance: Optional[OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit] = None
+    payment_system: Optional[StrictStr] = None
+    user_id: Optional[StrictStr] = None
+    account_id: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["account_attributes", "branch_id", "account_routings", "label", "balance", "payment_system", "user_id", "account_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +79,23 @@ class OBPv400CreateSettlementAccount200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in account_attributes (list)
+        _items = []
+        if self.account_attributes:
+            for _item_account_attributes in self.account_attributes:
+                if _item_account_attributes:
+                    _items.append(_item_account_attributes.to_dict())
+            _dict['account_attributes'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in account_routings (list)
+        _items = []
+        if self.account_routings:
+            for _item_account_routings in self.account_routings:
+                if _item_account_routings:
+                    _items.append(_item_account_routings.to_dict())
+            _dict['account_routings'] = _items
+        # override the default output from pydantic by calling `to_dict()` of balance
+        if self.balance:
+            _dict['balance'] = self.balance.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +108,14 @@ class OBPv400CreateSettlementAccount200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv400CreateSettlementAccount200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "account_attributes": [OBPv400GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner.from_dict(_item) for _item in obj["account_attributes"]] if obj.get("account_attributes") is not None else None,
+            "branch_id": obj.get("branch_id"),
+            "account_routings": [OBPv310GetCheckbookOrders200ResponseAccountAccountRoutingsInner.from_dict(_item) for _item in obj["account_routings"]] if obj.get("account_routings") is not None else None,
+            "label": obj.get("label"),
+            "balance": OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit.from_dict(obj["balance"]) if obj.get("balance") is not None else None,
+            "payment_system": obj.get("payment_system"),
+            "user_id": obj.get("user_id"),
+            "account_id": obj.get("account_id")
         })
         return _obj
 

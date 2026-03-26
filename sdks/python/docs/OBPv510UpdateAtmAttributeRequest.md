@@ -5,8 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510UpdateAtmAttributeRequestProperties**](OBPv510UpdateAtmAttributeRequestProperties.md) |  | 
+**name** | **str** |  | [optional] 
+**value** | **str** |  | [optional] 
+**is_active** | **bool** |  | [optional] 
+**type** | **str** |  | [optional] 
 
 ## Example
 

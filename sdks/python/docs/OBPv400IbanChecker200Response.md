@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400IbanChecker200ResponseProperties**](OBPv400IbanChecker200ResponseProperties.md) |  | 
+**is_valid** | **bool** |  | [optional] 
+**details** | [**OBPv400IbanChecker200ResponseDetails**](OBPv400IbanChecker200ResponseDetails.md) |  | [optional] 
 
 ## Example
 

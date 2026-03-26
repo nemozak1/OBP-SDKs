@@ -5,8 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv200AddKycMediaRequestProperties**](OBPv200AddKycMediaRequestProperties.md) |  | 
+**url** | **str** |  | [optional] 
+**customer_number** | **str** |  | [optional] 
+**var_date** | **datetime** |  | [optional] 
+**relates_to_kyc_document_id** | **str** |  | [optional] 
+**relates_to_kyc_check_id** | **str** |  | [optional] 
+**type** | **str** |  | [optional] 
 
 ## Example
 

@@ -5,8 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetOidcClient200ResponseProperties**](OBPv600GetOidcClient200ResponseProperties.md) |  | 
+**enabled** | **bool** |  | [optional] 
+**client_name** | **str** |  | [optional] 
+**client_id** | **str** |  | [optional] 
+**consumer_id** | **str** |  | [optional] 
+**redirect_uris** | **List[str]** |  | [optional] 
 
 ## Example
 

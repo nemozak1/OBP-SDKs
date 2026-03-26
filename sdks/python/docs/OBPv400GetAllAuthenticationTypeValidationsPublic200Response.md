@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseProperties**](OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseProperties.md) |  | 
+**authentication_types_validations** | [**List[OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner]**](OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md) |  | [optional] 
 
 ## Example
 

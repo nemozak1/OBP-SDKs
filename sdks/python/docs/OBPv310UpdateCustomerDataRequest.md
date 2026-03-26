@@ -5,8 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310UpdateCustomerDataRequestProperties**](OBPv310UpdateCustomerDataRequestProperties.md) |  | 
+**highest_education_attained** | **str** |  | [optional] 
+**employment_status** | **str** |  | [optional] 
+**face_image** | [**OBPv500GetMyCustomersAtBank200ResponseCustomersInnerFaceImage**](OBPv500GetMyCustomersAtBank200ResponseCustomersInnerFaceImage.md) |  | [optional] 
+**dependants** | **int** |  | [optional] 
+**relationship_status** | **str** |  | [optional] 
 
 ## Example
 

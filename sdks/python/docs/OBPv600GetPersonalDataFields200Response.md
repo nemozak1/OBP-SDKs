@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetPersonalDataFields200ResponseProperties**](OBPv600GetPersonalDataFields200ResponseProperties.md) |  | 
+**user_attributes** | [**List[OBPv600GetPersonalDataFields200ResponseUserAttributesInner]**](OBPv600GetPersonalDataFields200ResponseUserAttributesInner.md) |  | [optional] 
 
 ## Example
 

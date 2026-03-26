@@ -1,6 +1,6 @@
 # obp_python.BranchApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **o_bpv3_0_0_create_branch**
-> OBPv300GetBranches200ResponsePropertiesBranchesItems o_bpv3_0_0_create_branch(bankid, obpv300_get_branches200_response_properties_branches_items)
+> OBPv300GetBranches200ResponseBranchesInner o_bpv3_0_0_create_branch(bankid, obpv300_get_branches200_response_branches_inner)
 
 Create Branch
 
@@ -101,14 +101,14 @@ Create Branch
 
 ```python
 import obp_python
-from obp_python.models.obpv300_get_branches200_response_properties_branches_items import OBPv300GetBranches200ResponsePropertiesBranchesItems
+from obp_python.models.obpv300_get_branches200_response_branches_inner import OBPv300GetBranches200ResponseBranchesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -135,11 +135,11 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.BranchApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
-    obpv300_get_branches200_response_properties_branches_items = {"type":"object","properties":{"accessibleFeatures":{"type":"string"},"more_info":{"type":"string"},"branch_type":{"type":"string"},"name":{"type":"string"},"bank_id":{"type":"string"},"location":{"type":"object","properties":{"latitude":{"type":"number"},"longitude":{"type":"number"}}},"id":{"type":"string"},"is_accessible":{"type":"string"},"address":{"type":"object","properties":{"city":{"type":"string"},"county":{"type":"string"},"postcode":{"type":"string"},"line_1":{"type":"string"},"line_2":{"type":"string"},"line_3":{"type":"string"},"state":{"type":"string"},"country_code":{"type":"string"}}},"drive_up":{"type":"object","properties":{"friday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"monday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"saturday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"thursday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"tuesday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"wednesday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"sunday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}}},"branch_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"meta":{"type":"object","properties":{"license":{"type":"object","properties":{"name":{"type":"string"},"id":{"type":"string"}}}}},"phone_number":{"type":"string"},"lobby":{"type":"object","properties":{"saturday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}},"tuesday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}},"monday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}},"friday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}},"sunday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}},"wednesday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}},"thursday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}}}}}} # OBPv300GetBranches200ResponsePropertiesBranchesItems | Request body
+    obpv300_get_branches200_response_branches_inner = {"type":"object","properties":{"accessibleFeatures":{"type":"string"},"more_info":{"type":"string"},"branch_type":{"type":"string"},"name":{"type":"string"},"bank_id":{"type":"string"},"location":{"type":"object","properties":{"latitude":{"type":"number"},"longitude":{"type":"number"}}},"id":{"type":"string"},"is_accessible":{"type":"string"},"address":{"type":"object","properties":{"city":{"type":"string"},"county":{"type":"string"},"postcode":{"type":"string"},"line_1":{"type":"string"},"line_2":{"type":"string"},"line_3":{"type":"string"},"state":{"type":"string"},"country_code":{"type":"string"}}},"drive_up":{"type":"object","properties":{"friday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"monday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"saturday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"thursday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"tuesday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"wednesday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"sunday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}}},"branch_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"meta":{"type":"object","properties":{"license":{"type":"object","properties":{"name":{"type":"string"},"id":{"type":"string"}}}}},"phone_number":{"type":"string"},"lobby":{"type":"object","properties":{"saturday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}},"tuesday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}},"monday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}},"friday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}},"sunday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}},"wednesday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}},"thursday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}}}}}} # OBPv300GetBranches200ResponseBranchesInner | Request body
 
     try:
         # Create Branch
-        api_response = api_instance.o_bpv3_0_0_create_branch(bankid, obpv300_get_branches200_response_properties_branches_items)
+        api_response = api_instance.o_bpv3_0_0_create_branch(bankid, obpv300_get_branches200_response_branches_inner)
         print("The response of BranchApi->o_bpv3_0_0_create_branch:\n")
         pprint(api_response)
     except Exception as e:
@@ -154,11 +154,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
- **obpv300_get_branches200_response_properties_branches_items** | [**OBPv300GetBranches200ResponsePropertiesBranchesItems**](OBPv300GetBranches200ResponsePropertiesBranchesItems.md)| Request body | 
+ **obpv300_get_branches200_response_branches_inner** | [**OBPv300GetBranches200ResponseBranchesInner**](OBPv300GetBranches200ResponseBranchesInner.md)| Request body | 
 
 ### Return type
 
-[**OBPv300GetBranches200ResponsePropertiesBranchesItems**](OBPv300GetBranches200ResponsePropertiesBranchesItems.md)
+[**OBPv300GetBranches200ResponseBranchesInner**](OBPv300GetBranches200ResponseBranchesInner.md)
 
 ### Authorization
 
@@ -180,7 +180,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv3_0_0_get_branch**
-> OBPv300GetBranches200ResponsePropertiesBranchesItems o_bpv3_0_0_get_branch(bankid, branchid)
+> OBPv300GetBranches200ResponseBranchesInner o_bpv3_0_0_get_branch(bankid, branchid)
 
 Get Branch
 
@@ -238,14 +238,14 @@ Get Branch
 
 ```python
 import obp_python
-from obp_python.models.obpv300_get_branches200_response_properties_branches_items import OBPv300GetBranches200ResponsePropertiesBranchesItems
+from obp_python.models.obpv300_get_branches200_response_branches_inner import OBPv300GetBranches200ResponseBranchesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv300GetBranches200ResponsePropertiesBranchesItems**](OBPv300GetBranches200ResponsePropertiesBranchesItems.md)
+[**OBPv300GetBranches200ResponseBranchesInner**](OBPv300GetBranches200ResponseBranchesInner.md)
 
 ### Authorization
 
@@ -380,10 +380,10 @@ from obp_python.models.obpv300_get_branches200_response import OBPv300GetBranche
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -458,10 +458,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters

@@ -5,8 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400CreateSystemAccountNotificationWebhookRequestProperties**](OBPv400CreateSystemAccountNotificationWebhookRequestProperties.md) |  | 
+**http_method** | **str** |  | [optional] 
+**http_protocol** | **str** |  | [optional] 
+**url** | **str** |  | [optional] 
 
 ## Example
 

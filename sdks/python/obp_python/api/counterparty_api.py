@@ -1,7 +1,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -29,7 +29,7 @@ from obp_python.models.obpv121_update_counterparty_physical_location_request imp
 from obp_python.models.obpv121_update_counterparty_url_request import OBPv121UpdateCounterpartyUrlRequest
 from obp_python.models.obpv121_update_transaction_narrative200_response import OBPv121UpdateTransactionNarrative200Response
 from obp_python.models.obpv300_get_other_accounts_for_bank_account200_response import OBPv300GetOtherAccountsForBankAccount200Response
-from obp_python.models.obpv310_get_transaction_by_id_for_bank_account200_response_properties_other_account import OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccount
+from obp_python.models.obpv310_get_transaction_by_id_for_bank_account200_response_other_account import OBPv310GetTransactionByIdForBankAccount200ResponseOtherAccount
 from obp_python.models.obpv400_create_counterparty_for_any_account_request import OBPv400CreateCounterpartyForAnyAccountRequest
 from obp_python.models.obpv400_get_counterparties_for_any_account200_response import OBPv400GetCounterpartiesForAnyAccount200Response
 from obp_python.models.obpv400_get_explicit_counterparty_by_id200_response import OBPv400GetExplicitCounterpartyById200Response
@@ -9237,7 +9237,7 @@ class CounterpartyApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccount:
+    ) -> OBPv310GetTransactionByIdForBankAccount200ResponseOtherAccount:
         """Get Other Account by Id
 
         <p>Returns data about the Other Account that has shared at least one transaction with ACCOUNT_ID at BANK_ID.<br /> User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
@@ -9284,7 +9284,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccount",
+            '200': "OBPv310GetTransactionByIdForBankAccount200ResponseOtherAccount",
             '404': None,
             '500': None,
         }
@@ -9318,7 +9318,7 @@ class CounterpartyApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccount]:
+    ) -> ApiResponse[OBPv310GetTransactionByIdForBankAccount200ResponseOtherAccount]:
         """Get Other Account by Id
 
         <p>Returns data about the Other Account that has shared at least one transaction with ACCOUNT_ID at BANK_ID.<br /> User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
@@ -9365,7 +9365,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccount",
+            '200': "OBPv310GetTransactionByIdForBankAccount200ResponseOtherAccount",
             '404': None,
             '500': None,
         }
@@ -9446,7 +9446,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccount",
+            '200': "OBPv310GetTransactionByIdForBankAccount200ResponseOtherAccount",
             '404': None,
             '500': None,
         }

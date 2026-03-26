@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -19,8 +19,8 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv500_create_product200_response_properties import OBPv500CreateProduct200ResponseProperties
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv310_get_product_tree200_response_parent_product_parent_product_meta import OBPv310GetProductTree200ResponseParentProductParentProductMeta
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,15 @@ class OBPv500CreateProduct200Response(BaseModel):
     """
     OBPv500CreateProduct200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv500CreateProduct200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    name: Optional[StrictStr] = None
+    description: Optional[StrictStr] = None
+    terms_and_conditions_url: Optional[StrictStr] = None
+    more_info_url: Optional[StrictStr] = None
+    product_code: Optional[StrictStr] = None
+    bank_id: Optional[StrictStr] = None
+    meta: Optional[OBPv310GetProductTree200ResponseParentProductParentProductMeta] = None
+    parent_product_code: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["name", "description", "terms_and_conditions_url", "more_info_url", "product_code", "bank_id", "meta", "parent_product_code"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +77,9 @@ class OBPv500CreateProduct200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of meta
+        if self.meta:
+            _dict['meta'] = self.meta.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +92,14 @@ class OBPv500CreateProduct200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv500CreateProduct200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "name": obj.get("name"),
+            "description": obj.get("description"),
+            "terms_and_conditions_url": obj.get("terms_and_conditions_url"),
+            "more_info_url": obj.get("more_info_url"),
+            "product_code": obj.get("product_code"),
+            "bank_id": obj.get("bank_id"),
+            "meta": OBPv310GetProductTree200ResponseParentProductParentProductMeta.from_dict(obj["meta"]) if obj.get("meta") is not None else None,
+            "parent_product_code": obj.get("parent_product_code")
         })
         return _obj
 

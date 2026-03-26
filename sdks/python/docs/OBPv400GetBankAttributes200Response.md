@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400GetBankAttributes200ResponseProperties**](OBPv400GetBankAttributes200ResponseProperties.md) |  | 
+**bank_attributes** | [**List[OBPv400GetBankAttributes200ResponseBankAttributesInner]**](OBPv400GetBankAttributes200ResponseBankAttributesInner.md) |  | [optional] 
 
 ## Example
 

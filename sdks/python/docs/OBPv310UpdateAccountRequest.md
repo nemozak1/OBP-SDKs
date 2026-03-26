@@ -5,8 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310UpdateAccountRequestProperties**](OBPv310UpdateAccountRequestProperties.md) |  | 
+**account_routings** | [**List[OBPv310GetCheckbookOrders200ResponseAccountAccountRoutingsInner]**](OBPv310GetCheckbookOrders200ResponseAccountAccountRoutingsInner.md) |  | [optional] 
+**branch_id** | **str** |  | [optional] 
+**label** | **str** |  | [optional] 
+**type** | **str** |  | [optional] 
 
 ## Example
 

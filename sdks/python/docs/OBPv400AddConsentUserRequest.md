@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400AddConsentUserRequestProperties**](OBPv400AddConsentUserRequestProperties.md) |  | 
+**user_id** | **str** |  | [optional] 
 
 ## Example
 

@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv510_get_counterparty_limit200_response_properties import OBPv510GetCounterpartyLimit200ResponseProperties
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +27,20 @@ class OBPv510GetCounterpartyLimit200Response(BaseModel):
     """
     OBPv510GetCounterpartyLimit200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv510GetCounterpartyLimit200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    counterparty_limit_id: Optional[StrictStr] = None
+    max_monthly_amount: Optional[StrictStr] = None
+    max_number_of_monthly_transactions: Optional[StrictInt] = None
+    max_single_amount: Optional[StrictStr] = None
+    view_id: Optional[StrictStr] = None
+    bank_id: Optional[StrictStr] = None
+    account_id: Optional[StrictStr] = None
+    max_number_of_transactions: Optional[StrictInt] = None
+    currency: Optional[StrictStr] = None
+    max_number_of_yearly_transactions: Optional[StrictInt] = None
+    max_yearly_amount: Optional[StrictStr] = None
+    counterparty_id: Optional[StrictStr] = None
+    max_total_amount: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["counterparty_limit_id", "max_monthly_amount", "max_number_of_monthly_transactions", "max_single_amount", "view_id", "bank_id", "account_id", "max_number_of_transactions", "currency", "max_number_of_yearly_transactions", "max_yearly_amount", "counterparty_id", "max_total_amount"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +81,6 @@ class OBPv510GetCounterpartyLimit200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +93,19 @@ class OBPv510GetCounterpartyLimit200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv510GetCounterpartyLimit200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "counterparty_limit_id": obj.get("counterparty_limit_id"),
+            "max_monthly_amount": obj.get("max_monthly_amount"),
+            "max_number_of_monthly_transactions": obj.get("max_number_of_monthly_transactions"),
+            "max_single_amount": obj.get("max_single_amount"),
+            "view_id": obj.get("view_id"),
+            "bank_id": obj.get("bank_id"),
+            "account_id": obj.get("account_id"),
+            "max_number_of_transactions": obj.get("max_number_of_transactions"),
+            "currency": obj.get("currency"),
+            "max_number_of_yearly_transactions": obj.get("max_number_of_yearly_transactions"),
+            "max_yearly_amount": obj.get("max_yearly_amount"),
+            "counterparty_id": obj.get("counterparty_id"),
+            "max_total_amount": obj.get("max_total_amount")
         })
         return _obj
 

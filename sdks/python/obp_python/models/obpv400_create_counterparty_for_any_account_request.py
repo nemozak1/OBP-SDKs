@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv400_create_counterparty_for_any_account_request_properties import OBPv400CreateCounterpartyForAnyAccountRequestProperties
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv400_get_explicit_counterparty_by_id200_response_bespoke_inner import OBPv400GetExplicitCounterpartyById200ResponseBespokeInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,20 @@ class OBPv400CreateCounterpartyForAnyAccountRequest(BaseModel):
     """
     OBPv400CreateCounterpartyForAnyAccountRequest
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv400CreateCounterpartyForAnyAccountRequestProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    other_account_routing_address: Optional[StrictStr] = None
+    other_account_routing_scheme: Optional[StrictStr] = None
+    name: Optional[StrictStr] = None
+    other_account_secondary_routing_address: Optional[StrictStr] = None
+    is_beneficiary: Optional[StrictBool] = None
+    description: Optional[StrictStr] = None
+    other_branch_routing_address: Optional[StrictStr] = None
+    bespoke: Optional[List[OBPv400GetExplicitCounterpartyById200ResponseBespokeInner]] = None
+    other_bank_routing_scheme: Optional[StrictStr] = None
+    other_branch_routing_scheme: Optional[StrictStr] = None
+    currency: Optional[StrictStr] = None
+    other_bank_routing_address: Optional[StrictStr] = None
+    other_account_secondary_routing_scheme: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["other_account_routing_address", "other_account_routing_scheme", "name", "other_account_secondary_routing_address", "is_beneficiary", "description", "other_branch_routing_address", "bespoke", "other_bank_routing_scheme", "other_branch_routing_scheme", "currency", "other_bank_routing_address", "other_account_secondary_routing_scheme"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +82,13 @@ class OBPv400CreateCounterpartyForAnyAccountRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in bespoke (list)
+        _items = []
+        if self.bespoke:
+            for _item_bespoke in self.bespoke:
+                if _item_bespoke:
+                    _items.append(_item_bespoke.to_dict())
+            _dict['bespoke'] = _items
         return _dict
 
     @classmethod
@@ -86,8 +101,19 @@ class OBPv400CreateCounterpartyForAnyAccountRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv400CreateCounterpartyForAnyAccountRequestProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "other_account_routing_address": obj.get("other_account_routing_address"),
+            "other_account_routing_scheme": obj.get("other_account_routing_scheme"),
+            "name": obj.get("name"),
+            "other_account_secondary_routing_address": obj.get("other_account_secondary_routing_address"),
+            "is_beneficiary": obj.get("is_beneficiary"),
+            "description": obj.get("description"),
+            "other_branch_routing_address": obj.get("other_branch_routing_address"),
+            "bespoke": [OBPv400GetExplicitCounterpartyById200ResponseBespokeInner.from_dict(_item) for _item in obj["bespoke"]] if obj.get("bespoke") is not None else None,
+            "other_bank_routing_scheme": obj.get("other_bank_routing_scheme"),
+            "other_branch_routing_scheme": obj.get("other_branch_routing_scheme"),
+            "currency": obj.get("currency"),
+            "other_bank_routing_address": obj.get("other_bank_routing_address"),
+            "other_account_secondary_routing_scheme": obj.get("other_account_secondary_routing_scheme")
         })
         return _obj
 

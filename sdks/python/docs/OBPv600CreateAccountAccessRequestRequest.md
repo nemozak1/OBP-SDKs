@@ -5,8 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600CreateAccountAccessRequestRequestProperties**](OBPv600CreateAccountAccessRequestRequestProperties.md) |  | 
+**is_system_view** | **bool** |  | [optional] 
+**business_justification** | **str** |  | [optional] 
+**view_id** | **str** |  | [optional] 
+**target_user_id** | **str** |  | [optional] 
 
 ## Example
 

@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv600_get_dynamic_entity_diagnostics200_response_properties import OBPv600GetDynamicEntityDiagnostics200ResponseProperties
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv600_cleanup_orphaned_dynamic_entity_records200_response_deleted_orphaned_entities_inner import OBPv600CleanupOrphanedDynamicEntityRecords200ResponseDeletedOrphanedEntitiesInner
+from obp_python.models.obpv600_get_dynamic_entity_diagnostics200_response_issues_inner import OBPv600GetDynamicEntityDiagnostics200ResponseIssuesInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +29,11 @@ class OBPv600GetDynamicEntityDiagnostics200Response(BaseModel):
     """
     OBPv600GetDynamicEntityDiagnostics200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv600GetDynamicEntityDiagnostics200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    issues: Optional[List[OBPv600GetDynamicEntityDiagnostics200ResponseIssuesInner]] = None
+    scanned_entities: Optional[List[StrictStr]] = None
+    orphaned_entities: Optional[List[OBPv600CleanupOrphanedDynamicEntityRecords200ResponseDeletedOrphanedEntitiesInner]] = None
+    total_issues: Optional[StrictInt] = None
+    __properties: ClassVar[List[str]] = ["issues", "scanned_entities", "orphaned_entities", "total_issues"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +74,20 @@ class OBPv600GetDynamicEntityDiagnostics200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in issues (list)
+        _items = []
+        if self.issues:
+            for _item_issues in self.issues:
+                if _item_issues:
+                    _items.append(_item_issues.to_dict())
+            _dict['issues'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in orphaned_entities (list)
+        _items = []
+        if self.orphaned_entities:
+            for _item_orphaned_entities in self.orphaned_entities:
+                if _item_orphaned_entities:
+                    _items.append(_item_orphaned_entities.to_dict())
+            _dict['orphaned_entities'] = _items
         return _dict
 
     @classmethod
@@ -86,8 +100,10 @@ class OBPv600GetDynamicEntityDiagnostics200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv600GetDynamicEntityDiagnostics200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "issues": [OBPv600GetDynamicEntityDiagnostics200ResponseIssuesInner.from_dict(_item) for _item in obj["issues"]] if obj.get("issues") is not None else None,
+            "scanned_entities": obj.get("scanned_entities"),
+            "orphaned_entities": [OBPv600CleanupOrphanedDynamicEntityRecords200ResponseDeletedOrphanedEntitiesInner.from_dict(_item) for _item in obj["orphaned_entities"]] if obj.get("orphaned_entities") is not None else None,
+            "total_issues": obj.get("total_issues")
         })
         return _obj
 

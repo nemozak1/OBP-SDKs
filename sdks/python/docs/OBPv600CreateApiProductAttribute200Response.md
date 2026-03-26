@@ -5,8 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600CreateApiProductAttribute200ResponseProperties**](OBPv600CreateApiProductAttribute200ResponseProperties.md) |  | 
+**name** | **str** |  | [optional] 
+**is_active** | **bool** |  | [optional] 
+**api_product_code** | **str** |  | [optional] 
+**bank_id** | **str** |  | [optional] 
+**type** | **str** |  | [optional] 
+**value** | **str** |  | [optional] 
+**api_product_attribute_id** | **str** |  | [optional] 
 
 ## Example
 

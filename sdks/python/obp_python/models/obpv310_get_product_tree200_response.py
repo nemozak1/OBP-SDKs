@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -19,8 +19,9 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv310_get_product_tree200_response_properties import OBPv310GetProductTree200ResponseProperties
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv310_get_product_tree200_response_parent_product import OBPv310GetProductTree200ResponseParentProduct
+from obp_python.models.obpv310_get_product_tree200_response_parent_product_parent_product_meta import OBPv310GetProductTree200ResponseParentProductParentProductMeta
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +29,18 @@ class OBPv310GetProductTree200Response(BaseModel):
     """
     OBPv310GetProductTree200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv310GetProductTree200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    name: Optional[StrictStr] = None
+    description: Optional[StrictStr] = None
+    parent_product: Optional[OBPv310GetProductTree200ResponseParentProduct] = None
+    more_info_url: Optional[StrictStr] = None
+    super_family: Optional[StrictStr] = None
+    code: Optional[StrictStr] = None
+    bank_id: Optional[StrictStr] = None
+    meta: Optional[OBPv310GetProductTree200ResponseParentProductParentProductMeta] = None
+    details: Optional[StrictStr] = None
+    category: Optional[StrictStr] = None
+    family: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["name", "description", "parent_product", "more_info_url", "super_family", "code", "bank_id", "meta", "details", "category", "family"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +81,12 @@ class OBPv310GetProductTree200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of parent_product
+        if self.parent_product:
+            _dict['parent_product'] = self.parent_product.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of meta
+        if self.meta:
+            _dict['meta'] = self.meta.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +99,17 @@ class OBPv310GetProductTree200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv310GetProductTree200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "name": obj.get("name"),
+            "description": obj.get("description"),
+            "parent_product": OBPv310GetProductTree200ResponseParentProduct.from_dict(obj["parent_product"]) if obj.get("parent_product") is not None else None,
+            "more_info_url": obj.get("more_info_url"),
+            "super_family": obj.get("super_family"),
+            "code": obj.get("code"),
+            "bank_id": obj.get("bank_id"),
+            "meta": OBPv310GetProductTree200ResponseParentProductParentProductMeta.from_dict(obj["meta"]) if obj.get("meta") is not None else None,
+            "details": obj.get("details"),
+            "category": obj.get("category"),
+            "family": obj.get("family")
         })
         return _obj
 

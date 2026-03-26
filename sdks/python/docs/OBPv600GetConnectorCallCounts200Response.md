@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetConnectorCallCounts200ResponseProperties**](OBPv600GetConnectorCallCounts200ResponseProperties.md) |  | 
+**enabled** | **bool** |  | [optional] 
+**connector_counts** | [**List[OBPv600GetConnectorCallCounts200ResponseConnectorCountsInner]**](OBPv600GetConnectorCallCounts200ResponseConnectorCountsInner.md) |  | [optional] 
 
 ## Example
 

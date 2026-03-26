@@ -1,6 +1,6 @@
 # obp_python.MetricApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **o_bpv2_0_0_elastic_search_metrics**
-> OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage o_bpv2_0_0_elastic_search_metrics()
+> object o_bpv2_0_0_elastic_search_metrics()
 
 Search API Metrics via Elasticsearch
 
@@ -63,14 +63,13 @@ Search API Metrics via Elasticsearch
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_dynamic_message_doc200_response_properties_example_inbound_message import OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -114,7 +113,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage**](OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.md)
+**object**
 
 ### Authorization
 
@@ -175,10 +174,10 @@ from obp_python.models.obpv220_get_connector_metrics200_response import OBPv220G
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -249,14 +248,14 @@ Get Top Consumers
 
 <p>Get metrics about the top consumers of the API usage e.g. total count, consumer_id and app_name.</p>
 <p>Should be able to filter on the following fields</p>
-<p>e.g.: /management/metrics/top-consumers?from_date=1970-01-01T00:00:00.000Z&amp;to_date=2026-03-16T19:25:56.890Z&amp;consumer_id=5<br />
+<p>e.g.: /management/metrics/top-consumers?from_date=1970-01-01T00:00:00.000Z&amp;to_date=2026-03-25T12:16:24.498Z&amp;consumer_id=5<br />
 &amp;user_id=66214b8e-259e-44ad-8868-3eb47be70646&amp;implemented_by_partial_function=getTransactionsForBankAccount<br />
 &amp;implemented_in_version=v3.0.0&amp;url=/obp/v3.0.0/banks/gh.29.uk/accounts/8ca8a7e4-6d02-48e3-a029-0b2bf89de9f0/owner/transactions<br />
 &amp;verb=GET&amp;anon=false&amp;app_name=MapperPostman<br />
 &amp;exclude_app_names=API-EXPLORER,API-Manager,SOFI,null<br />
 &amp;limit=100</p>
 <p>1 from_date (defaults to the one year ago): eg:from_date=1970-01-01T00:00:00.000Z</p>
-<p>2 to_date (defaults to the current date) eg:to_date=2026-03-16T19:25:56.890Z</p>
+<p>2 to_date (defaults to the current date) eg:to_date=2026-03-25T12:16:24.498Z</p>
 <p>3 consumer_id  (if null ignore)</p>
 <p>4 user_id (if null ignore)</p>
 <p>5 anon (if null ignore) only support two value : true (return where user_id is null.) or false (return where user_id is not null.)</p>
@@ -292,10 +291,10 @@ from obp_python.models.obpv310_get_metrics_top_consumers200_response import OBPv
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -377,7 +376,7 @@ Get Metrics at Bank
 possible values:<br />
 &quot;url&quot;,<br />
 &quot;date&quot;,<br />
-&quot;user_name&quot;,<br />
+&quot;username&quot; (or &quot;user_name&quot; for backward compatibility),<br />
 &quot;app_name&quot;,<br />
 &quot;developer_email&quot;,<br />
 &quot;implemented_by_partial_function&quot;,<br />
@@ -385,7 +384,7 @@ possible values:<br />
 &quot;consumer_id&quot;,<br />
 &quot;verb&quot;</p>
 <p>6 direction (defaults to date desc) eg: direction=desc</p>
-<p>eg: /management/metrics?from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:<a href="&#109;&#x61;&#x69;&#x6c;&#x74;o&#58;&#x30;&#49;&#x2e;&#x30;&#x30;&#x30;Z&#x26;&#x6c;i&#109;i&#x74;&#x3d;1&#x30;&#48;&#x30;&#48;&amp;&#x6f;&#x66;&#102;&#115;&#x65;t&#61;&#x30;&#x26;&#x61;&#110;&#111;&#110;&#x3d;&#102;&#x61;&#x6c;s&#x65;&#38;&#97;pp_&#x6e;&#x61;&#x6d;&#x65;&#x3d;&#84;&#101;&#x61;t&#65;p&#112;&#38;&#105;&#x6d;&#x70;&#x6c;e&#x6d;e&#x6e;&#x74;&#101;d&#95;&#105;&#110;_ver&#x73;i&#x6f;&#110;&#61;v2.&#49;&#46;&#x30;&#38;&#x76;e&#x72;&#98;&#61;&#x50;&#x4f;S&#x54;&#x26;&#117;&#115;&#101;&#114;&#95;&#105;d&#x3d;&#x63;&#x37;&#x62;&#54;&#99;&#98;&#x34;&#x37;-&#x63;b&#x39;&#54;&#45;&#52;&#x34;&#x34;&#x31;-&#56;&#x38;0&#x31;&#x2d;&#x33;&#53;&#x62;5&#x37;&#x34;&#53;&#54;&#x37;&#x35;&#x33;a&#x26;&#x75;&#x73;&#101;r&#95;&#x6e;&#97;&#109;e=&#115;&#117;&#115;a&#110;&#46;&#117;&#107;&#x2e;&#x32;9&#64;&#101;&#x78;&#x61;&#x6d;&#x70;&#108;&#x65;&#x2e;&#x63;&#111;m">0&#x31;&#46;0&#48;&#x30;&#x5a;&amp;&#108;i&#109;&#105;&#116;&#x3d;&#x31;&#48;&#x30;&#x30;&#x30;&#38;&#111;&#102;&#x66;&#115;&#101;&#116;&#x3d;&#x30;&#x26;&#97;&#x6e;&#111;&#110;&#61;&#x66;&#97;l&#x73;&#x65;&amp;&#97;p&#x70;&#x5f;n&#x61;&#109;&#101;&#61;&#x54;&#x65;a&#x74;&#x41;&#112;&#x70;&#x26;&#105;&#109;&#112;&#x6c;&#x65;&#x6d;en&#x74;&#101;d&#x5f;&#x69;&#110;&#x5f;&#x76;&#101;&#114;&#115;&#x69;&#x6f;&#x6e;&#61;&#x76;2&#46;&#49;&#46;&#x30;&amp;&#x76;&#x65;&#x72;&#98;&#x3d;P&#79;&#83;&#84;&#x26;&#x75;&#115;e&#114;&#95;i&#x64;&#x3d;c&#x37;&#x62;6&#99;&#98;&#52;&#55;&#45;&#x63;&#x62;&#x39;&#x36;-444&#x31;&#x2d;88&#48;&#x31;-&#51;&#x35;b&#x35;745&#54;&#55;&#x35;&#x33;&#x61;&amp;&#x75;&#x73;e&#114;&#95;&#x6e;a&#x6d;&#x65;=&#115;&#x75;&#x73;&#x61;&#110;&#x2e;&#x75;&#x6b;&#x2e;&#x32;9&#x40;e&#120;&#x61;&#109;&#112;&#x6c;e.&#99;o&#x6d;</a>&amp;consumer_id=78</p>
+<p>eg: /management/metrics?from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:<a href="&#109;a&#105;&#x6c;&#116;o&#x3a;&#48;&#x31;&#x2e;&#48;&#x30;&#48;&#90;&amp;li&#x6d;i&#x74;&#61;10&#48;&#48;&#48;&amp;&#111;&#x66;&#x66;&#x73;&#101;&#116;&#x3d;&#x30;&#38;&#x61;n&#111;&#x6e;=&#x66;&#x61;&#108;&#115;&#101;&#x26;&#97;&#x70;&#x70;&#x5f;&#110;&#97;&#x6d;&#101;=&#84;&#101;&#x61;&#116;&#x41;&#x70;&#112;&amp;&#105;&#109;ple&#x6d;&#x65;&#x6e;&#116;&#101;&#x64;&#95;&#x69;&#110;&#x5f;&#118;e&#x72;&#x73;&#x69;&#111;&#110;&#x3d;&#118;&#x32;&#x2e;&#49;&#x2e;&#x30;&#38;&#x76;&#x65;&#x72;&#98;&#x3d;&#80;&#79;&#83;&#x54;&#x26;&#117;&#115;&#x65;&#114;&#95;i&#x64;=&#x63;7&#x62;&#x36;c&#98;&#x34;&#55;-&#x63;&#98;&#x39;&#x36;&#45;&#52;4&#x34;&#x31;&#45;&#56;&#x38;&#48;&#x31;&#45;3&#x35;b&#x35;&#x37;45&#x36;7&#53;3&#97;&#38;&#117;&#x73;&#x65;&#x72;&#110;&#97;m&#101;=&#x73;&#x75;&#x73;a&#110;&#x2e;uk&#46;&#x32;&#57;&#x40;&#101;x&#97;&#109;&#112;&#x6c;&#x65;.&#x63;o&#109;">0&#x31;&#46;&#x30;0&#x30;&#x5a;&#38;&#108;&#x69;&#109;&#105;&#x74;=&#x31;&#48;0&#48;&#48;&#x26;&#x6f;&#102;&#102;s&#x65;&#x74;=&#48;&amp;&#x61;&#110;o&#110;&#61;&#102;&#x61;&#108;&#115;&#x65;&#x26;&#97;p&#112;&#x5f;&#110;a&#x6d;&#101;&#x3d;&#84;&#101;&#x61;&#116;&#x41;pp&#x26;&#x69;&#109;&#112;&#x6c;e&#109;e&#110;&#116;&#x65;&#100;_&#x69;&#x6e;&#95;v&#101;&#114;si&#111;&#x6e;&#x3d;&#118;2.&#x31;.&#48;&#38;v&#101;&#114;&#x62;=&#x50;&#x4f;&#x53;&#x54;&#x26;&#x75;se&#x72;_&#105;&#100;&#61;&#x63;&#55;&#x62;&#54;c&#98;&#x34;&#x37;-&#99;&#x62;&#57;6&#x2d;&#x34;4&#52;&#x31;-&#x38;&#x38;&#48;1&#45;35b&#x35;&#x37;&#52;&#x35;&#54;&#55;5&#x33;&#97;&#x26;us&#101;&#114;n&#x61;m&#101;&#x3d;&#115;&#x75;&#115;&#x61;&#110;&#x2e;&#117;&#107;&#46;&#x32;&#x39;&#64;e&#x78;&#x61;m&#x70;&#108;e&#46;&#x63;&#111;&#109;</a>&amp;consumer_id=78</p>
 <p>Other filters:</p>
 <p>7 consumer_id  (if null ignore)</p>
 <p>8 user_id (if null ignore)</p>
@@ -428,10 +427,10 @@ from obp_python.models.obpv500_get_metrics_at_bank200_response import OBPv500Get
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -575,10 +574,10 @@ from obp_python.models.obpv600_get_aggregate_metrics200_response import OBPv600G
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -685,10 +684,10 @@ from obp_python.models.obpv600_get_connector_call_counts200_response import OBPv
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -802,10 +801,10 @@ from obp_python.models.obpv600_get_connector_traces200_response import OBPv600Ge
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -912,7 +911,7 @@ For historical/reporting queries, always explicitly specify your desired <code>f
 possible values:<br />
 &quot;url&quot;,<br />
 &quot;date&quot;,<br />
-&quot;user_name&quot;,<br />
+&quot;username&quot; (or &quot;user_name&quot; for backward compatibility),<br />
 &quot;app_name&quot;,<br />
 &quot;developer_email&quot;,<br />
 &quot;implemented_by_partial_function&quot;,<br />
@@ -920,7 +919,7 @@ possible values:<br />
 &quot;consumer_id&quot;,<br />
 &quot;verb&quot;</p>
 <p>6 direction (defaults to date desc) eg: direction=desc</p>
-<p>eg: /management/metrics?from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:<a href="&#109;a&#105;&#x6c;t&#111;&#58;&#x30;&#x31;.0&#48;&#x30;&#x5a;&#38;&#x6c;&#105;&#109;&#x69;t&#61;&#49;000&#x30;&#38;&#x6f;&#x66;&#102;s&#101;&#116;&#61;&#x30;&#x26;a&#x6e;o&#x6e;&#61;&#x66;&#x61;&#108;&#115;&#101;&amp;&#97;&#112;&#x70;_&#110;&#x61;&#x6d;&#x65;&#x3d;T&#101;&#97;&#x74;&#x41;&#x70;p&#x26;&#105;&#109;&#x70;&#108;&#101;&#x6d;&#101;&#110;t&#x65;&#x64;&#x5f;&#105;&#110;&#x5f;&#x76;e&#x72;&#115;&#x69;&#x6f;&#x6e;&#x3d;&#118;2&#46;&#49;&#x2e;&#48;&#38;&#x76;&#x65;&#x72;&#x62;=&#x50;O&#x53;&#84;&#38;&#117;&#x73;&#101;&#114;&#x5f;i&#x64;&#x3d;&#x63;&#x37;&#x62;&#x36;&#99;&#98;&#x34;7&#x2d;&#x63;&#x62;&#57;&#x36;&#45;&#x34;&#52;&#x34;1&#x2d;8&#x38;0&#49;&#45;&#x33;5&#98;5&#55;&#x34;&#53;&#x36;&#x37;&#x35;&#x33;&#97;&#38;&#117;&#x73;e&#114;&#95;&#110;&#97;me=s&#117;&#115;a&#110;&#x2e;u&#107;&#x2e;&#x32;&#x39;&#64;e&#120;&#x61;&#x6d;&#x70;&#108;&#x65;&#x2e;&#x63;o&#109;">&#x30;&#49;&#46;0&#48;&#x30;&#x5a;&#38;&#108;&#x69;&#109;&#x69;&#116;&#61;&#x31;&#x30;&#x30;&#48;&#48;&#38;o&#x66;f&#115;&#101;&#x74;=&#48;&#x26;&#97;&#110;&#x6f;&#x6e;=&#x66;&#x61;&#x6c;&#115;&#x65;&#38;&#97;p&#112;&#x5f;&#x6e;&#97;&#x6d;&#x65;&#x3d;&#84;eat&#65;p&#112;&#x26;&#x69;&#109;&#112;l&#101;&#x6d;&#x65;n&#x74;&#x65;&#x64;&#95;&#105;&#110;&#95;&#118;e&#x72;&#x73;&#105;&#x6f;n&#x3d;&#x76;&#50;&#x2e;1.0&#38;&#118;&#x65;&#x72;b&#x3d;&#x50;&#79;S&#84;&#38;u&#x73;e&#114;&#x5f;&#105;d&#61;c7&#98;&#x36;&#x63;&#98;&#52;&#x37;&#45;&#99;&#x62;&#x39;&#x36;-&#x34;&#52;&#x34;&#49;&#x2d;&#56;&#x38;0&#x31;&#45;&#x33;&#53;&#x62;&#x35;&#x37;4&#53;&#x36;7&#x35;&#x33;&#97;&#38;&#117;&#x73;&#x65;&#114;&#95;&#110;&#97;&#x6d;&#x65;&#61;&#x73;&#117;&#115;&#x61;&#110;&#x2e;&#117;&#107;&#x2e;&#x32;&#x39;&#x40;&#101;&#x78;a&#x6d;&#112;&#108;&#101;&#46;c&#111;&#x6d;</a>&amp;consumer_id=78</p>
+<p>eg: /management/metrics?from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:<a href="m&#x61;i&#108;&#116;o&#58;&#48;&#x31;&#46;&#x30;&#48;&#48;&#90;&#x26;l&#x69;&#x6d;&#105;&#x74;&#x3d;&#49;&#x30;&#48;&#48;&#x30;&#x26;&#x6f;&#x66;f&#x73;&#101;&#x74;=&#x30;&#x26;an&#111;&#110;=&#x66;&#97;&#108;se&#x26;&#97;&#112;&#112;&#x5f;&#110;&#97;&#109;&#x65;&#x3d;&#x54;&#101;&#97;&#116;&#x41;&#112;&#112;&#x26;i&#x6d;&#x70;&#x6c;&#x65;&#x6d;&#x65;&#110;t&#101;&#100;_&#105;&#x6e;&#x5f;&#118;e&#x72;&#x73;&#x69;o&#x6e;&#x3d;v&#50;&#x2e;&#x31;&#46;&#48;&amp;v&#101;&#114;&#98;=&#80;OS&#x54;&#x26;us&#101;&#x72;&#x5f;&#105;&#x64;&#61;&#99;&#x37;&#x62;&#x36;&#x63;&#98;47&#45;&#99;&#98;&#57;&#54;&#x2d;&#x34;&#x34;&#x34;&#x31;-8&#x38;0&#49;&#45;&#51;&#53;&#x62;&#x35;&#x37;4&#x35;&#54;&#55;53&#x61;&amp;u&#115;&#101;&#114;&#x6e;&#97;m&#101;&#61;&#115;&#x75;&#115;&#97;&#x6e;&#x2e;&#117;&#x6b;&#46;&#50;&#x39;&#64;e&#120;a&#x6d;p&#x6c;e.&#x63;&#111;&#109;">&#x30;&#49;&#46;&#48;&#48;&#48;&#90;&#x26;li&#109;&#x69;&#116;&#x3d;&#x31;00&#48;&#48;&#x26;&#x6f;&#102;f&#x73;&#x65;&#x74;&#61;&#x30;&#38;&#x61;&#x6e;&#111;&#110;&#61;&#x66;&#x61;&#x6c;s&#101;&#x26;&#97;&#x70;&#x70;&#95;&#x6e;&#97;&#x6d;&#x65;&#x3d;&#84;ea&#x74;&#x41;&#x70;&#112;&#x26;&#105;m&#112;&#x6c;&#101;&#109;&#101;&#110;t&#x65;&#100;&#x5f;&#x69;&#110;&#95;&#x76;&#101;&#114;&#x73;&#x69;&#111;n=&#118;&#x32;&#46;&#x31;&#46;&#x30;&amp;&#x76;&#x65;r&#x62;&#61;&#x50;&#x4f;&#83;&#84;&amp;u&#x73;er&#95;i&#x64;&#61;&#99;7&#x62;&#x36;cb&#x34;&#55;-&#x63;&#98;&#x39;&#x36;&#45;&#x34;&#x34;4&#x31;&#45;&#56;&#x38;&#48;1&#x2d;&#51;&#x35;&#x62;5&#55;&#52;&#53;&#54;&#x37;&#x35;&#51;&#97;&#x26;&#117;&#115;&#101;&#114;&#110;&#97;&#109;&#x65;&#61;&#x73;&#117;&#x73;&#x61;&#110;&#46;&#117;&#x6b;&#46;&#x32;&#57;@&#x65;&#x78;&#x61;&#109;&#112;le&#x2e;&#x63;&#111;&#x6d;</a>&amp;consumer_id=78</p>
 <p>Other filters:</p>
 <p>7 consumer_id  (if null ignore)</p>
 <p>8 user_id (if null ignore)</p>
@@ -949,7 +948,7 @@ possible values:<br />
 <p><a href="/glossary#"><strong>target_ip</strong></a>: target_ip</p>
 <p><a href="/glossary#"><strong>url</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
 <p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>user_name</strong></a>: felixsmith</p>
+<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
 <p><a href="/glossary#verb"><strong>verb</strong></a>:</p>
 
 
@@ -965,10 +964,10 @@ from obp_python.models.obpv600_get_metrics200_response import OBPv600GetMetrics2
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1059,10 +1058,10 @@ from obp_python.models.obpv600_get_popular_apis200_response import OBPv600GetPop
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -1117,13 +1116,13 @@ Get Top APIs
 <p>This v6.0.0 version includes the <strong>operation_id</strong> field which uniquely identifies each API endpoint<br />
 across different API standards (OBP, Berlin Group, UK Open Banking, etc.).</p>
 <p>Should be able to filter on the following fields:</p>
-<p>eg: /management/metrics/top-apis?from_date=1970-01-01T00:00:00.000Z&amp;to_date=2026-03-16T19:25:59.789Z&amp;consumer_id=5<br />
+<p>eg: /management/metrics/top-apis?from_date=1970-01-01T00:00:00.000Z&amp;to_date=2026-03-25T12:16:25.492Z&amp;consumer_id=5<br />
 &amp;user_id=66214b8e-259e-44ad-8868-3eb47be70646&amp;implemented_by_partial_function=getTransactionsForBankAccount<br />
 &amp;implemented_in_version=v3.0.0&amp;url=/obp/v3.0.0/banks/gh.29.uk/accounts/8ca8a7e4-6d02-48e3-a029-0b2bf89de9f0/owner/transactions<br />
 &amp;verb=GET&amp;anon=false&amp;app_name=MapperPostman<br />
 &amp;exclude_app_names=API-EXPLORER,API-Manager,SOFI,null</p>
 <p>1 from_date (defaults to one year ago): eg:from_date=1970-01-01T00:00:00.000Z</p>
-<p>2 to_date (defaults to the current date) eg:to_date=2026-03-16T19:25:59.789Z</p>
+<p>2 to_date (defaults to the current date) eg:to_date=2026-03-25T12:16:25.492Z</p>
 <p>3 consumer_id (if null ignore)</p>
 <p>4 user_id (if null ignore)</p>
 <p>5 anon (if null ignore) only support two values: true (return where user_id is null) or false (return where user_id is not null)</p>
@@ -1159,10 +1158,10 @@ from obp_python.models.obpv600_get_top_apis200_response import OBPv600GetTopAPIs
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters

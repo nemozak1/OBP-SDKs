@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310EnableDisableConsumersRequestProperties**](OBPv310EnableDisableConsumersRequestProperties.md) |  | 
+**enabled** | **bool** |  | [optional] 
 
 ## Example
 

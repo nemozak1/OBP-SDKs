@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400CreateUserCustomerLinksRequestProperties**](OBPv400CreateUserCustomerLinksRequestProperties.md) |  | 
+**customer_id** | **str** |  | [optional] 
+**user_id** | **str** |  | [optional] 
 
 ## Example
 

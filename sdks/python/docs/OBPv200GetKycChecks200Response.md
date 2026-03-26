@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv200GetKycChecks200ResponseProperties**](OBPv200GetKycChecks200ResponseProperties.md) |  | 
+**checks** | [**List[OBPv200GetKycChecks200ResponseChecksInner]**](OBPv200GetKycChecks200ResponseChecksInner.md) |  | [optional] 
 
 ## Example
 

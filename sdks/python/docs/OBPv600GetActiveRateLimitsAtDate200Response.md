@@ -5,8 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetActiveRateLimitsAtDate200ResponseProperties**](OBPv600GetActiveRateLimitsAtDate200ResponseProperties.md) |  | 
+**active_at_date** | **datetime** |  | [optional] 
+**active_per_second_rate_limit** | **int** |  | [optional] 
+**active_per_day_rate_limit** | **int** |  | [optional] 
+**active_per_week_rate_limit** | **int** |  | [optional] 
+**considered_rate_limit_ids** | **List[str]** |  | [optional] 
+**active_per_minute_rate_limit** | **int** |  | [optional] 
+**active_per_month_rate_limit** | **int** |  | [optional] 
+**active_per_hour_rate_limit** | **int** |  | [optional] 
 
 ## Example
 

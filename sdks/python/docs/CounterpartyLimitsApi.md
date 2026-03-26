@@ -1,6 +1,6 @@
 # obp_python.CounterpartyLimitsApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **o_bpv5_1_0_create_counterparty_limit**
-> OBPv510GetCounterpartyLimit200Response o_bpv5_1_0_create_counterparty_limit(bankid, accountid, viewid, counterpartyid, obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit)
+> OBPv510GetCounterpartyLimit200Response o_bpv5_1_0_create_counterparty_limit(bankid, accountid, viewid, counterpartyid, obpv510_create_vrp_consent_request_request_to_account_limit)
 
 Create Counterparty Limit
 
@@ -20,7 +20,7 @@ Create Counterparty Limit
 <p>Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).</p>
 <p>For more information on Counterparty Limits, see <a href="/glossary#Counterparty-Limits">here</a></p>
 <p>For an introduction to Counterparties in OBP, see <a href="/glossary#Counterparties">here</a></p>
-<p>You can automate the process of creating counterparty limits and consents for VRP with this <a href="https://apiexplorer-ii-sandbox.openbankproject.com//operationid/OBPv5.1.0-createVRPConsentRequest">endpoint</a>.</p>
+<p>You can automate the process of creating counterparty limits and consents for VRP with this <a href="http://localhost:5174/operationid/OBPv5.1.0-createVRPConsentRequest">endpoint</a>.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
@@ -60,15 +60,15 @@ Create Counterparty Limit
 
 ```python
 import obp_python
-from obp_python.models.obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit import OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit
+from obp_python.models.obpv510_create_vrp_consent_request_request_to_account_limit import OBPv510CreateVRPConsentRequestRequestToAccountLimit
 from obp_python.models.obpv510_get_counterparty_limit200_response import OBPv510GetCounterpartyLimit200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -98,11 +98,11 @@ with obp_python.ApiClient(configuration) as api_client:
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
     counterpartyid = 'counterpartyid_example' # str | The COUNTERPARTYID identifier
-    obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit = {type=object, properties={max_total_amount={type=string}, currency={type=string}, max_number_of_yearly_transactions={type=integer}, max_monthly_amount={type=string}, max_single_amount={type=string}, max_number_of_monthly_transactions={type=integer}, max_yearly_amount={type=string}, max_number_of_transactions={type=integer}}} # OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit | Request body
+    obpv510_create_vrp_consent_request_request_to_account_limit = {type=object, properties={max_total_amount={type=string}, currency={type=string}, max_number_of_yearly_transactions={type=integer}, max_monthly_amount={type=string}, max_single_amount={type=string}, max_number_of_monthly_transactions={type=integer}, max_yearly_amount={type=string}, max_number_of_transactions={type=integer}}} # OBPv510CreateVRPConsentRequestRequestToAccountLimit | Request body
 
     try:
         # Create Counterparty Limit
-        api_response = api_instance.o_bpv5_1_0_create_counterparty_limit(bankid, accountid, viewid, counterpartyid, obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit)
+        api_response = api_instance.o_bpv5_1_0_create_counterparty_limit(bankid, accountid, viewid, counterpartyid, obpv510_create_vrp_consent_request_request_to_account_limit)
         print("The response of CounterpartyLimitsApi->o_bpv5_1_0_create_counterparty_limit:\n")
         pprint(api_response)
     except Exception as e:
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
  **counterpartyid** | **str**| The COUNTERPARTYID identifier | 
- **obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit** | [**OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit**](OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit.md)| Request body | 
+ **obpv510_create_vrp_consent_request_request_to_account_limit** | [**OBPv510CreateVRPConsentRequestRequestToAccountLimit**](OBPv510CreateVRPConsentRequestRequestToAccountLimit.md)| Request body | 
 
 ### Return type
 
@@ -171,10 +171,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -287,10 +287,10 @@ from obp_python.models.obpv510_get_counterparty_limit200_response import OBPv510
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -413,10 +413,10 @@ from obp_python.models.obpv510_get_counterparty_limit_status200_response import 
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -492,7 +492,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv5_1_0_update_counterparty_limit**
-> OBPv510GetCounterpartyLimit200Response o_bpv5_1_0_update_counterparty_limit(bankid, accountid, viewid, counterpartyid, obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit)
+> OBPv510GetCounterpartyLimit200Response o_bpv5_1_0_update_counterparty_limit(bankid, accountid, viewid, counterpartyid, obpv510_create_vrp_consent_request_request_to_account_limit)
 
 Update Counterparty Limit
 
@@ -527,15 +527,15 @@ Update Counterparty Limit
 
 ```python
 import obp_python
-from obp_python.models.obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit import OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit
+from obp_python.models.obpv510_create_vrp_consent_request_request_to_account_limit import OBPv510CreateVRPConsentRequestRequestToAccountLimit
 from obp_python.models.obpv510_get_counterparty_limit200_response import OBPv510GetCounterpartyLimit200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -565,11 +565,11 @@ with obp_python.ApiClient(configuration) as api_client:
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
     counterpartyid = 'counterpartyid_example' # str | The COUNTERPARTYID identifier
-    obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit = {"type":"object","properties":{"max_total_amount":{"type":"string"},"currency":{"type":"string"},"max_number_of_yearly_transactions":{"type":"integer"},"max_monthly_amount":{"type":"string"},"max_single_amount":{"type":"string"},"max_number_of_monthly_transactions":{"type":"integer"},"max_yearly_amount":{"type":"string"},"max_number_of_transactions":{"type":"integer"}}} # OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit | Request body
+    obpv510_create_vrp_consent_request_request_to_account_limit = {"type":"object","properties":{"max_total_amount":{"type":"string"},"currency":{"type":"string"},"max_number_of_yearly_transactions":{"type":"integer"},"max_monthly_amount":{"type":"string"},"max_single_amount":{"type":"string"},"max_number_of_monthly_transactions":{"type":"integer"},"max_yearly_amount":{"type":"string"},"max_number_of_transactions":{"type":"integer"}}} # OBPv510CreateVRPConsentRequestRequestToAccountLimit | Request body
 
     try:
         # Update Counterparty Limit
-        api_response = api_instance.o_bpv5_1_0_update_counterparty_limit(bankid, accountid, viewid, counterpartyid, obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit)
+        api_response = api_instance.o_bpv5_1_0_update_counterparty_limit(bankid, accountid, viewid, counterpartyid, obpv510_create_vrp_consent_request_request_to_account_limit)
         print("The response of CounterpartyLimitsApi->o_bpv5_1_0_update_counterparty_limit:\n")
         pprint(api_response)
     except Exception as e:
@@ -587,7 +587,7 @@ Name | Type | Description  | Notes
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
  **counterpartyid** | **str**| The COUNTERPARTYID identifier | 
- **obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit** | [**OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit**](OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit.md)| Request body | 
+ **obpv510_create_vrp_consent_request_request_to_account_limit** | [**OBPv510CreateVRPConsentRequestRequestToAccountLimit**](OBPv510CreateVRPConsentRequestRequestToAccountLimit.md)| Request body | 
 
 ### Return type
 

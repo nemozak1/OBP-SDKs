@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400UpdateAtmAccessibilityFeatures200ResponseProperties**](OBPv400UpdateAtmAccessibilityFeatures200ResponseProperties.md) |  | 
+**accessibility_features** | **List[str]** |  | [optional] 
+**atm_id** | **str** |  | [optional] 
 
 ## Example
 

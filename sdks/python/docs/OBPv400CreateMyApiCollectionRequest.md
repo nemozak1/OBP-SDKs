@@ -5,8 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400CreateMyApiCollectionRequestProperties**](OBPv400CreateMyApiCollectionRequestProperties.md) |  | 
+**description** | **str** |  | [optional] 
+**api_collection_name** | **str** |  | [optional] 
+**is_sharable** | **bool** |  | [optional] 
 
 ## Example
 

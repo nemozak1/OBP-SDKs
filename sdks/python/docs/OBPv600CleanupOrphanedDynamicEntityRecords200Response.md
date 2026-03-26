@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600CleanupOrphanedDynamicEntityRecords200ResponseProperties**](OBPv600CleanupOrphanedDynamicEntityRecords200ResponseProperties.md) |  | 
+**deleted_orphaned_entities** | [**List[OBPv600CleanupOrphanedDynamicEntityRecords200ResponseDeletedOrphanedEntitiesInner]**](OBPv600CleanupOrphanedDynamicEntityRecords200ResponseDeletedOrphanedEntitiesInner.md) |  | [optional] 
+**total_records_deleted** | **int** |  | [optional] 
 
 ## Example
 

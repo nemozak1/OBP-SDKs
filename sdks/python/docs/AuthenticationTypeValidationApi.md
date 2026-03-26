@@ -1,6 +1,6 @@
 # obp_python.AuthenticationTypeValidationApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **o_bpv4_0_0_create_authentication_type_validation**
-> OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems o_bpv4_0_0_create_authentication_type_validation(operationid, obpv400_update_authentication_type_validation_request)
+> OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner o_bpv4_0_0_create_authentication_type_validation(operationid, obpv400_update_authentication_type_validation_request)
 
 Create an Authentication Type Validation
 
@@ -34,15 +34,15 @@ Create an Authentication Type Validation
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_all_authentication_type_validations_public200_response_properties_authentication_types_validations_items import OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems
+from obp_python.models.obpv400_get_all_authentication_type_validations_public200_response_authentication_types_validations_inner import OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
 from obp_python.models.obpv400_update_authentication_type_validation_request import OBPv400UpdateAuthenticationTypeValidationRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -69,7 +69,7 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.AuthenticationTypeValidationApi(api_client)
     operationid = 'operationid_example' # str | The OPERATIONID identifier
-    obpv400_update_authentication_type_validation_request = {type=object, properties={tl={type=array, items={type=object, properties={}}}, head={type=string, enum=[DirectLogin, GatewayLogin, DAuth, OAuth2_OIDC, OAuth2_OIDC_FAPI, Anonymous]}}} # OBPv400UpdateAuthenticationTypeValidationRequest | Request body
+    obpv400_update_authentication_type_validation_request = {type=object, properties={head={type=string, enum=[DirectLogin, GatewayLogin, DAuth, OAuth2_OIDC, OAuth2_OIDC_FAPI, Anonymous]}, tl={type=array, items={type=object, properties={}}}}} # OBPv400UpdateAuthenticationTypeValidationRequest | Request body
 
     try:
         # Create an Authentication Type Validation
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems**](OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems.md)
+[**OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner**](OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)
 
 ### Authorization
 
@@ -135,10 +135,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -226,10 +226,10 @@ from obp_python.models.obpv400_get_all_authentication_type_validations_public200
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -312,10 +312,10 @@ from obp_python.models.obpv400_get_all_authentication_type_validations_public200
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -362,7 +362,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_get_authentication_type_validation**
-> OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems o_bpv4_0_0_get_authentication_type_validation(operationid)
+> OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner o_bpv4_0_0_get_authentication_type_validation(operationid)
 
 Get an Authentication Type Validation
 
@@ -381,14 +381,14 @@ Get an Authentication Type Validation
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_all_authentication_type_validations_public200_response_properties_authentication_types_validations_items import OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems
+from obp_python.models.obpv400_get_all_authentication_type_validations_public200_response_authentication_types_validations_inner import OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -436,7 +436,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems**](OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems.md)
+[**OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner**](OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)
 
 ### Authorization
 
@@ -457,7 +457,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_update_authentication_type_validation**
-> OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems o_bpv4_0_0_update_authentication_type_validation(operationid, obpv400_update_authentication_type_validation_request)
+> OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner o_bpv4_0_0_update_authentication_type_validation(operationid, obpv400_update_authentication_type_validation_request)
 
 Update an Authentication Type Validation
 
@@ -477,15 +477,15 @@ Update an Authentication Type Validation
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_all_authentication_type_validations_public200_response_properties_authentication_types_validations_items import OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems
+from obp_python.models.obpv400_get_all_authentication_type_validations_public200_response_authentication_types_validations_inner import OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
 from obp_python.models.obpv400_update_authentication_type_validation_request import OBPv400UpdateAuthenticationTypeValidationRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -512,7 +512,7 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.AuthenticationTypeValidationApi(api_client)
     operationid = 'operationid_example' # str | The OPERATIONID identifier
-    obpv400_update_authentication_type_validation_request = {"type":"object","properties":{"tl":{"type":"array","items":{"type":"object","properties":{}}},"head":{"type":"string","enum":["DirectLogin","GatewayLogin","DAuth","OAuth2_OIDC","OAuth2_OIDC_FAPI","Anonymous"]}}} # OBPv400UpdateAuthenticationTypeValidationRequest | Request body
+    obpv400_update_authentication_type_validation_request = {"type":"object","properties":{"head":{"type":"string","enum":["DirectLogin","GatewayLogin","DAuth","OAuth2_OIDC","OAuth2_OIDC_FAPI","Anonymous"]},"tl":{"type":"array","items":{"type":"object","properties":{}}}}} # OBPv400UpdateAuthenticationTypeValidationRequest | Request body
 
     try:
         # Update an Authentication Type Validation
@@ -535,7 +535,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems**](OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems.md)
+[**OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner**](OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)
 
 ### Authorization
 

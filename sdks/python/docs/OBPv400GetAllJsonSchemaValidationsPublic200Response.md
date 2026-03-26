@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400GetAllJsonSchemaValidationsPublic200ResponseProperties**](OBPv400GetAllJsonSchemaValidationsPublic200ResponseProperties.md) |  | 
+**json_schema_validations** | [**List[OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner]**](OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md) |  | [optional] 
 
 ## Example
 

@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400GetMyCorrelatedEntities200ResponseProperties**](OBPv400GetMyCorrelatedEntities200ResponseProperties.md) |  | 
+**correlated_entities** | [**List[OBPv400GetMyCorrelatedEntities200ResponseCorrelatedEntitiesInner]**](OBPv400GetMyCorrelatedEntities200ResponseCorrelatedEntitiesInner.md) |  | [optional] 
 
 ## Example
 

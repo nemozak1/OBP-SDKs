@@ -5,8 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetDynamicEntityDiagnostics200ResponseProperties**](OBPv600GetDynamicEntityDiagnostics200ResponseProperties.md) |  | 
+**issues** | [**List[OBPv600GetDynamicEntityDiagnostics200ResponseIssuesInner]**](OBPv600GetDynamicEntityDiagnostics200ResponseIssuesInner.md) |  | [optional] 
+**scanned_entities** | **List[str]** |  | [optional] 
+**orphaned_entities** | [**List[OBPv600CleanupOrphanedDynamicEntityRecords200ResponseDeletedOrphanedEntitiesInner]**](OBPv600CleanupOrphanedDynamicEntityRecords200ResponseDeletedOrphanedEntitiesInner.md) |  | [optional] 
+**total_issues** | **int** |  | [optional] 
 
 ## Example
 

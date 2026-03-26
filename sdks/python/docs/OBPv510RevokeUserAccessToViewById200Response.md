@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510RevokeUserAccessToViewById200ResponseProperties**](OBPv510RevokeUserAccessToViewById200ResponseProperties.md) |  | 
+**revoked** | **bool** |  | [optional] 
 
 ## Example
 

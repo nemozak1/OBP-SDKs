@@ -5,8 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510GetAgent200ResponseProperties**](OBPv510GetAgent200ResponseProperties.md) |  | 
+**agent_number** | **str** |  | [optional] 
+**mobile_phone_number** | **str** |  | [optional] 
+**bank_id** | **str** |  | [optional] 
+**currency** | **str** |  | [optional] 
+**legal_name** | **str** |  | [optional] 
+**is_confirmed_agent** | **bool** |  | [optional] 
+**is_pending_agent** | **bool** |  | [optional] 
+**agent_id** | **str** |  | [optional] 
 
 ## Example
 

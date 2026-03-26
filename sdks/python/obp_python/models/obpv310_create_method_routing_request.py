@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv310_create_method_routing_request_properties import OBPv310CreateMethodRoutingRequestProperties
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv400_get_explicit_counterparty_by_id200_response_bespoke_inner import OBPv400GetExplicitCounterpartyById200ResponseBespokeInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,12 @@ class OBPv310CreateMethodRoutingRequest(BaseModel):
     """
     OBPv310CreateMethodRoutingRequest
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv310CreateMethodRoutingRequestProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    connector_name: Optional[StrictStr] = None
+    bank_id_pattern: Optional[StrictStr] = None
+    is_bank_id_exact_match: Optional[StrictBool] = None
+    method_name: Optional[StrictStr] = None
+    parameters: Optional[List[OBPv400GetExplicitCounterpartyById200ResponseBespokeInner]] = None
+    __properties: ClassVar[List[str]] = ["connector_name", "bank_id_pattern", "is_bank_id_exact_match", "method_name", "parameters"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +74,13 @@ class OBPv310CreateMethodRoutingRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in parameters (list)
+        _items = []
+        if self.parameters:
+            for _item_parameters in self.parameters:
+                if _item_parameters:
+                    _items.append(_item_parameters.to_dict())
+            _dict['parameters'] = _items
         return _dict
 
     @classmethod
@@ -86,8 +93,11 @@ class OBPv310CreateMethodRoutingRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv310CreateMethodRoutingRequestProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "connector_name": obj.get("connector_name"),
+            "bank_id_pattern": obj.get("bank_id_pattern"),
+            "is_bank_id_exact_match": obj.get("is_bank_id_exact_match"),
+            "method_name": obj.get("method_name"),
+            "parameters": [OBPv400GetExplicitCounterpartyById200ResponseBespokeInner.from_dict(_item) for _item in obj["parameters"]] if obj.get("parameters") is not None else None
         })
         return _obj
 

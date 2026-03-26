@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv500UpdateCustomerAccountLinkByIdRequestProperties**](OBPv500UpdateCustomerAccountLinkByIdRequestProperties.md) |  | 
+**relationship_type** | **str** |  | [optional] 
 
 ## Example
 

@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400GetConsentInfos200ResponseProperties**](OBPv400GetConsentInfos200ResponseProperties.md) |  | 
+**consents** | [**List[OBPv400GetConsentInfos200ResponseConsentsInner]**](OBPv400GetConsentInfos200ResponseConsentsInner.md) |  | [optional] 
 
 ## Example
 

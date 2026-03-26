@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetRolesWithEntitlementCountsAtAllBanks200ResponseProperties**](OBPv600GetRolesWithEntitlementCountsAtAllBanks200ResponseProperties.md) |  | 
+**roles** | [**List[OBPv600GetRolesWithEntitlementCountsAtAllBanks200ResponseRolesInner]**](OBPv600GetRolesWithEntitlementCountsAtAllBanks200ResponseRolesInner.md) |  | [optional] 
 
 ## Example
 

@@ -1,7 +1,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -19,8 +19,8 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
 from obp_python.models.obpv400_get_scopes200_response import OBPv400GetScopes200Response
-from obp_python.models.obpv400_get_scopes200_response_properties_list_items import OBPv400GetScopes200ResponsePropertiesListItems
-from obp_python.models.obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items import OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems
+from obp_python.models.obpv400_get_scopes200_response_list_inner import OBPv400GetScopes200ResponseListInner
+from obp_python.models.obpv510_create_consent_implicit_request_entitlements_inner import OBPv510CreateConsentImplicitRequestEntitlementsInner
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -321,7 +321,7 @@ class ScopeApi:
     def o_bpv4_0_0_add_scope(
         self,
         consumerid: Annotated[StrictStr, Field(description="The CONSUMERID identifier")],
-        obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items: Annotated[OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems, Field(description="Request body")],
+        obpv510_create_consent_implicit_request_entitlements_inner: Annotated[OBPv510CreateConsentImplicitRequestEntitlementsInner, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -334,15 +334,15 @@ class ScopeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetScopes200ResponsePropertiesListItems:
+    ) -> OBPv400GetScopes200ResponseListInner:
         """Create Scope for a Consumer
 
         <p>Create Scope. Grant Role to Consumer.</p> <p>Scopes are used to grant System or Bank level roles to the Consumer (App). (For Account level privileges, see Views)</p> <p>For a System level Role (.e.g CanGetAnyUser), set bank_id to an empty string i.e. &quot;bank_id&quot;:&quot;&quot;</p> <p>For a Bank level Role (e.g. CanCreateAccount), set bank_id to a valid value e.g. &quot;bank_id&quot;:&quot;my-bank-id&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#role_name\"><strong>role_name</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#role_name\"><strong>role_name</strong></a>:</p> <p><a href=\"/glossary#scope_id\"><strong>scope_id</strong></a>:</p> 
 
         :param consumerid: The CONSUMERID identifier (required)
         :type consumerid: str
-        :param obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items: Request body (required)
-        :type obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items: OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems
+        :param obpv510_create_consent_implicit_request_entitlements_inner: Request body (required)
+        :type obpv510_create_consent_implicit_request_entitlements_inner: OBPv510CreateConsentImplicitRequestEntitlementsInner
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -367,7 +367,7 @@ class ScopeApi:
 
         _param = self._o_bpv4_0_0_add_scope_serialize(
             consumerid=consumerid,
-            obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items=obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items,
+            obpv510_create_consent_implicit_request_entitlements_inner=obpv510_create_consent_implicit_request_entitlements_inner,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -375,7 +375,7 @@ class ScopeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetScopes200ResponsePropertiesListItems",
+            '200': "OBPv400GetScopes200ResponseListInner",
             '404': None,
             '500': None,
         }
@@ -394,7 +394,7 @@ class ScopeApi:
     def o_bpv4_0_0_add_scope_with_http_info(
         self,
         consumerid: Annotated[StrictStr, Field(description="The CONSUMERID identifier")],
-        obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items: Annotated[OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems, Field(description="Request body")],
+        obpv510_create_consent_implicit_request_entitlements_inner: Annotated[OBPv510CreateConsentImplicitRequestEntitlementsInner, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -407,15 +407,15 @@ class ScopeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetScopes200ResponsePropertiesListItems]:
+    ) -> ApiResponse[OBPv400GetScopes200ResponseListInner]:
         """Create Scope for a Consumer
 
         <p>Create Scope. Grant Role to Consumer.</p> <p>Scopes are used to grant System or Bank level roles to the Consumer (App). (For Account level privileges, see Views)</p> <p>For a System level Role (.e.g CanGetAnyUser), set bank_id to an empty string i.e. &quot;bank_id&quot;:&quot;&quot;</p> <p>For a Bank level Role (e.g. CanCreateAccount), set bank_id to a valid value e.g. &quot;bank_id&quot;:&quot;my-bank-id&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#role_name\"><strong>role_name</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#role_name\"><strong>role_name</strong></a>:</p> <p><a href=\"/glossary#scope_id\"><strong>scope_id</strong></a>:</p> 
 
         :param consumerid: The CONSUMERID identifier (required)
         :type consumerid: str
-        :param obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items: Request body (required)
-        :type obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items: OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems
+        :param obpv510_create_consent_implicit_request_entitlements_inner: Request body (required)
+        :type obpv510_create_consent_implicit_request_entitlements_inner: OBPv510CreateConsentImplicitRequestEntitlementsInner
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -440,7 +440,7 @@ class ScopeApi:
 
         _param = self._o_bpv4_0_0_add_scope_serialize(
             consumerid=consumerid,
-            obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items=obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items,
+            obpv510_create_consent_implicit_request_entitlements_inner=obpv510_create_consent_implicit_request_entitlements_inner,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -448,7 +448,7 @@ class ScopeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetScopes200ResponsePropertiesListItems",
+            '200': "OBPv400GetScopes200ResponseListInner",
             '404': None,
             '500': None,
         }
@@ -467,7 +467,7 @@ class ScopeApi:
     def o_bpv4_0_0_add_scope_without_preload_content(
         self,
         consumerid: Annotated[StrictStr, Field(description="The CONSUMERID identifier")],
-        obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items: Annotated[OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems, Field(description="Request body")],
+        obpv510_create_consent_implicit_request_entitlements_inner: Annotated[OBPv510CreateConsentImplicitRequestEntitlementsInner, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -487,8 +487,8 @@ class ScopeApi:
 
         :param consumerid: The CONSUMERID identifier (required)
         :type consumerid: str
-        :param obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items: Request body (required)
-        :type obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items: OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems
+        :param obpv510_create_consent_implicit_request_entitlements_inner: Request body (required)
+        :type obpv510_create_consent_implicit_request_entitlements_inner: OBPv510CreateConsentImplicitRequestEntitlementsInner
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -513,7 +513,7 @@ class ScopeApi:
 
         _param = self._o_bpv4_0_0_add_scope_serialize(
             consumerid=consumerid,
-            obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items=obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items,
+            obpv510_create_consent_implicit_request_entitlements_inner=obpv510_create_consent_implicit_request_entitlements_inner,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -521,7 +521,7 @@ class ScopeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetScopes200ResponsePropertiesListItems",
+            '200': "OBPv400GetScopes200ResponseListInner",
             '404': None,
             '500': None,
         }
@@ -535,7 +535,7 @@ class ScopeApi:
     def _o_bpv4_0_0_add_scope_serialize(
         self,
         consumerid,
-        obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items,
+        obpv510_create_consent_implicit_request_entitlements_inner,
         _request_auth,
         _content_type,
         _headers,
@@ -563,8 +563,8 @@ class ScopeApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items is not None:
-            _body_params = obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items
+        if obpv510_create_consent_implicit_request_entitlements_inner is not None:
+            _body_params = obpv510_create_consent_implicit_request_entitlements_inner
 
 
         # set the HTTP header `Accept`

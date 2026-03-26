@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv200GetKycStatuses200ResponseProperties**](OBPv200GetKycStatuses200ResponseProperties.md) |  | 
+**statuses** | [**List[OBPv200GetKycStatuses200ResponseStatusesInner]**](OBPv200GetKycStatuses200ResponseStatusesInner.md) |  | [optional] 
 
 ## Example
 

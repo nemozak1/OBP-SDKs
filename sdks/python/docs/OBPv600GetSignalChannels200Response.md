@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetSignalChannels200ResponseProperties**](OBPv600GetSignalChannels200ResponseProperties.md) |  | 
+**channels** | [**List[OBPv600GetSignalChannelInfo200Response]**](OBPv600GetSignalChannelInfo200Response.md) |  | [optional] 
 
 ## Example
 

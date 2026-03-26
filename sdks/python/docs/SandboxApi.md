@@ -1,6 +1,6 @@
 # obp_python.SandboxApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -43,7 +43,7 @@ User Authentication is Required. The User must be logged in. The Application mus
 <p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
 <p><a href="/glossary#detail"><strong>detail</strong></a>:</p>
 <p><a href="/glossary#details"><strong>details</strong></a>:</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="m&#x61;&#105;&#x6c;&#116;&#x6f;:fe&#108;i&#x78;s&#109;&#105;t&#x68;@&#x65;&#120;&#x61;&#x6d;&#112;&#x6c;&#101;&#x2e;&#99;o&#x6d;">&#102;&#x65;&#108;&#105;&#x78;s&#109;&#x69;t&#x68;&#x40;e&#x78;&#97;&#x6d;p&#108;&#101;&#x2e;co&#109;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#97;&#x69;&#108;&#x74;o:&#102;&#101;l&#105;&#120;&#115;&#x6d;&#105;&#116;&#104;&#x40;&#x65;&#120;&#x61;&#x6d;&#x70;&#108;&#x65;&#x2e;&#x63;o&#x6d;">&#102;el&#x69;x&#x73;&#x6d;&#105;&#116;&#104;&#x40;e&#120;&#x61;m&#112;&#x6c;&#x65;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
 <p><a href="/glossary#family"><strong>family</strong></a>:</p>
 <p><a href="/glossary#full_name"><strong>full_name</strong></a>: full name string</p>
 <p><a href="/glossary#generate_accountants_view"><strong>generate_accountants_view</strong></a>:</p>
@@ -66,7 +66,7 @@ User Authentication is Required. The User must be logged in. The Application mus
 <p><a href="/glossary#new_balance"><strong>new_balance</strong></a>: 20</p>
 <p><a href="/glossary#number"><strong>number</strong></a>:</p>
 <p><a href="/glossary#owners"><strong>owners</strong></a>:</p>
-<p><a href="/glossary#"><strong>password</strong></a>: password</p>
+<p><a href="/glossary#"><strong>password</strong></a>: passwordpasswordpassword</p>
 <p><a href="/glossary#post_code"><strong>post_code</strong></a>: 789</p>
 <p><a href="/glossary#posted"><strong>posted</strong></a>: 2020-01-27</p>
 <p><a href="/glossary#products"><strong>products</strong></a>:</p>
@@ -102,10 +102,10 @@ from obp_python.models.obpv210_sandbox_data_import_request import OBPv210Sandbox
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters

@@ -5,8 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetCacheConfig200ResponseProperties**](OBPv600GetCacheConfig200ResponseProperties.md) |  | 
+**global_prefix** | **str** |  | [optional] 
+**redis_status** | [**OBPv600GetCacheConfig200ResponseRedisStatus**](OBPv600GetCacheConfig200ResponseRedisStatus.md) |  | [optional] 
+**environment** | **str** |  | [optional] 
+**in_memory_status** | [**OBPv600GetCacheConfig200ResponseInMemoryStatus**](OBPv600GetCacheConfig200ResponseInMemoryStatus.md) |  | [optional] 
+**instance_id** | **str** |  | [optional] 
 
 ## Example
 

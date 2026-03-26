@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv400_get_all_connector_methods200_response_properties import OBPv400GetAllConnectorMethods200ResponseProperties
+from pydantic import BaseModel, ConfigDict
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv400_get_all_connector_methods200_response_connectors_methods_inner import OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,8 @@ class OBPv400GetAllConnectorMethods200Response(BaseModel):
     """
     OBPv400GetAllConnectorMethods200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv400GetAllConnectorMethods200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    connectors_methods: Optional[List[OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner]] = None
+    __properties: ClassVar[List[str]] = ["connectors_methods"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +70,13 @@ class OBPv400GetAllConnectorMethods200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in connectors_methods (list)
+        _items = []
+        if self.connectors_methods:
+            for _item_connectors_methods in self.connectors_methods:
+                if _item_connectors_methods:
+                    _items.append(_item_connectors_methods.to_dict())
+            _dict['connectors_methods'] = _items
         return _dict
 
     @classmethod
@@ -86,8 +89,7 @@ class OBPv400GetAllConnectorMethods200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv400GetAllConnectorMethods200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "connectors_methods": [OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner.from_dict(_item) for _item in obj["connectors_methods"]] if obj.get("connectors_methods") is not None else None
         })
         return _obj
 

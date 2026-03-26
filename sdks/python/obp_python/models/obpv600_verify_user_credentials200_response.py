@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -19,8 +19,8 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv600_verify_user_credentials200_response_properties import OBPv600VerifyUserCredentials200ResponseProperties
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv510_get_user_by_provider_and_username200_response_entitlements import OBPv510GetUserByProviderAndUsername200ResponseEntitlements
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,13 @@ class OBPv600VerifyUserCredentials200Response(BaseModel):
     """
     OBPv600VerifyUserCredentials200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv600VerifyUserCredentials200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    provider: Optional[StrictStr] = None
+    email: Optional[StrictStr] = None
+    username: Optional[StrictStr] = None
+    provider_id: Optional[StrictStr] = None
+    user_id: Optional[StrictStr] = None
+    entitlements: Optional[OBPv510GetUserByProviderAndUsername200ResponseEntitlements] = None
+    __properties: ClassVar[List[str]] = ["provider", "email", "username", "provider_id", "user_id", "entitlements"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +75,9 @@ class OBPv600VerifyUserCredentials200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of entitlements
+        if self.entitlements:
+            _dict['entitlements'] = self.entitlements.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +90,12 @@ class OBPv600VerifyUserCredentials200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv600VerifyUserCredentials200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "provider": obj.get("provider"),
+            "email": obj.get("email"),
+            "username": obj.get("username"),
+            "provider_id": obj.get("provider_id"),
+            "user_id": obj.get("user_id"),
+            "entitlements": OBPv510GetUserByProviderAndUsername200ResponseEntitlements.from_dict(obj["entitlements"]) if obj.get("entitlements") is not None else None
         })
         return _obj
 

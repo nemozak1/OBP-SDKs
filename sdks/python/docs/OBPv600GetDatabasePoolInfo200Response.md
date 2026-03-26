@@ -5,8 +5,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetDatabasePoolInfo200ResponseProperties**](OBPv600GetDatabasePoolInfo200ResponseProperties.md) |  | 
+**max_lifetime_ms** | **int** |  | [optional] 
+**idle_timeout_ms** | **int** |  | [optional] 
+**keepalive_time_ms** | **int** |  | [optional] 
+**minimum_idle** | **int** |  | [optional] 
+**active_connections** | **int** |  | [optional] 
+**idle_connections** | **int** |  | [optional] 
+**pool_name** | **str** |  | [optional] 
+**threads_awaiting_connection** | **int** |  | [optional] 
+**maximum_pool_size** | **int** |  | [optional] 
+**total_connections** | **int** |  | [optional] 
+**connection_timeout_ms** | **int** |  | [optional] 
 
 ## Example
 

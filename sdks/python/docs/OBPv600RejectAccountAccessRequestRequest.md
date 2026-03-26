@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600RejectAccountAccessRequestRequestProperties**](OBPv600RejectAccountAccessRequestRequestProperties.md) |  | 
+**comment** | **str** |  | [optional] 
 
 ## Example
 

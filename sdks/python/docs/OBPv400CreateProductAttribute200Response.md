@@ -5,8 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400CreateProductAttribute200ResponseProperties**](OBPv400CreateProductAttribute200ResponseProperties.md) |  | 
+**name** | **str** |  | [optional] 
+**is_active** | **bool** |  | [optional] 
+**product_attribute_id** | **str** |  | [optional] 
+**product_code** | **str** |  | [optional] 
+**bank_id** | **str** |  | [optional] 
+**type** | **str** |  | [optional] 
+**value** | **str** |  | [optional] 
 
 ## Example
 

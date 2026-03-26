@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600ValidateUserEmailRequestProperties**](OBPv600ValidateUserEmailRequestProperties.md) |  | 
+**token** | **str** |  | [optional] 
 
 ## Example
 

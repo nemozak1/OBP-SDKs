@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310GetMetricsTopConsumers200ResponseProperties**](OBPv310GetMetricsTopConsumers200ResponseProperties.md) |  | 
+**top_consumers** | [**List[OBPv310GetMetricsTopConsumers200ResponseTopConsumersInner]**](OBPv310GetMetricsTopConsumers200ResponseTopConsumersInner.md) |  | [optional] 
 
 ## Example
 

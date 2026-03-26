@@ -5,8 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310GetObpConnectorLoopback200ResponseProperties**](OBPv310GetObpConnectorLoopback200ResponseProperties.md) |  | 
+**connector_version** | **str** |  | [optional] 
+**git_commit** | **str** |  | [optional] 
+**duration_time** | **str** |  | [optional] 
 
 ## Example
 

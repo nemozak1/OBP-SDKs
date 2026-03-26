@@ -5,8 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600CreatePersonalDataFieldRequestProperties**](OBPv600CreatePersonalDataFieldRequestProperties.md) |  | 
+**name** | **str** |  | [optional] 
+**type** | **str** |  | [optional] 
+**value** | **str** |  | [optional] 
 
 ## Example
 

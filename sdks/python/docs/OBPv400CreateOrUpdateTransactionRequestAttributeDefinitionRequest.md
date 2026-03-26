@@ -5,8 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequestProperties**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequestProperties.md) |  | 
+**name** | **str** |  | [optional] 
+**is_active** | **bool** |  | [optional] 
+**description** | **str** |  | [optional] 
+**alias** | **str** |  | [optional] 
+**can_be_seen_on_views** | **List[str]** |  | [optional] 
+**category** | **str** |  | [optional] 
+**type** | **str** |  | [optional] 
 
 ## Example
 

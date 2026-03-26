@@ -5,8 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600CreateUserRequestProperties**](OBPv600CreateUserRequestProperties.md) |  | 
+**first_name** | **str** |  | [optional] 
+**email** | **str** |  | [optional] 
+**username** | **str** |  | [optional] 
+**last_name** | **str** |  | [optional] 
+**password** | **str** |  | [optional] 
 
 ## Example
 

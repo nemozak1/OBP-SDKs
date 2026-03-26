@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetFeaturedApiCollectionsAdmin200ResponseProperties**](OBPv600GetFeaturedApiCollectionsAdmin200ResponseProperties.md) |  | 
+**featured_api_collections** | [**List[OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner]**](OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner.md) |  | [optional] 
 
 ## Example
 

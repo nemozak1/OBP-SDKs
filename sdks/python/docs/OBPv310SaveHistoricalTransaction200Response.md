@@ -5,8 +5,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310SaveHistoricalTransaction200ResponseProperties**](OBPv310SaveHistoricalTransaction200ResponseProperties.md) |  | 
+**description** | **str** |  | [optional] 
+**to** | [**OBPv310SaveHistoricalTransactionRequestTo**](OBPv310SaveHistoricalTransactionRequestTo.md) |  | [optional] 
+**transaction_id** | **str** |  | [optional] 
+**transaction_request_type** | **str** |  | [optional] 
+**completed** | **datetime** |  | [optional] 
+**charge_policy** | **str** |  | [optional] 
+**var_from** | [**OBPv310SaveHistoricalTransactionRequestTo**](OBPv310SaveHistoricalTransactionRequestTo.md) |  | [optional] 
+**value** | [**OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit**](OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit.md) |  | [optional] 
+**posted** | **datetime** |  | [optional] 
 
 ## Example
 

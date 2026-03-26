@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310GetMethodRoutings200ResponseProperties**](OBPv310GetMethodRoutings200ResponseProperties.md) |  | 
+**method_routings** | [**List[OBPv310GetMethodRoutings200ResponseMethodRoutingsInner]**](OBPv310GetMethodRoutings200ResponseMethodRoutingsInner.md) |  | [optional] 
 
 ## Example
 

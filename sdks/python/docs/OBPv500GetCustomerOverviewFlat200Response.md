@@ -5,8 +5,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv500GetCustomerOverviewFlat200ResponseProperties**](OBPv500GetCustomerOverviewFlat200ResponseProperties.md) |  | 
+**customer_id** | **str** |  | [optional] 
+**name_suffix** | **str** |  | [optional] 
+**email** | **str** |  | [optional] 
+**branch_id** | **str** |  | [optional] 
+**mobile_phone_number** | **str** |  | [optional] 
+**customer_number** | **str** |  | [optional] 
+**customer_attributes** | [**List[OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner]**](OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner.md) |  | [optional] 
+**bank_id** | **str** |  | [optional] 
+**date_of_birth** | **datetime** |  | [optional] 
+**legal_name** | **str** |  | [optional] 
+**title** | **str** |  | [optional] 
+**accounts** | [**List[OBPv500GetCustomerOverviewFlat200ResponseAccountsInner]**](OBPv500GetCustomerOverviewFlat200ResponseAccountsInner.md) |  | [optional] 
 
 ## Example
 

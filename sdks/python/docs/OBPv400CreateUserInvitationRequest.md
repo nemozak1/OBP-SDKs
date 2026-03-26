@@ -5,8 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400CreateUserInvitationRequestProperties**](OBPv400CreateUserInvitationRequestProperties.md) |  | 
+**first_name** | **str** |  | [optional] 
+**email** | **str** |  | [optional] 
+**country** | **str** |  | [optional] 
+**purpose** | **str** |  | [optional] 
+**company** | **str** |  | [optional] 
+**last_name** | **str** |  | [optional] 
 
 ## Example
 

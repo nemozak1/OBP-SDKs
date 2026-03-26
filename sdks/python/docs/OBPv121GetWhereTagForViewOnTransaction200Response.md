@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv121GetWhereTagForViewOnTransaction200ResponseProperties**](OBPv121GetWhereTagForViewOnTransaction200ResponseProperties.md) |  | 
+**where** | [**OBPv121GetOtherAccountMetadata200ResponsePhysicalLocation**](OBPv121GetOtherAccountMetadata200ResponsePhysicalLocation.md) |  | [optional] 
 
 ## Example
 

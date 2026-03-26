@@ -5,8 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv210SandboxDataImportRequestProperties**](OBPv210SandboxDataImportRequestProperties.md) |  | 
+**crm_events** | [**List[OBPv210SandboxDataImportRequestCrmEventsInner]**](OBPv210SandboxDataImportRequestCrmEventsInner.md) |  | [optional] 
+**users** | [**List[OBPv210SandboxDataImportRequestUsersInner]**](OBPv210SandboxDataImportRequestUsersInner.md) |  | [optional] 
+**products** | [**List[OBPv210SandboxDataImportRequestProductsInner]**](OBPv210SandboxDataImportRequestProductsInner.md) |  | [optional] 
+**banks** | [**List[OBPv210SandboxDataImportRequestBanksInner]**](OBPv210SandboxDataImportRequestBanksInner.md) |  | [optional] 
+**branches** | [**List[OBPv210SandboxDataImportRequestBranchesInner]**](OBPv210SandboxDataImportRequestBranchesInner.md) |  | [optional] 
+**transactions** | [**List[OBPv210SandboxDataImportRequestTransactionsInner]**](OBPv210SandboxDataImportRequestTransactionsInner.md) |  | [optional] 
+**accounts** | [**List[OBPv210SandboxDataImportRequestAccountsInner]**](OBPv210SandboxDataImportRequestAccountsInner.md) |  | [optional] 
+**atms** | [**List[OBPv210SandboxDataImportRequestAtmsInner]**](OBPv210SandboxDataImportRequestAtmsInner.md) |  | [optional] 
 
 ## Example
 

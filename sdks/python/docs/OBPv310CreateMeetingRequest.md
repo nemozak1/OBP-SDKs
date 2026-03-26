@@ -5,8 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310CreateMeetingRequestProperties**](OBPv310CreateMeetingRequestProperties.md) |  | 
+**provider_id** | **str** |  | [optional] 
+**creator** | [**OBPv310GetMeeting200ResponseCreator**](OBPv310GetMeeting200ResponseCreator.md) |  | [optional] 
+**invitees** | [**List[OBPv310GetMeeting200ResponseInviteesInner]**](OBPv310GetMeeting200ResponseInviteesInner.md) |  | [optional] 
+**var_date** | **datetime** |  | [optional] 
+**purpose_id** | **str** |  | [optional] 
 
 ## Example
 

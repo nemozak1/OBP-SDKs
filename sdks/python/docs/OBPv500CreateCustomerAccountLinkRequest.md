@@ -5,8 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv500CreateCustomerAccountLinkRequestProperties**](OBPv500CreateCustomerAccountLinkRequestProperties.md) |  | 
+**customer_id** | **str** |  | [optional] 
+**bank_id** | **str** |  | [optional] 
+**account_id** | **str** |  | [optional] 
+**relationship_type** | **str** |  | [optional] 
 
 ## Example
 

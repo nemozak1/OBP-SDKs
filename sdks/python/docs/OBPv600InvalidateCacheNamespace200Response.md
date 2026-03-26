@@ -5,8 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600InvalidateCacheNamespace200ResponseProperties**](OBPv600InvalidateCacheNamespace200ResponseProperties.md) |  | 
+**namespace_id** | **str** |  | [optional] 
+**new_version** | **int** |  | [optional] 
+**status** | **str** |  | [optional] 
+**old_version** | **int** |  | [optional] 
 
 ## Example
 

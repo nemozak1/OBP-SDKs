@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetAccountAccessRequestsForAccount200ResponseProperties**](OBPv600GetAccountAccessRequestsForAccount200ResponseProperties.md) |  | 
+**account_access_requests** | [**List[OBPv600RejectAccountAccessRequest200Response]**](OBPv600RejectAccountAccessRequest200Response.md) |  | [optional] 
 
 ## Example
 

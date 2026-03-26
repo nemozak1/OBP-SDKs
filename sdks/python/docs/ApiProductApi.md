@@ -1,6 +1,6 @@
 # obp_python.ApiProductApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **o_bpv6_0_0_create_api_product**
-> OBPv600GetApiProducts200ResponsePropertiesApiProductsItems o_bpv6_0_0_create_api_product(bankid, apiproductcode, obpv600_create_or_update_api_product_request)
+> OBPv600GetApiProducts200ResponseApiProductsInner o_bpv6_0_0_create_api_product(bankid, apiproductcode, obpv600_create_or_update_api_product_request)
 
 Create Api Product
 
@@ -73,14 +73,14 @@ Create Api Product
 ```python
 import obp_python
 from obp_python.models.obpv600_create_or_update_api_product_request import OBPv600CreateOrUpdateApiProductRequest
-from obp_python.models.obpv600_get_api_products200_response_properties_api_products_items import OBPv600GetApiProducts200ResponsePropertiesApiProductsItems
+from obp_python.models.obpv600_get_api_products200_response_api_products_inner import OBPv600GetApiProducts200ResponseApiProductsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetApiProducts200ResponsePropertiesApiProductsItems**](OBPv600GetApiProducts200ResponsePropertiesApiProductsItems.md)
+[**OBPv600GetApiProducts200ResponseApiProductsInner**](OBPv600GetApiProducts200ResponseApiProductsInner.md)
 
 ### Authorization
 
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv6_0_0_create_or_update_api_product**
-> OBPv600GetApiProducts200ResponsePropertiesApiProductsItems o_bpv6_0_0_create_or_update_api_product(bankid, apiproductcode, obpv600_create_or_update_api_product_request)
+> OBPv600GetApiProducts200ResponseApiProductsInner o_bpv6_0_0_create_or_update_api_product(bankid, apiproductcode, obpv600_create_or_update_api_product_request)
 
 Create or Update Api Product
 
@@ -198,14 +198,14 @@ Create or Update Api Product
 ```python
 import obp_python
 from obp_python.models.obpv600_create_or_update_api_product_request import OBPv600CreateOrUpdateApiProductRequest
-from obp_python.models.obpv600_get_api_products200_response_properties_api_products_items import OBPv600GetApiProducts200ResponsePropertiesApiProductsItems
+from obp_python.models.obpv600_get_api_products200_response_api_products_inner import OBPv600GetApiProducts200ResponseApiProductsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetApiProducts200ResponsePropertiesApiProductsItems**](OBPv600GetApiProducts200ResponsePropertiesApiProductsItems.md)
+[**OBPv600GetApiProducts200ResponseApiProductsInner**](OBPv600GetApiProducts200ResponseApiProductsInner.md)
 
 ### Authorization
 
@@ -302,10 +302,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -375,7 +375,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv6_0_0_get_api_product**
-> OBPv600GetApiProducts200ResponsePropertiesApiProductsItems o_bpv6_0_0_get_api_product(bankid, apiproductcode)
+> OBPv600GetApiProducts200ResponseApiProductsInner o_bpv6_0_0_get_api_product(bankid, apiproductcode)
 
 Get Api Product
 
@@ -416,14 +416,14 @@ Get Api Product
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_api_products200_response_properties_api_products_items import OBPv600GetApiProducts200ResponsePropertiesApiProductsItems
+from obp_python.models.obpv600_get_api_products200_response_api_products_inner import OBPv600GetApiProducts200ResponseApiProductsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -455,7 +455,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetApiProducts200ResponsePropertiesApiProductsItems**](OBPv600GetApiProducts200ResponsePropertiesApiProductsItems.md)
+[**OBPv600GetApiProducts200ResponseApiProductsInner**](OBPv600GetApiProducts200ResponseApiProductsInner.md)
 
 ### Authorization
 
@@ -521,10 +521,10 @@ from obp_python.models.obpv600_get_api_products200_response import OBPv600GetApi
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 

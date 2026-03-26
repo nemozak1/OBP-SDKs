@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400IbanCheckerRequestProperties**](OBPv400IbanCheckerRequestProperties.md) |  | 
+**address** | **str** |  | [optional] 
 
 ## Example
 

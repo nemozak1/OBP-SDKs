@@ -5,8 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600UpdateRateLimitsRequestProperties**](OBPv600UpdateRateLimitsRequestProperties.md) |  | 
+**per_month_call_limit** | **str** |  | [optional] 
+**per_week_call_limit** | **str** |  | [optional] 
+**per_hour_call_limit** | **str** |  | [optional] 
+**per_second_call_limit** | **str** |  | [optional] 
+**from_date** | **datetime** |  | [optional] 
+**per_minute_call_limit** | **str** |  | [optional] 
+**per_day_call_limit** | **str** |  | [optional] 
+**to_date** | **datetime** |  | [optional] 
 
 ## Example
 

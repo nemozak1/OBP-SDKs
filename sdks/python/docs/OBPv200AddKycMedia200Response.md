@@ -5,8 +5,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv200AddKycMedia200ResponseProperties**](OBPv200AddKycMedia200ResponseProperties.md) |  | 
+**customer_id** | **str** |  | [optional] 
+**url** | **str** |  | [optional] 
+**customer_number** | **str** |  | [optional] 
+**bank_id** | **str** |  | [optional] 
+**id** | **str** |  | [optional] 
+**var_date** | **datetime** |  | [optional] 
+**relates_to_kyc_document_id** | **str** |  | [optional] 
+**relates_to_kyc_check_id** | **str** |  | [optional] 
+**type** | **str** |  | [optional] 
 
 ## Example
 

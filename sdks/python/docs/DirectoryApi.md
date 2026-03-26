@@ -1,6 +1,6 @@
 # obp_python.DirectoryApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -104,7 +104,7 @@ Create a Consumer(Dynamic Registration)
 <p><a href="/glossary#created_by_user"><strong>created_by_user</strong></a>:</p>
 <p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
 <p><a href="/glossary#developer_email"><strong>developer_email</strong></a>:</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;&#97;il&#116;o&#58;&#102;e&#x6c;ix&#x73;&#x6d;&#x69;&#116;&#104;&#x40;e&#120;&#97;&#109;&#x70;&#x6c;&#x65;&#x2e;&#99;&#x6f;&#x6d;">&#102;&#101;&#108;i&#x78;s&#109;i&#x74;&#104;&#64;&#101;&#120;&#97;m&#x70;&#x6c;&#x65;&#x2e;&#99;&#x6f;&#109;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;&#97;&#x69;&#108;to&#x3a;&#102;&#101;&#x6c;i&#x78;&#x73;m&#x69;&#116;&#x68;&#x40;&#101;&#x78;am&#112;l&#x65;&#x2e;c&#x6f;&#109;">f&#x65;&#108;&#x69;&#120;&#x73;&#109;&#x69;&#116;&#x68;&#64;&#101;&#120;&#x61;&#x6d;p&#108;&#x65;&#x2e;&#x63;&#111;&#x6d;</a></p>
 <p><a href="/glossary#enabled"><strong>enabled</strong></a>: false</p>
 <p><a href="/glossary#"><strong>issuer_domain_name</strong></a>: issuer_domain_name</p>
 <p><a href="/glossary#"><strong>not_after</strong></a>: not_after</p>
@@ -134,10 +134,10 @@ from obp_python.models.obpv510_update_consumer_name200_response import OBPv510Up
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -260,10 +260,10 @@ from obp_python.models.obpv510_get_regulated_entity_by_id200_response import OBP
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -332,7 +332,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv5_1_0_create_regulated_entity_attribute**
-> OBPv510GetRegulatedEntityAttributeById200Response o_bpv5_1_0_create_regulated_entity_attribute(regulatedentityid, obpv510_update_regulated_entity_attribute_request)
+> OBPv510GetRegulatedEntityAttributeById200Response o_bpv5_1_0_create_regulated_entity_attribute(regulatedentityid, obpv600_create_counterparty_attribute_request)
 
 Create Regulated Entity Attribute
 
@@ -364,14 +364,14 @@ User Authentication is Required. The User must be logged in. The Application mus
 ```python
 import obp_python
 from obp_python.models.obpv510_get_regulated_entity_attribute_by_id200_response import OBPv510GetRegulatedEntityAttributeById200Response
-from obp_python.models.obpv510_update_regulated_entity_attribute_request import OBPv510UpdateRegulatedEntityAttributeRequest
+from obp_python.models.obpv600_create_counterparty_attribute_request import OBPv600CreateCounterpartyAttributeRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -398,11 +398,11 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.DirectoryApi(api_client)
     regulatedentityid = 'regulatedentityid_example' # str | The REGULATEDENTITYID identifier
-    obpv510_update_regulated_entity_attribute_request = {type=object, properties={attribute_type={type=string}, value={type=string}, is_active={type=boolean}, name={type=string}}} # OBPv510UpdateRegulatedEntityAttributeRequest | Request body
+    obpv600_create_counterparty_attribute_request = {type=object, properties={attribute_type={type=string}, name={type=string}, is_active={type=boolean}, value={type=string}}} # OBPv600CreateCounterpartyAttributeRequest | Request body
 
     try:
         # Create Regulated Entity Attribute
-        api_response = api_instance.o_bpv5_1_0_create_regulated_entity_attribute(regulatedentityid, obpv510_update_regulated_entity_attribute_request)
+        api_response = api_instance.o_bpv5_1_0_create_regulated_entity_attribute(regulatedentityid, obpv600_create_counterparty_attribute_request)
         print("The response of DirectoryApi->o_bpv5_1_0_create_regulated_entity_attribute:\n")
         pprint(api_response)
     except Exception as e:
@@ -417,7 +417,7 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **regulatedentityid** | **str**| The REGULATEDENTITYID identifier | 
- **obpv510_update_regulated_entity_attribute_request** | [**OBPv510UpdateRegulatedEntityAttributeRequest**](OBPv510UpdateRegulatedEntityAttributeRequest.md)| Request body | 
+ **obpv600_create_counterparty_attribute_request** | [**OBPv600CreateCounterpartyAttributeRequest**](OBPv600CreateCounterpartyAttributeRequest.md)| Request body | 
 
 ### Return type
 
@@ -464,10 +464,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -557,10 +557,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -659,10 +659,10 @@ from obp_python.models.obpv510_get_all_regulated_entity_attributes200_response i
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -761,10 +761,10 @@ from obp_python.models.obpv510_get_regulated_entity_attribute_by_id200_response 
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -871,10 +871,10 @@ from obp_python.models.obpv510_get_regulated_entity_by_id200_response import OBP
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -963,10 +963,10 @@ from obp_python.models.obpv510_regulated_entities200_response import OBPv510Regu
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -1013,7 +1013,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv5_1_0_update_regulated_entity_attribute**
-> OBPv510GetRegulatedEntityAttributeById200Response o_bpv5_1_0_update_regulated_entity_attribute(regulatedentityid, regulatedentityattributeid, obpv510_update_regulated_entity_attribute_request)
+> OBPv510GetRegulatedEntityAttributeById200Response o_bpv5_1_0_update_regulated_entity_attribute(regulatedentityid, regulatedentityattributeid, obpv600_create_counterparty_attribute_request)
 
 Update Regulated Entity Attribute
 
@@ -1040,14 +1040,14 @@ Update Regulated Entity Attribute
 ```python
 import obp_python
 from obp_python.models.obpv510_get_regulated_entity_attribute_by_id200_response import OBPv510GetRegulatedEntityAttributeById200Response
-from obp_python.models.obpv510_update_regulated_entity_attribute_request import OBPv510UpdateRegulatedEntityAttributeRequest
+from obp_python.models.obpv600_create_counterparty_attribute_request import OBPv600CreateCounterpartyAttributeRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1075,11 +1075,11 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.DirectoryApi(api_client)
     regulatedentityid = 'regulatedentityid_example' # str | The REGULATEDENTITYID identifier
     regulatedentityattributeid = 'regulatedentityattributeid_example' # str | The REGULATEDENTITYATTRIBUTEID identifier
-    obpv510_update_regulated_entity_attribute_request = {"type":"object","properties":{"attribute_type":{"type":"string"},"value":{"type":"string"},"is_active":{"type":"boolean"},"name":{"type":"string"}}} # OBPv510UpdateRegulatedEntityAttributeRequest | Request body
+    obpv600_create_counterparty_attribute_request = {type=object, properties={attribute_type={type=string}, name={type=string}, is_active={type=boolean}, value={type=string}}} # OBPv600CreateCounterpartyAttributeRequest | Request body
 
     try:
         # Update Regulated Entity Attribute
-        api_response = api_instance.o_bpv5_1_0_update_regulated_entity_attribute(regulatedentityid, regulatedentityattributeid, obpv510_update_regulated_entity_attribute_request)
+        api_response = api_instance.o_bpv5_1_0_update_regulated_entity_attribute(regulatedentityid, regulatedentityattributeid, obpv600_create_counterparty_attribute_request)
         print("The response of DirectoryApi->o_bpv5_1_0_update_regulated_entity_attribute:\n")
         pprint(api_response)
     except Exception as e:
@@ -1095,7 +1095,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **regulatedentityid** | **str**| The REGULATEDENTITYID identifier | 
  **regulatedentityattributeid** | **str**| The REGULATEDENTITYATTRIBUTEID identifier | 
- **obpv510_update_regulated_entity_attribute_request** | [**OBPv510UpdateRegulatedEntityAttributeRequest**](OBPv510UpdateRegulatedEntityAttributeRequest.md)| Request body | 
+ **obpv600_create_counterparty_attribute_request** | [**OBPv600CreateCounterpartyAttributeRequest**](OBPv600CreateCounterpartyAttributeRequest.md)| Request body | 
 
 ### Return type
 

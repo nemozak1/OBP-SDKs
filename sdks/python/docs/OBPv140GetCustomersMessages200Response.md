@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv140GetCustomersMessages200ResponseProperties**](OBPv140GetCustomersMessages200ResponseProperties.md) |  | 
+**messages** | [**List[OBPv140GetCustomersMessages200ResponseMessagesInner]**](OBPv140GetCustomersMessages200ResponseMessagesInner.md) |  | [optional] 
 
 ## Example
 

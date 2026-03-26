@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510UpdateConsumerCertificateRequestProperties**](OBPv510UpdateConsumerCertificateRequestProperties.md) |  | 
+**certificate** | **str** |  | [optional] 
 
 ## Example
 

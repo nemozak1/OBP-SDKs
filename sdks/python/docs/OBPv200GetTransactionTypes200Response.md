@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv200GetTransactionTypes200ResponseProperties**](OBPv200GetTransactionTypes200ResponseProperties.md) |  | 
+**transaction_types** | [**List[OBPv200GetTransactionTypes200ResponseTransactionTypesInner]**](OBPv200GetTransactionTypes200ResponseTransactionTypesInner.md) |  | [optional] 
 
 ## Example
 

@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,12 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv310_config200_response_properties import OBPv310Config200ResponseProperties
+from pydantic import BaseModel, ConfigDict
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv310_config200_response_akka import OBPv310Config200ResponseAkka
+from obp_python.models.obpv310_config200_response_cache_inner import OBPv310Config200ResponseCacheInner
+from obp_python.models.obpv310_config200_response_elastic_search import OBPv310Config200ResponseElasticSearch
+from obp_python.models.obpv310_config200_response_scopes import OBPv310Config200ResponseScopes
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +31,11 @@ class OBPv310Config200Response(BaseModel):
     """
     OBPv310Config200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv310Config200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    elastic_search: Optional[OBPv310Config200ResponseElasticSearch] = None
+    scopes: Optional[OBPv310Config200ResponseScopes] = None
+    akka: Optional[OBPv310Config200ResponseAkka] = None
+    cache: Optional[List[OBPv310Config200ResponseCacheInner]] = None
+    __properties: ClassVar[List[str]] = ["elastic_search", "scopes", "akka", "cache"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +76,22 @@ class OBPv310Config200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of elastic_search
+        if self.elastic_search:
+            _dict['elastic_search'] = self.elastic_search.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of scopes
+        if self.scopes:
+            _dict['scopes'] = self.scopes.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of akka
+        if self.akka:
+            _dict['akka'] = self.akka.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in cache (list)
+        _items = []
+        if self.cache:
+            for _item_cache in self.cache:
+                if _item_cache:
+                    _items.append(_item_cache.to_dict())
+            _dict['cache'] = _items
         return _dict
 
     @classmethod
@@ -86,8 +104,10 @@ class OBPv310Config200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv310Config200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "elastic_search": OBPv310Config200ResponseElasticSearch.from_dict(obj["elastic_search"]) if obj.get("elastic_search") is not None else None,
+            "scopes": OBPv310Config200ResponseScopes.from_dict(obj["scopes"]) if obj.get("scopes") is not None else None,
+            "akka": OBPv310Config200ResponseAkka.from_dict(obj["akka"]) if obj.get("akka") is not None else None,
+            "cache": [OBPv310Config200ResponseCacheInner.from_dict(_item) for _item in obj["cache"]] if obj.get("cache") is not None else None
         })
         return _obj
 

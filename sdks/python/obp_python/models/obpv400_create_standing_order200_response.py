@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,11 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv400_create_standing_order200_response_properties import OBPv400CreateStandingOrder200ResponseProperties
+from datetime import datetime
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv400_create_standing_order_request_when import OBPv400CreateStandingOrderRequestWhen
+from obp_python.models.obpv500_get_my_customers_at_bank200_response_customers_inner_credit_limit import OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +30,20 @@ class OBPv400CreateStandingOrder200Response(BaseModel):
     """
     OBPv400CreateStandingOrder200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv400CreateStandingOrder200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    date_starts: Optional[datetime] = None
+    customer_id: Optional[StrictStr] = None
+    standing_order_id: Optional[StrictStr] = None
+    date_cancelled: Optional[datetime] = None
+    date_signed: Optional[datetime] = None
+    user_id: Optional[StrictStr] = None
+    amount: Optional[OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit] = None
+    bank_id: Optional[StrictStr] = None
+    account_id: Optional[StrictStr] = None
+    date_expires: Optional[datetime] = None
+    counterparty_id: Optional[StrictStr] = None
+    when: Optional[OBPv400CreateStandingOrderRequestWhen] = None
+    active: Optional[StrictBool] = None
+    __properties: ClassVar[List[str]] = ["date_starts", "customer_id", "standing_order_id", "date_cancelled", "date_signed", "user_id", "amount", "bank_id", "account_id", "date_expires", "counterparty_id", "when", "active"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +84,12 @@ class OBPv400CreateStandingOrder200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of amount
+        if self.amount:
+            _dict['amount'] = self.amount.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of when
+        if self.when:
+            _dict['when'] = self.when.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +102,19 @@ class OBPv400CreateStandingOrder200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv400CreateStandingOrder200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "date_starts": obj.get("date_starts"),
+            "customer_id": obj.get("customer_id"),
+            "standing_order_id": obj.get("standing_order_id"),
+            "date_cancelled": obj.get("date_cancelled"),
+            "date_signed": obj.get("date_signed"),
+            "user_id": obj.get("user_id"),
+            "amount": OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit.from_dict(obj["amount"]) if obj.get("amount") is not None else None,
+            "bank_id": obj.get("bank_id"),
+            "account_id": obj.get("account_id"),
+            "date_expires": obj.get("date_expires"),
+            "counterparty_id": obj.get("counterparty_id"),
+            "when": OBPv400CreateStandingOrderRequestWhen.from_dict(obj["when"]) if obj.get("when") is not None else None,
+            "active": obj.get("active")
         })
         return _obj
 

@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv121UpdateCounterpartyOpenCorporatesUrlRequestProperties**](OBPv121UpdateCounterpartyOpenCorporatesUrlRequestProperties.md) |  | 
+**open_corporates_url** | **str** |  | [optional] 
 
 ## Example
 

@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510GetAgents200ResponseProperties**](OBPv510GetAgents200ResponseProperties.md) |  | 
+**agents** | [**List[OBPv510GetAgents200ResponseAgentsInner]**](OBPv510GetAgents200ResponseAgentsInner.md) |  | [optional] 
 
 ## Example
 

@@ -1,6 +1,6 @@
 # obp_python.AccountMetadataApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **o_bpv4_0_0_add_tag_for_view_on_account**
-> OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems o_bpv4_0_0_add_tag_for_view_on_account(bankid, accountid, viewid, obpv400_delete_system_level_endpoint_tag200_response)
+> OBPv400GetTagsForViewOnAccount200ResponseTagsInner o_bpv4_0_0_add_tag_for_view_on_account(bankid, accountid, viewid, obpv200_get_transaction_types200_response_transaction_types_inner_id)
 
 Create a tag on account
 
@@ -40,15 +40,15 @@ Create a tag on account
 
 ```python
 import obp_python
-from obp_python.models.obpv400_delete_system_level_endpoint_tag200_response import OBPv400DeleteSystemLevelEndpointTag200Response
-from obp_python.models.obpv400_get_tags_for_view_on_account200_response_properties_tags_items import OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
+from obp_python.models.obpv200_get_transaction_types200_response_transaction_types_inner_id import OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId
+from obp_python.models.obpv400_get_tags_for_view_on_account200_response_tags_inner import OBPv400GetTagsForViewOnAccount200ResponseTagsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -77,11 +77,11 @@ with obp_python.ApiClient(configuration) as api_client:
     bankid = 'bankid_example' # str | The BANKID identifier
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
-    obpv400_delete_system_level_endpoint_tag200_response = {"type":"object","properties":{"value":{"type":"string"}}} # OBPv400DeleteSystemLevelEndpointTag200Response | Request body
+    obpv200_get_transaction_types200_response_transaction_types_inner_id = {"type":"object","properties":{"value":{"type":"string"}}} # OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
 
     try:
         # Create a tag on account
-        api_response = api_instance.o_bpv4_0_0_add_tag_for_view_on_account(bankid, accountid, viewid, obpv400_delete_system_level_endpoint_tag200_response)
+        api_response = api_instance.o_bpv4_0_0_add_tag_for_view_on_account(bankid, accountid, viewid, obpv200_get_transaction_types200_response_transaction_types_inner_id)
         print("The response of AccountMetadataApi->o_bpv4_0_0_add_tag_for_view_on_account:\n")
         pprint(api_response)
     except Exception as e:
@@ -98,11 +98,11 @@ Name | Type | Description  | Notes
  **bankid** | **str**| The BANKID identifier | 
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
- **obpv400_delete_system_level_endpoint_tag200_response** | [**OBPv400DeleteSystemLevelEndpointTag200Response**](OBPv400DeleteSystemLevelEndpointTag200Response.md)| Request body | 
+ **obpv200_get_transaction_types200_response_transaction_types_inner_id** | [**OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId**](OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
+[**OBPv400GetTagsForViewOnAccount200ResponseTagsInner**](OBPv400GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 ### Authorization
 
@@ -150,10 +150,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -260,10 +260,10 @@ from obp_python.models.obpv400_get_tags_for_view_on_account200_response import O
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters

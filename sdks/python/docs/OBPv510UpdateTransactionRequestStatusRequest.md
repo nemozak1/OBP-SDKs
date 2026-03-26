@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510UpdateTransactionRequestStatusRequestProperties**](OBPv510UpdateTransactionRequestStatusRequestProperties.md) |  | 
+**status** | **str** |  | [optional] 
 
 ## Example
 

@@ -5,8 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv500GetConsentRequest200ResponseProperties**](OBPv500GetConsentRequest200ResponseProperties.md) |  | 
+**consumer_id** | **str** |  | [optional] 
+**consent_request_id** | **str** |  | [optional] 
+**payload** | [**OBPv500GetConsentRequest200ResponsePayload**](OBPv500GetConsentRequest200ResponsePayload.md) |  | [optional] 
 
 ## Example
 

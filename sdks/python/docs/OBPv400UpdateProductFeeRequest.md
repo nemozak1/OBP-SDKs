@@ -5,8 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400UpdateProductFeeRequestProperties**](OBPv400UpdateProductFeeRequestProperties.md) |  | 
+**is_active** | **bool** |  | [optional] 
+**name** | **str** |  | [optional] 
+**more_info** | **str** |  | [optional] 
+**value** | [**OBPv400GetProductFee200ResponseValue**](OBPv400GetProductFee200ResponseValue.md) |  | [optional] 
 
 ## Example
 

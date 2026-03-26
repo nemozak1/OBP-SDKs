@@ -5,8 +5,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310CreateCustomerAddressRequestProperties**](OBPv310CreateCustomerAddressRequestProperties.md) |  | 
+**city** | **str** |  | [optional] 
+**line_2** | **str** |  | [optional] 
+**state** | **str** |  | [optional] 
+**tags** | **List[str]** |  | [optional] 
+**postcode** | **str** |  | [optional] 
+**county** | **str** |  | [optional] 
+**country_code** | **str** |  | [optional] 
+**status** | **str** |  | [optional] 
+**line_3** | **str** |  | [optional] 
+**line_1** | **str** |  | [optional] 
 
 ## Example
 

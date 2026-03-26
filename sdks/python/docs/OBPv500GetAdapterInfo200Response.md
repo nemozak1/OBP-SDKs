@@ -5,8 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv500GetAdapterInfo200ResponseProperties**](OBPv500GetAdapterInfo200ResponseProperties.md) |  | 
+**name** | **str** |  | [optional] 
+**backend_messages** | [**List[OBPv500GetAdapterInfo200ResponseBackendMessagesInner]**](OBPv500GetAdapterInfo200ResponseBackendMessagesInner.md) |  | [optional] 
+**total_duration** | **float** |  | [optional] 
+**version** | **str** |  | [optional] 
+**var_date** | **datetime** |  | [optional] 
+**git_commit** | **str** |  | [optional] 
 
 ## Example
 

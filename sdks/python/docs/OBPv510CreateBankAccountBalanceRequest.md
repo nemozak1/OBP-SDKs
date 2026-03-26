@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510CreateBankAccountBalanceRequestProperties**](OBPv510CreateBankAccountBalanceRequestProperties.md) |  | 
+**balance_amount** | **str** |  | [optional] 
+**balance_type** | **str** |  | [optional] 
 
 ## Example
 

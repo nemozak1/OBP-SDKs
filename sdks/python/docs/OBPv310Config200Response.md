@@ -5,8 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310Config200ResponseProperties**](OBPv310Config200ResponseProperties.md) |  | 
+**elastic_search** | [**OBPv310Config200ResponseElasticSearch**](OBPv310Config200ResponseElasticSearch.md) |  | [optional] 
+**scopes** | [**OBPv310Config200ResponseScopes**](OBPv310Config200ResponseScopes.md) |  | [optional] 
+**akka** | [**OBPv310Config200ResponseAkka**](OBPv310Config200ResponseAkka.md) |  | [optional] 
+**cache** | [**List[OBPv310Config200ResponseCacheInner]**](OBPv310Config200ResponseCacheInner.md) |  | [optional] 
 
 ## Example
 

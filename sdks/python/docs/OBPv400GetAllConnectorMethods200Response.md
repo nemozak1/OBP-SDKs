@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400GetAllConnectorMethods200ResponseProperties**](OBPv400GetAllConnectorMethods200ResponseProperties.md) |  | 
+**connectors_methods** | [**List[OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner]**](OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner.md) |  | [optional] 
 
 ## Example
 

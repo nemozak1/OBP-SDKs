@@ -5,8 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510AddSystemViewPermission200ResponseProperties**](OBPv510AddSystemViewPermission200ResponseProperties.md) |  | 
+**role_name** | **str** |  | [optional] 
+**bank_id** | **str** |  | [optional] 
+**entitlement_id** | **str** |  | [optional] 
 
 ## Example
 

@@ -5,8 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv121GetOtherAccountForTransaction200ResponseProperties**](OBPv121GetOtherAccountForTransaction200ResponseProperties.md) |  | 
+**number** | **str** |  | [optional] 
+**iban** | **str** |  | [optional] 
+**swift_bic** | **str** |  | [optional] 
+**holder** | [**OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerThisAccountHoldersInner**](OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerThisAccountHoldersInner.md) |  | [optional] 
+**bank** | [**OBPv121GetOtherAccountForTransaction200ResponseBank**](OBPv121GetOtherAccountForTransaction200ResponseBank.md) |  | [optional] 
+**id** | **str** |  | [optional] 
+**metadata** | [**OBPv121GetOtherAccountMetadata200Response**](OBPv121GetOtherAccountMetadata200Response.md) |  | [optional] 
+**kind** | **str** |  | [optional] 
 
 ## Example
 

@@ -5,8 +5,22 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetConsumer200ResponseProperties**](OBPv600GetConsumer200ResponseProperties.md) |  | 
+**app_type** | **str** |  | [optional] 
+**active_rate_limits** | [**OBPv600GetActiveRateLimitsAtDate200Response**](OBPv600GetActiveRateLimitsAtDate200Response.md) |  | [optional] 
+**description** | **str** |  | [optional] 
+**certificate_pem** | **str** |  | [optional] 
+**created_by_user** | [**OBPv510UpdateConsumerName200ResponseCreatedByUser**](OBPv510UpdateConsumerName200ResponseCreatedByUser.md) |  | [optional] 
+**enabled** | **bool** |  | [optional] 
+**consumer_key** | **str** |  | [optional] 
+**certificate_info** | [**OBPv510UpdateConsumerName200ResponseCertificateInfo**](OBPv510UpdateConsumerName200ResponseCertificateInfo.md) |  | [optional] 
+**redirect_url** | **str** |  | [optional] 
+**logo_url** | **str** |  | [optional] 
+**company** | **str** |  | [optional] 
+**developer_email** | **str** |  | [optional] 
+**consumer_id** | **str** |  | [optional] 
+**app_name** | **str** |  | [optional] 
+**call_counters** | [**OBPv600GetCurrentConsumer200ResponseCallCounters**](OBPv600GetCurrentConsumer200ResponseCallCounters.md) |  | [optional] 
+**created** | **datetime** |  | [optional] 
 
 ## Example
 

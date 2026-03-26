@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400GetUserInvitationAnonymousRequestProperties**](OBPv400GetUserInvitationAnonymousRequestProperties.md) |  | 
+**secret_key** | **int** |  | [optional] 
 
 ## Example
 

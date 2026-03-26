@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,11 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv500_create_consent_request_request_properties import OBPv500CreateConsentRequestRequestProperties
+from datetime import datetime
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv500_get_consent_request200_response_payload_account_access_inner import OBPv500GetConsentRequest200ResponsePayloadAccountAccessInner
+from obp_python.models.obpv510_create_consent_implicit_request_entitlements_inner import OBPv510CreateConsentImplicitRequestEntitlementsInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +30,15 @@ class OBPv500CreateConsentRequestRequest(BaseModel):
     """
     OBPv500CreateConsentRequestRequest
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv500CreateConsentRequestRequestProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    phone_number: Optional[StrictStr] = None
+    time_to_live: Optional[StrictInt] = None
+    email: Optional[StrictStr] = None
+    account_access: Optional[List[OBPv500GetConsentRequest200ResponsePayloadAccountAccessInner]] = None
+    everything: Optional[StrictBool] = None
+    consumer_id: Optional[StrictStr] = None
+    valid_from: Optional[datetime] = None
+    entitlements: Optional[List[OBPv510CreateConsentImplicitRequestEntitlementsInner]] = None
+    __properties: ClassVar[List[str]] = ["phone_number", "time_to_live", "email", "account_access", "everything", "consumer_id", "valid_from", "entitlements"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +79,20 @@ class OBPv500CreateConsentRequestRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in account_access (list)
+        _items = []
+        if self.account_access:
+            for _item_account_access in self.account_access:
+                if _item_account_access:
+                    _items.append(_item_account_access.to_dict())
+            _dict['account_access'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in entitlements (list)
+        _items = []
+        if self.entitlements:
+            for _item_entitlements in self.entitlements:
+                if _item_entitlements:
+                    _items.append(_item_entitlements.to_dict())
+            _dict['entitlements'] = _items
         return _dict
 
     @classmethod
@@ -86,8 +105,14 @@ class OBPv500CreateConsentRequestRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv500CreateConsentRequestRequestProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "phone_number": obj.get("phone_number"),
+            "time_to_live": obj.get("time_to_live"),
+            "email": obj.get("email"),
+            "account_access": [OBPv500GetConsentRequest200ResponsePayloadAccountAccessInner.from_dict(_item) for _item in obj["account_access"]] if obj.get("account_access") is not None else None,
+            "everything": obj.get("everything"),
+            "consumer_id": obj.get("consumer_id"),
+            "valid_from": obj.get("valid_from"),
+            "entitlements": [OBPv510CreateConsentImplicitRequestEntitlementsInner.from_dict(_item) for _item in obj["entitlements"]] if obj.get("entitlements") is not None else None
         })
         return _obj
 

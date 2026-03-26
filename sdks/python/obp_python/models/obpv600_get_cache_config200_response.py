@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -19,8 +19,9 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv600_get_cache_config200_response_properties import OBPv600GetCacheConfig200ResponseProperties
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv600_get_cache_config200_response_in_memory_status import OBPv600GetCacheConfig200ResponseInMemoryStatus
+from obp_python.models.obpv600_get_cache_config200_response_redis_status import OBPv600GetCacheConfig200ResponseRedisStatus
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +29,12 @@ class OBPv600GetCacheConfig200Response(BaseModel):
     """
     OBPv600GetCacheConfig200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv600GetCacheConfig200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    global_prefix: Optional[StrictStr] = None
+    redis_status: Optional[OBPv600GetCacheConfig200ResponseRedisStatus] = None
+    environment: Optional[StrictStr] = None
+    in_memory_status: Optional[OBPv600GetCacheConfig200ResponseInMemoryStatus] = None
+    instance_id: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["global_prefix", "redis_status", "environment", "in_memory_status", "instance_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +75,12 @@ class OBPv600GetCacheConfig200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of redis_status
+        if self.redis_status:
+            _dict['redis_status'] = self.redis_status.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of in_memory_status
+        if self.in_memory_status:
+            _dict['in_memory_status'] = self.in_memory_status.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +93,11 @@ class OBPv600GetCacheConfig200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv600GetCacheConfig200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "global_prefix": obj.get("global_prefix"),
+            "redis_status": OBPv600GetCacheConfig200ResponseRedisStatus.from_dict(obj["redis_status"]) if obj.get("redis_status") is not None else None,
+            "environment": obj.get("environment"),
+            "in_memory_status": OBPv600GetCacheConfig200ResponseInMemoryStatus.from_dict(obj["in_memory_status"]) if obj.get("in_memory_status") is not None else None,
+            "instance_id": obj.get("instance_id")
         })
         return _obj
 

@@ -5,8 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600CreateGroupRequestProperties**](OBPv600CreateGroupRequestProperties.md) |  | 
+**list_of_roles** | **List[str]** |  | [optional] 
+**bank_id** | **str** |  | [optional] 
+**group_name** | **str** |  | [optional] 
+**is_enabled** | **bool** |  | [optional] 
+**group_description** | **str** |  | [optional] 
 
 ## Example
 

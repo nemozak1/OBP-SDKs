@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400GetTransactionAttributes200ResponseProperties**](OBPv400GetTransactionAttributes200ResponseProperties.md) |  | 
+**transaction_attributes** | [**List[OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner]**](OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner.md) |  | [optional] 
 
 ## Example
 

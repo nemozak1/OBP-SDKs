@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400GetAllBankLevelDynamicMessageDocs200ResponseProperties**](OBPv400GetAllBankLevelDynamicMessageDocs200ResponseProperties.md) |  | 
+**dynamic_message_docs** | [**List[OBPv400GetDynamicMessageDoc200Response]**](OBPv400GetDynamicMessageDoc200Response.md) |  | [optional] 
 
 ## Example
 

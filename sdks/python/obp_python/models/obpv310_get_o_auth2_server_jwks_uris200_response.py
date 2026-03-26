@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv310_get_o_auth2_server_jwks_uris200_response_properties import OBPv310GetOAuth2ServerJWKsURIs200ResponseProperties
+from pydantic import BaseModel, ConfigDict
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv310_get_o_auth2_server_jwks_uris200_response_jwks_uris_inner import OBPv310GetOAuth2ServerJWKsURIs200ResponseJwksUrisInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,8 @@ class OBPv310GetOAuth2ServerJWKsURIs200Response(BaseModel):
     """
     OBPv310GetOAuth2ServerJWKsURIs200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv310GetOAuth2ServerJWKsURIs200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    jwks_uris: Optional[List[OBPv310GetOAuth2ServerJWKsURIs200ResponseJwksUrisInner]] = None
+    __properties: ClassVar[List[str]] = ["jwks_uris"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +70,13 @@ class OBPv310GetOAuth2ServerJWKsURIs200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in jwks_uris (list)
+        _items = []
+        if self.jwks_uris:
+            for _item_jwks_uris in self.jwks_uris:
+                if _item_jwks_uris:
+                    _items.append(_item_jwks_uris.to_dict())
+            _dict['jwks_uris'] = _items
         return _dict
 
     @classmethod
@@ -86,8 +89,7 @@ class OBPv310GetOAuth2ServerJWKsURIs200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv310GetOAuth2ServerJWKsURIs200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "jwks_uris": [OBPv310GetOAuth2ServerJWKsURIs200ResponseJwksUrisInner.from_dict(_item) for _item in obj["jwks_uris"]] if obj.get("jwks_uris") is not None else None
         })
         return _obj
 

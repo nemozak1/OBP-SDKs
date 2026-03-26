@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400GetBankLevelEndpointTags200ResponseProperties**](OBPv400GetBankLevelEndpointTags200ResponseProperties.md) |  | 
+**head** | [**OBPv400UpdateSystemLevelEndpointTag200Response**](OBPv400UpdateSystemLevelEndpointTag200Response.md) |  | [optional] 
+**tl** | **object** |  | [optional] 
 
 ## Example
 

@@ -1,7 +1,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -25,9 +25,9 @@ from obp_python.models.obpv121_get_transaction_narrative200_response import OBPv
 from obp_python.models.obpv121_get_where_tag_for_view_on_transaction200_response import OBPv121GetWhereTagForViewOnTransaction200Response
 from obp_python.models.obpv121_update_transaction_narrative200_response import OBPv121UpdateTransactionNarrative200Response
 from obp_python.models.obpv121_update_where_tag_for_view_on_transaction_request import OBPv121UpdateWhereTagForViewOnTransactionRequest
-from obp_python.models.obpv310_get_transaction_by_id_for_bank_account200_response_properties_metadata_properties_images_items import OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems
-from obp_python.models.obpv400_delete_system_level_endpoint_tag200_response import OBPv400DeleteSystemLevelEndpointTag200Response
-from obp_python.models.obpv400_get_tags_for_view_on_account200_response_properties_tags_items import OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
+from obp_python.models.obpv200_get_transaction_types200_response_transaction_types_inner_id import OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId
+from obp_python.models.obpv310_get_transaction_by_id_for_bank_account200_response_metadata_images_inner import OBPv310GetTransactionByIdForBankAccount200ResponseMetadataImagesInner
+from obp_python.models.obpv400_get_tags_for_view_on_account200_response_tags_inner import OBPv400GetTagsForViewOnAccount200ResponseTagsInner
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -54,7 +54,7 @@ class TransactionMetadataApi:
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         transactionid: Annotated[StrictStr, Field(description="The TRANSACTIONID identifier")],
-        obpv400_delete_system_level_endpoint_tag200_response: Annotated[OBPv400DeleteSystemLevelEndpointTag200Response, Field(description="Request body")],
+        obpv200_get_transaction_types200_response_transaction_types_inner_id: Annotated[OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -67,7 +67,7 @@ class TransactionMetadataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems:
+    ) -> OBPv400GetTagsForViewOnAccount200ResponseTagsInner:
         """Add a Transaction Comment
 
         <p>Posts a comment about a transaction TRANSACTION_ID on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> VIEW_ID.</p> <p>${authenticationRequiredMessage(false)}</p> <p>Authentication is required since the comment is linked with the user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -80,8 +80,8 @@ class TransactionMetadataApi:
         :type viewid: str
         :param transactionid: The TRANSACTIONID identifier (required)
         :type transactionid: str
-        :param obpv400_delete_system_level_endpoint_tag200_response: Request body (required)
-        :type obpv400_delete_system_level_endpoint_tag200_response: OBPv400DeleteSystemLevelEndpointTag200Response
+        :param obpv200_get_transaction_types200_response_transaction_types_inner_id: Request body (required)
+        :type obpv200_get_transaction_types200_response_transaction_types_inner_id: OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -109,7 +109,7 @@ class TransactionMetadataApi:
             accountid=accountid,
             viewid=viewid,
             transactionid=transactionid,
-            obpv400_delete_system_level_endpoint_tag200_response=obpv400_delete_system_level_endpoint_tag200_response,
+            obpv200_get_transaction_types200_response_transaction_types_inner_id=obpv200_get_transaction_types200_response_transaction_types_inner_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -117,7 +117,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems",
+            '200': "OBPv400GetTagsForViewOnAccount200ResponseTagsInner",
             '404': None,
             '500': None,
         }
@@ -139,7 +139,7 @@ class TransactionMetadataApi:
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         transactionid: Annotated[StrictStr, Field(description="The TRANSACTIONID identifier")],
-        obpv400_delete_system_level_endpoint_tag200_response: Annotated[OBPv400DeleteSystemLevelEndpointTag200Response, Field(description="Request body")],
+        obpv200_get_transaction_types200_response_transaction_types_inner_id: Annotated[OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -152,7 +152,7 @@ class TransactionMetadataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems]:
+    ) -> ApiResponse[OBPv400GetTagsForViewOnAccount200ResponseTagsInner]:
         """Add a Transaction Comment
 
         <p>Posts a comment about a transaction TRANSACTION_ID on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> VIEW_ID.</p> <p>${authenticationRequiredMessage(false)}</p> <p>Authentication is required since the comment is linked with the user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -165,8 +165,8 @@ class TransactionMetadataApi:
         :type viewid: str
         :param transactionid: The TRANSACTIONID identifier (required)
         :type transactionid: str
-        :param obpv400_delete_system_level_endpoint_tag200_response: Request body (required)
-        :type obpv400_delete_system_level_endpoint_tag200_response: OBPv400DeleteSystemLevelEndpointTag200Response
+        :param obpv200_get_transaction_types200_response_transaction_types_inner_id: Request body (required)
+        :type obpv200_get_transaction_types200_response_transaction_types_inner_id: OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -194,7 +194,7 @@ class TransactionMetadataApi:
             accountid=accountid,
             viewid=viewid,
             transactionid=transactionid,
-            obpv400_delete_system_level_endpoint_tag200_response=obpv400_delete_system_level_endpoint_tag200_response,
+            obpv200_get_transaction_types200_response_transaction_types_inner_id=obpv200_get_transaction_types200_response_transaction_types_inner_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -202,7 +202,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems",
+            '200': "OBPv400GetTagsForViewOnAccount200ResponseTagsInner",
             '404': None,
             '500': None,
         }
@@ -224,7 +224,7 @@ class TransactionMetadataApi:
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         transactionid: Annotated[StrictStr, Field(description="The TRANSACTIONID identifier")],
-        obpv400_delete_system_level_endpoint_tag200_response: Annotated[OBPv400DeleteSystemLevelEndpointTag200Response, Field(description="Request body")],
+        obpv200_get_transaction_types200_response_transaction_types_inner_id: Annotated[OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -250,8 +250,8 @@ class TransactionMetadataApi:
         :type viewid: str
         :param transactionid: The TRANSACTIONID identifier (required)
         :type transactionid: str
-        :param obpv400_delete_system_level_endpoint_tag200_response: Request body (required)
-        :type obpv400_delete_system_level_endpoint_tag200_response: OBPv400DeleteSystemLevelEndpointTag200Response
+        :param obpv200_get_transaction_types200_response_transaction_types_inner_id: Request body (required)
+        :type obpv200_get_transaction_types200_response_transaction_types_inner_id: OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -279,7 +279,7 @@ class TransactionMetadataApi:
             accountid=accountid,
             viewid=viewid,
             transactionid=transactionid,
-            obpv400_delete_system_level_endpoint_tag200_response=obpv400_delete_system_level_endpoint_tag200_response,
+            obpv200_get_transaction_types200_response_transaction_types_inner_id=obpv200_get_transaction_types200_response_transaction_types_inner_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -287,7 +287,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems",
+            '200': "OBPv400GetTagsForViewOnAccount200ResponseTagsInner",
             '404': None,
             '500': None,
         }
@@ -304,7 +304,7 @@ class TransactionMetadataApi:
         accountid,
         viewid,
         transactionid,
-        obpv400_delete_system_level_endpoint_tag200_response,
+        obpv200_get_transaction_types200_response_transaction_types_inner_id,
         _request_auth,
         _content_type,
         _headers,
@@ -338,8 +338,8 @@ class TransactionMetadataApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_delete_system_level_endpoint_tag200_response is not None:
-            _body_params = obpv400_delete_system_level_endpoint_tag200_response
+        if obpv200_get_transaction_types200_response_transaction_types_inner_id is not None:
+            _body_params = obpv200_get_transaction_types200_response_transaction_types_inner_id
 
 
         # set the HTTP header `Accept`
@@ -409,7 +409,7 @@ class TransactionMetadataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems:
+    ) -> OBPv310GetTransactionByIdForBankAccount200ResponseMetadataImagesInner:
         """Add a Transaction Image
 
         <p>Posts an image about a transaction TRANSACTION_ID on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> VIEW_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>The image is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
@@ -459,7 +459,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems",
+            '200': "OBPv310GetTransactionByIdForBankAccount200ResponseMetadataImagesInner",
             '404': None,
             '500': None,
         }
@@ -494,7 +494,7 @@ class TransactionMetadataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems]:
+    ) -> ApiResponse[OBPv310GetTransactionByIdForBankAccount200ResponseMetadataImagesInner]:
         """Add a Transaction Image
 
         <p>Posts an image about a transaction TRANSACTION_ID on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> VIEW_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>The image is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
@@ -544,7 +544,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems",
+            '200': "OBPv310GetTransactionByIdForBankAccount200ResponseMetadataImagesInner",
             '404': None,
             '500': None,
         }
@@ -629,7 +629,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems",
+            '200': "OBPv310GetTransactionByIdForBankAccount200ResponseMetadataImagesInner",
             '404': None,
             '500': None,
         }
@@ -738,7 +738,7 @@ class TransactionMetadataApi:
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         transactionid: Annotated[StrictStr, Field(description="The TRANSACTIONID identifier")],
-        obpv400_delete_system_level_endpoint_tag200_response: Annotated[OBPv400DeleteSystemLevelEndpointTag200Response, Field(description="Request body")],
+        obpv200_get_transaction_types200_response_transaction_types_inner_id: Annotated[OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -751,7 +751,7 @@ class TransactionMetadataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems:
+    ) -> OBPv400GetTagsForViewOnAccount200ResponseTagsInner:
         """Add a Transaction Tag
 
         <p>Posts a tag about a transaction TRANSACTION_ID on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> VIEW_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>Authentication is required as the tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -764,8 +764,8 @@ class TransactionMetadataApi:
         :type viewid: str
         :param transactionid: The TRANSACTIONID identifier (required)
         :type transactionid: str
-        :param obpv400_delete_system_level_endpoint_tag200_response: Request body (required)
-        :type obpv400_delete_system_level_endpoint_tag200_response: OBPv400DeleteSystemLevelEndpointTag200Response
+        :param obpv200_get_transaction_types200_response_transaction_types_inner_id: Request body (required)
+        :type obpv200_get_transaction_types200_response_transaction_types_inner_id: OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -793,7 +793,7 @@ class TransactionMetadataApi:
             accountid=accountid,
             viewid=viewid,
             transactionid=transactionid,
-            obpv400_delete_system_level_endpoint_tag200_response=obpv400_delete_system_level_endpoint_tag200_response,
+            obpv200_get_transaction_types200_response_transaction_types_inner_id=obpv200_get_transaction_types200_response_transaction_types_inner_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -801,7 +801,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems",
+            '200': "OBPv400GetTagsForViewOnAccount200ResponseTagsInner",
             '404': None,
             '500': None,
         }
@@ -823,7 +823,7 @@ class TransactionMetadataApi:
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         transactionid: Annotated[StrictStr, Field(description="The TRANSACTIONID identifier")],
-        obpv400_delete_system_level_endpoint_tag200_response: Annotated[OBPv400DeleteSystemLevelEndpointTag200Response, Field(description="Request body")],
+        obpv200_get_transaction_types200_response_transaction_types_inner_id: Annotated[OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -836,7 +836,7 @@ class TransactionMetadataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems]:
+    ) -> ApiResponse[OBPv400GetTagsForViewOnAccount200ResponseTagsInner]:
         """Add a Transaction Tag
 
         <p>Posts a tag about a transaction TRANSACTION_ID on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> VIEW_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>Authentication is required as the tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -849,8 +849,8 @@ class TransactionMetadataApi:
         :type viewid: str
         :param transactionid: The TRANSACTIONID identifier (required)
         :type transactionid: str
-        :param obpv400_delete_system_level_endpoint_tag200_response: Request body (required)
-        :type obpv400_delete_system_level_endpoint_tag200_response: OBPv400DeleteSystemLevelEndpointTag200Response
+        :param obpv200_get_transaction_types200_response_transaction_types_inner_id: Request body (required)
+        :type obpv200_get_transaction_types200_response_transaction_types_inner_id: OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -878,7 +878,7 @@ class TransactionMetadataApi:
             accountid=accountid,
             viewid=viewid,
             transactionid=transactionid,
-            obpv400_delete_system_level_endpoint_tag200_response=obpv400_delete_system_level_endpoint_tag200_response,
+            obpv200_get_transaction_types200_response_transaction_types_inner_id=obpv200_get_transaction_types200_response_transaction_types_inner_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -886,7 +886,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems",
+            '200': "OBPv400GetTagsForViewOnAccount200ResponseTagsInner",
             '404': None,
             '500': None,
         }
@@ -908,7 +908,7 @@ class TransactionMetadataApi:
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         transactionid: Annotated[StrictStr, Field(description="The TRANSACTIONID identifier")],
-        obpv400_delete_system_level_endpoint_tag200_response: Annotated[OBPv400DeleteSystemLevelEndpointTag200Response, Field(description="Request body")],
+        obpv200_get_transaction_types200_response_transaction_types_inner_id: Annotated[OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -934,8 +934,8 @@ class TransactionMetadataApi:
         :type viewid: str
         :param transactionid: The TRANSACTIONID identifier (required)
         :type transactionid: str
-        :param obpv400_delete_system_level_endpoint_tag200_response: Request body (required)
-        :type obpv400_delete_system_level_endpoint_tag200_response: OBPv400DeleteSystemLevelEndpointTag200Response
+        :param obpv200_get_transaction_types200_response_transaction_types_inner_id: Request body (required)
+        :type obpv200_get_transaction_types200_response_transaction_types_inner_id: OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -963,7 +963,7 @@ class TransactionMetadataApi:
             accountid=accountid,
             viewid=viewid,
             transactionid=transactionid,
-            obpv400_delete_system_level_endpoint_tag200_response=obpv400_delete_system_level_endpoint_tag200_response,
+            obpv200_get_transaction_types200_response_transaction_types_inner_id=obpv200_get_transaction_types200_response_transaction_types_inner_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -971,7 +971,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems",
+            '200': "OBPv400GetTagsForViewOnAccount200ResponseTagsInner",
             '404': None,
             '500': None,
         }
@@ -988,7 +988,7 @@ class TransactionMetadataApi:
         accountid,
         viewid,
         transactionid,
-        obpv400_delete_system_level_endpoint_tag200_response,
+        obpv200_get_transaction_types200_response_transaction_types_inner_id,
         _request_auth,
         _content_type,
         _headers,
@@ -1022,8 +1022,8 @@ class TransactionMetadataApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_delete_system_level_endpoint_tag200_response is not None:
-            _body_params = obpv400_delete_system_level_endpoint_tag200_response
+        if obpv200_get_transaction_types200_response_transaction_types_inner_id is not None:
+            _body_params = obpv200_get_transaction_types200_response_transaction_types_inner_id
 
 
         # set the HTTP header `Accept`
@@ -3981,7 +3981,7 @@ class TransactionMetadataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems:
+    ) -> OBPv400GetTagsForViewOnAccount200ResponseTagsInner:
         """Get Transaction Tags
 
         <p>Returns the transaction TRANSACTION_ID tags made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -4028,7 +4028,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems",
+            '200': "OBPv400GetTagsForViewOnAccount200ResponseTagsInner",
             '404': None,
             '500': None,
         }
@@ -4062,7 +4062,7 @@ class TransactionMetadataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems]:
+    ) -> ApiResponse[OBPv400GetTagsForViewOnAccount200ResponseTagsInner]:
         """Get Transaction Tags
 
         <p>Returns the transaction TRANSACTION_ID tags made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -4109,7 +4109,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems",
+            '200': "OBPv400GetTagsForViewOnAccount200ResponseTagsInner",
             '404': None,
             '500': None,
         }
@@ -4190,7 +4190,7 @@ class TransactionMetadataApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems",
+            '200': "OBPv400GetTagsForViewOnAccount200ResponseTagsInner",
             '404': None,
             '500': None,
         }

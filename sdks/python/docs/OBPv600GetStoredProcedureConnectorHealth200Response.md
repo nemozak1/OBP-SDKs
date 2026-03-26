@@ -5,8 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetStoredProcedureConnectorHealth200ResponseProperties**](OBPv600GetStoredProcedureConnectorHealth200ResponseProperties.md) |  | 
+**server_name** | **str** |  | [optional] 
+**server_ip** | **str** |  | [optional] 
+**status** | **str** |  | [optional] 
+**database_name** | **str** |  | [optional] 
+**response_time_ms** | **int** |  | [optional] 
 
 ## Example
 

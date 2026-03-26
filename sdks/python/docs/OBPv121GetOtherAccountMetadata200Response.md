@@ -5,8 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv121GetOtherAccountMetadata200ResponseProperties**](OBPv121GetOtherAccountMetadata200ResponseProperties.md) |  | 
+**public_alias** | **str** |  | [optional] 
+**image_url** | **str** |  | [optional] 
+**physical_location** | [**OBPv121GetOtherAccountMetadata200ResponsePhysicalLocation**](OBPv121GetOtherAccountMetadata200ResponsePhysicalLocation.md) |  | [optional] 
+**private_alias** | **str** |  | [optional] 
+**url** | **str** |  | [optional] 
+**more_info** | **str** |  | [optional] 
+**corporate_location** | [**OBPv121GetOtherAccountMetadata200ResponsePhysicalLocation**](OBPv121GetOtherAccountMetadata200ResponsePhysicalLocation.md) |  | [optional] 
+**open_corporates_url** | **str** |  | [optional] 
 
 ## Example
 

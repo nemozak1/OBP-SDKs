@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400GetAccountsByAccountRoutingRegex200ResponseProperties**](OBPv400GetAccountsByAccountRoutingRegex200ResponseProperties.md) |  | 
+**accounts** | [**List[OBPv400GetAccountsByAccountRoutingRegex200ResponseAccountsInner]**](OBPv400GetAccountsByAccountRoutingRegex200ResponseAccountsInner.md) |  | [optional] 
 
 ## Example
 

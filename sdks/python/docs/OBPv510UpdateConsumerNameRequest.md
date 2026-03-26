@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510UpdateConsumerNameRequestProperties**](OBPv510UpdateConsumerNameRequestProperties.md) |  | 
+**app_name** | **str** |  | [optional] 
 
 ## Example
 

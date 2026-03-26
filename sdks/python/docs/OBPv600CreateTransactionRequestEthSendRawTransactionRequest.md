@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600CreateTransactionRequestEthSendRawTransactionRequestProperties**](OBPv600CreateTransactionRequestEthSendRawTransactionRequestProperties.md) |  | 
+**description** | **str** |  | [optional] 
+**params** | **str** |  | [optional] 
 
 ## Example
 

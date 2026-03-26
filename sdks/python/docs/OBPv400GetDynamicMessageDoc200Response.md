@@ -5,8 +5,20 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400GetDynamicMessageDoc200ResponseProperties**](OBPv400GetDynamicMessageDoc200ResponseProperties.md) |  | 
+**adapter_implementation** | **str** |  | [optional] 
+**example_inbound_message** | **object** |  | [optional] 
+**description** | **str** |  | [optional] 
+**process** | **str** |  | [optional] 
+**outbound_avro_schema** | **str** |  | [optional] 
+**message_format** | **str** |  | [optional] 
+**programming_lang** | **str** |  | [optional] 
+**example_outbound_message** | **object** |  | [optional] 
+**bank_id** | **str** |  | [optional] 
+**dynamic_message_doc_id** | **str** |  | [optional] 
+**inbound_avro_schema** | **str** |  | [optional] 
+**method_body** | **str** |  | [optional] 
+**outbound_topic** | **str** |  | [optional] 
+**inbound_topic** | **str** |  | [optional] 
 
 ## Example
 

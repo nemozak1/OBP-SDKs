@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetViewPermissions200ResponseProperties**](OBPv600GetViewPermissions200ResponseProperties.md) |  | 
+**permissions** | [**List[OBPv600GetViewPermissions200ResponsePermissionsInner]**](OBPv600GetViewPermissions200ResponsePermissionsInner.md) |  | [optional] 
 
 ## Example
 

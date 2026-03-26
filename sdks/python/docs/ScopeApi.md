@@ -1,6 +1,6 @@
 # obp_python.ScopeApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -35,10 +35,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -108,7 +108,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_add_scope**
-> OBPv400GetScopes200ResponsePropertiesListItems o_bpv4_0_0_add_scope(consumerid, obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items)
+> OBPv400GetScopes200ResponseListInner o_bpv4_0_0_add_scope(consumerid, obpv510_create_consent_implicit_request_entitlements_inner)
 
 Create Scope for a Consumer
 
@@ -136,15 +136,15 @@ Create Scope for a Consumer
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_scopes200_response_properties_list_items import OBPv400GetScopes200ResponsePropertiesListItems
-from obp_python.models.obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items import OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems
+from obp_python.models.obpv400_get_scopes200_response_list_inner import OBPv400GetScopes200ResponseListInner
+from obp_python.models.obpv510_create_consent_implicit_request_entitlements_inner import OBPv510CreateConsentImplicitRequestEntitlementsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -171,11 +171,11 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.ScopeApi(api_client)
     consumerid = 'consumerid_example' # str | The CONSUMERID identifier
-    obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items = {type=object, properties={bank_id={type=string}, role_name={type=string}}} # OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems | Request body
+    obpv510_create_consent_implicit_request_entitlements_inner = {type=object, properties={bank_id={type=string}, role_name={type=string}}} # OBPv510CreateConsentImplicitRequestEntitlementsInner | Request body
 
     try:
         # Create Scope for a Consumer
-        api_response = api_instance.o_bpv4_0_0_add_scope(consumerid, obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items)
+        api_response = api_instance.o_bpv4_0_0_add_scope(consumerid, obpv510_create_consent_implicit_request_entitlements_inner)
         print("The response of ScopeApi->o_bpv4_0_0_add_scope:\n")
         pprint(api_response)
     except Exception as e:
@@ -190,11 +190,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **consumerid** | **str**| The CONSUMERID identifier | 
- **obpv510_get_my_consents_by_bank200_response_properties_consents_items_properties_jwt_payload_properties_entitlements_items** | [**OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems**](OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems.md)| Request body | 
+ **obpv510_create_consent_implicit_request_entitlements_inner** | [**OBPv510CreateConsentImplicitRequestEntitlementsInner**](OBPv510CreateConsentImplicitRequestEntitlementsInner.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetScopes200ResponsePropertiesListItems**](OBPv400GetScopes200ResponsePropertiesListItems.md)
+[**OBPv400GetScopes200ResponseListInner**](OBPv400GetScopes200ResponseListInner.md)
 
 ### Authorization
 
@@ -243,10 +243,10 @@ from obp_python.models.obpv400_get_scopes200_response import OBPv400GetScopes200
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters

@@ -5,8 +5,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400UpdateBankLevelDynamicResourceDocRequestProperties**](OBPv400UpdateBankLevelDynamicResourceDocRequestProperties.md) |  | 
+**error_response_bodies** | **str** |  | [optional] 
+**request_verb** | **str** |  | [optional] 
+**request_url** | **str** |  | [optional] 
+**description** | **str** |  | [optional] 
+**tags** | **str** |  | [optional] 
+**success_response_body** | [**OBPv400GetBankLevelDynamicResourceDoc200ResponseSuccessResponseBody**](OBPv400GetBankLevelDynamicResourceDoc200ResponseSuccessResponseBody.md) |  | [optional] 
+**example_request_body** | [**OBPv400GetBankLevelDynamicResourceDoc200ResponseExampleRequestBody**](OBPv400GetBankLevelDynamicResourceDoc200ResponseExampleRequestBody.md) |  | [optional] 
+**bank_id** | **str** |  | [optional] 
+**roles** | **str** |  | [optional] 
+**partial_function_name** | **str** |  | [optional] 
+**method_body** | **str** |  | [optional] 
+**summary** | **str** |  | [optional] 
 
 ## Example
 

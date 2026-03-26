@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv200GetSocialMediaHandles200ResponseProperties**](OBPv200GetSocialMediaHandles200ResponseProperties.md) |  | 
+**checks** | [**List[OBPv200GetSocialMediaHandles200ResponseChecksInner]**](OBPv200GetSocialMediaHandles200ResponseChecksInner.md) |  | [optional] 
 
 ## Example
 

@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400GetCustomersMinimalAtAnyBank200ResponseProperties**](OBPv400GetCustomersMinimalAtAnyBank200ResponseProperties.md) |  | 
+**customers** | [**List[OBPv400GetCustomersMinimalAtAnyBank200ResponseCustomersInner]**](OBPv400GetCustomersMinimalAtAnyBank200ResponseCustomersInner.md) |  | [optional] 
 
 ## Example
 

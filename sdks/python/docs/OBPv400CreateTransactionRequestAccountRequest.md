@@ -5,8 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400CreateTransactionRequestAccountRequestProperties**](OBPv400CreateTransactionRequestAccountRequestProperties.md) |  | 
+**to** | [**OBPv400CreateTransactionRequestCounterparty200ResponseFrom**](OBPv400CreateTransactionRequestCounterparty200ResponseFrom.md) |  | [optional] 
+**description** | **str** |  | [optional] 
+**value** | [**OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit**](OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit.md) |  | [optional] 
 
 ## Example
 

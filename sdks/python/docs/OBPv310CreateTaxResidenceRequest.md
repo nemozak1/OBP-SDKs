@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310CreateTaxResidenceRequestProperties**](OBPv310CreateTaxResidenceRequestProperties.md) |  | 
+**tax_number** | **str** |  | [optional] 
+**domain** | **str** |  | [optional] 
 
 ## Example
 

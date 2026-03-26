@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetHoldingAccountByReleaser200ResponseProperties**](OBPv600GetHoldingAccountByReleaser200ResponseProperties.md) |  | 
+**accounts** | [**List[OBPv300GetPublicAccountById200Response]**](OBPv300GetPublicAccountById200Response.md) |  | [optional] 
 
 ## Example
 

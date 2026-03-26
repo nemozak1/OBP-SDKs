@@ -9,5 +9,6 @@ license = {text = "AGPL v3.0"}
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "obp-python @ git+https://github.com/OpenBankProject/OBP-SDKs.git#subdirectory=sdks/python"
+    "obp-python @ git+https://github.com/OpenBankProject/OBP-SDKs.git#subdirectory=sdks/python",
+    "python-dotenv>=1.2.2",
 ]

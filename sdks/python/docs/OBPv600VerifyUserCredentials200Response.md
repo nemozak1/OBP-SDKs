@@ -5,8 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600VerifyUserCredentials200ResponseProperties**](OBPv600VerifyUserCredentials200ResponseProperties.md) |  | 
+**provider** | **str** |  | [optional] 
+**email** | **str** |  | [optional] 
+**username** | **str** |  | [optional] 
+**provider_id** | **str** |  | [optional] 
+**user_id** | **str** |  | [optional] 
+**entitlements** | [**OBPv510GetUserByProviderAndUsername200ResponseEntitlements**](OBPv510GetUserByProviderAndUsername200ResponseEntitlements.md) |  | [optional] 
 
 ## Example
 

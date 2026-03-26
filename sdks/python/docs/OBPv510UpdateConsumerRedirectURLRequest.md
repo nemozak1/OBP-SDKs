@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510UpdateConsumerRedirectURLRequestProperties**](OBPv510UpdateConsumerRedirectURLRequestProperties.md) |  | 
+**redirect_url** | **str** |  | [optional] 
 
 ## Example
 

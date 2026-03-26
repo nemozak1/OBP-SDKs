@@ -5,8 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv500CreateConsentRequestRequestProperties**](OBPv500CreateConsentRequestRequestProperties.md) |  | 
+**phone_number** | **str** |  | [optional] 
+**time_to_live** | **int** |  | [optional] 
+**email** | **str** |  | [optional] 
+**account_access** | [**List[OBPv500GetConsentRequest200ResponsePayloadAccountAccessInner]**](OBPv500GetConsentRequest200ResponsePayloadAccountAccessInner.md) |  | [optional] 
+**everything** | **bool** |  | [optional] 
+**consumer_id** | **str** |  | [optional] 
+**valid_from** | **datetime** |  | [optional] 
+**entitlements** | [**List[OBPv510CreateConsentImplicitRequestEntitlementsInner]**](OBPv510CreateConsentImplicitRequestEntitlementsInner.md) |  | [optional] 
 
 ## Example
 

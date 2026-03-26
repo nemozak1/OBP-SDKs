@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510GetCallsLimit200ResponseProperties**](OBPv510GetCallsLimit200ResponseProperties.md) |  | 
+**limits** | [**List[OBPv510GetCallsLimit200ResponseLimitsInner]**](OBPv510GetCallsLimit200ResponseLimitsInner.md) |  | [optional] 
 
 ## Example
 

@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv300GetFirehoseTransactionsForBankAccount200ResponseProperties**](OBPv300GetFirehoseTransactionsForBankAccount200ResponseProperties.md) |  | 
+**transactions** | [**List[OBPv310GetTransactionByIdForBankAccount200Response]**](OBPv310GetTransactionByIdForBankAccount200Response.md) |  | [optional] 
 
 ## Example
 

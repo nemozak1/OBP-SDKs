@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
+from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv200_add_kyc_document_request_properties import OBPv200AddKycDocumentRequestProperties
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,13 @@ class OBPv200AddKycDocumentRequest(BaseModel):
     """
     OBPv200AddKycDocumentRequest
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv200AddKycDocumentRequestProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    number: Optional[StrictStr] = None
+    customer_number: Optional[StrictStr] = None
+    issue_date: Optional[datetime] = None
+    type: Optional[StrictStr] = None
+    issue_place: Optional[StrictStr] = None
+    expiry_date: Optional[datetime] = None
+    __properties: ClassVar[List[str]] = ["number", "customer_number", "issue_date", "type", "issue_place", "expiry_date"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +75,6 @@ class OBPv200AddKycDocumentRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +87,12 @@ class OBPv200AddKycDocumentRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "number": obj.get("number"),
+            "customer_number": obj.get("customer_number"),
+            "issue_date": obj.get("issue_date"),
             "type": obj.get("type"),
-            "properties": OBPv200AddKycDocumentRequestProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "issue_place": obj.get("issue_place"),
+            "expiry_date": obj.get("expiry_date")
         })
         return _obj
 

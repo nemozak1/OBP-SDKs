@@ -5,8 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600UpdateAbacRuleRequestProperties**](OBPv600UpdateAbacRuleRequestProperties.md) |  | 
+**rule_code** | **str** |  | [optional] 
+**is_active** | **bool** |  | [optional] 
+**description** | **str** |  | [optional] 
+**rule_name** | **str** |  | [optional] 
+**policy** | **str** |  | [optional] 
 
 ## Example
 

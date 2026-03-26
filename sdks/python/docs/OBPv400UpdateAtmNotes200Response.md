@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400UpdateAtmNotes200ResponseProperties**](OBPv400UpdateAtmNotes200ResponseProperties.md) |  | 
+**notes** | **List[str]** |  | [optional] 
+**atm_id** | **str** |  | [optional] 
 
 ## Example
 

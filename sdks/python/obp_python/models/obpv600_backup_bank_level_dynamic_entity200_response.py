@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv600_backup_bank_level_dynamic_entity200_response_properties import OBPv600BackupBankLevelDynamicEntity200ResponseProperties
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv600_backup_bank_level_dynamic_entity200_response_schema import OBPv600BackupBankLevelDynamicEntity200ResponseSchema
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,16 @@ class OBPv600BackupBankLevelDynamicEntity200Response(BaseModel):
     """
     OBPv600BackupBankLevelDynamicEntity200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv600BackupBankLevelDynamicEntity200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    personal_requires_role: Optional[StrictBool] = None
+    user_id: Optional[StrictStr] = None
+    entity_name: Optional[StrictStr] = None
+    bank_id: Optional[StrictStr] = None
+    dynamic_entity_id: Optional[StrictStr] = None
+    var_schema: Optional[OBPv600BackupBankLevelDynamicEntity200ResponseSchema] = Field(default=None, alias="schema")
+    has_public_access: Optional[StrictBool] = None
+    has_community_access: Optional[StrictBool] = None
+    has_personal_entity: Optional[StrictBool] = None
+    __properties: ClassVar[List[str]] = ["personal_requires_role", "user_id", "entity_name", "bank_id", "dynamic_entity_id", "schema", "has_public_access", "has_community_access", "has_personal_entity"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +78,9 @@ class OBPv600BackupBankLevelDynamicEntity200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of var_schema
+        if self.var_schema:
+            _dict['schema'] = self.var_schema.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +93,15 @@ class OBPv600BackupBankLevelDynamicEntity200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv600BackupBankLevelDynamicEntity200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "personal_requires_role": obj.get("personal_requires_role"),
+            "user_id": obj.get("user_id"),
+            "entity_name": obj.get("entity_name"),
+            "bank_id": obj.get("bank_id"),
+            "dynamic_entity_id": obj.get("dynamic_entity_id"),
+            "schema": OBPv600BackupBankLevelDynamicEntity200ResponseSchema.from_dict(obj["schema"]) if obj.get("schema") is not None else None,
+            "has_public_access": obj.get("has_public_access"),
+            "has_community_access": obj.get("has_community_access"),
+            "has_personal_entity": obj.get("has_personal_entity")
         })
         return _obj
 

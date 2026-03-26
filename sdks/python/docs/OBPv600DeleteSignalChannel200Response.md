@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600DeleteSignalChannel200ResponseProperties**](OBPv600DeleteSignalChannel200ResponseProperties.md) |  | 
+**channel_name** | **str** |  | [optional] 
+**deleted** | **bool** |  | [optional] 
 
 ## Example
 

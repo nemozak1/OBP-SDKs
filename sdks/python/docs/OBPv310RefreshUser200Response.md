@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310RefreshUser200ResponseProperties**](OBPv310RefreshUser200ResponseProperties.md) |  | 
+**duration_time** | **str** |  | [optional] 
 
 ## Example
 

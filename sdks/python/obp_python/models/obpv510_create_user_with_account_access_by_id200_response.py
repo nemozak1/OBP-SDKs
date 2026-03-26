@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv510_create_user_with_account_access_by_id200_response_properties import OBPv510CreateUserWithAccountAccessById200ResponseProperties
+from pydantic import BaseModel, ConfigDict
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv510_create_user_with_account_access_by_id200_response_head import OBPv510CreateUserWithAccountAccessById200ResponseHead
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,9 @@ class OBPv510CreateUserWithAccountAccessById200Response(BaseModel):
     """
     OBPv510CreateUserWithAccountAccessById200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv510CreateUserWithAccountAccessById200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    head: Optional[OBPv510CreateUserWithAccountAccessById200ResponseHead] = None
+    tl: Optional[Dict[str, Any]] = None
+    __properties: ClassVar[List[str]] = ["head", "tl"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +71,9 @@ class OBPv510CreateUserWithAccountAccessById200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of head
+        if self.head:
+            _dict['head'] = self.head.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +86,8 @@ class OBPv510CreateUserWithAccountAccessById200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv510CreateUserWithAccountAccessById200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "head": OBPv510CreateUserWithAccountAccessById200ResponseHead.from_dict(obj["head"]) if obj.get("head") is not None else None,
+            "tl": obj.get("tl")
         })
         return _obj
 

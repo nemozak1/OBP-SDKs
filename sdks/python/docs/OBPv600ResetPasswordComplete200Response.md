@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600ResetPasswordComplete200ResponseProperties**](OBPv600ResetPasswordComplete200ResponseProperties.md) |  | 
+**message** | **str** |  | [optional] 
 
 ## Example
 

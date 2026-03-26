@@ -5,8 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510CreateCustomView200ResponseProperties**](OBPv510CreateCustomView200ResponseProperties.md) |  | 
+**name** | **str** |  | [optional] 
+**description** | **str** |  | [optional] 
+**allowed_permissions** | **List[str]** |  | [optional] 
+**is_public** | **bool** |  | [optional] 
+**hide_metadata_if_alias_used** | **bool** |  | [optional] 
+**alias** | **str** |  | [optional] 
+**id** | **str** |  | [optional] 
+**metadata_view** | **str** |  | [optional] 
 
 ## Example
 

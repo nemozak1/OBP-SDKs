@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetGroupEntitlements200ResponseProperties**](OBPv600GetGroupEntitlements200ResponseProperties.md) |  | 
+**entitlements** | [**List[OBPv600GetGroupEntitlements200ResponseEntitlementsInner]**](OBPv600GetGroupEntitlements200ResponseEntitlementsInner.md) |  | [optional] 
 
 ## Example
 

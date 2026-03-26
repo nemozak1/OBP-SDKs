@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310AnswerConsentChallengeRequestProperties**](OBPv310AnswerConsentChallengeRequestProperties.md) |  | 
+**answer** | **str** |  | [optional] 
 
 ## Example
 

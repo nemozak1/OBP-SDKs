@@ -1,6 +1,6 @@
 # obp_python.MethodRoutingApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **o_bpv3_1_0_create_method_routing**
-> OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems o_bpv3_1_0_create_method_routing(obpv310_create_method_routing_request)
+> OBPv310GetMethodRoutings200ResponseMethodRoutingsInner o_bpv3_1_0_create_method_routing(obpv310_create_method_routing_request)
 
 Create MethodRouting
 
@@ -20,7 +20,7 @@ Create MethodRouting
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 <p>Explanation of Fields:</p>
 <ul>
-<li>method_name is required String value, current supported value: [mapped]</li>
+<li>method_name is required String value, current supported value: [mapped | cardano_vJun2025 | rabbitmq_vOct2024]</li>
 <li>connector_name is required String value</li>
 <li>is_bank_id_exact_match is required boolean value, if bank_id_pattern is exact bank_id value, this value is true; if bank_id_pattern is null or a regex, this value is false</li>
 <li>bank_id_pattern is optional String value, it can be null, a exact bank_id or a regex</li>
@@ -66,14 +66,14 @@ Build InBound json value rules:<br />
 ```python
 import obp_python
 from obp_python.models.obpv310_create_method_routing_request import OBPv310CreateMethodRoutingRequest
-from obp_python.models.obpv310_get_method_routings200_response_properties_method_routings_items import OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems
+from obp_python.models.obpv310_get_method_routings200_response_method_routings_inner import OBPv310GetMethodRoutings200ResponseMethodRoutingsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems**](OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems.md)
+[**OBPv310GetMethodRoutings200ResponseMethodRoutingsInner**](OBPv310GetMethodRoutings200ResponseMethodRoutingsInner.md)
 
 ### Authorization
 
@@ -164,10 +164,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -245,8 +245,8 @@ Get MethodRoutings
 <li>active: if active = true, it will show all the webui_ props. Even if they are set yet, we will return all the default webui_ props</li>
 </ul>
 <p>eg:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v3.1.0/management/method_routings?active=true">https://apisandbox.openbankproject.com/obp/v3.1.0/management/method_routings?active=true</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v3.1.0/management/method_routings?method_name=getBank">https://apisandbox.openbankproject.com/obp/v3.1.0/management/method_routings?method_name=getBank</a></p>
+<a href="http://127.0.0.1:8080/obp/v3.1.0/management/method_routings?active=true">http://127.0.0.1:8080/obp/v3.1.0/management/method_routings?active=true</a><br />
+<a href="http://127.0.0.1:8080/obp/v3.1.0/management/method_routings?method_name=getBank">http://127.0.0.1:8080/obp/v3.1.0/management/method_routings?method_name=getBank</a></p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 <p><strong>JSON response body fields:</strong></p>
 <p><a href="/glossary#"><strong>key</strong></a>: CustomerNumber</p>
@@ -266,10 +266,10 @@ from obp_python.models.obpv310_get_method_routings200_response import OBPv310Get
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -334,7 +334,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv3_1_0_update_method_routing**
-> OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems o_bpv3_1_0_update_method_routing(methodroutingid, obpv310_create_method_routing_request)
+> OBPv310GetMethodRoutings200ResponseMethodRoutingsInner o_bpv3_1_0_update_method_routing(methodroutingid, obpv310_create_method_routing_request)
 
 Update MethodRouting
 
@@ -342,7 +342,7 @@ Update MethodRouting
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 <p>Explaination of Fields:</p>
 <ul>
-<li>method_name is required String value, current supported value: [mapped]</li>
+<li>method_name is required String value, current supported value: [mapped | cardano_vJun2025 | rabbitmq_vOct2024]</li>
 <li>connector_name is required String value</li>
 <li>is_bank_id_exact_match is required boolean value, if bank_id_pattern is exact bank_id value, this value is true; if bank_id_pattern is null or a regex, this value is false</li>
 <li>bank_id_pattern is optional String value, it can be null, a exact bank_id or a regex</li>
@@ -383,14 +383,14 @@ Build InBound json value rules:<br />
 ```python
 import obp_python
 from obp_python.models.obpv310_create_method_routing_request import OBPv310CreateMethodRoutingRequest
-from obp_python.models.obpv310_get_method_routings200_response_properties_method_routings_items import OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems
+from obp_python.models.obpv310_get_method_routings200_response_method_routings_inner import OBPv310GetMethodRoutings200ResponseMethodRoutingsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -440,7 +440,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems**](OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems.md)
+[**OBPv310GetMethodRoutings200ResponseMethodRoutingsInner**](OBPv310GetMethodRoutings200ResponseMethodRoutingsInner.md)
 
 ### Authorization
 
@@ -509,10 +509,10 @@ from obp_python.models.obpv600_get_connector_method_names200_response import OBP
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters

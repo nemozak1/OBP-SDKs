@@ -5,8 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400CreateTransactionRequestRefundRequestProperties**](OBPv400CreateTransactionRequestRefundRequestProperties.md) |  | 
+**description** | **str** |  | [optional] 
+**refund** | [**OBPv400CreateTransactionRequestRefundRequestRefund**](OBPv400CreateTransactionRequestRefundRequestRefund.md) |  | [optional] 
+**to** | [**OBPv310SaveHistoricalTransactionRequestTo**](OBPv310SaveHistoricalTransactionRequestTo.md) |  | [optional] 
+**var_from** | [**OBPv400CreateTransactionRequestCounterpartyRequestTo**](OBPv400CreateTransactionRequestCounterpartyRequestTo.md) |  | [optional] 
+**value** | [**OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit**](OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit.md) |  | [optional] 
 
 ## Example
 

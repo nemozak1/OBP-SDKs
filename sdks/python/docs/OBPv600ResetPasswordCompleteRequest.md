@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600ResetPasswordCompleteRequestProperties**](OBPv600ResetPasswordCompleteRequestProperties.md) |  | 
+**new_password** | **str** |  | [optional] 
+**token** | **str** |  | [optional] 
 
 ## Example
 

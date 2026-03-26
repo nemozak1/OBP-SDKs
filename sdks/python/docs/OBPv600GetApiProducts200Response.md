@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetApiProducts200ResponseProperties**](OBPv600GetApiProducts200ResponseProperties.md) |  | 
+**api_products** | [**List[OBPv600GetApiProducts200ResponseApiProductsInner]**](OBPv600GetApiProducts200ResponseApiProductsInner.md) |  | [optional] 
 
 ## Example
 

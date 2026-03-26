@@ -5,8 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetAbacRuleSchema200ResponseProperties**](OBPv600GetAbacRuleSchema200ResponseProperties.md) |  | 
+**examples** | [**List[OBPv600UpdateAbacRuleRequest]**](OBPv600UpdateAbacRuleRequest.md) |  | [optional] 
+**available_operators** | **List[str]** |  | [optional] 
+**object_types** | [**List[OBPv600GetAbacRuleSchema200ResponseObjectTypesInner]**](OBPv600GetAbacRuleSchema200ResponseObjectTypesInner.md) |  | [optional] 
+**notes** | **List[str]** |  | [optional] 
+**parameters** | [**List[OBPv600GetAbacRuleSchema200ResponseParametersInner]**](OBPv600GetAbacRuleSchema200ResponseParametersInner.md) |  | [optional] 
 
 ## Example
 

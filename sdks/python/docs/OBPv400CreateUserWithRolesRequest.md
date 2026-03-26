@@ -5,8 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400CreateUserWithRolesRequestProperties**](OBPv400CreateUserWithRolesRequestProperties.md) |  | 
+**roles** | [**List[OBPv510CreateConsentImplicitRequestEntitlementsInner]**](OBPv510CreateConsentImplicitRequestEntitlementsInner.md) |  | [optional] 
+**provider** | **str** |  | [optional] 
+**username** | **str** |  | [optional] 
 
 ## Example
 

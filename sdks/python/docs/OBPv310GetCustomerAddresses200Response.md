@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310GetCustomerAddresses200ResponseProperties**](OBPv310GetCustomerAddresses200ResponseProperties.md) |  | 
+**addresses** | [**List[OBPv310CreateCustomerAddress200Response]**](OBPv310CreateCustomerAddress200Response.md) |  | [optional] 
 
 ## Example
 

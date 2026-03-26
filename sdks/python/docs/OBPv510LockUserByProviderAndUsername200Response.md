@@ -5,8 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510LockUserByProviderAndUsername200ResponseProperties**](OBPv510LockUserByProviderAndUsername200ResponseProperties.md) |  | 
+**type_of_lock** | **str** |  | [optional] 
+**last_lock_date** | **datetime** |  | [optional] 
+**user_id** | **str** |  | [optional] 
 
 ## Example
 

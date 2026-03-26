@@ -5,8 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv200AddKycStatusRequestProperties**](OBPv200AddKycStatusRequestProperties.md) |  | 
+**customer_number** | **str** |  | [optional] 
+**ok** | **bool** |  | [optional] 
+**var_date** | **datetime** |  | [optional] 
 
 ## Example
 

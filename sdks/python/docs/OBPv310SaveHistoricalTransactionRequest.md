@@ -5,8 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310SaveHistoricalTransactionRequestProperties**](OBPv310SaveHistoricalTransactionRequestProperties.md) |  | 
+**description** | **str** |  | [optional] 
+**to** | [**OBPv310SaveHistoricalTransactionRequestTo**](OBPv310SaveHistoricalTransactionRequestTo.md) |  | [optional] 
+**completed** | **str** |  | [optional] 
+**charge_policy** | **str** |  | [optional] 
+**var_from** | [**OBPv310SaveHistoricalTransactionRequestTo**](OBPv310SaveHistoricalTransactionRequestTo.md) |  | [optional] 
+**type** | **str** |  | [optional] 
+**value** | [**OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit**](OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit.md) |  | [optional] 
+**posted** | **str** |  | [optional] 
 
 ## Example
 

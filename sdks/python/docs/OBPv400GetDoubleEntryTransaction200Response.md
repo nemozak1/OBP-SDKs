@@ -5,8 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400GetDoubleEntryTransaction200ResponseProperties**](OBPv400GetDoubleEntryTransaction200ResponseProperties.md) |  | 
+**debit_transaction** | [**OBPv400GetDoubleEntryTransaction200ResponseDebitTransaction**](OBPv400GetDoubleEntryTransaction200ResponseDebitTransaction.md) |  | [optional] 
+**credit_transaction** | [**OBPv400GetDoubleEntryTransaction200ResponseDebitTransaction**](OBPv400GetDoubleEntryTransaction200ResponseDebitTransaction.md) |  | [optional] 
+**transaction_request** | [**OBPv400GetDoubleEntryTransaction200ResponseTransactionRequest**](OBPv400GetDoubleEntryTransaction200ResponseTransactionRequest.md) |  | [optional] 
 
 ## Example
 

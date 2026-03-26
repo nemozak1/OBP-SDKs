@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,14 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv400_create_transaction_request_counterparty200_response_properties import OBPv400CreateTransactionRequestCounterparty200ResponseProperties
+from datetime import datetime
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv400_create_transaction_request_counterparty200_response_attributes_inner import OBPv400CreateTransactionRequestCounterparty200ResponseAttributesInner
+from obp_python.models.obpv400_create_transaction_request_counterparty200_response_challenges_inner import OBPv400CreateTransactionRequestCounterparty200ResponseChallengesInner
+from obp_python.models.obpv400_create_transaction_request_counterparty200_response_charge import OBPv400CreateTransactionRequestCounterparty200ResponseCharge
+from obp_python.models.obpv400_create_transaction_request_counterparty200_response_details import OBPv400CreateTransactionRequestCounterparty200ResponseDetails
+from obp_python.models.obpv400_create_transaction_request_counterparty200_response_from import OBPv400CreateTransactionRequestCounterparty200ResponseFrom
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +33,18 @@ class OBPv400CreateTransactionRequestCounterparty200Response(BaseModel):
     """
     OBPv400CreateTransactionRequestCounterparty200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv400CreateTransactionRequestCounterparty200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    start_date: Optional[datetime] = None
+    attributes: Optional[List[OBPv400CreateTransactionRequestCounterparty200ResponseAttributesInner]] = None
+    id: Optional[StrictStr] = None
+    end_date: Optional[datetime] = None
+    status: Optional[StrictStr] = None
+    var_from: Optional[OBPv400CreateTransactionRequestCounterparty200ResponseFrom] = Field(default=None, alias="from")
+    details: Optional[OBPv400CreateTransactionRequestCounterparty200ResponseDetails] = None
+    charge: Optional[OBPv400CreateTransactionRequestCounterparty200ResponseCharge] = None
+    type: Optional[StrictStr] = None
+    transaction_ids: Optional[List[StrictStr]] = None
+    challenges: Optional[List[OBPv400CreateTransactionRequestCounterparty200ResponseChallengesInner]] = None
+    __properties: ClassVar[List[str]] = ["start_date", "attributes", "id", "end_date", "status", "from", "details", "charge", "type", "transaction_ids", "challenges"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +85,29 @@ class OBPv400CreateTransactionRequestCounterparty200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in attributes (list)
+        _items = []
+        if self.attributes:
+            for _item_attributes in self.attributes:
+                if _item_attributes:
+                    _items.append(_item_attributes.to_dict())
+            _dict['attributes'] = _items
+        # override the default output from pydantic by calling `to_dict()` of var_from
+        if self.var_from:
+            _dict['from'] = self.var_from.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of details
+        if self.details:
+            _dict['details'] = self.details.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of charge
+        if self.charge:
+            _dict['charge'] = self.charge.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in challenges (list)
+        _items = []
+        if self.challenges:
+            for _item_challenges in self.challenges:
+                if _item_challenges:
+                    _items.append(_item_challenges.to_dict())
+            _dict['challenges'] = _items
         return _dict
 
     @classmethod
@@ -86,8 +120,17 @@ class OBPv400CreateTransactionRequestCounterparty200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "start_date": obj.get("start_date"),
+            "attributes": [OBPv400CreateTransactionRequestCounterparty200ResponseAttributesInner.from_dict(_item) for _item in obj["attributes"]] if obj.get("attributes") is not None else None,
+            "id": obj.get("id"),
+            "end_date": obj.get("end_date"),
+            "status": obj.get("status"),
+            "from": OBPv400CreateTransactionRequestCounterparty200ResponseFrom.from_dict(obj["from"]) if obj.get("from") is not None else None,
+            "details": OBPv400CreateTransactionRequestCounterparty200ResponseDetails.from_dict(obj["details"]) if obj.get("details") is not None else None,
+            "charge": OBPv400CreateTransactionRequestCounterparty200ResponseCharge.from_dict(obj["charge"]) if obj.get("charge") is not None else None,
             "type": obj.get("type"),
-            "properties": OBPv400CreateTransactionRequestCounterparty200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "transaction_ids": obj.get("transaction_ids"),
+            "challenges": [OBPv400CreateTransactionRequestCounterparty200ResponseChallengesInner.from_dict(_item) for _item in obj["challenges"]] if obj.get("challenges") is not None else None
         })
         return _obj
 

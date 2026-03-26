@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv510_get_transaction_requests200_response_properties import OBPv510GetTransactionRequests200ResponseProperties
+from pydantic import BaseModel, ConfigDict
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv510_get_transaction_request_by_id200_response import OBPv510GetTransactionRequestById200Response
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,8 @@ class OBPv510GetTransactionRequests200Response(BaseModel):
     """
     OBPv510GetTransactionRequests200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv510GetTransactionRequests200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    transaction_requests_with_charges: Optional[List[OBPv510GetTransactionRequestById200Response]] = None
+    __properties: ClassVar[List[str]] = ["transaction_requests_with_charges"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +70,13 @@ class OBPv510GetTransactionRequests200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in transaction_requests_with_charges (list)
+        _items = []
+        if self.transaction_requests_with_charges:
+            for _item_transaction_requests_with_charges in self.transaction_requests_with_charges:
+                if _item_transaction_requests_with_charges:
+                    _items.append(_item_transaction_requests_with_charges.to_dict())
+            _dict['transaction_requests_with_charges'] = _items
         return _dict
 
     @classmethod
@@ -86,8 +89,7 @@ class OBPv510GetTransactionRequests200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv510GetTransactionRequests200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "transaction_requests_with_charges": [OBPv510GetTransactionRequestById200Response.from_dict(_item) for _item in obj["transaction_requests_with_charges"]] if obj.get("transaction_requests_with_charges") is not None else None
         })
         return _obj
 

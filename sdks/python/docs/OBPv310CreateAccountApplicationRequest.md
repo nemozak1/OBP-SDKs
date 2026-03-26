@@ -5,8 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310CreateAccountApplicationRequestProperties**](OBPv310CreateAccountApplicationRequestProperties.md) |  | 
+**user_id** | **str** |  | [optional] 
+**product_code** | **str** |  | [optional] 
+**customer_id** | **str** |  | [optional] 
 
 ## Example
 

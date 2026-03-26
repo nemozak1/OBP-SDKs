@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv121UpdateCounterpartyMoreInfoRequestProperties**](OBPv121UpdateCounterpartyMoreInfoRequestProperties.md) |  | 
+**more_info** | **str** |  | [optional] 
 
 ## Example
 

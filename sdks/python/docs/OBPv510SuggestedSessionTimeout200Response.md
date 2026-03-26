@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510SuggestedSessionTimeout200ResponseProperties**](OBPv510SuggestedSessionTimeout200ResponseProperties.md) |  | 
+**timeout_in_seconds** | **str** |  | [optional] 
 
 ## Example
 

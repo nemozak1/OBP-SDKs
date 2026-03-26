@@ -5,8 +5,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510CreateConsumerRequestProperties**](OBPv510CreateConsumerRequestProperties.md) |  | 
+**app_type** | **str** |  | [optional] 
+**description** | **str** |  | [optional] 
+**enabled** | **bool** |  | [optional] 
+**client_certificate** | **str** |  | [optional] 
+**redirect_url** | **str** |  | [optional] 
+**logo_url** | **str** |  | [optional] 
+**company** | **str** |  | [optional] 
+**developer_email** | **str** |  | [optional] 
+**app_name** | **str** |  | [optional] 
 
 ## Example
 

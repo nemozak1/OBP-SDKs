@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400GetScopes200ResponseProperties**](OBPv400GetScopes200ResponseProperties.md) |  | 
+**list** | [**List[OBPv400GetScopes200ResponseListInner]**](OBPv400GetScopes200ResponseListInner.md) |  | [optional] 
 
 ## Example
 

@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400UpdateAtmNotesRequestProperties**](OBPv400UpdateAtmNotesRequestProperties.md) |  | 
+**notes** | **List[str]** |  | [optional] 
 
 ## Example
 

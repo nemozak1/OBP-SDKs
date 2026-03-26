@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv121UpdateTransactionNarrative200ResponseProperties**](OBPv121UpdateTransactionNarrative200ResponseProperties.md) |  | 
+**success** | **str** |  | [optional] 
 
 ## Example
 

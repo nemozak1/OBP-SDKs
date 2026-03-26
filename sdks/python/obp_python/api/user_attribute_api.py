@@ -1,7 +1,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -20,7 +20,7 @@ from pydantic import Field, StrictStr
 from typing_extensions import Annotated
 from obp_python.models.obpv600_create_personal_data_field_request import OBPv600CreatePersonalDataFieldRequest
 from obp_python.models.obpv600_get_personal_data_fields200_response import OBPv600GetPersonalDataFields200Response
-from obp_python.models.obpv600_get_personal_data_fields200_response_properties_user_attributes_items import OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+from obp_python.models.obpv600_get_personal_data_fields200_response_user_attributes_inner import OBPv600GetPersonalDataFields200ResponseUserAttributesInner
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -56,7 +56,7 @@ class UserAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems:
+    ) -> OBPv600GetPersonalDataFields200ResponseUserAttributesInner:
         """Create Personal Data Field
 
         <p>Create a Personal Data Field for the currently authenticated user.</p> <p>Personal Data Fields (IsPersonal=true) are managed by the user themselves and do not require special roles.<br /> This data is not available in ABAC rules for privacy reasons.</p> <p>For non-personal attributes that can be used in ABAC rules, see the /users/USER_ID/attributes endpoints.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or &quot;DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -94,7 +94,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems",
+            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -124,7 +124,7 @@ class UserAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems]:
+    ) -> ApiResponse[OBPv600GetPersonalDataFields200ResponseUserAttributesInner]:
         """Create Personal Data Field
 
         <p>Create a Personal Data Field for the currently authenticated user.</p> <p>Personal Data Fields (IsPersonal=true) are managed by the user themselves and do not require special roles.<br /> This data is not available in ABAC rules for privacy reasons.</p> <p>For non-personal attributes that can be used in ABAC rules, see the /users/USER_ID/attributes endpoints.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or &quot;DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -162,7 +162,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems",
+            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -230,7 +230,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems",
+            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -336,7 +336,7 @@ class UserAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems:
+    ) -> OBPv600GetPersonalDataFields200ResponseUserAttributesInner:
         """Create User Attribute
 
         <p>Create a User Attribute for the user specified by USER_ID.</p> <p>User Attributes are non-personal attributes (IsPersonal=false) that can be used in ABAC rules.<br /> They require a role to set, similar to Customer Attributes, Account Attributes, etc.</p> <p>For personal attributes that users manage themselves, see the /my/personal-data-fields endpoints.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or &quot;DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -377,7 +377,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems",
+            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -409,7 +409,7 @@ class UserAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems]:
+    ) -> ApiResponse[OBPv600GetPersonalDataFields200ResponseUserAttributesInner]:
         """Create User Attribute
 
         <p>Create a User Attribute for the user specified by USER_ID.</p> <p>User Attributes are non-personal attributes (IsPersonal=false) that can be used in ABAC rules.<br /> They require a role to set, similar to Customer Attributes, Account Attributes, etc.</p> <p>For personal attributes that users manage themselves, see the /my/personal-data-fields endpoints.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or &quot;DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -450,7 +450,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems",
+            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -523,7 +523,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems",
+            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -1171,7 +1171,7 @@ class UserAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems:
+    ) -> OBPv600GetPersonalDataFields200ResponseUserAttributesInner:
         """Get Personal Data Field By Id
 
         <p>Get a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -1209,7 +1209,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems",
+            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -1240,7 +1240,7 @@ class UserAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems]:
+    ) -> ApiResponse[OBPv600GetPersonalDataFields200ResponseUserAttributesInner]:
         """Get Personal Data Field By Id
 
         <p>Get a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -1278,7 +1278,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems",
+            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -1347,7 +1347,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems",
+            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -1692,7 +1692,7 @@ class UserAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems:
+    ) -> OBPv600GetPersonalDataFields200ResponseUserAttributesInner:
         """Get User Attribute By Id
 
         <p>Get a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -1733,7 +1733,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems",
+            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -1765,7 +1765,7 @@ class UserAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems]:
+    ) -> ApiResponse[OBPv600GetPersonalDataFields200ResponseUserAttributesInner]:
         """Get User Attribute By Id
 
         <p>Get a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -1806,7 +1806,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems",
+            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -1879,7 +1879,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems",
+            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -2245,7 +2245,7 @@ class UserAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems:
+    ) -> OBPv600GetPersonalDataFields200ResponseUserAttributesInner:
         """Update Personal Data Field
 
         <p>Update a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -2286,7 +2286,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems",
+            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -2318,7 +2318,7 @@ class UserAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems]:
+    ) -> ApiResponse[OBPv600GetPersonalDataFields200ResponseUserAttributesInner]:
         """Update Personal Data Field
 
         <p>Update a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -2359,7 +2359,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems",
+            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -2432,7 +2432,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems",
+            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -2543,7 +2543,7 @@ class UserAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems:
+    ) -> OBPv600GetPersonalDataFields200ResponseUserAttributesInner:
         """Update User Attribute
 
         <p>Update a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -2587,7 +2587,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems",
+            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -2620,7 +2620,7 @@ class UserAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems]:
+    ) -> ApiResponse[OBPv600GetPersonalDataFields200ResponseUserAttributesInner]:
         """Update User Attribute
 
         <p>Update a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -2664,7 +2664,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems",
+            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -2741,7 +2741,7 @@ class UserAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems",
+            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }

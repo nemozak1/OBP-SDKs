@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400GetMySpaces200ResponseProperties**](OBPv400GetMySpaces200ResponseProperties.md) |  | 
+**bank_ids** | **List[str]** |  | [optional] 
 
 ## Example
 

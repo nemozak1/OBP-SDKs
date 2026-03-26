@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -19,8 +19,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv310_enable_disable_account_webhook_request_properties import OBPv310EnableDisableAccountWebhookRequestProperties
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +27,9 @@ class OBPv310EnableDisableAccountWebhookRequest(BaseModel):
     """
     OBPv310EnableDisableAccountWebhookRequest
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv310EnableDisableAccountWebhookRequestProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    account_webhook_id: Optional[StrictStr] = None
+    is_active: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["account_webhook_id", "is_active"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +70,6 @@ class OBPv310EnableDisableAccountWebhookRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +82,8 @@ class OBPv310EnableDisableAccountWebhookRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv310EnableDisableAccountWebhookRequestProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "account_webhook_id": obj.get("account_webhook_id"),
+            "is_active": obj.get("is_active")
         })
         return _obj
 

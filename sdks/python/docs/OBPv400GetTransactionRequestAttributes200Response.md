@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400GetTransactionRequestAttributes200ResponseProperties**](OBPv400GetTransactionRequestAttributes200ResponseProperties.md) |  | 
+**transaction_request_attributes** | [**List[OBPv400GetTransactionRequestAttributeById200Response]**](OBPv400GetTransactionRequestAttributeById200Response.md) |  | [optional] 
 
 ## Example
 

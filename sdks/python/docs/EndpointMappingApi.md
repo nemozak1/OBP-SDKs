@@ -1,6 +1,6 @@
 # obp_python.EndpointMappingApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **o_bpv4_0_0_create_bank_level_endpoint_mapping**
-> OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems o_bpv4_0_0_create_bank_level_endpoint_mapping(bankid, obpv400_create_endpoint_mapping_request)
+> OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner o_bpv4_0_0_create_bank_level_endpoint_mapping(bankid, obpv400_create_endpoint_mapping_request)
 
 Create Bank Level Endpoint Mapping
 
@@ -41,14 +41,14 @@ Create Bank Level Endpoint Mapping
 ```python
 import obp_python
 from obp_python.models.obpv400_create_endpoint_mapping_request import OBPv400CreateEndpointMappingRequest
-from obp_python.models.obpv400_get_all_endpoint_mappings200_response_properties_endpoint_mappings_items import OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+from obp_python.models.obpv400_get_all_endpoint_mappings200_response_endpoint_mappings_inner import OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner**](OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_create_endpoint_mapping**
-> OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems o_bpv4_0_0_create_endpoint_mapping(obpv400_create_endpoint_mapping_request)
+> OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner o_bpv4_0_0_create_endpoint_mapping(obpv400_create_endpoint_mapping_request)
 
 Create Endpoint Mapping
 
@@ -142,14 +142,14 @@ Create Endpoint Mapping
 ```python
 import obp_python
 from obp_python.models.obpv400_create_endpoint_mapping_request import OBPv400CreateEndpointMappingRequest
-from obp_python.models.obpv400_get_all_endpoint_mappings200_response_properties_endpoint_mappings_items import OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+from obp_python.models.obpv400_get_all_endpoint_mappings200_response_endpoint_mappings_inner import OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner**](OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 
@@ -241,10 +241,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -336,10 +336,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -430,10 +430,10 @@ from obp_python.models.obpv400_get_all_endpoint_mappings200_response import OBPv
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -525,10 +525,10 @@ from obp_python.models.obpv400_get_all_endpoint_mappings200_response import OBPv
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -593,7 +593,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_get_bank_level_endpoint_mapping**
-> OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems o_bpv4_0_0_get_bank_level_endpoint_mapping(bankid, endpointmappingid)
+> OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner o_bpv4_0_0_get_bank_level_endpoint_mapping(bankid, endpointmappingid)
 
 Get Bank Level Endpoint Mapping
 
@@ -614,14 +614,14 @@ Get Bank Level Endpoint Mapping
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_all_endpoint_mappings200_response_properties_endpoint_mappings_items import OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+from obp_python.models.obpv400_get_all_endpoint_mappings200_response_endpoint_mappings_inner import OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -671,7 +671,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner**](OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 
@@ -693,7 +693,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_get_endpoint_mapping**
-> OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems o_bpv4_0_0_get_endpoint_mapping(endpointmappingid)
+> OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner o_bpv4_0_0_get_endpoint_mapping(endpointmappingid)
 
 Get Endpoint Mapping by Id
 
@@ -713,14 +713,14 @@ Get Endpoint Mapping by Id
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_all_endpoint_mappings200_response_properties_endpoint_mappings_items import OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+from obp_python.models.obpv400_get_all_endpoint_mappings200_response_endpoint_mappings_inner import OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -768,7 +768,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner**](OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 
@@ -789,7 +789,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_update_bank_level_endpoint_mapping**
-> OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems o_bpv4_0_0_update_bank_level_endpoint_mapping(bankid, endpointmappingid, obpv400_create_endpoint_mapping_request)
+> OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner o_bpv4_0_0_update_bank_level_endpoint_mapping(bankid, endpointmappingid, obpv400_create_endpoint_mapping_request)
 
 Update Bank Level Endpoint Mapping
 
@@ -811,14 +811,14 @@ Update Bank Level Endpoint Mapping
 ```python
 import obp_python
 from obp_python.models.obpv400_create_endpoint_mapping_request import OBPv400CreateEndpointMappingRequest
-from obp_python.models.obpv400_get_all_endpoint_mappings200_response_properties_endpoint_mappings_items import OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+from obp_python.models.obpv400_get_all_endpoint_mappings200_response_endpoint_mappings_inner import OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -870,7 +870,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner**](OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 
@@ -892,7 +892,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_update_endpoint_mapping**
-> OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems o_bpv4_0_0_update_endpoint_mapping(endpointmappingid, obpv400_create_endpoint_mapping_request)
+> OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner o_bpv4_0_0_update_endpoint_mapping(endpointmappingid, obpv400_create_endpoint_mapping_request)
 
 Update Endpoint Mapping
 
@@ -913,14 +913,14 @@ Update Endpoint Mapping
 ```python
 import obp_python
 from obp_python.models.obpv400_create_endpoint_mapping_request import OBPv400CreateEndpointMappingRequest
-from obp_python.models.obpv400_get_all_endpoint_mappings200_response_properties_endpoint_mappings_items import OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+from obp_python.models.obpv400_get_all_endpoint_mappings200_response_endpoint_mappings_inner import OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -970,7 +970,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner**](OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 

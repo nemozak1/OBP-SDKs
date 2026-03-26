@@ -5,8 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400GetProductFee200ResponseProperties**](OBPv400GetProductFee200ResponseProperties.md) |  | 
+**name** | **str** |  | [optional] 
+**is_active** | **bool** |  | [optional] 
+**product_code** | **str** |  | [optional] 
+**more_info** | **str** |  | [optional] 
+**bank_id** | **str** |  | [optional] 
+**product_fee_id** | **str** |  | [optional] 
+**value** | [**OBPv400GetProductFee200ResponseValue**](OBPv400GetProductFee200ResponseValue.md) |  | [optional] 
 
 ## Example
 

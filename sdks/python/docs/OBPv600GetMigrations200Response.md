@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetMigrations200ResponseProperties**](OBPv600GetMigrations200ResponseProperties.md) |  | 
+**migration_script_logs** | [**List[OBPv600GetMigrations200ResponseMigrationScriptLogsInner]**](OBPv600GetMigrations200ResponseMigrationScriptLogsInner.md) |  | [optional] 
 
 ## Example
 

@@ -5,8 +5,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600UpdateSystemViewRequestProperties**](OBPv600UpdateSystemViewRequestProperties.md) |  | 
+**can_grant_access_to_views** | **List[str]** |  | [optional] 
+**description** | **str** |  | [optional] 
+**is_public** | **bool** |  | [optional] 
+**hide_metadata_if_alias_used** | **bool** |  | [optional] 
+**can_revoke_access_to_views** | **List[str]** |  | [optional] 
+**which_alias_to_use** | **str** |  | [optional] 
+**is_firehose** | **bool** |  | [optional] 
+**metadata_view** | **str** |  | [optional] 
+**allowed_actions** | **List[str]** |  | [optional] 
 
 ## Example
 

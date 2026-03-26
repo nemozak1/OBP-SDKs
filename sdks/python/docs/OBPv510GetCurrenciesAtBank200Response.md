@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510GetCurrenciesAtBank200ResponseProperties**](OBPv510GetCurrenciesAtBank200ResponseProperties.md) |  | 
+**currencies** | [**List[OBPv510GetCurrenciesAtBank200ResponseCurrenciesInner]**](OBPv510GetCurrenciesAtBank200ResponseCurrenciesInner.md) |  | [optional] 
 
 ## Example
 

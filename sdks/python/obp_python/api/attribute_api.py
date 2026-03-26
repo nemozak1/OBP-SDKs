@@ -1,7 +1,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,29 +18,29 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from obp_python.models.obpv300_get_core_transactions_for_bank_account200_response_properties_transactions_items_properties_transaction_attributes_items import OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems
+from obp_python.models.obpv300_get_core_transactions_for_bank_account200_response_transactions_inner_transaction_attributes_inner import OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner
 from obp_python.models.obpv310_create_card_attribute200_response import OBPv310CreateCardAttribute200Response
 from obp_python.models.obpv310_update_account_attribute_request import OBPv310UpdateAccountAttributeRequest
 from obp_python.models.obpv400_create_or_update_transaction_request_attribute_definition_request import OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
 from obp_python.models.obpv400_create_product_attribute200_response import OBPv400CreateProductAttribute200Response
-from obp_python.models.obpv400_create_transaction_request_counterparty_request_properties_attributes_items import OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems
+from obp_python.models.obpv400_create_transaction_request_counterparty_request_attributes_inner import OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner
 from obp_python.models.obpv400_delete_system_level_endpoint_tag200_response import OBPv400DeleteSystemLevelEndpointTag200Response
+from obp_python.models.obpv400_get_accounts_by_account_routing_regex200_response_accounts_inner_account_attributes_inner import OBPv400GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner
 from obp_python.models.obpv400_get_bank_attributes200_response import OBPv400GetBankAttributes200Response
-from obp_python.models.obpv400_get_bank_attributes200_response_properties_bank_attributes_items import OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems
+from obp_python.models.obpv400_get_bank_attributes200_response_bank_attributes_inner import OBPv400GetBankAttributes200ResponseBankAttributesInner
 from obp_python.models.obpv400_get_customer_attributes200_response import OBPv400GetCustomerAttributes200Response
-from obp_python.models.obpv400_get_customer_attributes200_response_properties_customer_attributes_items import OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems
-from obp_python.models.obpv400_get_private_account_by_id_full200_response_properties_account_attributes_items import OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems
+from obp_python.models.obpv400_get_customer_attributes200_response_customer_attributes_inner import OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner
 from obp_python.models.obpv400_get_transaction_attributes200_response import OBPv400GetTransactionAttributes200Response
 from obp_python.models.obpv400_get_transaction_request_attribute_by_id200_response import OBPv400GetTransactionRequestAttributeById200Response
 from obp_python.models.obpv400_get_transaction_request_attribute_definition200_response import OBPv400GetTransactionRequestAttributeDefinition200Response
-from obp_python.models.obpv400_get_transaction_request_attribute_definition200_response_properties_attributes_items import OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
+from obp_python.models.obpv400_get_transaction_request_attribute_definition200_response_attributes_inner import OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner
 from obp_python.models.obpv400_get_transaction_request_attributes200_response import OBPv400GetTransactionRequestAttributes200Response
 from obp_python.models.obpv510_get_atm_attribute200_response import OBPv510GetAtmAttribute200Response
 from obp_python.models.obpv510_get_atm_attributes200_response import OBPv510GetAtmAttributes200Response
 from obp_python.models.obpv510_update_atm_attribute_request import OBPv510UpdateAtmAttributeRequest
 from obp_python.models.obpv600_create_personal_data_field_request import OBPv600CreatePersonalDataFieldRequest
 from obp_python.models.obpv600_get_personal_data_fields200_response import OBPv600GetPersonalDataFields200Response
-from obp_python.models.obpv600_get_personal_data_fields200_response_properties_user_attributes_items import OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+from obp_python.models.obpv600_get_personal_data_fields200_response_user_attributes_inner import OBPv600GetPersonalDataFields200ResponseUserAttributesInner
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -79,7 +79,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems:
+    ) -> OBPv400GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner:
         """Create Account Attribute
 
         <p>Create Account Attribute</p> <p>Account Attributes are used to describe a financial Product with a list of typed key value pairs.</p> <p>Each Account Attribute is linked to its Account by ACCOUNT_ID</p> <p>Typical account attributes might be:</p> <p>ISIN (for International bonds)<br /> VKN (for German bonds)<br /> REDCODE (markit short code for credit derivative)<br /> LOAN_ID (e.g. used for Anacredit reporting)</p> <p>ISSUE_DATE (When the bond was issued in the market)<br /> MATURITY_DATE (End of life time of a product)<br /> TRADABLE</p> <p>See <a href=\"http://www.fpml.org/\">FPML</a> for more examples.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#product_code\">PRODUCT_CODE</a>: 1234BW</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#\">product_instance_code</a>: product_instance_code</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#account_attribute_id\"><strong>account_attribute_id</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#\">product_instance_code</a>: product_instance_code</p> 
@@ -126,7 +126,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems",
+            '200': "OBPv400GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -159,7 +159,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems]:
+    ) -> ApiResponse[OBPv400GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner]:
         """Create Account Attribute
 
         <p>Create Account Attribute</p> <p>Account Attributes are used to describe a financial Product with a list of typed key value pairs.</p> <p>Each Account Attribute is linked to its Account by ACCOUNT_ID</p> <p>Typical account attributes might be:</p> <p>ISIN (for International bonds)<br /> VKN (for German bonds)<br /> REDCODE (markit short code for credit derivative)<br /> LOAN_ID (e.g. used for Anacredit reporting)</p> <p>ISSUE_DATE (When the bond was issued in the market)<br /> MATURITY_DATE (End of life time of a product)<br /> TRADABLE</p> <p>See <a href=\"http://www.fpml.org/\">FPML</a> for more examples.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#product_code\">PRODUCT_CODE</a>: 1234BW</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#\">product_instance_code</a>: product_instance_code</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#account_attribute_id\"><strong>account_attribute_id</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#\">product_instance_code</a>: product_instance_code</p> 
@@ -206,7 +206,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems",
+            '200': "OBPv400GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -286,7 +286,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems",
+            '200': "OBPv400GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1005,7 +1005,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems:
+    ) -> OBPv400GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner:
         """Update Account Attribute
 
         <p>Update Account Attribute</p> <p>Account Attributes are used to describe a financial Product with a list of typed key value pairs.</p> <p>Each Account Attribute is linked to its Account by ACCOUNT_ID</p> <p>Typical account attributes might be:</p> <p>ISIN (for International bonds)<br /> VKN (for German bonds)<br /> REDCODE (markit short code for credit derivative)<br /> LOAN_ID (e.g. used for Anacredit reporting)</p> <p>ISSUE_DATE (When the bond was issued in the market)<br /> MATURITY_DATE (End of life time of a product)<br /> TRADABLE</p> <p>See <a href=\"http://www.fpml.org/\">FPML</a> for more examples.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#account_attribute_id\">ACCOUNT_ATTRIBUTE_ID</a>:</p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#product_code\">PRODUCT_CODE</a>: 1234BW</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#account_attribute_id\"><strong>account_attribute_id</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#\">product_instance_code</a>: product_instance_code</p> 
@@ -1055,7 +1055,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems",
+            '200': "OBPv400GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1089,7 +1089,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems]:
+    ) -> ApiResponse[OBPv400GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner]:
         """Update Account Attribute
 
         <p>Update Account Attribute</p> <p>Account Attributes are used to describe a financial Product with a list of typed key value pairs.</p> <p>Each Account Attribute is linked to its Account by ACCOUNT_ID</p> <p>Typical account attributes might be:</p> <p>ISIN (for International bonds)<br /> VKN (for German bonds)<br /> REDCODE (markit short code for credit derivative)<br /> LOAN_ID (e.g. used for Anacredit reporting)</p> <p>ISSUE_DATE (When the bond was issued in the market)<br /> MATURITY_DATE (End of life time of a product)<br /> TRADABLE</p> <p>See <a href=\"http://www.fpml.org/\">FPML</a> for more examples.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#account_attribute_id\">ACCOUNT_ATTRIBUTE_ID</a>:</p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#product_code\">PRODUCT_CODE</a>: 1234BW</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#account_attribute_id\"><strong>account_attribute_id</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#\">product_instance_code</a>: product_instance_code</p> 
@@ -1139,7 +1139,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems",
+            '200': "OBPv400GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1223,7 +1223,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems",
+            '200': "OBPv400GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1665,7 +1665,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems:
+    ) -> OBPv400GetBankAttributes200ResponseBankAttributesInner:
         """Create Bank Attribute
 
         <p>Create Bank Attribute</p> <p>Typical product attributes might be:</p> <p>ISIN (for International bonds)<br /> VKN (for German bonds)<br /> REDCODE (markit short code for credit derivative)<br /> LOAN_ID (e.g. used for Anacredit reporting)</p> <p>ISSUE_DATE (When the bond was issued in the market)<br /> MATURITY_DATE (End of life time of a product)<br /> TRADABLE</p> <p>See <a href=\"http://www.fpml.org/\">FPML</a> for more examples.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_attribute_id</strong></a>: bank_attribute_id</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -1706,7 +1706,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems",
+            '200': "OBPv400GetBankAttributes200ResponseBankAttributesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1737,7 +1737,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems]:
+    ) -> ApiResponse[OBPv400GetBankAttributes200ResponseBankAttributesInner]:
         """Create Bank Attribute
 
         <p>Create Bank Attribute</p> <p>Typical product attributes might be:</p> <p>ISIN (for International bonds)<br /> VKN (for German bonds)<br /> REDCODE (markit short code for credit derivative)<br /> LOAN_ID (e.g. used for Anacredit reporting)</p> <p>ISSUE_DATE (When the bond was issued in the market)<br /> MATURITY_DATE (End of life time of a product)<br /> TRADABLE</p> <p>See <a href=\"http://www.fpml.org/\">FPML</a> for more examples.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_attribute_id</strong></a>: bank_attribute_id</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -1778,7 +1778,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems",
+            '200': "OBPv400GetBankAttributes200ResponseBankAttributesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1850,7 +1850,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems",
+            '200': "OBPv400GetBankAttributes200ResponseBankAttributesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1960,7 +1960,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems:
+    ) -> OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner:
         """Create Customer Attribute
 
         <p>Create Customer Attribute</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -2004,7 +2004,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems",
+            '200': "OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner",
             '404': None,
             '500': None,
         }
@@ -2037,7 +2037,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems]:
+    ) -> ApiResponse[OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner]:
         """Create Customer Attribute
 
         <p>Create Customer Attribute</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -2081,7 +2081,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems",
+            '200': "OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner",
             '404': None,
             '500': None,
         }
@@ -2158,7 +2158,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems",
+            '200': "OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner",
             '404': None,
             '500': None,
         }
@@ -2271,7 +2271,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems:
+    ) -> OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner:
         """Create or Update Account Attribute Definition
 
         <p>Create or Update Account Attribute Definition</p> <p>The category field must be Account</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
@@ -2312,7 +2312,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems",
+            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
             '404': None,
             '500': None,
         }
@@ -2344,7 +2344,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems]:
+    ) -> ApiResponse[OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner]:
         """Create or Update Account Attribute Definition
 
         <p>Create or Update Account Attribute Definition</p> <p>The category field must be Account</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
@@ -2385,7 +2385,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems",
+            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
             '404': None,
             '500': None,
         }
@@ -2458,7 +2458,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems",
+            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
             '404': None,
             '500': None,
         }
@@ -2568,7 +2568,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems:
+    ) -> OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner:
         """Create or Update Bank Attribute Definition
 
         <p>Create or Update Bank Attribute Definition</p> <p>The category field must be Bank</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
@@ -2609,7 +2609,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems",
+            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
             '404': None,
             '500': None,
         }
@@ -2641,7 +2641,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems]:
+    ) -> ApiResponse[OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner]:
         """Create or Update Bank Attribute Definition
 
         <p>Create or Update Bank Attribute Definition</p> <p>The category field must be Bank</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
@@ -2682,7 +2682,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems",
+            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
             '404': None,
             '500': None,
         }
@@ -2755,7 +2755,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems",
+            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
             '404': None,
             '500': None,
         }
@@ -2865,7 +2865,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems:
+    ) -> OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner:
         """Create or Update Card Attribute Definition
 
         <p>Create or Update Card Attribute Definition</p> <p>The category field must be Card</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
@@ -2906,7 +2906,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems",
+            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
             '404': None,
             '500': None,
         }
@@ -2938,7 +2938,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems]:
+    ) -> ApiResponse[OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner]:
         """Create or Update Card Attribute Definition
 
         <p>Create or Update Card Attribute Definition</p> <p>The category field must be Card</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
@@ -2979,7 +2979,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems",
+            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
             '404': None,
             '500': None,
         }
@@ -3052,7 +3052,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems",
+            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
             '404': None,
             '500': None,
         }
@@ -3162,7 +3162,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems:
+    ) -> OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner:
         """Create or Update Customer Attribute Definition
 
         <p>Create or Update Customer Attribute Definition</p> <p>The category field must be one of: Customer</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
@@ -3203,7 +3203,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems",
+            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
             '404': None,
             '500': None,
         }
@@ -3235,7 +3235,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems]:
+    ) -> ApiResponse[OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner]:
         """Create or Update Customer Attribute Definition
 
         <p>Create or Update Customer Attribute Definition</p> <p>The category field must be one of: Customer</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
@@ -3276,7 +3276,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems",
+            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
             '404': None,
             '500': None,
         }
@@ -3349,7 +3349,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems",
+            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
             '404': None,
             '500': None,
         }
@@ -3459,7 +3459,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems:
+    ) -> OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner:
         """Create or Update Product Attribute Definition
 
         <p>Create or Update Product Attribute Definition</p> <p>The category field must be Product</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
@@ -3500,7 +3500,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems",
+            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
             '404': None,
             '500': None,
         }
@@ -3532,7 +3532,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems]:
+    ) -> ApiResponse[OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner]:
         """Create or Update Product Attribute Definition
 
         <p>Create or Update Product Attribute Definition</p> <p>The category field must be Product</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
@@ -3573,7 +3573,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems",
+            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
             '404': None,
             '500': None,
         }
@@ -3646,7 +3646,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems",
+            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
             '404': None,
             '500': None,
         }
@@ -3756,7 +3756,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems:
+    ) -> OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner:
         """Create or Update Transaction Attribute Definition
 
         <p>Create or Update Transaction Attribute Definition</p> <p>The category field must be Transaction</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
@@ -3797,7 +3797,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems",
+            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
             '404': None,
             '500': None,
         }
@@ -3829,7 +3829,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems]:
+    ) -> ApiResponse[OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner]:
         """Create or Update Transaction Attribute Definition
 
         <p>Create or Update Transaction Attribute Definition</p> <p>The category field must be Transaction</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
@@ -3870,7 +3870,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems",
+            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
             '404': None,
             '500': None,
         }
@@ -3943,7 +3943,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems",
+            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
             '404': None,
             '500': None,
         }
@@ -4053,7 +4053,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems:
+    ) -> OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner:
         """Create or Update Transaction Request Attribute Definition
 
         <p>Create or Update Transaction Request Attribute Definition</p> <p>The category field must be TransactionRequest</p> <p>The type field must be one of: DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
@@ -4094,7 +4094,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems",
+            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
             '404': None,
             '500': None,
         }
@@ -4126,7 +4126,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems]:
+    ) -> ApiResponse[OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner]:
         """Create or Update Transaction Request Attribute Definition
 
         <p>Create or Update Transaction Request Attribute Definition</p> <p>The category field must be TransactionRequest</p> <p>The type field must be one of: DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
@@ -4167,7 +4167,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems",
+            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
             '404': None,
             '500': None,
         }
@@ -4240,7 +4240,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems",
+            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
             '404': None,
             '500': None,
         }
@@ -4661,7 +4661,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems:
+    ) -> OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner:
         """Create Transaction Attribute
 
         <p>Create Transaction Attribute</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -4708,7 +4708,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems",
+            '200': "OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner",
             '404': None,
             '500': None,
         }
@@ -4742,7 +4742,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems]:
+    ) -> ApiResponse[OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner]:
         """Create Transaction Attribute
 
         <p>Create Transaction Attribute</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -4789,7 +4789,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems",
+            '200': "OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner",
             '404': None,
             '500': None,
         }
@@ -4870,7 +4870,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems",
+            '200': "OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner",
             '404': None,
             '500': None,
         }
@@ -4975,7 +4975,7 @@ class AttributeApi:
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         transactionrequestid: Annotated[StrictStr, Field(description="The TRANSACTIONREQUESTID identifier")],
-        obpv400_create_transaction_request_counterparty_request_properties_attributes_items: Annotated[OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems, Field(description="Request body")],
+        obpv400_create_transaction_request_counterparty_request_attributes_inner: Annotated[OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4999,8 +4999,8 @@ class AttributeApi:
         :type accountid: str
         :param transactionrequestid: The TRANSACTIONREQUESTID identifier (required)
         :type transactionrequestid: str
-        :param obpv400_create_transaction_request_counterparty_request_properties_attributes_items: Request body (required)
-        :type obpv400_create_transaction_request_counterparty_request_properties_attributes_items: OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems
+        :param obpv400_create_transaction_request_counterparty_request_attributes_inner: Request body (required)
+        :type obpv400_create_transaction_request_counterparty_request_attributes_inner: OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5027,7 +5027,7 @@ class AttributeApi:
             bankid=bankid,
             accountid=accountid,
             transactionrequestid=transactionrequestid,
-            obpv400_create_transaction_request_counterparty_request_properties_attributes_items=obpv400_create_transaction_request_counterparty_request_properties_attributes_items,
+            obpv400_create_transaction_request_counterparty_request_attributes_inner=obpv400_create_transaction_request_counterparty_request_attributes_inner,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5056,7 +5056,7 @@ class AttributeApi:
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         transactionrequestid: Annotated[StrictStr, Field(description="The TRANSACTIONREQUESTID identifier")],
-        obpv400_create_transaction_request_counterparty_request_properties_attributes_items: Annotated[OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems, Field(description="Request body")],
+        obpv400_create_transaction_request_counterparty_request_attributes_inner: Annotated[OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5080,8 +5080,8 @@ class AttributeApi:
         :type accountid: str
         :param transactionrequestid: The TRANSACTIONREQUESTID identifier (required)
         :type transactionrequestid: str
-        :param obpv400_create_transaction_request_counterparty_request_properties_attributes_items: Request body (required)
-        :type obpv400_create_transaction_request_counterparty_request_properties_attributes_items: OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems
+        :param obpv400_create_transaction_request_counterparty_request_attributes_inner: Request body (required)
+        :type obpv400_create_transaction_request_counterparty_request_attributes_inner: OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5108,7 +5108,7 @@ class AttributeApi:
             bankid=bankid,
             accountid=accountid,
             transactionrequestid=transactionrequestid,
-            obpv400_create_transaction_request_counterparty_request_properties_attributes_items=obpv400_create_transaction_request_counterparty_request_properties_attributes_items,
+            obpv400_create_transaction_request_counterparty_request_attributes_inner=obpv400_create_transaction_request_counterparty_request_attributes_inner,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5137,7 +5137,7 @@ class AttributeApi:
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         transactionrequestid: Annotated[StrictStr, Field(description="The TRANSACTIONREQUESTID identifier")],
-        obpv400_create_transaction_request_counterparty_request_properties_attributes_items: Annotated[OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems, Field(description="Request body")],
+        obpv400_create_transaction_request_counterparty_request_attributes_inner: Annotated[OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5161,8 +5161,8 @@ class AttributeApi:
         :type accountid: str
         :param transactionrequestid: The TRANSACTIONREQUESTID identifier (required)
         :type transactionrequestid: str
-        :param obpv400_create_transaction_request_counterparty_request_properties_attributes_items: Request body (required)
-        :type obpv400_create_transaction_request_counterparty_request_properties_attributes_items: OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems
+        :param obpv400_create_transaction_request_counterparty_request_attributes_inner: Request body (required)
+        :type obpv400_create_transaction_request_counterparty_request_attributes_inner: OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5189,7 +5189,7 @@ class AttributeApi:
             bankid=bankid,
             accountid=accountid,
             transactionrequestid=transactionrequestid,
-            obpv400_create_transaction_request_counterparty_request_properties_attributes_items=obpv400_create_transaction_request_counterparty_request_properties_attributes_items,
+            obpv400_create_transaction_request_counterparty_request_attributes_inner=obpv400_create_transaction_request_counterparty_request_attributes_inner,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5213,7 +5213,7 @@ class AttributeApi:
         bankid,
         accountid,
         transactionrequestid,
-        obpv400_create_transaction_request_counterparty_request_properties_attributes_items,
+        obpv400_create_transaction_request_counterparty_request_attributes_inner,
         _request_auth,
         _content_type,
         _headers,
@@ -5245,8 +5245,8 @@ class AttributeApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_create_transaction_request_counterparty_request_properties_attributes_items is not None:
-            _body_params = obpv400_create_transaction_request_counterparty_request_properties_attributes_items
+        if obpv400_create_transaction_request_counterparty_request_attributes_inner is not None:
+            _body_params = obpv400_create_transaction_request_counterparty_request_attributes_inner
 
 
         # set the HTTP header `Accept`
@@ -7820,7 +7820,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems:
+    ) -> OBPv400GetBankAttributes200ResponseBankAttributesInner:
         """Get Bank Attribute By BANK_ATTRIBUTE_ID
 
         <p>Get Bank Attribute By BANK_ATTRIBUTE_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">BANK_ATTRIBUTE_ID</a>: BANK_ATTRIBUTE_ID</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_attribute_id</strong></a>: bank_attribute_id</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -7861,7 +7861,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems",
+            '200': "OBPv400GetBankAttributes200ResponseBankAttributesInner",
             '404': None,
             '500': None,
         }
@@ -7893,7 +7893,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems]:
+    ) -> ApiResponse[OBPv400GetBankAttributes200ResponseBankAttributesInner]:
         """Get Bank Attribute By BANK_ATTRIBUTE_ID
 
         <p>Get Bank Attribute By BANK_ATTRIBUTE_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">BANK_ATTRIBUTE_ID</a>: BANK_ATTRIBUTE_ID</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_attribute_id</strong></a>: bank_attribute_id</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -7934,7 +7934,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems",
+            '200': "OBPv400GetBankAttributes200ResponseBankAttributesInner",
             '404': None,
             '500': None,
         }
@@ -8007,7 +8007,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems",
+            '200': "OBPv400GetBankAttributes200ResponseBankAttributesInner",
             '404': None,
             '500': None,
         }
@@ -8643,7 +8643,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems:
+    ) -> OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner:
         """Get Customer Attribute By Id
 
         <p>Get Customer Attribute By Id</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Adapter.card_attribute_id\">ATTRIBUTE_ID</a>:</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -8687,7 +8687,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems",
+            '200': "OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner",
             '404': None,
             '500': None,
         }
@@ -8720,7 +8720,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems]:
+    ) -> ApiResponse[OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner]:
         """Get Customer Attribute By Id
 
         <p>Get Customer Attribute By Id</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Adapter.card_attribute_id\">ATTRIBUTE_ID</a>:</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -8764,7 +8764,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems",
+            '200': "OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner",
             '404': None,
             '500': None,
         }
@@ -8841,7 +8841,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems",
+            '200': "OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner",
             '404': None,
             '500': None,
         }
@@ -10061,7 +10061,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems:
+    ) -> OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner:
         """Get Transaction Attribute By Id
 
         <p>Get Transaction Attribute By Id</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Adapter.card_attribute_id\">ATTRIBUTE_ID</a>:</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -10108,7 +10108,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems",
+            '200': "OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner",
             '404': None,
             '500': None,
         }
@@ -10142,7 +10142,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems]:
+    ) -> ApiResponse[OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner]:
         """Get Transaction Attribute By Id
 
         <p>Get Transaction Attribute By Id</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Adapter.card_attribute_id\">ATTRIBUTE_ID</a>:</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -10189,7 +10189,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems",
+            '200': "OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner",
             '404': None,
             '500': None,
         }
@@ -10270,7 +10270,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems",
+            '200': "OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner",
             '404': None,
             '500': None,
         }
@@ -12134,7 +12134,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems:
+    ) -> OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner:
         """Update Customer Attribute
 
         <p>Update Customer Attribute</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">CUSTOMER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -12181,7 +12181,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems",
+            '200': "OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner",
             '404': None,
             '500': None,
         }
@@ -12215,7 +12215,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems]:
+    ) -> ApiResponse[OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner]:
         """Update Customer Attribute
 
         <p>Update Customer Attribute</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">CUSTOMER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -12262,7 +12262,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems",
+            '200': "OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner",
             '404': None,
             '500': None,
         }
@@ -12343,7 +12343,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems",
+            '200': "OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner",
             '404': None,
             '500': None,
         }
@@ -12786,7 +12786,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems:
+    ) -> OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner:
         """Update Transaction Attribute
 
         <p>Update Transaction Attribute</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#account_attribute_id\">ACCOUNT_ATTRIBUTE_ID</a>:</p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -12836,7 +12836,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems",
+            '200': "OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner",
             '404': None,
             '500': None,
         }
@@ -12871,7 +12871,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems]:
+    ) -> ApiResponse[OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner]:
         """Update Transaction Attribute
 
         <p>Update Transaction Attribute</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#account_attribute_id\">ACCOUNT_ATTRIBUTE_ID</a>:</p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -12921,7 +12921,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems",
+            '200': "OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner",
             '404': None,
             '500': None,
         }
@@ -13006,7 +13006,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems",
+            '200': "OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner",
             '404': None,
             '500': None,
         }
@@ -13115,7 +13115,7 @@ class AttributeApi:
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         transactionrequestid: Annotated[StrictStr, Field(description="The TRANSACTIONREQUESTID identifier")],
         attributeid: Annotated[StrictStr, Field(description="The ATTRIBUTEID identifier")],
-        obpv400_create_transaction_request_counterparty_request_properties_attributes_items: Annotated[OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems, Field(description="Request body")],
+        obpv400_create_transaction_request_counterparty_request_attributes_inner: Annotated[OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13141,8 +13141,8 @@ class AttributeApi:
         :type transactionrequestid: str
         :param attributeid: The ATTRIBUTEID identifier (required)
         :type attributeid: str
-        :param obpv400_create_transaction_request_counterparty_request_properties_attributes_items: Request body (required)
-        :type obpv400_create_transaction_request_counterparty_request_properties_attributes_items: OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems
+        :param obpv400_create_transaction_request_counterparty_request_attributes_inner: Request body (required)
+        :type obpv400_create_transaction_request_counterparty_request_attributes_inner: OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -13170,7 +13170,7 @@ class AttributeApi:
             accountid=accountid,
             transactionrequestid=transactionrequestid,
             attributeid=attributeid,
-            obpv400_create_transaction_request_counterparty_request_properties_attributes_items=obpv400_create_transaction_request_counterparty_request_properties_attributes_items,
+            obpv400_create_transaction_request_counterparty_request_attributes_inner=obpv400_create_transaction_request_counterparty_request_attributes_inner,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -13200,7 +13200,7 @@ class AttributeApi:
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         transactionrequestid: Annotated[StrictStr, Field(description="The TRANSACTIONREQUESTID identifier")],
         attributeid: Annotated[StrictStr, Field(description="The ATTRIBUTEID identifier")],
-        obpv400_create_transaction_request_counterparty_request_properties_attributes_items: Annotated[OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems, Field(description="Request body")],
+        obpv400_create_transaction_request_counterparty_request_attributes_inner: Annotated[OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13226,8 +13226,8 @@ class AttributeApi:
         :type transactionrequestid: str
         :param attributeid: The ATTRIBUTEID identifier (required)
         :type attributeid: str
-        :param obpv400_create_transaction_request_counterparty_request_properties_attributes_items: Request body (required)
-        :type obpv400_create_transaction_request_counterparty_request_properties_attributes_items: OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems
+        :param obpv400_create_transaction_request_counterparty_request_attributes_inner: Request body (required)
+        :type obpv400_create_transaction_request_counterparty_request_attributes_inner: OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -13255,7 +13255,7 @@ class AttributeApi:
             accountid=accountid,
             transactionrequestid=transactionrequestid,
             attributeid=attributeid,
-            obpv400_create_transaction_request_counterparty_request_properties_attributes_items=obpv400_create_transaction_request_counterparty_request_properties_attributes_items,
+            obpv400_create_transaction_request_counterparty_request_attributes_inner=obpv400_create_transaction_request_counterparty_request_attributes_inner,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -13285,7 +13285,7 @@ class AttributeApi:
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         transactionrequestid: Annotated[StrictStr, Field(description="The TRANSACTIONREQUESTID identifier")],
         attributeid: Annotated[StrictStr, Field(description="The ATTRIBUTEID identifier")],
-        obpv400_create_transaction_request_counterparty_request_properties_attributes_items: Annotated[OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems, Field(description="Request body")],
+        obpv400_create_transaction_request_counterparty_request_attributes_inner: Annotated[OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13311,8 +13311,8 @@ class AttributeApi:
         :type transactionrequestid: str
         :param attributeid: The ATTRIBUTEID identifier (required)
         :type attributeid: str
-        :param obpv400_create_transaction_request_counterparty_request_properties_attributes_items: Request body (required)
-        :type obpv400_create_transaction_request_counterparty_request_properties_attributes_items: OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems
+        :param obpv400_create_transaction_request_counterparty_request_attributes_inner: Request body (required)
+        :type obpv400_create_transaction_request_counterparty_request_attributes_inner: OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -13340,7 +13340,7 @@ class AttributeApi:
             accountid=accountid,
             transactionrequestid=transactionrequestid,
             attributeid=attributeid,
-            obpv400_create_transaction_request_counterparty_request_properties_attributes_items=obpv400_create_transaction_request_counterparty_request_properties_attributes_items,
+            obpv400_create_transaction_request_counterparty_request_attributes_inner=obpv400_create_transaction_request_counterparty_request_attributes_inner,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -13365,7 +13365,7 @@ class AttributeApi:
         accountid,
         transactionrequestid,
         attributeid,
-        obpv400_create_transaction_request_counterparty_request_properties_attributes_items,
+        obpv400_create_transaction_request_counterparty_request_attributes_inner,
         _request_auth,
         _content_type,
         _headers,
@@ -13399,8 +13399,8 @@ class AttributeApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_create_transaction_request_counterparty_request_properties_attributes_items is not None:
-            _body_params = obpv400_create_transaction_request_counterparty_request_properties_attributes_items
+        if obpv400_create_transaction_request_counterparty_request_attributes_inner is not None:
+            _body_params = obpv400_create_transaction_request_counterparty_request_attributes_inner
 
 
         # set the HTTP header `Accept`
@@ -14980,7 +14980,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems:
+    ) -> OBPv600GetPersonalDataFields200ResponseUserAttributesInner:
         """Create Personal Data Field
 
         <p>Create a Personal Data Field for the currently authenticated user.</p> <p>Personal Data Fields (IsPersonal=true) are managed by the user themselves and do not require special roles.<br /> This data is not available in ABAC rules for privacy reasons.</p> <p>For non-personal attributes that can be used in ABAC rules, see the /users/USER_ID/attributes endpoints.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or &quot;DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -15018,7 +15018,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems",
+            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -15048,7 +15048,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems]:
+    ) -> ApiResponse[OBPv600GetPersonalDataFields200ResponseUserAttributesInner]:
         """Create Personal Data Field
 
         <p>Create a Personal Data Field for the currently authenticated user.</p> <p>Personal Data Fields (IsPersonal=true) are managed by the user themselves and do not require special roles.<br /> This data is not available in ABAC rules for privacy reasons.</p> <p>For non-personal attributes that can be used in ABAC rules, see the /users/USER_ID/attributes endpoints.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or &quot;DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -15086,7 +15086,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems",
+            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -15154,7 +15154,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems",
+            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -15260,7 +15260,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems:
+    ) -> OBPv600GetPersonalDataFields200ResponseUserAttributesInner:
         """Create User Attribute
 
         <p>Create a User Attribute for the user specified by USER_ID.</p> <p>User Attributes are non-personal attributes (IsPersonal=false) that can be used in ABAC rules.<br /> They require a role to set, similar to Customer Attributes, Account Attributes, etc.</p> <p>For personal attributes that users manage themselves, see the /my/personal-data-fields endpoints.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or &quot;DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -15301,7 +15301,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems",
+            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -15333,7 +15333,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems]:
+    ) -> ApiResponse[OBPv600GetPersonalDataFields200ResponseUserAttributesInner]:
         """Create User Attribute
 
         <p>Create a User Attribute for the user specified by USER_ID.</p> <p>User Attributes are non-personal attributes (IsPersonal=false) that can be used in ABAC rules.<br /> They require a role to set, similar to Customer Attributes, Account Attributes, etc.</p> <p>For personal attributes that users manage themselves, see the /my/personal-data-fields endpoints.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or &quot;DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -15374,7 +15374,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems",
+            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -15447,7 +15447,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems",
+            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -16095,7 +16095,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems:
+    ) -> OBPv600GetPersonalDataFields200ResponseUserAttributesInner:
         """Get Personal Data Field By Id
 
         <p>Get a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -16133,7 +16133,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems",
+            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -16164,7 +16164,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems]:
+    ) -> ApiResponse[OBPv600GetPersonalDataFields200ResponseUserAttributesInner]:
         """Get Personal Data Field By Id
 
         <p>Get a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -16202,7 +16202,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems",
+            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -16271,7 +16271,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems",
+            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -16616,7 +16616,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems:
+    ) -> OBPv600GetPersonalDataFields200ResponseUserAttributesInner:
         """Get User Attribute By Id
 
         <p>Get a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -16657,7 +16657,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems",
+            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -16689,7 +16689,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems]:
+    ) -> ApiResponse[OBPv600GetPersonalDataFields200ResponseUserAttributesInner]:
         """Get User Attribute By Id
 
         <p>Get a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -16730,7 +16730,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems",
+            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -16803,7 +16803,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems",
+            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -17169,7 +17169,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems:
+    ) -> OBPv600GetPersonalDataFields200ResponseUserAttributesInner:
         """Update Personal Data Field
 
         <p>Update a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -17210,7 +17210,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems",
+            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -17242,7 +17242,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems]:
+    ) -> ApiResponse[OBPv600GetPersonalDataFields200ResponseUserAttributesInner]:
         """Update Personal Data Field
 
         <p>Update a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -17283,7 +17283,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems",
+            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -17356,7 +17356,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems",
+            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -17467,7 +17467,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems:
+    ) -> OBPv600GetPersonalDataFields200ResponseUserAttributesInner:
         """Update User Attribute
 
         <p>Update a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -17511,7 +17511,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems",
+            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -17544,7 +17544,7 @@ class AttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems]:
+    ) -> ApiResponse[OBPv600GetPersonalDataFields200ResponseUserAttributesInner]:
         """Update User Attribute
 
         <p>Update a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -17588,7 +17588,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems",
+            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }
@@ -17665,7 +17665,7 @@ class AttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems",
+            '200': "OBPv600GetPersonalDataFields200ResponseUserAttributesInner",
             '404': None,
             '500': None,
         }

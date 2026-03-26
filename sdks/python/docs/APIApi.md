@@ -1,6 +1,6 @@
 # obp_python.APIApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -75,16 +75,20 @@ Method | HTTP request | Description
 [**o_bpv6_0_0_create_api_product**](APIApi.md#o_bpv6_0_0_create_api_product) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create Api Product
 [**o_bpv6_0_0_create_api_product_attribute**](APIApi.md#o_bpv6_0_0_create_api_product_attribute) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attribute | Create Api Product Attribute
 [**o_bpv6_0_0_create_bank_level_dynamic_entity**](APIApi.md#o_bpv6_0_0_create_bank_level_dynamic_entity) | **POST** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities | Create Bank Level Dynamic Entity
+[**o_bpv6_0_0_create_counterparty_attribute**](APIApi.md#o_bpv6_0_0_create_counterparty_attribute) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes | Create Counterparty Attribute
 [**o_bpv6_0_0_create_featured_api_collection**](APIApi.md#o_bpv6_0_0_create_featured_api_collection) | **POST** /obp/v6.0.0/management/api-collections/featured | Create Featured Api Collection
 [**o_bpv6_0_0_create_or_update_api_product**](APIApi.md#o_bpv6_0_0_create_or_update_api_product) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create or Update Api Product
 [**o_bpv6_0_0_create_system_dynamic_entity**](APIApi.md#o_bpv6_0_0_create_system_dynamic_entity) | **POST** /obp/v6.0.0/management/system-dynamic-entities | Create System Level Dynamic Entity
 [**o_bpv6_0_0_delete_api_product**](APIApi.md#o_bpv6_0_0_delete_api_product) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Delete Api Product
 [**o_bpv6_0_0_delete_api_product_attribute**](APIApi.md#o_bpv6_0_0_delete_api_product_attribute) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Delete Api Product Attribute
+[**o_bpv6_0_0_delete_counterparty_attribute**](APIApi.md#o_bpv6_0_0_delete_counterparty_attribute) | **DELETE** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes/{counterpartyattributeid} | Delete Counterparty Attribute
 [**o_bpv6_0_0_delete_featured_api_collection**](APIApi.md#o_bpv6_0_0_delete_featured_api_collection) | **DELETE** /obp/v6.0.0/management/api-collections/featured/{apicollectionid} | Delete Featured Api Collection
 [**o_bpv6_0_0_delete_system_dynamic_entity_cascade**](APIApi.md#o_bpv6_0_0_delete_system_dynamic_entity_cascade) | **DELETE** /obp/v6.0.0/management/system-dynamic-entities/cascade/{dynamicentityid} | Delete System Level Dynamic Entity Cascade
+[**o_bpv6_0_0_get_all_counterparty_attributes**](APIApi.md#o_bpv6_0_0_get_all_counterparty_attributes) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes | Get All Counterparty Attributes
 [**o_bpv6_0_0_get_api_product**](APIApi.md#o_bpv6_0_0_get_api_product) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Get Api Product
 [**o_bpv6_0_0_get_api_product_attribute**](APIApi.md#o_bpv6_0_0_get_api_product_attribute) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Get Api Product Attribute
 [**o_bpv6_0_0_get_api_products**](APIApi.md#o_bpv6_0_0_get_api_products) | **GET** /obp/v6.0.0/banks/{bankid}/api-products | Get Api Products
+[**o_bpv6_0_0_get_app_directory**](APIApi.md#o_bpv6_0_0_get_app_directory) | **GET** /obp/v6.0.0/app-directory | Get App Directory
 [**o_bpv6_0_0_get_available_personal_dynamic_entities**](APIApi.md#o_bpv6_0_0_get_available_personal_dynamic_entities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities
 [**o_bpv6_0_0_get_bank_level_dynamic_entities**](APIApi.md#o_bpv6_0_0_get_bank_level_dynamic_entities) | **GET** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities | Get Bank Level Dynamic Entities
 [**o_bpv6_0_0_get_cache_config**](APIApi.md#o_bpv6_0_0_get_cache_config) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration
@@ -95,10 +99,12 @@ Method | HTTP request | Description
 [**o_bpv6_0_0_get_connector_method_names**](APIApi.md#o_bpv6_0_0_get_connector_method_names) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names
 [**o_bpv6_0_0_get_connector_traces**](APIApi.md#o_bpv6_0_0_get_connector_traces) | **GET** /obp/v6.0.0/management/connector/traces | Get Connector Traces
 [**o_bpv6_0_0_get_connectors**](APIApi.md#o_bpv6_0_0_get_connectors) | **GET** /obp/v6.0.0/system/connectors | Get Connectors
+[**o_bpv6_0_0_get_counterparty_attribute_by_id**](APIApi.md#o_bpv6_0_0_get_counterparty_attribute_by_id) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes/{counterpartyattributeid} | Get Counterparty Attribute By ID
 [**o_bpv6_0_0_get_current_consumer**](APIApi.md#o_bpv6_0_0_get_current_consumer) | **GET** /obp/v6.0.0/consumers/current | Get Current Consumer
 [**o_bpv6_0_0_get_database_pool_info**](APIApi.md#o_bpv6_0_0_get_database_pool_info) | **GET** /obp/v6.0.0/system/database/pool | Get Database Pool Information
 [**o_bpv6_0_0_get_dynamic_entity_diagnostics**](APIApi.md#o_bpv6_0_0_get_dynamic_entity_diagnostics) | **GET** /obp/v6.0.0/management/diagnostics/dynamic-entities | Get Dynamic Entity Diagnostics
 [**o_bpv6_0_0_get_featured_api_collections_admin**](APIApi.md#o_bpv6_0_0_get_featured_api_collections_admin) | **GET** /obp/v6.0.0/management/api-collections/featured | Get Featured Api Collections (Admin)
+[**o_bpv6_0_0_get_features**](APIApi.md#o_bpv6_0_0_get_features) | **GET** /obp/v6.0.0/features | Get Features
 [**o_bpv6_0_0_get_message_docs_json_schema**](APIApi.md#o_bpv6_0_0_get_message_docs_json_schema) | **GET** /obp/v6.0.0/message-docs/{connector}/json-schema | Get Message Docs as JSON Schema
 [**o_bpv6_0_0_get_metrics**](APIApi.md#o_bpv6_0_0_get_metrics) | **GET** /obp/v6.0.0/management/metrics | Get Metrics
 [**o_bpv6_0_0_get_migrations**](APIApi.md#o_bpv6_0_0_get_migrations) | **GET** /obp/v6.0.0/system/migrations | Get Database Migrations
@@ -113,6 +119,7 @@ Method | HTTP request | Description
 [**o_bpv6_0_0_root**](APIApi.md#o_bpv6_0_0_root) | **GET** /obp/v6.0.0/root | Get API Info (root)
 [**o_bpv6_0_0_update_api_product_attribute**](APIApi.md#o_bpv6_0_0_update_api_product_attribute) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Update Api Product Attribute
 [**o_bpv6_0_0_update_bank_level_dynamic_entity**](APIApi.md#o_bpv6_0_0_update_bank_level_dynamic_entity) | **PUT** /obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid} | Update Bank Level Dynamic Entity
+[**o_bpv6_0_0_update_counterparty_attribute**](APIApi.md#o_bpv6_0_0_update_counterparty_attribute) | **PUT** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes/{counterpartyattributeid} | Update Counterparty Attribute
 [**o_bpv6_0_0_update_featured_api_collection**](APIApi.md#o_bpv6_0_0_update_featured_api_collection) | **PUT** /obp/v6.0.0/management/api-collections/featured/{apicollectionid} | Update Featured Api Collection
 [**o_bpv6_0_0_update_my_dynamic_entity**](APIApi.md#o_bpv6_0_0_update_my_dynamic_entity) | **PUT** /obp/v6.0.0/my/dynamic-entities/{dynamicentityid} | Update My Dynamic Entity
 [**o_bpv6_0_0_update_system_dynamic_entity**](APIApi.md#o_bpv6_0_0_update_system_dynamic_entity) | **PUT** /obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid} | Update System Level Dynamic Entity
@@ -139,12 +146,12 @@ if set content=dynamic, only show dynamic endpoints, if content=static, only sho
 <p>Note: Dynamic Resource Docs are cached, TTL is 3600 seconds<br />
 Static Resource Docs are cached, TTL is 3600 seconds</p>
 <p>Following are more examples:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp">https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?tags=Account,Bank">https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?tags=Account,Bank</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?functions=getBanks,bankById">https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?functions=getBanks,bankById</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?locale=es_ES">https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?locale=es_ES</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?content=static,dynamic,all">https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?content=static,dynamic,all</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221">https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221</a></p>
+<a href="http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp">http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?tags=Account,Bank">http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?tags=Account,Bank</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?functions=getBanks,bankById">http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?functions=getBanks,bankById</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?locale=es_ES">http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?locale=es_ES</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?content=static,dynamic,all">http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?content=static,dynamic,all</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221">http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221</a></p>
 <ul>
 <li> operation_id is concatenation of "v", version and function and should be unique (used for DOM element IDs etc. maybe used to link to source code) </li>
 <li> version references the version that the API call is defined in.</li>
@@ -172,10 +179,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -264,12 +271,12 @@ if set content=dynamic, only show dynamic endpoints, if content=static, only sho
 <p>Note: Dynamic Resource Docs are cached, TTL is 3600 seconds<br />
 Static Resource Docs are cached, TTL is 3600 seconds</p>
 <p>Following are more examples:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp">https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?tags=Account,Bank">https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?tags=Account,Bank</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?functions=getBanks,bankById">https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?functions=getBanks,bankById</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?locale=es_ES">https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?locale=es_ES</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?content=static,dynamic,all">https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?content=static,dynamic,all</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221">https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221</a></p>
+<a href="http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp">http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?tags=Account,Bank">http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?tags=Account,Bank</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?functions=getBanks,bankById">http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?functions=getBanks,bankById</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?locale=es_ES">http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?locale=es_ES</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?content=static,dynamic,all">http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?content=static,dynamic,all</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221">http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221</a></p>
 <ul>
 <li> operation_id is concatenation of "v", version and function and should be unique (used for DOM element IDs etc. maybe used to link to source code) </li>
 <li> version references the version that the API call is defined in.</li>
@@ -296,10 +303,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -402,21 +409,21 @@ Get OpenAPI 3.1 documentation
 <p>Note: Resource Docs are cached, TTL is 3600 seconds</p>
 <h2><a href="#examples" id="examples">Examples</a></h2>
 <p>Basic usage:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi</a></p>
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi</a></p>
 <p>Filter by tags:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account,Bank">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account,Bank</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account-Firehose">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account-Firehose</a></p>
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account,Bank">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account,Bank</a><br />
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account-Firehose">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account-Firehose</a></p>
 <p>Filter by content type:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=dynamic">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=dynamic</a></p>
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static</a><br />
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=dynamic">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=dynamic</a></p>
 <p>Filter by functions:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?functions=getBanks,bankById">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?functions=getBanks,bankById</a></p>
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?functions=getBanks,bankById">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?functions=getBanks,bankById</a></p>
 <p>Combine multiple parameters:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static&amp;tags=Account-Firehose">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static&amp;tags=Account-Firehose</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account,Bank,PSD2&amp;functions=getBanks,bankById">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account,Bank,PSD2&amp;functions=getBanks,bankById</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static&amp;locale=en_GB&amp;tags=Account">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static&amp;locale=en_GB&amp;tags=Account</a></p>
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static&amp;tags=Account-Firehose">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static&amp;tags=Account-Firehose</a><br />
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account,Bank,PSD2&amp;functions=getBanks,bankById">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account,Bank,PSD2&amp;functions=getBanks,bankById</a><br />
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static&amp;locale=en_GB&amp;tags=Account">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static&amp;locale=en_GB&amp;tags=Account</a></p>
 <p>Filter by API collection:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221</a></p>
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221</a></p>
 <p>User Authentication is Optional. The User need not be logged in.</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#api_version">API_VERSION</a>:</p>
@@ -431,10 +438,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -496,10 +503,10 @@ Get Swagger documentation
 <p>See the Resource Doc endpoint for more information.</p>
 <p>Note: Resource Docs are cached, TTL is 3600 seconds</p>
 <p>Following are more examples:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger">https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags=Account,Bank">https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags=Account,Bank</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger?functions=getBanks,bankById">https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger?functions=getBanks,bankById</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags=Account,Bank,PSD2&amp;functions=getBanks,bankById">https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags=Account,Bank,PSD2&amp;functions=getBanks,bankById</a></p>
+<a href="http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger">http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger</a><br />
+<a href="http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags=Account,Bank">http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags=Account,Bank</a><br />
+<a href="http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger?functions=getBanks,bankById">http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger?functions=getBanks,bankById</a><br />
+<a href="http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags=Account,Bank,PSD2&amp;functions=getBanks,bankById">http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags=Account,Bank,PSD2&amp;functions=getBanks,bankById</a></p>
 <p>User Authentication is Optional. The User need not be logged in.</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#api_version">API_VERSION</a>:</p>
@@ -514,10 +521,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -566,7 +573,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv2_0_0_elastic_search_metrics**
-> OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage o_bpv2_0_0_elastic_search_metrics()
+> object o_bpv2_0_0_elastic_search_metrics()
 
 Search API Metrics via Elasticsearch
 
@@ -612,14 +619,13 @@ Search API Metrics via Elasticsearch
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_dynamic_message_doc200_response_properties_example_inbound_message import OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -663,7 +669,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage**](OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.md)
+**object**
 
 ### Authorization
 
@@ -724,10 +730,10 @@ from obp_python.models.obpv220_get_connector_metrics200_response import OBPv220G
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -832,10 +838,10 @@ from obp_python.models.obpv220_get_message_docs200_response import OBPv220GetMes
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -913,10 +919,10 @@ from obp_python.models.obpv400_get_mapper_database_info200_response import OBPv4
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1027,10 +1033,10 @@ from obp_python.models.obpv310_config200_response import OBPv310Config200Respons
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1095,7 +1101,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv3_1_0_create_method_routing**
-> OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems o_bpv3_1_0_create_method_routing(obpv310_create_method_routing_request)
+> OBPv310GetMethodRoutings200ResponseMethodRoutingsInner o_bpv3_1_0_create_method_routing(obpv310_create_method_routing_request)
 
 Create MethodRouting
 
@@ -1103,7 +1109,7 @@ Create MethodRouting
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 <p>Explanation of Fields:</p>
 <ul>
-<li>method_name is required String value, current supported value: [mapped]</li>
+<li>method_name is required String value, current supported value: [mapped | cardano_vJun2025 | rabbitmq_vOct2024]</li>
 <li>connector_name is required String value</li>
 <li>is_bank_id_exact_match is required boolean value, if bank_id_pattern is exact bank_id value, this value is true; if bank_id_pattern is null or a regex, this value is false</li>
 <li>bank_id_pattern is optional String value, it can be null, a exact bank_id or a regex</li>
@@ -1149,14 +1155,14 @@ Build InBound json value rules:<br />
 ```python
 import obp_python
 from obp_python.models.obpv310_create_method_routing_request import OBPv310CreateMethodRoutingRequest
-from obp_python.models.obpv310_get_method_routings200_response_properties_method_routings_items import OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems
+from obp_python.models.obpv310_get_method_routings200_response_method_routings_inner import OBPv310GetMethodRoutings200ResponseMethodRoutingsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1204,7 +1210,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems**](OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems.md)
+[**OBPv310GetMethodRoutings200ResponseMethodRoutingsInner**](OBPv310GetMethodRoutings200ResponseMethodRoutingsInner.md)
 
 ### Authorization
 
@@ -1247,10 +1253,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1341,10 +1347,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -1404,8 +1410,8 @@ Get MethodRoutings
 <li>active: if active = true, it will show all the webui_ props. Even if they are set yet, we will return all the default webui_ props</li>
 </ul>
 <p>eg:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v3.1.0/management/method_routings?active=true">https://apisandbox.openbankproject.com/obp/v3.1.0/management/method_routings?active=true</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v3.1.0/management/method_routings?method_name=getBank">https://apisandbox.openbankproject.com/obp/v3.1.0/management/method_routings?method_name=getBank</a></p>
+<a href="http://127.0.0.1:8080/obp/v3.1.0/management/method_routings?active=true">http://127.0.0.1:8080/obp/v3.1.0/management/method_routings?active=true</a><br />
+<a href="http://127.0.0.1:8080/obp/v3.1.0/management/method_routings?method_name=getBank">http://127.0.0.1:8080/obp/v3.1.0/management/method_routings?method_name=getBank</a></p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 <p><strong>JSON response body fields:</strong></p>
 <p><a href="/glossary#"><strong>key</strong></a>: CustomerNumber</p>
@@ -1425,10 +1431,10 @@ from obp_python.models.obpv310_get_method_routings200_response import OBPv310Get
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1514,10 +1520,10 @@ from obp_python.models.obpv310_get_o_auth2_server_jwks_uris200_response import O
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -1588,10 +1594,10 @@ from obp_python.models.obpv310_get_obp_connector_loopback200_response import OBP
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1685,10 +1691,10 @@ from obp_python.models.obpv310_get_rate_limiting_info200_response import OBPv310
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1777,10 +1783,10 @@ from obp_python.models.obpv310_get_server_jwk200_response import OBPv310GetServe
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -1827,7 +1833,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv3_1_0_update_method_routing**
-> OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems o_bpv3_1_0_update_method_routing(methodroutingid, obpv310_create_method_routing_request)
+> OBPv310GetMethodRoutings200ResponseMethodRoutingsInner o_bpv3_1_0_update_method_routing(methodroutingid, obpv310_create_method_routing_request)
 
 Update MethodRouting
 
@@ -1835,7 +1841,7 @@ Update MethodRouting
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 <p>Explaination of Fields:</p>
 <ul>
-<li>method_name is required String value, current supported value: [mapped]</li>
+<li>method_name is required String value, current supported value: [mapped | cardano_vJun2025 | rabbitmq_vOct2024]</li>
 <li>connector_name is required String value</li>
 <li>is_bank_id_exact_match is required boolean value, if bank_id_pattern is exact bank_id value, this value is true; if bank_id_pattern is null or a regex, this value is false</li>
 <li>bank_id_pattern is optional String value, it can be null, a exact bank_id or a regex</li>
@@ -1876,14 +1882,14 @@ Build InBound json value rules:<br />
 ```python
 import obp_python
 from obp_python.models.obpv310_create_method_routing_request import OBPv310CreateMethodRoutingRequest
-from obp_python.models.obpv310_get_method_routings200_response_properties_method_routings_items import OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems
+from obp_python.models.obpv310_get_method_routings200_response_method_routings_inner import OBPv310GetMethodRoutings200ResponseMethodRoutingsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1933,7 +1939,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems**](OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems.md)
+[**OBPv310GetMethodRoutings200ResponseMethodRoutingsInner**](OBPv310GetMethodRoutings200ResponseMethodRoutingsInner.md)
 
 ### Authorization
 
@@ -1954,7 +1960,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_create_bank_level_dynamic_endpoint**
-> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems o_bpv4_0_0_create_bank_level_dynamic_endpoint(bankid, obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string)
+> OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner o_bpv4_0_0_create_bank_level_dynamic_endpoint(bankid, obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string)
 
 Create Bank Level Dynamic Endpoint
 
@@ -1975,15 +1981,15 @@ please check <code>Endpoint Mapping</code> endpoints.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items import OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
-from obp_python.models.obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string import OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString
+from obp_python.models.obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner import OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner
+from obp_python.models.obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string import OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2010,11 +2016,11 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.APIApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
-    obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string = {type=object, properties={swagger={type=string}, paths={type=object, properties={/accounts={type=object, properties={post={type=object, properties={responses={type=object, properties={201={type=object, properties={description={type=string}, schema={type=object, properties={$ref={type=string}}}}}}}, consumes={type=array, items={type=object, properties={s={type=string}}}}, operationId={type=string}, summary={type=string}, description={type=string}, produces={type=array, items={type=object, properties={s={type=string}}}}}}}}, /accounts/{account_id}={type=object, properties={get={type=object, properties={description={type=string}, consumes={type=array, items={type=object, properties={s={type=string}}}}, operationId={type=string}, responses={type=object, properties={200={type=object, properties={description={type=string}, schema={type=object, properties={$ref={type=string}}}}}}}, summary={type=string}, produces={type=array, items={type=object, properties={s={type=string}}}}}}}}}}, info={type=object, properties={title={type=string}, version={type=string}}}, definitions={type=object, properties={AccountName={type=object, properties={type={type=string}, properties={type=object, properties={name={type=object, properties={type={type=string}, example={type=string}}}, balance={type=object, properties={type={type=string}, format={type=string}, example={type=number}}}}}}}}}, schemes={type=array, items={type=object, properties={s={type=string}}}}, host={type=string}}} # OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString | Request body
+    obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string = {type=object, properties={swagger={type=string}, paths={type=object, properties={/accounts={type=object, properties={post={type=object, properties={responses={type=object, properties={201={type=object, properties={description={type=string}, schema={type=object, properties={$ref={type=string}}}}}}}, consumes={type=array, items={type=object, properties={s={type=string}}}}, operationId={type=string}, summary={type=string}, description={type=string}, produces={type=array, items={type=object, properties={s={type=string}}}}}}}}, /accounts/{account_id}={type=object, properties={get={type=object, properties={description={type=string}, consumes={type=array, items={type=object, properties={s={type=string}}}}, operationId={type=string}, responses={type=object, properties={200={type=object, properties={description={type=string}, schema={type=object, properties={$ref={type=string}}}}}}}, summary={type=string}, produces={type=array, items={type=object, properties={s={type=string}}}}}}}}}}, info={type=object, properties={title={type=string}, version={type=string}}}, definitions={type=object, properties={AccountName={type=object, properties={type={type=string}, properties={type=object, properties={name={type=object, properties={type={type=string}, example={type=string}}}, balance={type=object, properties={type={type=string}, format={type=string}, example={type=number}}}}}}}}}, schemes={type=array, items={type=object, properties={s={type=string}}}}, host={type=string}}} # OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString | Request body
 
     try:
         # Create Bank Level Dynamic Endpoint
-        api_response = api_instance.o_bpv4_0_0_create_bank_level_dynamic_endpoint(bankid, obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string)
+        api_response = api_instance.o_bpv4_0_0_create_bank_level_dynamic_endpoint(bankid, obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string)
         print("The response of APIApi->o_bpv4_0_0_create_bank_level_dynamic_endpoint:\n")
         pprint(api_response)
     except Exception as e:
@@ -2029,11 +2035,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
- **obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string** | [**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString.md)| Request body | 
+ **obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string** | [**OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString**](OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
+[**OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner**](OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
 
 ### Authorization
 
@@ -2087,10 +2093,10 @@ from obp_python.models.obpv400_update_system_level_endpoint_tag_request import O
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2164,7 +2170,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_create_dynamic_endpoint**
-> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems o_bpv4_0_0_create_dynamic_endpoint(obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string)
+> OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner o_bpv4_0_0_create_dynamic_endpoint(obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string)
 
 Create Dynamic Endpoint
 
@@ -2185,15 +2191,15 @@ please check <code>Endpoint Mapping</code> endpoints.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items import OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
-from obp_python.models.obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string import OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString
+from obp_python.models.obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner import OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner
+from obp_python.models.obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string import OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2219,11 +2225,11 @@ configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
 with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.APIApi(api_client)
-    obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string = {"type":"object","properties":{"swagger":{"type":"string"},"paths":{"type":"object","properties":{"/accounts":{"type":"object","properties":{"post":{"type":"object","properties":{"responses":{"type":"object","properties":{"201":{"type":"object","properties":{"description":{"type":"string"},"schema":{"type":"object","properties":{"$ref":{"type":"string"}}}}}}},"consumes":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"operationId":{"type":"string"},"summary":{"type":"string"},"description":{"type":"string"},"produces":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}}}},"/accounts/{account_id}":{"type":"object","properties":{"get":{"type":"object","properties":{"description":{"type":"string"},"consumes":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"operationId":{"type":"string"},"responses":{"type":"object","properties":{"200":{"type":"object","properties":{"description":{"type":"string"},"schema":{"type":"object","properties":{"$ref":{"type":"string"}}}}}}},"summary":{"type":"string"},"produces":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}}}}}},"info":{"type":"object","properties":{"title":{"type":"string"},"version":{"type":"string"}}},"definitions":{"type":"object","properties":{"AccountName":{"type":"object","properties":{"type":{"type":"string"},"properties":{"type":"object","properties":{"name":{"type":"object","properties":{"type":{"type":"string"},"example":{"type":"string"}}},"balance":{"type":"object","properties":{"type":{"type":"string"},"format":{"type":"string"},"example":{"type":"number"}}}}}}}}},"schemes":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"host":{"type":"string"}}} # OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString | Request body
+    obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string = {"type":"object","properties":{"swagger":{"type":"string"},"paths":{"type":"object","properties":{"/accounts":{"type":"object","properties":{"post":{"type":"object","properties":{"responses":{"type":"object","properties":{"201":{"type":"object","properties":{"description":{"type":"string"},"schema":{"type":"object","properties":{"$ref":{"type":"string"}}}}}}},"consumes":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"operationId":{"type":"string"},"summary":{"type":"string"},"description":{"type":"string"},"produces":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}}}},"/accounts/{account_id}":{"type":"object","properties":{"get":{"type":"object","properties":{"description":{"type":"string"},"consumes":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"operationId":{"type":"string"},"responses":{"type":"object","properties":{"200":{"type":"object","properties":{"description":{"type":"string"},"schema":{"type":"object","properties":{"$ref":{"type":"string"}}}}}}},"summary":{"type":"string"},"produces":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}}}}}},"info":{"type":"object","properties":{"title":{"type":"string"},"version":{"type":"string"}}},"definitions":{"type":"object","properties":{"AccountName":{"type":"object","properties":{"type":{"type":"string"},"properties":{"type":"object","properties":{"name":{"type":"object","properties":{"type":{"type":"string"},"example":{"type":"string"}}},"balance":{"type":"object","properties":{"type":{"type":"string"},"format":{"type":"string"},"example":{"type":"number"}}}}}}}}},"schemes":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"host":{"type":"string"}}} # OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString | Request body
 
     try:
         # Create Dynamic Endpoint
-        api_response = api_instance.o_bpv4_0_0_create_dynamic_endpoint(obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string)
+        api_response = api_instance.o_bpv4_0_0_create_dynamic_endpoint(obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string)
         print("The response of APIApi->o_bpv4_0_0_create_dynamic_endpoint:\n")
         pprint(api_response)
     except Exception as e:
@@ -2237,11 +2243,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string** | [**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString.md)| Request body | 
+ **obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string** | [**OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString**](OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
+[**OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner**](OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
 
 ### Authorization
 
@@ -2293,10 +2299,10 @@ from obp_python.models.obpv400_update_system_level_endpoint_tag_request import O
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2386,10 +2392,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2479,10 +2485,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2577,10 +2583,10 @@ from obp_python.models.obpv400_delete_system_level_endpoint_tag200_response impo
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2673,10 +2679,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2763,10 +2769,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2854,10 +2860,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2944,10 +2950,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3038,10 +3044,10 @@ from obp_python.models.obpv400_delete_system_level_endpoint_tag200_response impo
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3112,7 +3118,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_get_bank_level_dynamic_endpoint**
-> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems o_bpv4_0_0_get_bank_level_dynamic_endpoint(bankid, dynamicendpointid)
+> OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner o_bpv4_0_0_get_bank_level_dynamic_endpoint(bankid, dynamicendpointid)
 
  Get Bank Level Dynamic Endpoint
 
@@ -3128,14 +3134,14 @@ Name | Type | Description  | Notes
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items import OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
+from obp_python.models.obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner import OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3185,7 +3191,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
+[**OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner**](OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
 
 ### Authorization
 
@@ -3227,10 +3233,10 @@ from obp_python.models.obpv400_get_dynamic_endpoints200_response import OBPv400G
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3328,10 +3334,10 @@ from obp_python.models.obpv400_get_bank_level_endpoint_tags200_response import O
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3423,10 +3429,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3489,7 +3495,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_get_dynamic_endpoint**
-> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems o_bpv4_0_0_get_dynamic_endpoint(dynamicendpointid)
+> OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner o_bpv4_0_0_get_dynamic_endpoint(dynamicendpointid)
 
 Get Dynamic Endpoint
 
@@ -3506,14 +3512,14 @@ Get Dynamic Endpoint
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items import OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
+from obp_python.models.obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner import OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3561,7 +3567,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
+[**OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner**](OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
 
 ### Authorization
 
@@ -3603,10 +3609,10 @@ from obp_python.models.obpv400_get_dynamic_endpoints200_response import OBPv400G
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3696,10 +3702,10 @@ from obp_python.models.obpv400_get_mapper_database_info200_response import OBPv4
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3784,10 +3790,10 @@ from obp_python.models.obpv400_get_dynamic_endpoints200_response import OBPv400G
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3879,10 +3885,10 @@ from obp_python.models.obpv400_get_bank_level_endpoint_tags200_response import O
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3972,10 +3978,10 @@ from obp_python.models.obpv400_update_bank_level_dynamic_endpoint_host_request i
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4080,10 +4086,10 @@ from obp_python.models.obpv400_update_system_level_endpoint_tag_request import O
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4180,10 +4186,10 @@ from obp_python.models.obpv400_update_bank_level_dynamic_endpoint_host_request i
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4285,10 +4291,10 @@ from obp_python.models.obpv400_update_system_level_endpoint_tag_request import O
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4381,10 +4387,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4479,10 +4485,10 @@ from obp_python.models.obpv500_get_adapter_info200_response import OBPv500GetAda
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4564,7 +4570,7 @@ Get Metrics at Bank
 possible values:<br />
 &quot;url&quot;,<br />
 &quot;date&quot;,<br />
-&quot;user_name&quot;,<br />
+&quot;username&quot; (or &quot;user_name&quot; for backward compatibility),<br />
 &quot;app_name&quot;,<br />
 &quot;developer_email&quot;,<br />
 &quot;implemented_by_partial_function&quot;,<br />
@@ -4572,7 +4578,7 @@ possible values:<br />
 &quot;consumer_id&quot;,<br />
 &quot;verb&quot;</p>
 <p>6 direction (defaults to date desc) eg: direction=desc</p>
-<p>eg: /management/metrics?from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:<a href="&#109;&#x61;&#x69;&#x6c;&#x74;o&#58;&#x30;&#49;&#x2e;&#x30;&#x30;&#x30;Z&#x26;&#x6c;i&#109;i&#x74;&#x3d;1&#x30;&#48;&#x30;&#48;&amp;&#x6f;&#x66;&#102;&#115;&#x65;t&#61;&#x30;&#x26;&#x61;&#110;&#111;&#110;&#x3d;&#102;&#x61;&#x6c;s&#x65;&#38;&#97;pp_&#x6e;&#x61;&#x6d;&#x65;&#x3d;&#84;&#101;&#x61;t&#65;p&#112;&#38;&#105;&#x6d;&#x70;&#x6c;e&#x6d;e&#x6e;&#x74;&#101;d&#95;&#105;&#110;_ver&#x73;i&#x6f;&#110;&#61;v2.&#49;&#46;&#x30;&#38;&#x76;e&#x72;&#98;&#61;&#x50;&#x4f;S&#x54;&#x26;&#117;&#115;&#101;&#114;&#95;&#105;d&#x3d;&#x63;&#x37;&#x62;&#54;&#99;&#98;&#x34;&#x37;-&#x63;b&#x39;&#54;&#45;&#52;&#x34;&#x34;&#x31;-&#56;&#x38;0&#x31;&#x2d;&#x33;&#53;&#x62;5&#x37;&#x34;&#53;&#54;&#x37;&#x35;&#x33;a&#x26;&#x75;&#x73;&#101;r&#95;&#x6e;&#97;&#109;e=&#115;&#117;&#115;a&#110;&#46;&#117;&#107;&#x2e;&#x32;9&#64;&#101;&#x78;&#x61;&#x6d;&#x70;&#108;&#x65;&#x2e;&#x63;&#111;m">0&#x31;&#46;0&#48;&#x30;&#x5a;&amp;&#108;i&#109;&#105;&#116;&#x3d;&#x31;&#48;&#x30;&#x30;&#x30;&#38;&#111;&#102;&#x66;&#115;&#101;&#116;&#x3d;&#x30;&#x26;&#97;&#x6e;&#111;&#110;&#61;&#x66;&#97;l&#x73;&#x65;&amp;&#97;p&#x70;&#x5f;n&#x61;&#109;&#101;&#61;&#x54;&#x65;a&#x74;&#x41;&#112;&#x70;&#x26;&#105;&#109;&#112;&#x6c;&#x65;&#x6d;en&#x74;&#101;d&#x5f;&#x69;&#110;&#x5f;&#x76;&#101;&#114;&#115;&#x69;&#x6f;&#x6e;&#61;&#x76;2&#46;&#49;&#46;&#x30;&amp;&#x76;&#x65;&#x72;&#98;&#x3d;P&#79;&#83;&#84;&#x26;&#x75;&#115;e&#114;&#95;i&#x64;&#x3d;c&#x37;&#x62;6&#99;&#98;&#52;&#55;&#45;&#x63;&#x62;&#x39;&#x36;-444&#x31;&#x2d;88&#48;&#x31;-&#51;&#x35;b&#x35;745&#54;&#55;&#x35;&#x33;&#x61;&amp;&#x75;&#x73;e&#114;&#95;&#x6e;a&#x6d;&#x65;=&#115;&#x75;&#x73;&#x61;&#110;&#x2e;&#x75;&#x6b;&#x2e;&#x32;9&#x40;e&#120;&#x61;&#109;&#112;&#x6c;e.&#99;o&#x6d;</a>&amp;consumer_id=78</p>
+<p>eg: /management/metrics?from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:<a href="&#109;a&#105;&#x6c;&#116;o&#x3a;&#48;&#x31;&#x2e;&#48;&#x30;&#48;&#90;&amp;li&#x6d;i&#x74;&#61;10&#48;&#48;&#48;&amp;&#111;&#x66;&#x66;&#x73;&#101;&#116;&#x3d;&#x30;&#38;&#x61;n&#111;&#x6e;=&#x66;&#x61;&#108;&#115;&#101;&#x26;&#97;&#x70;&#x70;&#x5f;&#110;&#97;&#x6d;&#101;=&#84;&#101;&#x61;&#116;&#x41;&#x70;&#112;&amp;&#105;&#109;ple&#x6d;&#x65;&#x6e;&#116;&#101;&#x64;&#95;&#x69;&#110;&#x5f;&#118;e&#x72;&#x73;&#x69;&#111;&#110;&#x3d;&#118;&#x32;&#x2e;&#49;&#x2e;&#x30;&#38;&#x76;&#x65;&#x72;&#98;&#x3d;&#80;&#79;&#83;&#x54;&#x26;&#117;&#115;&#x65;&#114;&#95;i&#x64;=&#x63;7&#x62;&#x36;c&#98;&#x34;&#55;-&#x63;&#98;&#x39;&#x36;&#45;&#52;4&#x34;&#x31;&#45;&#56;&#x38;&#48;&#x31;&#45;3&#x35;b&#x35;&#x37;45&#x36;7&#53;3&#97;&#38;&#117;&#x73;&#x65;&#x72;&#110;&#97;m&#101;=&#x73;&#x75;&#x73;a&#110;&#x2e;uk&#46;&#x32;&#57;&#x40;&#101;x&#97;&#109;&#112;&#x6c;&#x65;.&#x63;o&#109;">0&#x31;&#46;&#x30;0&#x30;&#x5a;&#38;&#108;&#x69;&#109;&#105;&#x74;=&#x31;&#48;0&#48;&#48;&#x26;&#x6f;&#102;&#102;s&#x65;&#x74;=&#48;&amp;&#x61;&#110;o&#110;&#61;&#102;&#x61;&#108;&#115;&#x65;&#x26;&#97;p&#112;&#x5f;&#110;a&#x6d;&#101;&#x3d;&#84;&#101;&#x61;&#116;&#x41;pp&#x26;&#x69;&#109;&#112;&#x6c;e&#109;e&#110;&#116;&#x65;&#100;_&#x69;&#x6e;&#95;v&#101;&#114;si&#111;&#x6e;&#x3d;&#118;2.&#x31;.&#48;&#38;v&#101;&#114;&#x62;=&#x50;&#x4f;&#x53;&#x54;&#x26;&#x75;se&#x72;_&#105;&#100;&#61;&#x63;&#55;&#x62;&#54;c&#98;&#x34;&#x37;-&#99;&#x62;&#57;6&#x2d;&#x34;4&#52;&#x31;-&#x38;&#x38;&#48;1&#45;35b&#x35;&#x37;&#52;&#x35;&#54;&#55;5&#x33;&#97;&#x26;us&#101;&#114;n&#x61;m&#101;&#x3d;&#115;&#x75;&#115;&#x61;&#110;&#x2e;&#117;&#107;&#46;&#x32;&#x39;&#64;e&#x78;&#x61;m&#x70;&#108;e&#46;&#x63;&#111;&#109;</a>&amp;consumer_id=78</p>
 <p>Other filters:</p>
 <p>7 consumer_id  (if null ignore)</p>
 <p>8 user_id (if null ignore)</p>
@@ -4615,10 +4621,10 @@ from obp_python.models.obpv500_get_metrics_at_bank200_response import OBPv500Get
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4741,10 +4747,10 @@ from obp_python.models.obpv510_get_regulated_entity_by_id200_response import OBP
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4813,7 +4819,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv5_1_0_create_regulated_entity_attribute**
-> OBPv510GetRegulatedEntityAttributeById200Response o_bpv5_1_0_create_regulated_entity_attribute(regulatedentityid, obpv510_update_regulated_entity_attribute_request)
+> OBPv510GetRegulatedEntityAttributeById200Response o_bpv5_1_0_create_regulated_entity_attribute(regulatedentityid, obpv600_create_counterparty_attribute_request)
 
 Create Regulated Entity Attribute
 
@@ -4845,14 +4851,14 @@ User Authentication is Required. The User must be logged in. The Application mus
 ```python
 import obp_python
 from obp_python.models.obpv510_get_regulated_entity_attribute_by_id200_response import OBPv510GetRegulatedEntityAttributeById200Response
-from obp_python.models.obpv510_update_regulated_entity_attribute_request import OBPv510UpdateRegulatedEntityAttributeRequest
+from obp_python.models.obpv600_create_counterparty_attribute_request import OBPv600CreateCounterpartyAttributeRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4879,11 +4885,11 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.APIApi(api_client)
     regulatedentityid = 'regulatedentityid_example' # str | The REGULATEDENTITYID identifier
-    obpv510_update_regulated_entity_attribute_request = {type=object, properties={attribute_type={type=string}, value={type=string}, is_active={type=boolean}, name={type=string}}} # OBPv510UpdateRegulatedEntityAttributeRequest | Request body
+    obpv600_create_counterparty_attribute_request = {type=object, properties={attribute_type={type=string}, name={type=string}, is_active={type=boolean}, value={type=string}}} # OBPv600CreateCounterpartyAttributeRequest | Request body
 
     try:
         # Create Regulated Entity Attribute
-        api_response = api_instance.o_bpv5_1_0_create_regulated_entity_attribute(regulatedentityid, obpv510_update_regulated_entity_attribute_request)
+        api_response = api_instance.o_bpv5_1_0_create_regulated_entity_attribute(regulatedentityid, obpv600_create_counterparty_attribute_request)
         print("The response of APIApi->o_bpv5_1_0_create_regulated_entity_attribute:\n")
         pprint(api_response)
     except Exception as e:
@@ -4898,7 +4904,7 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **regulatedentityid** | **str**| The REGULATEDENTITYID identifier | 
- **obpv510_update_regulated_entity_attribute_request** | [**OBPv510UpdateRegulatedEntityAttributeRequest**](OBPv510UpdateRegulatedEntityAttributeRequest.md)| Request body | 
+ **obpv600_create_counterparty_attribute_request** | [**OBPv600CreateCounterpartyAttributeRequest**](OBPv600CreateCounterpartyAttributeRequest.md)| Request body | 
 
 ### Return type
 
@@ -4945,10 +4951,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -5038,10 +5044,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -5140,10 +5146,10 @@ from obp_python.models.obpv510_get_all_regulated_entity_attributes200_response i
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -5234,10 +5240,10 @@ from obp_python.models.obpv510_get_api_tags200_response import OBPv510GetApiTags
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -5304,10 +5310,10 @@ from obp_python.models.obpv310_get_o_auth2_server_jwks_uris200_response import O
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -5384,10 +5390,10 @@ from obp_python.models.obpv510_get_regulated_entity_attribute_by_id200_response 
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -5494,10 +5500,10 @@ from obp_python.models.obpv510_get_regulated_entity_by_id200_response import OBP
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -5572,10 +5578,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -5662,10 +5668,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -5752,10 +5758,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -5842,10 +5848,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -5932,10 +5938,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -6022,10 +6028,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -6126,10 +6132,10 @@ from obp_python.models.obpv510_regulated_entities200_response import OBPv510Regu
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -6198,10 +6204,10 @@ from obp_python.models.obpv510_suggested_session_timeout200_response import OBPv
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -6248,7 +6254,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv5_1_0_update_regulated_entity_attribute**
-> OBPv510GetRegulatedEntityAttributeById200Response o_bpv5_1_0_update_regulated_entity_attribute(regulatedentityid, regulatedentityattributeid, obpv510_update_regulated_entity_attribute_request)
+> OBPv510GetRegulatedEntityAttributeById200Response o_bpv5_1_0_update_regulated_entity_attribute(regulatedentityid, regulatedentityattributeid, obpv600_create_counterparty_attribute_request)
 
 Update Regulated Entity Attribute
 
@@ -6275,14 +6281,14 @@ Update Regulated Entity Attribute
 ```python
 import obp_python
 from obp_python.models.obpv510_get_regulated_entity_attribute_by_id200_response import OBPv510GetRegulatedEntityAttributeById200Response
-from obp_python.models.obpv510_update_regulated_entity_attribute_request import OBPv510UpdateRegulatedEntityAttributeRequest
+from obp_python.models.obpv600_create_counterparty_attribute_request import OBPv600CreateCounterpartyAttributeRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -6310,11 +6316,11 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.APIApi(api_client)
     regulatedentityid = 'regulatedentityid_example' # str | The REGULATEDENTITYID identifier
     regulatedentityattributeid = 'regulatedentityattributeid_example' # str | The REGULATEDENTITYATTRIBUTEID identifier
-    obpv510_update_regulated_entity_attribute_request = {"type":"object","properties":{"attribute_type":{"type":"string"},"value":{"type":"string"},"is_active":{"type":"boolean"},"name":{"type":"string"}}} # OBPv510UpdateRegulatedEntityAttributeRequest | Request body
+    obpv600_create_counterparty_attribute_request = {type=object, properties={attribute_type={type=string}, name={type=string}, is_active={type=boolean}, value={type=string}}} # OBPv600CreateCounterpartyAttributeRequest | Request body
 
     try:
         # Update Regulated Entity Attribute
-        api_response = api_instance.o_bpv5_1_0_update_regulated_entity_attribute(regulatedentityid, regulatedentityattributeid, obpv510_update_regulated_entity_attribute_request)
+        api_response = api_instance.o_bpv5_1_0_update_regulated_entity_attribute(regulatedentityid, regulatedentityattributeid, obpv600_create_counterparty_attribute_request)
         print("The response of APIApi->o_bpv5_1_0_update_regulated_entity_attribute:\n")
         pprint(api_response)
     except Exception as e:
@@ -6330,7 +6336,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **regulatedentityid** | **str**| The REGULATEDENTITYID identifier | 
  **regulatedentityattributeid** | **str**| The REGULATEDENTITYATTRIBUTEID identifier | 
- **obpv510_update_regulated_entity_attribute_request** | [**OBPv510UpdateRegulatedEntityAttributeRequest**](OBPv510UpdateRegulatedEntityAttributeRequest.md)| Request body | 
+ **obpv600_create_counterparty_attribute_request** | [**OBPv600CreateCounterpartyAttributeRequest**](OBPv600CreateCounterpartyAttributeRequest.md)| Request body | 
 
 ### Return type
 
@@ -6376,10 +6382,10 @@ from obp_python.models.obpv510_waiting_for_godot200_response import OBPv510Waiti
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -6452,10 +6458,10 @@ from obp_python.models.obpv600_backup_bank_level_dynamic_entity200_response impo
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -6552,10 +6558,10 @@ from obp_python.models.obpv600_backup_system_dynamic_entity200_response import O
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -6657,10 +6663,10 @@ from obp_python.models.obpv600_cleanup_orphaned_dynamic_entity_records200_respon
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -6725,7 +6731,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv6_0_0_create_api_product**
-> OBPv600GetApiProducts200ResponsePropertiesApiProductsItems o_bpv6_0_0_create_api_product(bankid, apiproductcode, obpv600_create_or_update_api_product_request)
+> OBPv600GetApiProducts200ResponseApiProductsInner o_bpv6_0_0_create_api_product(bankid, apiproductcode, obpv600_create_or_update_api_product_request)
 
 Create Api Product
 
@@ -6786,14 +6792,14 @@ Create Api Product
 ```python
 import obp_python
 from obp_python.models.obpv600_create_or_update_api_product_request import OBPv600CreateOrUpdateApiProductRequest
-from obp_python.models.obpv600_get_api_products200_response_properties_api_products_items import OBPv600GetApiProducts200ResponsePropertiesApiProductsItems
+from obp_python.models.obpv600_get_api_products200_response_api_products_inner import OBPv600GetApiProducts200ResponseApiProductsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -6845,7 +6851,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetApiProducts200ResponsePropertiesApiProductsItems**](OBPv600GetApiProducts200ResponsePropertiesApiProductsItems.md)
+[**OBPv600GetApiProducts200ResponseApiProductsInner**](OBPv600GetApiProducts200ResponseApiProductsInner.md)
 
 ### Authorization
 
@@ -6904,10 +6910,10 @@ from obp_python.models.obpv600_create_api_product_attribute200_response import O
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -7028,10 +7034,10 @@ from obp_python.models.obpv600_create_system_dynamic_entity_request import OBPv6
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -7102,8 +7108,125 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **o_bpv6_0_0_create_counterparty_attribute**
+> OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner o_bpv6_0_0_create_counterparty_attribute(bankid, accountid, counterpartyid, obpv600_create_counterparty_attribute_request)
+
+Create Counterparty Attribute
+
+<p>Create a new Counterparty Attribute for a given COUNTERPARTY_ID.</p>
+<p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or &quot;DATE_WITH_DAY&quot;.<br />
+Authentication is Required</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>attribute_type</strong></a>: STRING</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#is_active">is_active</a>: false</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>attribute_type</strong></a>: STRING</p>
+<p><a href="/glossary#"><strong>counterparty_attribute_id</strong></a>: counterparty_attribute_id</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#is_active">is_active</a>: false</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.obpv600_create_counterparty_attribute_request import OBPv600CreateCounterpartyAttributeRequest
+from obp_python.models.obpv600_get_all_counterparty_attributes200_response_attributes_inner import OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.APIApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    counterpartyid = 'counterpartyid_example' # str | The COUNTERPARTYID identifier
+    obpv600_create_counterparty_attribute_request = {"type":"object","properties":{"attribute_type":{"type":"string"},"name":{"type":"string"},"is_active":{"type":"boolean"},"value":{"type":"string"}}} # OBPv600CreateCounterpartyAttributeRequest | Request body
+
+    try:
+        # Create Counterparty Attribute
+        api_response = api_instance.o_bpv6_0_0_create_counterparty_attribute(bankid, accountid, counterpartyid, obpv600_create_counterparty_attribute_request)
+        print("The response of APIApi->o_bpv6_0_0_create_counterparty_attribute:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling APIApi->o_bpv6_0_0_create_counterparty_attribute: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **counterpartyid** | **str**| The COUNTERPARTYID identifier | 
+ **obpv600_create_counterparty_attribute_request** | [**OBPv600CreateCounterpartyAttributeRequest**](OBPv600CreateCounterpartyAttributeRequest.md)| Request body | 
+
+### Return type
+
+[**OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner**](OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **o_bpv6_0_0_create_featured_api_collection**
-> OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems o_bpv6_0_0_create_featured_api_collection(obpv600_create_featured_api_collection_request)
+> OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner o_bpv6_0_0_create_featured_api_collection(obpv600_create_featured_api_collection_request)
 
 Create Featured Api Collection
 
@@ -7127,14 +7250,14 @@ Create Featured Api Collection
 ```python
 import obp_python
 from obp_python.models.obpv600_create_featured_api_collection_request import OBPv600CreateFeaturedApiCollectionRequest
-from obp_python.models.obpv600_get_featured_api_collections_admin200_response_properties_featured_api_collections_items import OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems
+from obp_python.models.obpv600_get_featured_api_collections_admin200_response_featured_api_collections_inner import OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -7182,7 +7305,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems**](OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems.md)
+[**OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner**](OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner.md)
 
 ### Authorization
 
@@ -7205,7 +7328,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv6_0_0_create_or_update_api_product**
-> OBPv600GetApiProducts200ResponsePropertiesApiProductsItems o_bpv6_0_0_create_or_update_api_product(bankid, apiproductcode, obpv600_create_or_update_api_product_request)
+> OBPv600GetApiProducts200ResponseApiProductsInner o_bpv6_0_0_create_or_update_api_product(bankid, apiproductcode, obpv600_create_or_update_api_product_request)
 
 Create or Update Api Product
 
@@ -7250,14 +7373,14 @@ Create or Update Api Product
 ```python
 import obp_python
 from obp_python.models.obpv600_create_or_update_api_product_request import OBPv600CreateOrUpdateApiProductRequest
-from obp_python.models.obpv600_get_api_products200_response_properties_api_products_items import OBPv600GetApiProducts200ResponsePropertiesApiProductsItems
+from obp_python.models.obpv600_get_api_products200_response_api_products_inner import OBPv600GetApiProducts200ResponseApiProductsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -7309,7 +7432,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetApiProducts200ResponsePropertiesApiProductsItems**](OBPv600GetApiProducts200ResponsePropertiesApiProductsItems.md)
+[**OBPv600GetApiProducts200ResponseApiProductsInner**](OBPv600GetApiProducts200ResponseApiProductsInner.md)
 
 ### Authorization
 
@@ -7362,6 +7485,12 @@ Create System Level Dynamic Entity
 * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p>
 <p>For more information see <a href="/glossary#Dynamic-Entities">here</a></p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br />
+See [here](/glossary#API.Endpoint Auth Modes) for more information.</p>
+<p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br />
+See [here](/glossary#API.Endpoint Auth Modes) for more information.</p>
+<p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br />
+See [here](/glossary#API.Endpoint Auth Modes) for more information.</p>
 
 
 ### Example
@@ -7377,10 +7506,10 @@ from obp_python.models.obpv600_create_system_dynamic_entity_request import OBPv6
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -7473,10 +7602,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -7571,10 +7700,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -7645,6 +7774,108 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **o_bpv6_0_0_delete_counterparty_attribute**
+> o_bpv6_0_0_delete_counterparty_attribute(bankid, accountid, counterpartyid, counterpartyattributeid)
+
+Delete Counterparty Attribute
+
+<p>Delete a Counterparty Attribute specified by COUNTERPARTY_ATTRIBUTE_ID.</p>
+<p>Authentication is Required</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">COUNTERPARTY_ATTRIBUTE_ID</a>: COUNTERPARTY_ATTRIBUTE_ID</p>
+<p><a href="/glossary#">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.APIApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    counterpartyid = 'counterpartyid_example' # str | The COUNTERPARTYID identifier
+    counterpartyattributeid = 'counterpartyattributeid_example' # str | The COUNTERPARTYATTRIBUTEID identifier
+
+    try:
+        # Delete Counterparty Attribute
+        api_instance.o_bpv6_0_0_delete_counterparty_attribute(bankid, accountid, counterpartyid, counterpartyattributeid)
+    except Exception as e:
+        print("Exception when calling APIApi->o_bpv6_0_0_delete_counterparty_attribute: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **counterpartyid** | **str**| The COUNTERPARTYID identifier | 
+ **counterpartyattributeid** | **str**| The COUNTERPARTYATTRIBUTEID identifier | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **o_bpv6_0_0_delete_featured_api_collection**
 > o_bpv6_0_0_delete_featured_api_collection(apicollectionid)
 
@@ -7668,10 +7899,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -7768,10 +7999,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -7837,8 +8068,117 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **o_bpv6_0_0_get_all_counterparty_attributes**
+> OBPv600GetAllCounterpartyAttributes200Response o_bpv6_0_0_get_all_counterparty_attributes(bankid, accountid, counterpartyid)
+
+Get All Counterparty Attributes
+
+<p>Get all attributes for the specified Counterparty.</p>
+<p>Authentication is Required</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>attribute_type</strong></a>: STRING</p>
+<p><a href="/glossary#attributes"><strong>attributes</strong></a>: attribute value in form of (name, value)</p>
+<p><a href="/glossary#"><strong>counterparty_attribute_id</strong></a>: counterparty_attribute_id</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#is_active">is_active</a>: false</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.obpv600_get_all_counterparty_attributes200_response import OBPv600GetAllCounterpartyAttributes200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.APIApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    counterpartyid = 'counterpartyid_example' # str | The COUNTERPARTYID identifier
+
+    try:
+        # Get All Counterparty Attributes
+        api_response = api_instance.o_bpv6_0_0_get_all_counterparty_attributes(bankid, accountid, counterpartyid)
+        print("The response of APIApi->o_bpv6_0_0_get_all_counterparty_attributes:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling APIApi->o_bpv6_0_0_get_all_counterparty_attributes: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **counterpartyid** | **str**| The COUNTERPARTYID identifier | 
+
+### Return type
+
+[**OBPv600GetAllCounterpartyAttributes200Response**](OBPv600GetAllCounterpartyAttributes200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **o_bpv6_0_0_get_api_product**
-> OBPv600GetApiProducts200ResponsePropertiesApiProductsItems o_bpv6_0_0_get_api_product(bankid, apiproductcode)
+> OBPv600GetApiProducts200ResponseApiProductsInner o_bpv6_0_0_get_api_product(bankid, apiproductcode)
 
 Get Api Product
 
@@ -7879,14 +8219,14 @@ Get Api Product
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_api_products200_response_properties_api_products_items import OBPv600GetApiProducts200ResponsePropertiesApiProductsItems
+from obp_python.models.obpv600_get_api_products200_response_api_products_inner import OBPv600GetApiProducts200ResponseApiProductsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -7918,7 +8258,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetApiProducts200ResponsePropertiesApiProductsItems**](OBPv600GetApiProducts200ResponsePropertiesApiProductsItems.md)
+[**OBPv600GetApiProducts200ResponseApiProductsInner**](OBPv600GetApiProducts200ResponseApiProductsInner.md)
 
 ### Authorization
 
@@ -7969,10 +8309,10 @@ from obp_python.models.obpv600_create_api_product_attribute200_response import O
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -8072,10 +8412,10 @@ from obp_python.models.obpv600_get_api_products200_response import OBPv600GetApi
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -8125,6 +8465,105 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **o_bpv6_0_0_get_app_directory**
+> OBPv600GetAppDirectory200Response o_bpv6_0_0_get_app_directory()
+
+Get App Directory
+
+<p>Get connectivity information for apps in the OBP ecosystem.</p>
+<p>Returns configuration properties that apps (Portal, API Explorer, API Manager,<br />
+Sandbox Populator, OIDC, Keycloak, Hola, MCP, Opey) and agents can use to discover<br />
+endpoints in the OBP ecosystem.</p>
+<p>Any props starting with public_ and ending with _url are included automatically.</p>
+<p>Known public app URL props:<br />
+public_keycloak_url, public_obp_api_explorer_url, public_obp_api_manager_url, public_obp_api_url, public_obp_hola_url, public_obp_mcp_url, public_obp_oidc_url, public_obp_opey_url, public_obp_portal_url, public_obp_sandbox_populator_url, public_rabbit_cats_adapter_url</p>
+<p>Empty (unconfigured) values are excluded from the response.</p>
+<p>Authentication is NOT Required.</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.obpv600_get_app_directory200_response import OBPv600GetAppDirectory200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.APIApi(api_client)
+
+    try:
+        # Get App Directory
+        api_response = api_instance.o_bpv6_0_0_get_app_directory()
+        print("The response of APIApi->o_bpv6_0_0_get_app_directory:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling APIApi->o_bpv6_0_0_get_app_directory: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**OBPv600GetAppDirectory200Response**](OBPv600GetAppDirectory200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **o_bpv6_0_0_get_available_personal_dynamic_entities**
 > OBPv600GetAvailablePersonalDynamicEntities200Response o_bpv6_0_0_get_available_personal_dynamic_entities()
 
@@ -8152,10 +8591,10 @@ from obp_python.models.obpv600_get_available_personal_dynamic_entities200_respon
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -8243,10 +8682,10 @@ from obp_python.models.obpv600_get_bank_level_dynamic_entities200_response impor
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -8355,10 +8794,10 @@ from obp_python.models.obpv600_get_cache_config200_response import OBPv600GetCac
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -8473,10 +8912,10 @@ from obp_python.models.obpv600_get_cache_info200_response import OBPv600GetCache
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -8579,10 +9018,10 @@ from obp_python.models.obpv600_get_cache_namespaces200_response import OBPv600Ge
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -8651,11 +9090,17 @@ This endpoint does not need any parameter.
 
 Get Config Props
 
-<p>Get the configuration properties (non-WebUI) and their runtime values.</p>
-<p>This endpoint reads all property keys from the sample.props.template file<br />
-(excluding webui_ properties) and returns their current runtime values.</p>
-<p>Sensitive properties (containing password, secret, passphrase, credential, token_secret)<br />
-will have their values masked as ****.</p>
+<p>Get the active configuration properties and their runtime values.</p>
+<p>This endpoint uses a self-registration mechanism: each time the code calls<br />
+getPropsValue, getPropsAsBoolValue, getPropsAsIntValue, or getPropsAsLongValue<br />
+with a default value, that property key is registered.</p>
+<p>Only registered properties are returned. The list grows as more code paths are<br />
+exercised. Most properties are registered at startup.</p>
+<p>For each property, the value shown is the actual runtime value. If the property<br />
+is not explicitly set, the code-defined default is shown.</p>
+<p>The response includes both regular and webui_ properties, sorted alphabetically by key.</p>
+<p>Properties with sensitive keys or values (containing password, secret, passphrase, credential, token, key, authorization, jdbc)<br />
+are excluded from the response entirely.</p>
 <p>Authentication is Required.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 <p><strong>JSON response body fields:</strong></p>
@@ -8675,10 +9120,10 @@ from obp_python.models.obpv600_get_config_props200_response import OBPv600GetCon
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -8785,10 +9230,10 @@ from obp_python.models.obpv600_get_connector_call_counts200_response import OBPv
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -8901,10 +9346,10 @@ from obp_python.models.obpv600_get_connector_method_names200_response import OBP
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -9018,10 +9463,10 @@ from obp_python.models.obpv600_get_connector_traces200_response import OBPv600Ge
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -9116,12 +9561,92 @@ This depends on the <code>connector</code> and <code>starConnector_supported_typ
 <p>Use this endpoint to discover which connectors are available when configuring Method Routing.<br />
 A connector is available for method routing if it matches the <code>connector</code> prop setting,<br />
 or if <code>connector=star</code> and the connector is listed in <code>starConnector_supported_types</code>.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p>CanGetConnectorNames entitlement is required.</p>
+<p>Authentication is Optional.</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
 <p><strong>JSON response body fields:</strong></p>
 <p><a href="/glossary#connector_name"><strong>connector_name</strong></a>:</p>
 <p><a href="/glossary#"><strong>connectors</strong></a>: connectors</p>
 <p><a href="/glossary#"><strong>is_available_in_method_routing</strong></a>: is_available_in_method_routing</p>
+
+
+### Example
+
+
+```python
+import obp_python
+from obp_python.models.obpv600_get_connectors200_response import OBPv600GetConnectors200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.APIApi(api_client)
+
+    try:
+        # Get Connectors
+        api_response = api_instance.o_bpv6_0_0_get_connectors()
+        print("The response of APIApi->o_bpv6_0_0_get_connectors:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling APIApi->o_bpv6_0_0_get_connectors: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**OBPv600GetConnectors200Response**](OBPv600GetConnectors200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **o_bpv6_0_0_get_counterparty_attribute_by_id**
+> OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner o_bpv6_0_0_get_counterparty_attribute_by_id(bankid, accountid, counterpartyid, counterpartyattributeid)
+
+Get Counterparty Attribute By ID
+
+<p>Get a specific Counterparty Attribute by its COUNTERPARTY_ATTRIBUTE_ID.</p>
+<p>Authentication is Required</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">COUNTERPARTY_ATTRIBUTE_ID</a>: COUNTERPARTY_ATTRIBUTE_ID</p>
+<p><a href="/glossary#">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>attribute_type</strong></a>: STRING</p>
+<p><a href="/glossary#"><strong>counterparty_attribute_id</strong></a>: counterparty_attribute_id</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#is_active">is_active</a>: false</p>
 
 
 ### Example
@@ -9132,14 +9657,14 @@ or if <code>connector=star</code> and the connector is listed in <code>starConne
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_connectors200_response import OBPv600GetConnectors200Response
+from obp_python.models.obpv600_get_all_counterparty_attributes200_response_attributes_inner import OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -9165,25 +9690,35 @@ configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
 with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.APIApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    counterpartyid = 'counterpartyid_example' # str | The COUNTERPARTYID identifier
+    counterpartyattributeid = 'counterpartyattributeid_example' # str | The COUNTERPARTYATTRIBUTEID identifier
 
     try:
-        # Get Connectors
-        api_response = api_instance.o_bpv6_0_0_get_connectors()
-        print("The response of APIApi->o_bpv6_0_0_get_connectors:\n")
+        # Get Counterparty Attribute By ID
+        api_response = api_instance.o_bpv6_0_0_get_counterparty_attribute_by_id(bankid, accountid, counterpartyid, counterpartyattributeid)
+        print("The response of APIApi->o_bpv6_0_0_get_counterparty_attribute_by_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling APIApi->o_bpv6_0_0_get_connectors: %s\n" % e)
+        print("Exception when calling APIApi->o_bpv6_0_0_get_counterparty_attribute_by_id: %s\n" % e)
 ```
 
 
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **counterpartyid** | **str**| The COUNTERPARTYID identifier | 
+ **counterpartyattributeid** | **str**| The COUNTERPARTYATTRIBUTEID identifier | 
 
 ### Return type
 
-[**OBPv600GetConnectors200Response**](OBPv600GetConnectors200Response.md)
+[**OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner**](OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -9251,10 +9786,10 @@ from obp_python.models.obpv600_get_current_consumer200_response import OBPv600Ge
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -9361,10 +9896,10 @@ from obp_python.models.obpv600_get_database_pool_info200_response import OBPv600
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -9487,10 +10022,10 @@ from obp_python.models.obpv600_get_dynamic_entity_diagnostics200_response import
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -9582,10 +10117,10 @@ from obp_python.models.obpv600_get_featured_api_collections_admin200_response im
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -9630,6 +10165,108 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**OBPv600GetFeaturedApiCollectionsAdmin200Response**](OBPv600GetFeaturedApiCollectionsAdmin200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **o_bpv6_0_0_get_features**
+> OBPv600GetFeatures200Response o_bpv6_0_0_get_features()
+
+Get Features
+
+<p>Returns information about the features enabled on this OBP instance.</p>
+<p>No Authentication is Required.</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>allow_abac_account_access</strong></a>: allow_abac_account_access</p>
+<p><a href="/glossary#"><strong>allow_account_deletion</strong></a>: allow_account_deletion</p>
+<p><a href="/glossary#"><strong>allow_account_firehose</strong></a>: allow_account_firehose</p>
+<p><a href="/glossary#"><strong>allow_customer_firehose</strong></a>: allow_customer_firehose</p>
+<p><a href="/glossary#"><strong>allow_dauth</strong></a>: allow_dauth</p>
+<p><a href="/glossary#"><strong>allow_direct_login</strong></a>: allow_direct_login</p>
+<p><a href="/glossary#"><strong>allow_gateway_login</strong></a>: allow_gateway_login</p>
+<p><a href="/glossary#"><strong>allow_just_in_time_entitlements</strong></a>: allow_just_in_time_entitlements</p>
+<p><a href="/glossary#"><strong>allow_oauth2_login</strong></a>: allow_oauth2_login</p>
+<p><a href="/glossary#"><strong>allow_public_views</strong></a>: allow_public_views</p>
+<p><a href="/glossary#"><strong>allow_sandbox_account_creation</strong></a>: allow_sandbox_account_creation</p>
+<p><a href="/glossary#"><strong>allow_sandbox_data_import</strong></a>: allow_sandbox_data_import</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.obpv600_get_features200_response import OBPv600GetFeatures200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.APIApi(api_client)
+
+    try:
+        # Get Features
+        api_response = api_instance.o_bpv6_0_0_get_features()
+        print("The response of APIApi->o_bpv6_0_0_get_features:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling APIApi->o_bpv6_0_0_get_features: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**OBPv600GetFeatures200Response**](OBPv600GetFeatures200Response.md)
 
 ### Authorization
 
@@ -9698,10 +10335,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -9792,7 +10429,7 @@ For historical/reporting queries, always explicitly specify your desired <code>f
 possible values:<br />
 &quot;url&quot;,<br />
 &quot;date&quot;,<br />
-&quot;user_name&quot;,<br />
+&quot;username&quot; (or &quot;user_name&quot; for backward compatibility),<br />
 &quot;app_name&quot;,<br />
 &quot;developer_email&quot;,<br />
 &quot;implemented_by_partial_function&quot;,<br />
@@ -9800,7 +10437,7 @@ possible values:<br />
 &quot;consumer_id&quot;,<br />
 &quot;verb&quot;</p>
 <p>6 direction (defaults to date desc) eg: direction=desc</p>
-<p>eg: /management/metrics?from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:<a href="&#109;a&#105;&#x6c;t&#111;&#58;&#x30;&#x31;.0&#48;&#x30;&#x5a;&#38;&#x6c;&#105;&#109;&#x69;t&#61;&#49;000&#x30;&#38;&#x6f;&#x66;&#102;s&#101;&#116;&#61;&#x30;&#x26;a&#x6e;o&#x6e;&#61;&#x66;&#x61;&#108;&#115;&#101;&amp;&#97;&#112;&#x70;_&#110;&#x61;&#x6d;&#x65;&#x3d;T&#101;&#97;&#x74;&#x41;&#x70;p&#x26;&#105;&#109;&#x70;&#108;&#101;&#x6d;&#101;&#110;t&#x65;&#x64;&#x5f;&#105;&#110;&#x5f;&#x76;e&#x72;&#115;&#x69;&#x6f;&#x6e;&#x3d;&#118;2&#46;&#49;&#x2e;&#48;&#38;&#x76;&#x65;&#x72;&#x62;=&#x50;O&#x53;&#84;&#38;&#117;&#x73;&#101;&#114;&#x5f;i&#x64;&#x3d;&#x63;&#x37;&#x62;&#x36;&#99;&#98;&#x34;7&#x2d;&#x63;&#x62;&#57;&#x36;&#45;&#x34;&#52;&#x34;1&#x2d;8&#x38;0&#49;&#45;&#x33;5&#98;5&#55;&#x34;&#53;&#x36;&#x37;&#x35;&#x33;&#97;&#38;&#117;&#x73;e&#114;&#95;&#110;&#97;me=s&#117;&#115;a&#110;&#x2e;u&#107;&#x2e;&#x32;&#x39;&#64;e&#120;&#x61;&#x6d;&#x70;&#108;&#x65;&#x2e;&#x63;o&#109;">&#x30;&#49;&#46;0&#48;&#x30;&#x5a;&#38;&#108;&#x69;&#109;&#x69;&#116;&#61;&#x31;&#x30;&#x30;&#48;&#48;&#38;o&#x66;f&#115;&#101;&#x74;=&#48;&#x26;&#97;&#110;&#x6f;&#x6e;=&#x66;&#x61;&#x6c;&#115;&#x65;&#38;&#97;p&#112;&#x5f;&#x6e;&#97;&#x6d;&#x65;&#x3d;&#84;eat&#65;p&#112;&#x26;&#x69;&#109;&#112;l&#101;&#x6d;&#x65;n&#x74;&#x65;&#x64;&#95;&#105;&#110;&#95;&#118;e&#x72;&#x73;&#105;&#x6f;n&#x3d;&#x76;&#50;&#x2e;1.0&#38;&#118;&#x65;&#x72;b&#x3d;&#x50;&#79;S&#84;&#38;u&#x73;e&#114;&#x5f;&#105;d&#61;c7&#98;&#x36;&#x63;&#98;&#52;&#x37;&#45;&#99;&#x62;&#x39;&#x36;-&#x34;&#52;&#x34;&#49;&#x2d;&#56;&#x38;0&#x31;&#45;&#x33;&#53;&#x62;&#x35;&#x37;4&#53;&#x36;7&#x35;&#x33;&#97;&#38;&#117;&#x73;&#x65;&#114;&#95;&#110;&#97;&#x6d;&#x65;&#61;&#x73;&#117;&#115;&#x61;&#110;&#x2e;&#117;&#107;&#x2e;&#x32;&#x39;&#x40;&#101;&#x78;a&#x6d;&#112;&#108;&#101;&#46;c&#111;&#x6d;</a>&amp;consumer_id=78</p>
+<p>eg: /management/metrics?from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:<a href="m&#x61;i&#108;&#116;o&#58;&#48;&#x31;&#46;&#x30;&#48;&#48;&#90;&#x26;l&#x69;&#x6d;&#105;&#x74;&#x3d;&#49;&#x30;&#48;&#48;&#x30;&#x26;&#x6f;&#x66;f&#x73;&#101;&#x74;=&#x30;&#x26;an&#111;&#110;=&#x66;&#97;&#108;se&#x26;&#97;&#112;&#112;&#x5f;&#110;&#97;&#109;&#x65;&#x3d;&#x54;&#101;&#97;&#116;&#x41;&#112;&#112;&#x26;i&#x6d;&#x70;&#x6c;&#x65;&#x6d;&#x65;&#110;t&#101;&#100;_&#105;&#x6e;&#x5f;&#118;e&#x72;&#x73;&#x69;o&#x6e;&#x3d;v&#50;&#x2e;&#x31;&#46;&#48;&amp;v&#101;&#114;&#98;=&#80;OS&#x54;&#x26;us&#101;&#x72;&#x5f;&#105;&#x64;&#61;&#99;&#x37;&#x62;&#x36;&#x63;&#98;47&#45;&#99;&#98;&#57;&#54;&#x2d;&#x34;&#x34;&#x34;&#x31;-8&#x38;0&#49;&#45;&#51;&#53;&#x62;&#x35;&#x37;4&#x35;&#54;&#55;53&#x61;&amp;u&#115;&#101;&#114;&#x6e;&#97;m&#101;&#61;&#115;&#x75;&#115;&#97;&#x6e;&#x2e;&#117;&#x6b;&#46;&#50;&#x39;&#64;e&#120;a&#x6d;p&#x6c;e.&#x63;&#111;&#109;">&#x30;&#49;&#46;&#48;&#48;&#48;&#90;&#x26;li&#109;&#x69;&#116;&#x3d;&#x31;00&#48;&#48;&#x26;&#x6f;&#102;f&#x73;&#x65;&#x74;&#61;&#x30;&#38;&#x61;&#x6e;&#111;&#110;&#61;&#x66;&#x61;&#x6c;s&#101;&#x26;&#97;&#x70;&#x70;&#95;&#x6e;&#97;&#x6d;&#x65;&#x3d;&#84;ea&#x74;&#x41;&#x70;&#112;&#x26;&#105;m&#112;&#x6c;&#101;&#109;&#101;&#110;t&#x65;&#100;&#x5f;&#x69;&#110;&#95;&#x76;&#101;&#114;&#x73;&#x69;&#111;n=&#118;&#x32;&#46;&#x31;&#46;&#x30;&amp;&#x76;&#x65;r&#x62;&#61;&#x50;&#x4f;&#83;&#84;&amp;u&#x73;er&#95;i&#x64;&#61;&#99;7&#x62;&#x36;cb&#x34;&#55;-&#x63;&#98;&#x39;&#x36;&#45;&#x34;&#x34;4&#x31;&#45;&#56;&#x38;&#48;1&#x2d;&#51;&#x35;&#x62;5&#55;&#52;&#53;&#54;&#x37;&#x35;&#51;&#97;&#x26;&#117;&#115;&#101;&#114;&#110;&#97;&#109;&#x65;&#61;&#x73;&#117;&#x73;&#x61;&#110;&#46;&#117;&#x6b;&#46;&#x32;&#57;@&#x65;&#x78;&#x61;&#109;&#112;le&#x2e;&#x63;&#111;&#x6d;</a>&amp;consumer_id=78</p>
 <p>Other filters:</p>
 <p>7 consumer_id  (if null ignore)</p>
 <p>8 user_id (if null ignore)</p>
@@ -9829,7 +10466,7 @@ possible values:<br />
 <p><a href="/glossary#"><strong>target_ip</strong></a>: target_ip</p>
 <p><a href="/glossary#"><strong>url</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
 <p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>user_name</strong></a>: felixsmith</p>
+<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
 <p><a href="/glossary#verb"><strong>verb</strong></a>:</p>
 
 
@@ -9845,10 +10482,10 @@ from obp_python.models.obpv600_get_metrics200_response import OBPv600GetMetrics2
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -9947,10 +10584,10 @@ from obp_python.models.obpv600_get_migrations200_response import OBPv600GetMigra
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -10040,10 +10677,10 @@ from obp_python.models.obpv600_get_available_personal_dynamic_entities200_respon
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -10134,10 +10771,10 @@ from obp_python.models.obpv600_get_popular_apis200_response import OBPv600GetPop
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -10230,10 +10867,10 @@ from obp_python.models.obpv600_get_reference_types200_response import OBPv600Get
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -10346,10 +10983,10 @@ from obp_python.models.obpv600_get_scanned_api_versions200_response import OBPv6
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -10455,10 +11092,10 @@ from obp_python.models.obpv600_get_stored_procedure_connector_health200_response
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -10546,10 +11183,10 @@ from obp_python.models.obpv600_get_system_dynamic_entities200_response import OB
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -10622,13 +11259,13 @@ Get Top APIs
 <p>This v6.0.0 version includes the <strong>operation_id</strong> field which uniquely identifies each API endpoint<br />
 across different API standards (OBP, Berlin Group, UK Open Banking, etc.).</p>
 <p>Should be able to filter on the following fields:</p>
-<p>eg: /management/metrics/top-apis?from_date=1970-01-01T00:00:00.000Z&amp;to_date=2026-03-16T19:25:59.789Z&amp;consumer_id=5<br />
+<p>eg: /management/metrics/top-apis?from_date=1970-01-01T00:00:00.000Z&amp;to_date=2026-03-25T12:16:25.492Z&amp;consumer_id=5<br />
 &amp;user_id=66214b8e-259e-44ad-8868-3eb47be70646&amp;implemented_by_partial_function=getTransactionsForBankAccount<br />
 &amp;implemented_in_version=v3.0.0&amp;url=/obp/v3.0.0/banks/gh.29.uk/accounts/8ca8a7e4-6d02-48e3-a029-0b2bf89de9f0/owner/transactions<br />
 &amp;verb=GET&amp;anon=false&amp;app_name=MapperPostman<br />
 &amp;exclude_app_names=API-EXPLORER,API-Manager,SOFI,null</p>
 <p>1 from_date (defaults to one year ago): eg:from_date=1970-01-01T00:00:00.000Z</p>
-<p>2 to_date (defaults to the current date) eg:to_date=2026-03-16T19:25:59.789Z</p>
+<p>2 to_date (defaults to the current date) eg:to_date=2026-03-25T12:16:25.492Z</p>
 <p>3 consumer_id (if null ignore)</p>
 <p>4 user_id (if null ignore)</p>
 <p>5 anon (if null ignore) only support two values: true (return where user_id is null) or false (return where user_id is not null)</p>
@@ -10664,10 +11301,10 @@ from obp_python.models.obpv600_get_top_apis200_response import OBPv600GetTopAPIs
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -10766,10 +11403,10 @@ from obp_python.models.obpv600_invalidate_cache_namespace_request import OBPv600
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -10853,7 +11490,7 @@ Get API Info (root)
 <p>User Authentication is Optional. The User need not be logged in.</p>
 <p><strong>JSON response body fields:</strong></p>
 <p><a href="/glossary#Connector"><strong>connector</strong></a>: connector</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="ma&#x69;&#108;&#116;o&#x3a;&#102;&#x65;li&#120;&#x73;m&#x69;&#116;h&#64;&#x65;x&#97;&#x6d;&#112;&#x6c;&#101;&#46;&#99;&#111;&#109;">&#102;&#x65;&#108;&#105;&#120;s&#x6d;&#105;&#116;&#x68;&#64;e&#120;&#x61;&#109;&#112;&#x6c;&#101;.c&#x6f;&#x6d;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;&#x61;&#x69;l&#116;&#111;&#x3a;fe&#x6c;&#105;&#120;s&#109;&#105;&#116;&#104;&#64;&#101;&#x78;&#x61;&#x6d;&#x70;&#108;e&#x2e;&#x63;&#x6f;&#109;">&#102;e&#108;i&#x78;s&#109;it&#x68;&#x40;&#x65;x&#x61;&#109;&#112;&#108;&#x65;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
 <p><a href="/glossary#energy_source"><strong>energy_source</strong></a>:</p>
 <p><a href="/glossary#"><strong>git_commit</strong></a>: 59623811dd8a41f6ffe67be46954eee11913dc28</p>
 <p><a href="/glossary#hosted_at"><strong>hosted_at</strong></a>:</p>
@@ -10877,10 +11514,10 @@ from obp_python.models.obpv600_root200_response import OBPv600Root200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -10961,10 +11598,10 @@ from obp_python.models.obpv600_create_api_product_attribute200_response import O
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -11087,10 +11724,10 @@ from obp_python.models.obpv600_update_system_dynamic_entity_request import OBPv6
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -11163,8 +11800,122 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **o_bpv6_0_0_update_counterparty_attribute**
+> OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner o_bpv6_0_0_update_counterparty_attribute(bankid, accountid, counterpartyid, counterpartyattributeid, obpv600_create_counterparty_attribute_request)
+
+Update Counterparty Attribute
+
+<p>Update an existing Counterparty Attribute specified by COUNTERPARTY_ATTRIBUTE_ID.</p>
+<p>Authentication is Required</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">COUNTERPARTY_ATTRIBUTE_ID</a>: COUNTERPARTY_ATTRIBUTE_ID</p>
+<p><a href="/glossary#">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>attribute_type</strong></a>: STRING</p>
+<p><a href="/glossary#"><strong>counterparty_attribute_id</strong></a>: counterparty_attribute_id</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#is_active">is_active</a>: false</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.obpv600_create_counterparty_attribute_request import OBPv600CreateCounterpartyAttributeRequest
+from obp_python.models.obpv600_get_all_counterparty_attributes200_response_attributes_inner import OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.APIApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    counterpartyid = 'counterpartyid_example' # str | The COUNTERPARTYID identifier
+    counterpartyattributeid = 'counterpartyattributeid_example' # str | The COUNTERPARTYATTRIBUTEID identifier
+    obpv600_create_counterparty_attribute_request = {type=object, properties={attribute_type={type=string}, name={type=string}, is_active={type=boolean}, value={type=string}}} # OBPv600CreateCounterpartyAttributeRequest | Request body
+
+    try:
+        # Update Counterparty Attribute
+        api_response = api_instance.o_bpv6_0_0_update_counterparty_attribute(bankid, accountid, counterpartyid, counterpartyattributeid, obpv600_create_counterparty_attribute_request)
+        print("The response of APIApi->o_bpv6_0_0_update_counterparty_attribute:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling APIApi->o_bpv6_0_0_update_counterparty_attribute: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **counterpartyid** | **str**| The COUNTERPARTYID identifier | 
+ **counterpartyattributeid** | **str**| The COUNTERPARTYATTRIBUTEID identifier | 
+ **obpv600_create_counterparty_attribute_request** | [**OBPv600CreateCounterpartyAttributeRequest**](OBPv600CreateCounterpartyAttributeRequest.md)| Request body | 
+
+### Return type
+
+[**OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner**](OBPv600GetAllCounterpartyAttributes200ResponseAttributesInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **o_bpv6_0_0_update_featured_api_collection**
-> OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems o_bpv6_0_0_update_featured_api_collection(apicollectionid, obpv600_update_featured_api_collection_request)
+> OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner o_bpv6_0_0_update_featured_api_collection(apicollectionid, obpv600_update_featured_api_collection_request)
 
 Update Featured Api Collection
 
@@ -11186,15 +11937,15 @@ Update Featured Api Collection
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_featured_api_collections_admin200_response_properties_featured_api_collections_items import OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems
+from obp_python.models.obpv600_get_featured_api_collections_admin200_response_featured_api_collections_inner import OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner
 from obp_python.models.obpv600_update_featured_api_collection_request import OBPv600UpdateFeaturedApiCollectionRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -11244,7 +11995,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems**](OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems.md)
+[**OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner**](OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner.md)
 
 ### Authorization
 
@@ -11314,10 +12065,10 @@ from obp_python.models.obpv600_update_system_dynamic_entity_request import OBPv6
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -11435,10 +12186,10 @@ from obp_python.models.obpv600_update_system_dynamic_entity_request import OBPv6
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters

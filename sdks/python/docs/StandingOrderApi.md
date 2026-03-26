@@ -1,6 +1,6 @@
 # obp_python.StandingOrderApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -65,10 +65,10 @@ from obp_python.models.obpv400_create_standing_order_request import OBPv400Creat
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -97,7 +97,7 @@ with obp_python.ApiClient(configuration) as api_client:
     bankid = 'bankid_example' # str | The BANKID identifier
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
-    obpv400_create_standing_order_request = {"type":"object","properties":{"date_expires":{"type":"string","format":"date-time"},"date_starts":{"type":"string","format":"date-time"},"customer_id":{"type":"string"},"counterparty_id":{"type":"string"},"when":{"type":"object","properties":{"frequency":{"type":"string"},"detail":{"type":"string"}}},"date_signed":{"type":"string","format":"date-time"},"amount":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"user_id":{"type":"string"}}} # OBPv400CreateStandingOrderRequest | Request body
+    obpv400_create_standing_order_request = {"type":"object","properties":{"customer_id":{"type":"string"},"date_signed":{"type":"string","format":"date-time"},"counterparty_id":{"type":"string"},"date_expires":{"type":"string","format":"date-time"},"when":{"type":"object","properties":{"frequency":{"type":"string"},"detail":{"type":"string"}}},"date_starts":{"type":"string","format":"date-time"},"amount":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"user_id":{"type":"string"}}} # OBPv400CreateStandingOrderRequest | Request body
 
     try:
         # Create Standing Order
@@ -199,10 +199,10 @@ from obp_python.models.obpv400_create_standing_order_request import OBPv400Creat
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -230,7 +230,7 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.StandingOrderApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    obpv400_create_standing_order_request = {type=object, properties={date_expires={type=string, format=date-time}, date_starts={type=string, format=date-time}, customer_id={type=string}, counterparty_id={type=string}, when={type=object, properties={frequency={type=string}, detail={type=string}}}, date_signed={type=string, format=date-time}, amount={type=object, properties={currency={type=string}, amount={type=string}}}, user_id={type=string}}} # OBPv400CreateStandingOrderRequest | Request body
+    obpv400_create_standing_order_request = {type=object, properties={customer_id={type=string}, date_signed={type=string, format=date-time}, counterparty_id={type=string}, date_expires={type=string, format=date-time}, when={type=object, properties={frequency={type=string}, detail={type=string}}}, date_starts={type=string, format=date-time}, amount={type=object, properties={currency={type=string}, amount={type=string}}}, user_id={type=string}}} # OBPv400CreateStandingOrderRequest | Request body
 
     try:
         # Create Standing Order (management)

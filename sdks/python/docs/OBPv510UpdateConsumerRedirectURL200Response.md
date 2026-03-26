@@ -5,8 +5,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510UpdateConsumerRedirectURL200ResponseProperties**](OBPv510UpdateConsumerRedirectURL200ResponseProperties.md) |  | 
+**created_by_user_id** | **str** |  | [optional] 
+**app_type** | **str** |  | [optional] 
+**description** | **str** |  | [optional] 
+**created_by_user** | [**OBPv510UpdateConsumerName200ResponseCreatedByUser**](OBPv510UpdateConsumerName200ResponseCreatedByUser.md) |  | [optional] 
+**enabled** | **bool** |  | [optional] 
+**redirect_url** | **str** |  | [optional] 
+**developer_email** | **str** |  | [optional] 
+**consumer_id** | **int** |  | [optional] 
+**app_name** | **str** |  | [optional] 
+**created** | **datetime** |  | [optional] 
 
 ## Example
 

@@ -5,8 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400CreateStandingOrderRequestProperties**](OBPv400CreateStandingOrderRequestProperties.md) |  | 
+**date_starts** | **datetime** |  | [optional] 
+**customer_id** | **str** |  | [optional] 
+**date_signed** | **datetime** |  | [optional] 
+**user_id** | **str** |  | [optional] 
+**amount** | [**OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit**](OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit.md) |  | [optional] 
+**date_expires** | **datetime** |  | [optional] 
+**counterparty_id** | **str** |  | [optional] 
+**when** | [**OBPv400CreateStandingOrderRequestWhen**](OBPv400CreateStandingOrderRequestWhen.md) |  | [optional] 
 
 ## Example
 

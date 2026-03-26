@@ -5,8 +5,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310EnableDisableAccountWebhook200ResponseProperties**](OBPv310EnableDisableAccountWebhook200ResponseProperties.md) |  | 
+**created_by_user_id** | **str** |  | [optional] 
+**is_active** | **bool** |  | [optional] 
+**url** | **str** |  | [optional] 
+**trigger_name** | **str** |  | [optional] 
+**http_protocol** | **str** |  | [optional] 
+**account_webhook_id** | **str** |  | [optional] 
+**http_method** | **str** |  | [optional] 
+**bank_id** | **str** |  | [optional] 
+**account_id** | **str** |  | [optional] 
 
 ## Example
 

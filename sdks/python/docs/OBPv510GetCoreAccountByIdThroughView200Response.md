@@ -5,8 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510GetCoreAccountByIdThroughView200ResponseProperties**](OBPv510GetCoreAccountByIdThroughView200ResponseProperties.md) |  | 
+**number** | **str** |  | [optional] 
+**account_routings** | [**List[OBPv310GetCheckbookOrders200ResponseAccountAccountRoutingsInner]**](OBPv310GetCheckbookOrders200ResponseAccountAccountRoutingsInner.md) |  | [optional] 
+**label** | **str** |  | [optional] 
+**balance** | [**OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit**](OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit.md) |  | [optional] 
+**views_basic** | **List[str]** |  | [optional] 
+**product_code** | **str** |  | [optional] 
+**bank_id** | **str** |  | [optional] 
+**id** | **str** |  | [optional] 
 
 ## Example
 

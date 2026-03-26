@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv210_get_transaction_request_types_supported_by_bank200_response_properties import OBPv210GetTransactionRequestTypesSupportedByBank200ResponseProperties
+from pydantic import BaseModel, ConfigDict
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv210_get_transaction_request_types_supported_by_bank200_response_transaction_request_types_inner import OBPv210GetTransactionRequestTypesSupportedByBank200ResponseTransactionRequestTypesInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,8 @@ class OBPv210GetTransactionRequestTypesSupportedByBank200Response(BaseModel):
     """
     OBPv210GetTransactionRequestTypesSupportedByBank200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv210GetTransactionRequestTypesSupportedByBank200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    transaction_request_types: Optional[List[OBPv210GetTransactionRequestTypesSupportedByBank200ResponseTransactionRequestTypesInner]] = None
+    __properties: ClassVar[List[str]] = ["transaction_request_types"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +70,13 @@ class OBPv210GetTransactionRequestTypesSupportedByBank200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in transaction_request_types (list)
+        _items = []
+        if self.transaction_request_types:
+            for _item_transaction_request_types in self.transaction_request_types:
+                if _item_transaction_request_types:
+                    _items.append(_item_transaction_request_types.to_dict())
+            _dict['transaction_request_types'] = _items
         return _dict
 
     @classmethod
@@ -86,8 +89,7 @@ class OBPv210GetTransactionRequestTypesSupportedByBank200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv210GetTransactionRequestTypesSupportedByBank200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "transaction_request_types": [OBPv210GetTransactionRequestTypesSupportedByBank200ResponseTransactionRequestTypesInner.from_dict(_item) for _item in obj["transaction_request_types"]] if obj.get("transaction_request_types") is not None else None
         })
         return _obj
 

@@ -5,8 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400CreateTransactionRequestCounterpartyRequestProperties**](OBPv400CreateTransactionRequestCounterpartyRequestProperties.md) |  | 
+**description** | **str** |  | [optional] 
+**future_date** | **str** |  | [optional] 
+**attributes** | [**List[OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner]**](OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner.md) |  | [optional] 
+**to** | [**OBPv400CreateTransactionRequestCounterpartyRequestTo**](OBPv400CreateTransactionRequestCounterpartyRequestTo.md) |  | [optional] 
+**charge_policy** | **str** |  | [optional] 
+**value** | [**OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit**](OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit.md) |  | [optional] 
 
 ## Example
 

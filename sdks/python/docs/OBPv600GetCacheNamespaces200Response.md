@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetCacheNamespaces200ResponseProperties**](OBPv600GetCacheNamespaces200ResponseProperties.md) |  | 
+**namespaces** | [**List[OBPv600GetCacheNamespaces200ResponseNamespacesInner]**](OBPv600GetCacheNamespaces200ResponseNamespacesInner.md) |  | [optional] 
 
 ## Example
 

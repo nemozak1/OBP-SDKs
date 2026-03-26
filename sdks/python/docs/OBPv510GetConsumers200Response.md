@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510GetConsumers200ResponseProperties**](OBPv510GetConsumers200ResponseProperties.md) |  | 
+**consumers** | [**List[OBPv510UpdateConsumerName200Response]**](OBPv510UpdateConsumerName200Response.md) |  | [optional] 
 
 ## Example
 

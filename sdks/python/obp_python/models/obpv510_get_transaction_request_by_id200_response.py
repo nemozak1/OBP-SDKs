@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,13 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv510_get_transaction_request_by_id200_response_properties import OBPv510GetTransactionRequestById200ResponseProperties
+from datetime import datetime
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv400_create_transaction_request_counterparty200_response_charge import OBPv400CreateTransactionRequestCounterparty200ResponseCharge
+from obp_python.models.obpv400_create_transaction_request_counterparty200_response_details import OBPv400CreateTransactionRequestCounterparty200ResponseDetails
+from obp_python.models.obpv400_create_transaction_request_counterparty200_response_from import OBPv400CreateTransactionRequestCounterparty200ResponseFrom
+from obp_python.models.obpv510_get_transaction_request_by_id200_response_challenge import OBPv510GetTransactionRequestById200ResponseChallenge
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +32,17 @@ class OBPv510GetTransactionRequestById200Response(BaseModel):
     """
     OBPv510GetTransactionRequestById200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv510GetTransactionRequestById200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    challenge: Optional[OBPv510GetTransactionRequestById200ResponseChallenge] = None
+    start_date: Optional[datetime] = None
+    id: Optional[StrictStr] = None
+    end_date: Optional[datetime] = None
+    status: Optional[StrictStr] = None
+    var_from: Optional[OBPv400CreateTransactionRequestCounterparty200ResponseFrom] = Field(default=None, alias="from")
+    details: Optional[OBPv400CreateTransactionRequestCounterparty200ResponseDetails] = None
+    charge: Optional[OBPv400CreateTransactionRequestCounterparty200ResponseCharge] = None
+    type: Optional[StrictStr] = None
+    transaction_ids: Optional[List[StrictStr]] = None
+    __properties: ClassVar[List[str]] = ["challenge", "start_date", "id", "end_date", "status", "from", "details", "charge", "type", "transaction_ids"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +83,18 @@ class OBPv510GetTransactionRequestById200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of challenge
+        if self.challenge:
+            _dict['challenge'] = self.challenge.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of var_from
+        if self.var_from:
+            _dict['from'] = self.var_from.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of details
+        if self.details:
+            _dict['details'] = self.details.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of charge
+        if self.charge:
+            _dict['charge'] = self.charge.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +107,16 @@ class OBPv510GetTransactionRequestById200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "challenge": OBPv510GetTransactionRequestById200ResponseChallenge.from_dict(obj["challenge"]) if obj.get("challenge") is not None else None,
+            "start_date": obj.get("start_date"),
+            "id": obj.get("id"),
+            "end_date": obj.get("end_date"),
+            "status": obj.get("status"),
+            "from": OBPv400CreateTransactionRequestCounterparty200ResponseFrom.from_dict(obj["from"]) if obj.get("from") is not None else None,
+            "details": OBPv400CreateTransactionRequestCounterparty200ResponseDetails.from_dict(obj["details"]) if obj.get("details") is not None else None,
+            "charge": OBPv400CreateTransactionRequestCounterparty200ResponseCharge.from_dict(obj["charge"]) if obj.get("charge") is not None else None,
             "type": obj.get("type"),
-            "properties": OBPv510GetTransactionRequestById200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "transaction_ids": obj.get("transaction_ids")
         })
         return _obj
 

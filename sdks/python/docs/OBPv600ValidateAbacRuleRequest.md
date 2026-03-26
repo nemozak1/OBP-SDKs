@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600ValidateAbacRuleRequestProperties**](OBPv600ValidateAbacRuleRequestProperties.md) |  | 
+**rule_code** | **str** |  | [optional] 
 
 ## Example
 

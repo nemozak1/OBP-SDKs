@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv300GetPermissionForUserForBankAccount200ResponseProperties**](OBPv300GetPermissionForUserForBankAccount200ResponseProperties.md) |  | 
+**views** | [**List[OBPv510CreateUserWithAccountAccessById200ResponseHead]**](OBPv510CreateUserWithAccountAccessById200ResponseHead.md) |  | [optional] 
 
 ## Example
 

@@ -5,8 +5,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600RejectAccountAccessRequest200ResponseProperties**](OBPv600RejectAccountAccessRequest200ResponseProperties.md) |  | 
+**requestor_user_id** | **str** |  | [optional] 
+**is_system_view** | **bool** |  | [optional] 
+**checker_user_id** | **str** |  | [optional] 
+**business_justification** | **str** |  | [optional] 
+**view_id** | **str** |  | [optional] 
+**bank_id** | **str** |  | [optional] 
+**account_id** | **str** |  | [optional] 
+**updated** | **datetime** |  | [optional] 
+**status** | **str** |  | [optional] 
+**target_user_id** | **str** |  | [optional] 
+**account_access_request_id** | **str** |  | [optional] 
+**created** | **datetime** |  | [optional] 
+**checker_comment** | **str** |  | [optional] 
 
 ## Example
 

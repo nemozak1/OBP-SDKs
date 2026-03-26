@@ -5,8 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310GetCallsLimit200ResponseProperties**](OBPv310GetCallsLimit200ResponseProperties.md) |  | 
+**current_state** | [**OBPv310GetCallsLimit200ResponseCurrentState**](OBPv310GetCallsLimit200ResponseCurrentState.md) |  | [optional] 
+**per_month_call_limit** | **str** |  | [optional] 
+**per_week_call_limit** | **str** |  | [optional] 
+**per_hour_call_limit** | **str** |  | [optional] 
+**per_second_call_limit** | **str** |  | [optional] 
+**per_minute_call_limit** | **str** |  | [optional] 
+**per_day_call_limit** | **str** |  | [optional] 
 
 ## Example
 

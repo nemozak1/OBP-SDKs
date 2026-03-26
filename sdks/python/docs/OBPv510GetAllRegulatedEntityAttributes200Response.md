@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510GetAllRegulatedEntityAttributes200ResponseProperties**](OBPv510GetAllRegulatedEntityAttributes200ResponseProperties.md) |  | 
+**attributes** | [**List[OBPv510GetRegulatedEntityAttributeById200Response]**](OBPv510GetRegulatedEntityAttributeById200Response.md) |  | [optional] 
 
 ## Example
 

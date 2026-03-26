@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600PublishSignalMessageRequestProperties**](OBPv600PublishSignalMessageRequestProperties.md) |  | 
+**message_type** | **str** |  | [optional] 
+**payload** | [**OBPv600GetSignalMessages200ResponseMessagesInnerPayload**](OBPv600GetSignalMessages200ResponseMessagesInnerPayload.md) |  | [optional] 
 
 ## Example
 

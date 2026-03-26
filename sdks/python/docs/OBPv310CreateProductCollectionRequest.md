@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310CreateProductCollectionRequestProperties**](OBPv310CreateProductCollectionRequestProperties.md) |  | 
+**parent_product_code** | **str** |  | [optional] 
+**children_product_codes** | **List[str]** |  | [optional] 
 
 ## Example
 

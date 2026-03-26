@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310UpdateCustomerBranchRequestProperties**](OBPv310UpdateCustomerBranchRequestProperties.md) |  | 
+**branch_id** | **str** |  | [optional] 
 
 ## Example
 

@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv300GetOtherAccountsForBankAccount200ResponseProperties**](OBPv300GetOtherAccountsForBankAccount200ResponseProperties.md) |  | 
+**other_accounts** | [**List[OBPv310GetTransactionByIdForBankAccount200ResponseOtherAccount]**](OBPv310GetTransactionByIdForBankAccount200ResponseOtherAccount.md) |  | [optional] 
 
 ## Example
 

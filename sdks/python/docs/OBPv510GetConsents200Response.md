@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510GetConsents200ResponseProperties**](OBPv510GetConsents200ResponseProperties.md) |  | 
+**number_of_rows** | **int** |  | [optional] 
+**consents** | [**List[OBPv510GetConsents200ResponseConsentsInner]**](OBPv510GetConsents200ResponseConsentsInner.md) |  | [optional] 
 
 ## Example
 

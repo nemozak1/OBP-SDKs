@@ -1,6 +1,6 @@
 # obp_python.BalanceApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **o_bpv5_1_0_create_bank_account_balance**
-> OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems o_bpv5_1_0_create_bank_account_balance(bankid, accountid, obpv510_create_bank_account_balance_request)
+> OBPv510GetAllBankAccountBalances200ResponseBalancesInner o_bpv5_1_0_create_bank_account_balance(bankid, accountid, obpv510_create_bank_account_balance_request)
 
 Create Bank Account Balance
 
@@ -41,14 +41,14 @@ Create Bank Account Balance
 ```python
 import obp_python
 from obp_python.models.obpv510_create_bank_account_balance_request import OBPv510CreateBankAccountBalanceRequest
-from obp_python.models.obpv510_get_all_bank_account_balances200_response_properties_balances_items import OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
+from obp_python.models.obpv510_get_all_bank_account_balances200_response_balances_inner import OBPv510GetAllBankAccountBalances200ResponseBalancesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems**](OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)
+[**OBPv510GetAllBankAccountBalances200ResponseBalancesInner**](OBPv510GetAllBankAccountBalances200ResponseBalancesInner.md)
 
 ### Authorization
 
@@ -145,10 +145,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -249,10 +249,10 @@ from obp_python.models.obpv510_get_all_bank_account_balances200_response import 
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv5_1_0_get_bank_account_balance_by_id**
-> OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems o_bpv5_1_0_get_bank_account_balance_by_id(bankid, accountid, balanceid)
+> OBPv510GetAllBankAccountBalances200ResponseBalancesInner o_bpv5_1_0_get_bank_account_balance_by_id(bankid, accountid, balanceid)
 
 Get Bank Account Balance By ID
 
@@ -349,14 +349,14 @@ Get Bank Account Balance By ID
 
 ```python
 import obp_python
-from obp_python.models.obpv510_get_all_bank_account_balances200_response_properties_balances_items import OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
+from obp_python.models.obpv510_get_all_bank_account_balances200_response_balances_inner import OBPv510GetAllBankAccountBalances200ResponseBalancesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -408,7 +408,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems**](OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)
+[**OBPv510GetAllBankAccountBalances200ResponseBalancesInner**](OBPv510GetAllBankAccountBalances200ResponseBalancesInner.md)
 
 ### Authorization
 
@@ -429,7 +429,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv5_1_0_update_bank_account_balance**
-> OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems o_bpv5_1_0_update_bank_account_balance(bankid, accountid, balanceid, obpv510_create_bank_account_balance_request)
+> OBPv510GetAllBankAccountBalances200ResponseBalancesInner o_bpv5_1_0_update_bank_account_balance(bankid, accountid, balanceid, obpv510_create_bank_account_balance_request)
 
 Update Bank Account Balance
 
@@ -456,14 +456,14 @@ Update Bank Account Balance
 ```python
 import obp_python
 from obp_python.models.obpv510_create_bank_account_balance_request import OBPv510CreateBankAccountBalanceRequest
-from obp_python.models.obpv510_get_all_bank_account_balances200_response_properties_balances_items import OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
+from obp_python.models.obpv510_get_all_bank_account_balances200_response_balances_inner import OBPv510GetAllBankAccountBalances200ResponseBalancesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -517,7 +517,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems**](OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)
+[**OBPv510GetAllBankAccountBalances200ResponseBalancesInner**](OBPv510GetAllBankAccountBalances200ResponseBalancesInner.md)
 
 ### Authorization
 

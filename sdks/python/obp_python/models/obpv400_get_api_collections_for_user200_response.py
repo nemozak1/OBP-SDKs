@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv400_get_api_collections_for_user200_response_properties import OBPv400GetApiCollectionsForUser200ResponseProperties
+from pydantic import BaseModel, ConfigDict
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv400_get_api_collections_for_user200_response_api_collections_inner import OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,8 @@ class OBPv400GetApiCollectionsForUser200Response(BaseModel):
     """
     OBPv400GetApiCollectionsForUser200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv400GetApiCollectionsForUser200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    api_collections: Optional[List[OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner]] = None
+    __properties: ClassVar[List[str]] = ["api_collections"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +70,13 @@ class OBPv400GetApiCollectionsForUser200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in api_collections (list)
+        _items = []
+        if self.api_collections:
+            for _item_api_collections in self.api_collections:
+                if _item_api_collections:
+                    _items.append(_item_api_collections.to_dict())
+            _dict['api_collections'] = _items
         return _dict
 
     @classmethod
@@ -86,8 +89,7 @@ class OBPv400GetApiCollectionsForUser200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv400GetApiCollectionsForUser200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "api_collections": [OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner.from_dict(_item) for _item in obj["api_collections"]] if obj.get("api_collections") is not None else None
         })
         return _obj
 

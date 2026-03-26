@@ -1,6 +1,6 @@
 # obp_python.DynamicEndpointManageApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 
 # **o_bpv4_0_0_create_bank_level_dynamic_endpoint**
-> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems o_bpv4_0_0_create_bank_level_dynamic_endpoint(bankid, obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string)
+> OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner o_bpv4_0_0_create_bank_level_dynamic_endpoint(bankid, obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string)
 
 Create Bank Level Dynamic Endpoint
 
@@ -40,15 +40,15 @@ please check <code>Endpoint Mapping</code> endpoints.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items import OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
-from obp_python.models.obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string import OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString
+from obp_python.models.obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner import OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner
+from obp_python.models.obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string import OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -75,11 +75,11 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.DynamicEndpointManageApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
-    obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string = {type=object, properties={swagger={type=string}, paths={type=object, properties={/accounts={type=object, properties={post={type=object, properties={responses={type=object, properties={201={type=object, properties={description={type=string}, schema={type=object, properties={$ref={type=string}}}}}}}, consumes={type=array, items={type=object, properties={s={type=string}}}}, operationId={type=string}, summary={type=string}, description={type=string}, produces={type=array, items={type=object, properties={s={type=string}}}}}}}}, /accounts/{account_id}={type=object, properties={get={type=object, properties={description={type=string}, consumes={type=array, items={type=object, properties={s={type=string}}}}, operationId={type=string}, responses={type=object, properties={200={type=object, properties={description={type=string}, schema={type=object, properties={$ref={type=string}}}}}}}, summary={type=string}, produces={type=array, items={type=object, properties={s={type=string}}}}}}}}}}, info={type=object, properties={title={type=string}, version={type=string}}}, definitions={type=object, properties={AccountName={type=object, properties={type={type=string}, properties={type=object, properties={name={type=object, properties={type={type=string}, example={type=string}}}, balance={type=object, properties={type={type=string}, format={type=string}, example={type=number}}}}}}}}}, schemes={type=array, items={type=object, properties={s={type=string}}}}, host={type=string}}} # OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString | Request body
+    obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string = {type=object, properties={swagger={type=string}, paths={type=object, properties={/accounts={type=object, properties={post={type=object, properties={responses={type=object, properties={201={type=object, properties={description={type=string}, schema={type=object, properties={$ref={type=string}}}}}}}, consumes={type=array, items={type=object, properties={s={type=string}}}}, operationId={type=string}, summary={type=string}, description={type=string}, produces={type=array, items={type=object, properties={s={type=string}}}}}}}}, /accounts/{account_id}={type=object, properties={get={type=object, properties={description={type=string}, consumes={type=array, items={type=object, properties={s={type=string}}}}, operationId={type=string}, responses={type=object, properties={200={type=object, properties={description={type=string}, schema={type=object, properties={$ref={type=string}}}}}}}, summary={type=string}, produces={type=array, items={type=object, properties={s={type=string}}}}}}}}}}, info={type=object, properties={title={type=string}, version={type=string}}}, definitions={type=object, properties={AccountName={type=object, properties={type={type=string}, properties={type=object, properties={name={type=object, properties={type={type=string}, example={type=string}}}, balance={type=object, properties={type={type=string}, format={type=string}, example={type=number}}}}}}}}}, schemes={type=array, items={type=object, properties={s={type=string}}}}, host={type=string}}} # OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString | Request body
 
     try:
         # Create Bank Level Dynamic Endpoint
-        api_response = api_instance.o_bpv4_0_0_create_bank_level_dynamic_endpoint(bankid, obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string)
+        api_response = api_instance.o_bpv4_0_0_create_bank_level_dynamic_endpoint(bankid, obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string)
         print("The response of DynamicEndpointManageApi->o_bpv4_0_0_create_bank_level_dynamic_endpoint:\n")
         pprint(api_response)
     except Exception as e:
@@ -94,11 +94,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
- **obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string** | [**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString.md)| Request body | 
+ **obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string** | [**OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString**](OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
+[**OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner**](OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
 
 ### Authorization
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_create_dynamic_endpoint**
-> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems o_bpv4_0_0_create_dynamic_endpoint(obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string)
+> OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner o_bpv4_0_0_create_dynamic_endpoint(obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string)
 
 Create Dynamic Endpoint
 
@@ -141,15 +141,15 @@ please check <code>Endpoint Mapping</code> endpoints.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items import OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
-from obp_python.models.obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string import OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString
+from obp_python.models.obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner import OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner
+from obp_python.models.obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string import OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -175,11 +175,11 @@ configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
 with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.DynamicEndpointManageApi(api_client)
-    obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string = {"type":"object","properties":{"swagger":{"type":"string"},"paths":{"type":"object","properties":{"/accounts":{"type":"object","properties":{"post":{"type":"object","properties":{"responses":{"type":"object","properties":{"201":{"type":"object","properties":{"description":{"type":"string"},"schema":{"type":"object","properties":{"$ref":{"type":"string"}}}}}}},"consumes":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"operationId":{"type":"string"},"summary":{"type":"string"},"description":{"type":"string"},"produces":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}}}},"/accounts/{account_id}":{"type":"object","properties":{"get":{"type":"object","properties":{"description":{"type":"string"},"consumes":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"operationId":{"type":"string"},"responses":{"type":"object","properties":{"200":{"type":"object","properties":{"description":{"type":"string"},"schema":{"type":"object","properties":{"$ref":{"type":"string"}}}}}}},"summary":{"type":"string"},"produces":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}}}}}},"info":{"type":"object","properties":{"title":{"type":"string"},"version":{"type":"string"}}},"definitions":{"type":"object","properties":{"AccountName":{"type":"object","properties":{"type":{"type":"string"},"properties":{"type":"object","properties":{"name":{"type":"object","properties":{"type":{"type":"string"},"example":{"type":"string"}}},"balance":{"type":"object","properties":{"type":{"type":"string"},"format":{"type":"string"},"example":{"type":"number"}}}}}}}}},"schemes":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"host":{"type":"string"}}} # OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString | Request body
+    obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string = {"type":"object","properties":{"swagger":{"type":"string"},"paths":{"type":"object","properties":{"/accounts":{"type":"object","properties":{"post":{"type":"object","properties":{"responses":{"type":"object","properties":{"201":{"type":"object","properties":{"description":{"type":"string"},"schema":{"type":"object","properties":{"$ref":{"type":"string"}}}}}}},"consumes":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"operationId":{"type":"string"},"summary":{"type":"string"},"description":{"type":"string"},"produces":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}}}},"/accounts/{account_id}":{"type":"object","properties":{"get":{"type":"object","properties":{"description":{"type":"string"},"consumes":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"operationId":{"type":"string"},"responses":{"type":"object","properties":{"200":{"type":"object","properties":{"description":{"type":"string"},"schema":{"type":"object","properties":{"$ref":{"type":"string"}}}}}}},"summary":{"type":"string"},"produces":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}}}}}},"info":{"type":"object","properties":{"title":{"type":"string"},"version":{"type":"string"}}},"definitions":{"type":"object","properties":{"AccountName":{"type":"object","properties":{"type":{"type":"string"},"properties":{"type":"object","properties":{"name":{"type":"object","properties":{"type":{"type":"string"},"example":{"type":"string"}}},"balance":{"type":"object","properties":{"type":{"type":"string"},"format":{"type":"string"},"example":{"type":"number"}}}}}}}}},"schemes":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"host":{"type":"string"}}} # OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString | Request body
 
     try:
         # Create Dynamic Endpoint
-        api_response = api_instance.o_bpv4_0_0_create_dynamic_endpoint(obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string)
+        api_response = api_instance.o_bpv4_0_0_create_dynamic_endpoint(obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string)
         print("The response of DynamicEndpointManageApi->o_bpv4_0_0_create_dynamic_endpoint:\n")
         pprint(api_response)
     except Exception as e:
@@ -193,11 +193,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string** | [**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString.md)| Request body | 
+ **obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string** | [**OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString**](OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
+[**OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner**](OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
 
 ### Authorization
 
@@ -237,10 +237,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -329,10 +329,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -419,10 +419,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -490,7 +490,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_get_bank_level_dynamic_endpoint**
-> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems o_bpv4_0_0_get_bank_level_dynamic_endpoint(bankid, dynamicendpointid)
+> OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner o_bpv4_0_0_get_bank_level_dynamic_endpoint(bankid, dynamicendpointid)
 
  Get Bank Level Dynamic Endpoint
 
@@ -506,14 +506,14 @@ void (empty response body)
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items import OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
+from obp_python.models.obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner import OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -563,7 +563,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
+[**OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner**](OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
 
 ### Authorization
 
@@ -605,10 +605,10 @@ from obp_python.models.obpv400_get_dynamic_endpoints200_response import OBPv400G
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -678,7 +678,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_get_dynamic_endpoint**
-> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems o_bpv4_0_0_get_dynamic_endpoint(dynamicendpointid)
+> OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner o_bpv4_0_0_get_dynamic_endpoint(dynamicendpointid)
 
 Get Dynamic Endpoint
 
@@ -695,14 +695,14 @@ Get Dynamic Endpoint
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items import OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
+from obp_python.models.obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner import OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -750,7 +750,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
+[**OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner**](OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
 
 ### Authorization
 
@@ -792,10 +792,10 @@ from obp_python.models.obpv400_get_dynamic_endpoints200_response import OBPv400G
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -880,10 +880,10 @@ from obp_python.models.obpv400_get_dynamic_endpoints200_response import OBPv400G
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -969,10 +969,10 @@ from obp_python.models.obpv400_update_bank_level_dynamic_endpoint_host_request i
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1067,10 +1067,10 @@ from obp_python.models.obpv400_update_bank_level_dynamic_endpoint_host_request i
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters

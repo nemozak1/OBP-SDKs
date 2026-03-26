@@ -5,8 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510GetRegulatedEntityAttributeById200ResponseProperties**](OBPv510GetRegulatedEntityAttributeById200ResponseProperties.md) |  | 
+**name** | **str** |  | [optional] 
+**is_active** | **bool** |  | [optional] 
+**attribute_type** | **str** |  | [optional] 
+**regulated_entity_id** | **str** |  | [optional] 
+**value** | **str** |  | [optional] 
+**regulated_entity_attribute_id** | **str** |  | [optional] 
 
 ## Example
 

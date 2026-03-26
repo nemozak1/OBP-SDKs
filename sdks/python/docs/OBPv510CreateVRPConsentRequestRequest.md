@@ -5,8 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510CreateVRPConsentRequestRequestProperties**](OBPv510CreateVRPConsentRequestRequestProperties.md) |  | 
+**phone_number** | **str** |  | [optional] 
+**time_to_live** | **int** |  | [optional] 
+**email** | **str** |  | [optional] 
+**from_account** | [**OBPv510CreateVRPConsentRequestRequestFromAccount**](OBPv510CreateVRPConsentRequestRequestFromAccount.md) |  | [optional] 
+**valid_from** | **datetime** |  | [optional] 
+**to_account** | [**OBPv510CreateVRPConsentRequestRequestToAccount**](OBPv510CreateVRPConsentRequestRequestToAccount.md) |  | [optional] 
 
 ## Example
 

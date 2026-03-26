@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -19,8 +19,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv400_update_system_level_endpoint_tag200_response_properties import OBPv400UpdateSystemLevelEndpointTag200ResponseProperties
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +27,11 @@ class OBPv400UpdateSystemLevelEndpointTag200Response(BaseModel):
     """
     OBPv400UpdateSystemLevelEndpointTag200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv400UpdateSystemLevelEndpointTag200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    operation_id: Optional[StrictStr] = None
+    tag_name: Optional[StrictStr] = None
+    bank_id: Optional[StrictStr] = None
+    endpoint_tag_id: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["operation_id", "tag_name", "bank_id", "endpoint_tag_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +72,6 @@ class OBPv400UpdateSystemLevelEndpointTag200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +84,10 @@ class OBPv400UpdateSystemLevelEndpointTag200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv400UpdateSystemLevelEndpointTag200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "operation_id": obj.get("operation_id"),
+            "tag_name": obj.get("tag_name"),
+            "bank_id": obj.get("bank_id"),
+            "endpoint_tag_id": obj.get("endpoint_tag_id")
         })
         return _obj
 

@@ -5,8 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510CreateAgentRequestProperties**](OBPv510CreateAgentRequestProperties.md) |  | 
+**currency** | **str** |  | [optional] 
+**legal_name** | **str** |  | [optional] 
+**agent_number** | **str** |  | [optional] 
+**mobile_phone_number** | **str** |  | [optional] 
 
 ## Example
 

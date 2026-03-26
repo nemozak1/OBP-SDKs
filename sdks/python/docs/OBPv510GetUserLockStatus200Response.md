@@ -5,8 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510GetUserLockStatus200ResponseProperties**](OBPv510GetUserLockStatus200ResponseProperties.md) |  | 
+**bad_attempts_since_last_success_or_reset** | **int** |  | [optional] 
+**last_failure_date** | **datetime** |  | [optional] 
+**username** | **str** |  | [optional] 
 
 ## Example
 

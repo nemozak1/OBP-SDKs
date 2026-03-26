@@ -1,7 +1,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -19,7 +19,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
 from obp_python.models.obpv400_get_all_authentication_type_validations_public200_response import OBPv400GetAllAuthenticationTypeValidationsPublic200Response
-from obp_python.models.obpv400_get_all_authentication_type_validations_public200_response_properties_authentication_types_validations_items import OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems
+from obp_python.models.obpv400_get_all_authentication_type_validations_public200_response_authentication_types_validations_inner import OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
 from obp_python.models.obpv400_update_authentication_type_validation_request import OBPv400UpdateAuthenticationTypeValidationRequest
 
 from obp_python.api_client import ApiClient, RequestSerialized
@@ -57,7 +57,7 @@ class AuthenticationTypeValidationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems:
+    ) -> OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner:
         """Create an Authentication Type Validation
 
         <p>Create an Authentication Type Validation.</p> <p>Please supply allowed authentication types.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON request body fields:</strong></p> <p><strong>JSON response body fields:</strong></p> 
@@ -98,7 +98,7 @@ class AuthenticationTypeValidationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems",
+            '200': "OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -129,7 +129,7 @@ class AuthenticationTypeValidationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems]:
+    ) -> ApiResponse[OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner]:
         """Create an Authentication Type Validation
 
         <p>Create an Authentication Type Validation.</p> <p>Please supply allowed authentication types.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON request body fields:</strong></p> <p><strong>JSON response body fields:</strong></p> 
@@ -170,7 +170,7 @@ class AuthenticationTypeValidationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems",
+            '200': "OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -242,7 +242,7 @@ class AuthenticationTypeValidationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems",
+            '200': "OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1108,7 +1108,7 @@ class AuthenticationTypeValidationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems:
+    ) -> OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner:
         """Get an Authentication Type Validation
 
         <p>Get an Authentication Type Validation by operation_id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
@@ -1146,7 +1146,7 @@ class AuthenticationTypeValidationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems",
+            '200': "OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1176,7 +1176,7 @@ class AuthenticationTypeValidationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems]:
+    ) -> ApiResponse[OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner]:
         """Get an Authentication Type Validation
 
         <p>Get an Authentication Type Validation by operation_id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
@@ -1214,7 +1214,7 @@ class AuthenticationTypeValidationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems",
+            '200': "OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1282,7 +1282,7 @@ class AuthenticationTypeValidationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems",
+            '200': "OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1375,7 +1375,7 @@ class AuthenticationTypeValidationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems:
+    ) -> OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner:
         """Update an Authentication Type Validation
 
         <p>Update an Authentication Type Validation.</p> <p>Please supply allowed authentication types.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
@@ -1416,7 +1416,7 @@ class AuthenticationTypeValidationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems",
+            '200': "OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1447,7 +1447,7 @@ class AuthenticationTypeValidationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems]:
+    ) -> ApiResponse[OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner]:
         """Update an Authentication Type Validation
 
         <p>Update an Authentication Type Validation.</p> <p>Please supply allowed authentication types.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
@@ -1488,7 +1488,7 @@ class AuthenticationTypeValidationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems",
+            '200': "OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1560,7 +1560,7 @@ class AuthenticationTypeValidationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems",
+            '200': "OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(

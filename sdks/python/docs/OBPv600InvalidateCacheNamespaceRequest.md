@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600InvalidateCacheNamespaceRequestProperties**](OBPv600InvalidateCacheNamespaceRequestProperties.md) |  | 
+**namespace_id** | **str** |  | [optional] 
 
 ## Example
 

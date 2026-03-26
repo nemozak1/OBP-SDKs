@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv121_get_other_account_metadata200_response_properties import OBPv121GetOtherAccountMetadata200ResponseProperties
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv121_get_other_account_metadata200_response_physical_location import OBPv121GetOtherAccountMetadata200ResponsePhysicalLocation
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,15 @@ class OBPv121GetOtherAccountMetadata200Response(BaseModel):
     """
     OBPv121GetOtherAccountMetadata200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv121GetOtherAccountMetadata200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    public_alias: Optional[StrictStr] = None
+    image_url: Optional[StrictStr] = Field(default=None, alias="image_URL")
+    physical_location: Optional[OBPv121GetOtherAccountMetadata200ResponsePhysicalLocation] = None
+    private_alias: Optional[StrictStr] = None
+    url: Optional[StrictStr] = Field(default=None, alias="URL")
+    more_info: Optional[StrictStr] = None
+    corporate_location: Optional[OBPv121GetOtherAccountMetadata200ResponsePhysicalLocation] = None
+    open_corporates_url: Optional[StrictStr] = Field(default=None, alias="open_corporates_URL")
+    __properties: ClassVar[List[str]] = ["public_alias", "image_URL", "physical_location", "private_alias", "URL", "more_info", "corporate_location", "open_corporates_URL"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +77,12 @@ class OBPv121GetOtherAccountMetadata200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of physical_location
+        if self.physical_location:
+            _dict['physical_location'] = self.physical_location.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of corporate_location
+        if self.corporate_location:
+            _dict['corporate_location'] = self.corporate_location.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +95,14 @@ class OBPv121GetOtherAccountMetadata200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv121GetOtherAccountMetadata200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "public_alias": obj.get("public_alias"),
+            "image_URL": obj.get("image_URL"),
+            "physical_location": OBPv121GetOtherAccountMetadata200ResponsePhysicalLocation.from_dict(obj["physical_location"]) if obj.get("physical_location") is not None else None,
+            "private_alias": obj.get("private_alias"),
+            "URL": obj.get("URL"),
+            "more_info": obj.get("more_info"),
+            "corporate_location": OBPv121GetOtherAccountMetadata200ResponsePhysicalLocation.from_dict(obj["corporate_location"]) if obj.get("corporate_location") is not None else None,
+            "open_corporates_URL": obj.get("open_corporates_URL")
         })
         return _obj
 

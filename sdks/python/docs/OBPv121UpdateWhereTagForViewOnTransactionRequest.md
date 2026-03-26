@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv121UpdateWhereTagForViewOnTransactionRequestProperties**](OBPv121UpdateWhereTagForViewOnTransactionRequestProperties.md) |  | 
+**where** | [**OBPv300GetBranches200ResponseBranchesInnerLocation**](OBPv300GetBranches200ResponseBranchesInnerLocation.md) |  | [optional] 
 
 ## Example
 

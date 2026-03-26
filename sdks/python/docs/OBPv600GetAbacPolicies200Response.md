@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetAbacPolicies200ResponseProperties**](OBPv600GetAbacPolicies200ResponseProperties.md) |  | 
+**policies** | [**List[OBPv600GetAbacPolicies200ResponsePoliciesInner]**](OBPv600GetAbacPolicies200ResponsePoliciesInner.md) |  | [optional] 
 
 ## Example
 

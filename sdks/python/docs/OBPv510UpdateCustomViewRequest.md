@@ -5,8 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510UpdateCustomViewRequestProperties**](OBPv510UpdateCustomViewRequestProperties.md) |  | 
+**description** | **str** |  | [optional] 
+**allowed_permissions** | **List[str]** |  | [optional] 
+**is_public** | **bool** |  | [optional] 
+**hide_metadata_if_alias_used** | **bool** |  | [optional] 
+**which_alias_to_use** | **str** |  | [optional] 
+**metadata_view** | **str** |  | [optional] 
 
 ## Example
 

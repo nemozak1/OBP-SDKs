@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400BuildDynamicEndpointTemplate200ResponseProperties**](OBPv400BuildDynamicEndpointTemplate200ResponseProperties.md) |  | 
+**code** | **str** |  | [optional] 
 
 ## Example
 

@@ -5,8 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600CreateTransactionRequestCardanoRequestProperties**](OBPv600CreateTransactionRequestCardanoRequestProperties.md) |  | 
+**passphrase** | **str** |  | [optional] 
+**description** | **str** |  | [optional] 
+**to** | [**OBPv600CreateTransactionRequestCardanoRequestTo**](OBPv600CreateTransactionRequestCardanoRequestTo.md) |  | [optional] 
+**metadata** | [**OBPv600CreateTransactionRequestCardanoRequestMetadata**](OBPv600CreateTransactionRequestCardanoRequestMetadata.md) |  | [optional] 
+**value** | [**OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit**](OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit.md) |  | [optional] 
 
 ## Example
 

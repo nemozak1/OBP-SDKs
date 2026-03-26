@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv510_get_atm_attribute200_response_properties import OBPv510GetAtmAttribute200ResponseProperties
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +27,14 @@ class OBPv510GetAtmAttribute200Response(BaseModel):
     """
     OBPv510GetAtmAttribute200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv510GetAtmAttribute200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    name: Optional[StrictStr] = None
+    is_active: Optional[StrictBool] = None
+    atm_id: Optional[StrictStr] = None
+    bank_id: Optional[StrictStr] = None
+    type: Optional[StrictStr] = None
+    atm_attribute_id: Optional[StrictStr] = None
+    value: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["name", "is_active", "atm_id", "bank_id", "type", "atm_attribute_id", "value"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +75,6 @@ class OBPv510GetAtmAttribute200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +87,13 @@ class OBPv510GetAtmAttribute200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "name": obj.get("name"),
+            "is_active": obj.get("is_active"),
+            "atm_id": obj.get("atm_id"),
+            "bank_id": obj.get("bank_id"),
             "type": obj.get("type"),
-            "properties": OBPv510GetAtmAttribute200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "atm_attribute_id": obj.get("atm_attribute_id"),
+            "value": obj.get("value")
         })
         return _obj
 

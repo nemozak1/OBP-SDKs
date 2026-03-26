@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv600_get_scanned_api_versions200_response_properties import OBPv600GetScannedApiVersions200ResponseProperties
+from pydantic import BaseModel, ConfigDict
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv600_get_scanned_api_versions200_response_scanned_api_versions_inner import OBPv600GetScannedApiVersions200ResponseScannedApiVersionsInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,8 @@ class OBPv600GetScannedApiVersions200Response(BaseModel):
     """
     OBPv600GetScannedApiVersions200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv600GetScannedApiVersions200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    scanned_api_versions: Optional[List[OBPv600GetScannedApiVersions200ResponseScannedApiVersionsInner]] = None
+    __properties: ClassVar[List[str]] = ["scanned_api_versions"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +70,13 @@ class OBPv600GetScannedApiVersions200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in scanned_api_versions (list)
+        _items = []
+        if self.scanned_api_versions:
+            for _item_scanned_api_versions in self.scanned_api_versions:
+                if _item_scanned_api_versions:
+                    _items.append(_item_scanned_api_versions.to_dict())
+            _dict['scanned_api_versions'] = _items
         return _dict
 
     @classmethod
@@ -86,8 +89,7 @@ class OBPv600GetScannedApiVersions200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv600GetScannedApiVersions200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "scanned_api_versions": [OBPv600GetScannedApiVersions200ResponseScannedApiVersionsInner.from_dict(_item) for _item in obj["scanned_api_versions"]] if obj.get("scanned_api_versions") is not None else None
         })
         return _obj
 

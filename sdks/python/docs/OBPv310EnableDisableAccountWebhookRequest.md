@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310EnableDisableAccountWebhookRequestProperties**](OBPv310EnableDisableAccountWebhookRequestProperties.md) |  | 
+**account_webhook_id** | **str** |  | [optional] 
+**is_active** | **str** |  | [optional] 
 
 ## Example
 

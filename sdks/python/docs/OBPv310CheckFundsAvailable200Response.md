@@ -5,8 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310CheckFundsAvailable200ResponseProperties**](OBPv310CheckFundsAvailable200ResponseProperties.md) |  | 
+**var_date** | **datetime** |  | [optional] 
+**available_funds_request_id** | **str** |  | [optional] 
+**answer** | **str** |  | [optional] 
 
 ## Example
 

@@ -5,8 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310UpdateAccountAttributeRequestProperties**](OBPv310UpdateAccountAttributeRequestProperties.md) |  | 
+**value** | **str** |  | [optional] 
+**product_instance_code** | **str** |  | [optional] 
+**type** | **str** |  | [optional] 
+**name** | **str** |  | [optional] 
 
 ## Example
 

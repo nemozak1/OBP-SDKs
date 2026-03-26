@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -19,8 +19,9 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv510_get_regulated_entity_by_id200_response_properties import OBPv510GetRegulatedEntityById200ResponseProperties
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv510_get_regulated_entity_by_id200_response_attributes_inner import OBPv510GetRegulatedEntityById200ResponseAttributesInner
+from obp_python.models.obpv510_get_regulated_entity_by_id200_response_services_inner import OBPv510GetRegulatedEntityById200ResponseServicesInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +29,20 @@ class OBPv510GetRegulatedEntityById200Response(BaseModel):
     """
     OBPv510GetRegulatedEntityById200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv510GetRegulatedEntityById200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    services: Optional[List[OBPv510GetRegulatedEntityById200ResponseServicesInner]] = None
+    entity_code: Optional[StrictStr] = None
+    entity_web_site: Optional[StrictStr] = None
+    entity_country: Optional[StrictStr] = None
+    entity_certificate_public_key: Optional[StrictStr] = None
+    entity_type: Optional[StrictStr] = None
+    attributes: Optional[List[OBPv510GetRegulatedEntityById200ResponseAttributesInner]] = None
+    entity_post_code: Optional[StrictStr] = None
+    entity_name: Optional[StrictStr] = None
+    entity_town_city: Optional[StrictStr] = None
+    entity_address: Optional[StrictStr] = None
+    entity_id: Optional[StrictStr] = None
+    certificate_authority_ca_owner_id: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["services", "entity_code", "entity_web_site", "entity_country", "entity_certificate_public_key", "entity_type", "attributes", "entity_post_code", "entity_name", "entity_town_city", "entity_address", "entity_id", "certificate_authority_ca_owner_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +83,20 @@ class OBPv510GetRegulatedEntityById200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in services (list)
+        _items = []
+        if self.services:
+            for _item_services in self.services:
+                if _item_services:
+                    _items.append(_item_services.to_dict())
+            _dict['services'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in attributes (list)
+        _items = []
+        if self.attributes:
+            for _item_attributes in self.attributes:
+                if _item_attributes:
+                    _items.append(_item_attributes.to_dict())
+            _dict['attributes'] = _items
         return _dict
 
     @classmethod
@@ -86,8 +109,19 @@ class OBPv510GetRegulatedEntityById200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv510GetRegulatedEntityById200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "services": [OBPv510GetRegulatedEntityById200ResponseServicesInner.from_dict(_item) for _item in obj["services"]] if obj.get("services") is not None else None,
+            "entity_code": obj.get("entity_code"),
+            "entity_web_site": obj.get("entity_web_site"),
+            "entity_country": obj.get("entity_country"),
+            "entity_certificate_public_key": obj.get("entity_certificate_public_key"),
+            "entity_type": obj.get("entity_type"),
+            "attributes": [OBPv510GetRegulatedEntityById200ResponseAttributesInner.from_dict(_item) for _item in obj["attributes"]] if obj.get("attributes") is not None else None,
+            "entity_post_code": obj.get("entity_post_code"),
+            "entity_name": obj.get("entity_name"),
+            "entity_town_city": obj.get("entity_town_city"),
+            "entity_address": obj.get("entity_address"),
+            "entity_id": obj.get("entity_id"),
+            "certificate_authority_ca_owner_id": obj.get("certificate_authority_ca_owner_id")
         })
         return _obj
 

@@ -1,6 +1,6 @@
 # obp_python.ApiCollectionApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -30,7 +30,7 @@ Method | HTTP request | Description
 
 
 # **o_bpv4_0_0_create_my_api_collection**
-> OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems o_bpv4_0_0_create_my_api_collection(obpv400_create_my_api_collection_request)
+> OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner o_bpv4_0_0_create_my_api_collection(obpv400_create_my_api_collection_request)
 
 Create My Api Collection
 
@@ -57,14 +57,14 @@ Create My Api Collection
 ```python
 import obp_python
 from obp_python.models.obpv400_create_my_api_collection_request import OBPv400CreateMyApiCollectionRequest
-from obp_python.models.obpv400_get_api_collections_for_user200_response_properties_api_collections_items import OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
+from obp_python.models.obpv400_get_api_collections_for_user200_response_api_collections_inner import OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems**](OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems.md)
+[**OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner**](OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner.md)
 
 ### Authorization
 
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_create_my_api_collection_endpoint**
-> OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems o_bpv4_0_0_create_my_api_collection_endpoint(apicollectionname, obpv400_create_my_api_collection_endpoint_request)
+> OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner o_bpv4_0_0_create_my_api_collection_endpoint(apicollectionname, obpv400_create_my_api_collection_endpoint_request)
 
 Create My Api Collection Endpoint
 
@@ -160,14 +160,14 @@ Create My Api Collection Endpoint
 ```python
 import obp_python
 from obp_python.models.obpv400_create_my_api_collection_endpoint_request import OBPv400CreateMyApiCollectionEndpointRequest
-from obp_python.models.obpv400_get_my_api_collection_endpoints200_response_properties_api_collection_endpoints_items import OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems
+from obp_python.models.obpv400_get_my_api_collection_endpoints200_response_api_collection_endpoints_inner import OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -217,7 +217,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems**](OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems.md)
+[**OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner**](OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner.md)
 
 ### Authorization
 
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_create_my_api_collection_endpoint_by_id**
-> OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems o_bpv4_0_0_create_my_api_collection_endpoint_by_id(apicollectionid, obpv400_create_my_api_collection_endpoint_request)
+> OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner o_bpv4_0_0_create_my_api_collection_endpoint_by_id(apicollectionid, obpv400_create_my_api_collection_endpoint_request)
 
 Create My Api Collection Endpoint By Id
 
@@ -264,14 +264,14 @@ Create My Api Collection Endpoint By Id
 ```python
 import obp_python
 from obp_python.models.obpv400_create_my_api_collection_endpoint_request import OBPv400CreateMyApiCollectionEndpointRequest
-from obp_python.models.obpv400_get_my_api_collection_endpoints200_response_properties_api_collection_endpoints_items import OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems
+from obp_python.models.obpv400_get_my_api_collection_endpoints200_response_api_collection_endpoints_inner import OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -321,7 +321,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems**](OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems.md)
+[**OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner**](OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner.md)
 
 ### Authorization
 
@@ -366,10 +366,10 @@ from obp_python.models.obpv400_delete_system_level_endpoint_tag200_response impo
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -464,10 +464,10 @@ from obp_python.models.obpv400_delete_system_level_endpoint_tag200_response impo
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -565,10 +565,10 @@ from obp_python.models.obpv400_delete_system_level_endpoint_tag200_response impo
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -665,10 +665,10 @@ from obp_python.models.obpv400_delete_system_level_endpoint_tag200_response impo
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -764,10 +764,10 @@ from obp_python.models.obpv400_get_my_api_collection_endpoints200_response impor
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -847,10 +847,10 @@ from obp_python.models.obpv400_get_api_collections_for_user200_response import O
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -944,10 +944,10 @@ from obp_python.models.obpv400_get_api_collections_for_user200_response import O
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -994,7 +994,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_get_my_api_collection_by_id**
-> OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems o_bpv4_0_0_get_my_api_collection_by_id(apicollectionid)
+> OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner o_bpv4_0_0_get_my_api_collection_by_id(apicollectionid)
 
 Get My Api Collection By Id
 
@@ -1018,14 +1018,14 @@ Get My Api Collection By Id
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_api_collections_for_user200_response_properties_api_collections_items import OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
+from obp_python.models.obpv400_get_api_collections_for_user200_response_api_collections_inner import OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1073,7 +1073,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems**](OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems.md)
+[**OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner**](OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner.md)
 
 ### Authorization
 
@@ -1095,7 +1095,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_get_my_api_collection_by_name**
-> OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems o_bpv4_0_0_get_my_api_collection_by_name(apicollectionname)
+> OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner o_bpv4_0_0_get_my_api_collection_by_name(apicollectionname)
 
 Get My Api Collection By Name
 
@@ -1119,14 +1119,14 @@ Get My Api Collection By Name
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_api_collections_for_user200_response_properties_api_collections_items import OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
+from obp_python.models.obpv400_get_api_collections_for_user200_response_api_collections_inner import OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1174,7 +1174,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems**](OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems.md)
+[**OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner**](OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner.md)
 
 ### Authorization
 
@@ -1196,7 +1196,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_get_my_api_collection_endpoint**
-> OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems o_bpv4_0_0_get_my_api_collection_endpoint(apicollectionname, operationid)
+> OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner o_bpv4_0_0_get_my_api_collection_endpoint(apicollectionname, operationid)
 
 Get My Api Collection Endpoint
 
@@ -1216,14 +1216,14 @@ Get My Api Collection Endpoint
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_my_api_collection_endpoints200_response_properties_api_collection_endpoints_items import OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems
+from obp_python.models.obpv400_get_my_api_collection_endpoints200_response_api_collection_endpoints_inner import OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -1255,7 +1255,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems**](OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems.md)
+[**OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner**](OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner.md)
 
 ### Authorization
 
@@ -1304,10 +1304,10 @@ from obp_python.models.obpv400_get_my_api_collection_endpoints200_response impor
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1404,10 +1404,10 @@ from obp_python.models.obpv400_get_my_api_collection_endpoints200_response impor
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1483,6 +1483,8 @@ Get My Api Collections
 
 <p>Get all the apiCollections for logged in user.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>1 limit (for pagination: defaults to 50)  eg:limit=200</p>
+<p>2 offset (for pagination: zero index, defaults to 0) eg: offset=10</p>
 <p><strong>JSON response body fields:</strong></p>
 <p><a href="/glossary#"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
 <p><a href="/glossary#"><strong>api_collection_name</strong></a>: Favourites</p>
@@ -1504,10 +1506,10 @@ from obp_python.models.obpv400_get_api_collections_for_user200_response import O
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1572,7 +1574,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_get_sharable_api_collection_by_id**
-> OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems o_bpv4_0_0_get_sharable_api_collection_by_id(apicollectionid)
+> OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner o_bpv4_0_0_get_sharable_api_collection_by_id(apicollectionid)
 
 Get Sharable Api Collection By Id
 
@@ -1593,14 +1595,14 @@ User Authentication is Optional. The User need not be logged in.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_api_collections_for_user200_response_properties_api_collections_items import OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
+from obp_python.models.obpv400_get_api_collections_for_user200_response_api_collections_inner import OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -1630,7 +1632,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems**](OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems.md)
+[**OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner**](OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner.md)
 
 ### Authorization
 
@@ -1678,10 +1680,10 @@ from obp_python.models.obpv400_get_api_collections_for_user200_response import O
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1746,7 +1748,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv5_1_0_update_my_api_collection**
-> OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems o_bpv5_1_0_update_my_api_collection(apicollectionid, obpv400_create_my_api_collection_request)
+> OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner o_bpv5_1_0_update_my_api_collection(apicollectionid, obpv400_create_my_api_collection_request)
 
 Update My Api Collection By API_COLLECTION_ID
 
@@ -1771,14 +1773,14 @@ Update My Api Collection By API_COLLECTION_ID
 ```python
 import obp_python
 from obp_python.models.obpv400_create_my_api_collection_request import OBPv400CreateMyApiCollectionRequest
-from obp_python.models.obpv400_get_api_collections_for_user200_response_properties_api_collections_items import OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
+from obp_python.models.obpv400_get_api_collections_for_user200_response_api_collections_inner import OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1828,7 +1830,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems**](OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems.md)
+[**OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner**](OBPv400GetApiCollectionsForUser200ResponseApiCollectionsInner.md)
 
 ### Authorization
 
@@ -1850,7 +1852,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv6_0_0_create_featured_api_collection**
-> OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems o_bpv6_0_0_create_featured_api_collection(obpv600_create_featured_api_collection_request)
+> OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner o_bpv6_0_0_create_featured_api_collection(obpv600_create_featured_api_collection_request)
 
 Create Featured Api Collection
 
@@ -1874,14 +1876,14 @@ Create Featured Api Collection
 ```python
 import obp_python
 from obp_python.models.obpv600_create_featured_api_collection_request import OBPv600CreateFeaturedApiCollectionRequest
-from obp_python.models.obpv600_get_featured_api_collections_admin200_response_properties_featured_api_collections_items import OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems
+from obp_python.models.obpv600_get_featured_api_collections_admin200_response_featured_api_collections_inner import OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1929,7 +1931,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems**](OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems.md)
+[**OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner**](OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner.md)
 
 ### Authorization
 
@@ -1974,10 +1976,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2074,10 +2076,10 @@ from obp_python.models.obpv600_get_featured_api_collections_admin200_response im
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2142,7 +2144,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv6_0_0_update_featured_api_collection**
-> OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems o_bpv6_0_0_update_featured_api_collection(apicollectionid, obpv600_update_featured_api_collection_request)
+> OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner o_bpv6_0_0_update_featured_api_collection(apicollectionid, obpv600_update_featured_api_collection_request)
 
 Update Featured Api Collection
 
@@ -2164,15 +2166,15 @@ Update Featured Api Collection
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_featured_api_collections_admin200_response_properties_featured_api_collections_items import OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems
+from obp_python.models.obpv600_get_featured_api_collections_admin200_response_featured_api_collections_inner import OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner
 from obp_python.models.obpv600_update_featured_api_collection_request import OBPv600UpdateFeaturedApiCollectionRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2222,7 +2224,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems**](OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems.md)
+[**OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner**](OBPv600GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner.md)
 
 ### Authorization
 

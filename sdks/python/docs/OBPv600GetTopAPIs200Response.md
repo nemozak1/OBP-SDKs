@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetTopAPIs200ResponseProperties**](OBPv600GetTopAPIs200ResponseProperties.md) |  | 
+**top_apis** | [**List[OBPv600GetTopAPIs200ResponseTopApisInner]**](OBPv600GetTopAPIs200ResponseTopApisInner.md) |  | [optional] 
 
 ## Example
 

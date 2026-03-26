@@ -5,8 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600VerifyUserCredentialsRequestProperties**](OBPv600VerifyUserCredentialsRequestProperties.md) |  | 
+**provider** | **str** |  | [optional] 
+**username** | **str** |  | [optional] 
+**password** | **str** |  | [optional] 
 
 ## Example
 

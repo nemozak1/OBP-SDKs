@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400GetAccountsByAccountRoutingRegexRequestProperties**](OBPv400GetAccountsByAccountRoutingRegexRequestProperties.md) |  | 
+**bank_id** | **str** |  | [optional] 
+**account_routing** | [**OBPv310GetCheckbookOrders200ResponseAccountAccountRoutingsInner**](OBPv310GetCheckbookOrders200ResponseAccountAccountRoutingsInner.md) |  | [optional] 
 
 ## Example
 

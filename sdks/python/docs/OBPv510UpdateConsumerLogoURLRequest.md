@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510UpdateConsumerLogoURLRequestProperties**](OBPv510UpdateConsumerLogoURLRequestProperties.md) |  | 
+**logo_url** | **str** |  | [optional] 
 
 ## Example
 

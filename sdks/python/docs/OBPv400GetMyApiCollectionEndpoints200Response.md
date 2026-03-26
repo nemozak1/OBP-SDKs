@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400GetMyApiCollectionEndpoints200ResponseProperties**](OBPv400GetMyApiCollectionEndpoints200ResponseProperties.md) |  | 
+**api_collection_endpoints** | [**List[OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner]**](OBPv400GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner.md) |  | [optional] 
 
 ## Example
 

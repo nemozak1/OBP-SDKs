@@ -5,8 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400CreateTransactionRequestCardRequestProperties**](OBPv400CreateTransactionRequestCardRequestProperties.md) |  | 
+**description** | **str** |  | [optional] 
+**value** | [**OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit**](OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit.md) |  | [optional] 
+**card** | [**OBPv400CreateTransactionRequestCardRequestCard**](OBPv400CreateTransactionRequestCardRequestCard.md) |  | [optional] 
+**to** | [**OBPv400CreateTransactionRequestCounterpartyRequestTo**](OBPv400CreateTransactionRequestCounterpartyRequestTo.md) |  | [optional] 
 
 ## Example
 

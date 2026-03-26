@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310GetOAuth2ServerJWKsURIs200ResponseProperties**](OBPv310GetOAuth2ServerJWKsURIs200ResponseProperties.md) |  | 
+**jwks_uris** | [**List[OBPv310GetOAuth2ServerJWKsURIs200ResponseJwksUrisInner]**](OBPv310GetOAuth2ServerJWKsURIs200ResponseJwksUrisInner.md) |  | [optional] 
 
 ## Example
 

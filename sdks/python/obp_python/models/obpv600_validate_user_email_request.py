@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -19,8 +19,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv600_validate_user_email_request_properties import OBPv600ValidateUserEmailRequestProperties
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +27,8 @@ class OBPv600ValidateUserEmailRequest(BaseModel):
     """
     OBPv600ValidateUserEmailRequest
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv600ValidateUserEmailRequestProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    token: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["token"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +69,6 @@ class OBPv600ValidateUserEmailRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +81,7 @@ class OBPv600ValidateUserEmailRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv600ValidateUserEmailRequestProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "token": obj.get("token")
         })
         return _obj
 

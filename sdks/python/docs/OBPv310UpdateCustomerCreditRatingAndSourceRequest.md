@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310UpdateCustomerCreditRatingAndSourceRequestProperties**](OBPv310UpdateCustomerCreditRatingAndSourceRequestProperties.md) |  | 
+**credit_source** | **str** |  | [optional] 
+**credit_rating** | **str** |  | [optional] 
 
 ## Example
 

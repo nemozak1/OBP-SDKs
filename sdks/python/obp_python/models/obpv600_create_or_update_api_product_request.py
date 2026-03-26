@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv600_create_or_update_api_product_request_properties import OBPv600CreateOrUpdateApiProductRequestProperties
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +27,22 @@ class OBPv600CreateOrUpdateApiProductRequest(BaseModel):
     """
     OBPv600CreateOrUpdateApiProductRequest
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv600CreateOrUpdateApiProductRequestProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    name: Optional[StrictStr] = None
+    monthly_subscription_currency: Optional[StrictStr] = None
+    per_month_call_limit: Optional[StrictInt] = None
+    description: Optional[StrictStr] = None
+    terms_and_conditions_url: Optional[StrictStr] = None
+    per_week_call_limit: Optional[StrictInt] = None
+    collection_id: Optional[StrictStr] = None
+    monthly_subscription_amount: Optional[StrictStr] = None
+    more_info_url: Optional[StrictStr] = None
+    per_hour_call_limit: Optional[StrictInt] = None
+    per_second_call_limit: Optional[StrictInt] = None
+    parent_api_product_code: Optional[StrictStr] = None
+    category: Optional[StrictStr] = None
+    per_minute_call_limit: Optional[StrictInt] = None
+    per_day_call_limit: Optional[StrictInt] = None
+    __properties: ClassVar[List[str]] = ["name", "monthly_subscription_currency", "per_month_call_limit", "description", "terms_and_conditions_url", "per_week_call_limit", "collection_id", "monthly_subscription_amount", "more_info_url", "per_hour_call_limit", "per_second_call_limit", "parent_api_product_code", "category", "per_minute_call_limit", "per_day_call_limit"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +83,6 @@ class OBPv600CreateOrUpdateApiProductRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +95,21 @@ class OBPv600CreateOrUpdateApiProductRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv600CreateOrUpdateApiProductRequestProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "name": obj.get("name"),
+            "monthly_subscription_currency": obj.get("monthly_subscription_currency"),
+            "per_month_call_limit": obj.get("per_month_call_limit"),
+            "description": obj.get("description"),
+            "terms_and_conditions_url": obj.get("terms_and_conditions_url"),
+            "per_week_call_limit": obj.get("per_week_call_limit"),
+            "collection_id": obj.get("collection_id"),
+            "monthly_subscription_amount": obj.get("monthly_subscription_amount"),
+            "more_info_url": obj.get("more_info_url"),
+            "per_hour_call_limit": obj.get("per_hour_call_limit"),
+            "per_second_call_limit": obj.get("per_second_call_limit"),
+            "parent_api_product_code": obj.get("parent_api_product_code"),
+            "category": obj.get("category"),
+            "per_minute_call_limit": obj.get("per_minute_call_limit"),
+            "per_day_call_limit": obj.get("per_day_call_limit")
         })
         return _obj
 

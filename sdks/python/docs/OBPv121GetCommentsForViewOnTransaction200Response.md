@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv121GetCommentsForViewOnTransaction200ResponseProperties**](OBPv121GetCommentsForViewOnTransaction200ResponseProperties.md) |  | 
+**comments** | [**List[OBPv400GetTagsForViewOnAccount200ResponseTagsInner]**](OBPv400GetTagsForViewOnAccount200ResponseTagsInner.md) |  | [optional] 
 
 ## Example
 

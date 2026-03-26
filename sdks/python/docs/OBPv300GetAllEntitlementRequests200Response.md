@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv300GetAllEntitlementRequests200ResponseProperties**](OBPv300GetAllEntitlementRequests200ResponseProperties.md) |  | 
+**entitlement_requests** | [**List[OBPv300GetAllEntitlementRequests200ResponseEntitlementRequestsInner]**](OBPv300GetAllEntitlementRequests200ResponseEntitlementRequestsInner.md) |  | [optional] 
 
 ## Example
 

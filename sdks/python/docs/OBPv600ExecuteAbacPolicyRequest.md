@@ -5,8 +5,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600ExecuteAbacPolicyRequestProperties**](OBPv600ExecuteAbacPolicyRequestProperties.md) |  | 
+**transaction_request_id** | **str** |  | [optional] 
+**customer_id** | **str** |  | [optional] 
+**user_id** | **str** |  | [optional] 
+**on_behalf_of_user_id** | **str** |  | [optional] 
+**view_id** | **str** |  | [optional] 
+**bank_id** | **str** |  | [optional] 
+**transaction_id** | **str** |  | [optional] 
+**account_id** | **str** |  | [optional] 
+**authenticated_user_id** | **str** |  | [optional] 
 
 ## Example
 

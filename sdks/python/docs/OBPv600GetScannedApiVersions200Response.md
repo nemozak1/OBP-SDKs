@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetScannedApiVersions200ResponseProperties**](OBPv600GetScannedApiVersions200ResponseProperties.md) |  | 
+**scanned_api_versions** | [**List[OBPv600GetScannedApiVersions200ResponseScannedApiVersionsInner]**](OBPv600GetScannedApiVersions200ResponseScannedApiVersionsInner.md) |  | [optional] 
 
 ## Example
 

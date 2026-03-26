@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400UpdateAuthenticationTypeValidationRequestProperties**](OBPv400UpdateAuthenticationTypeValidationRequestProperties.md) |  | 
+**head** | **str** |  | [optional] 
+**tl** | **List[object]** |  | [optional] 
 
 ## Example
 

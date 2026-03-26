@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv500GetCustomerOverviewFlatRequestProperties**](OBPv500GetCustomerOverviewFlatRequestProperties.md) |  | 
+**customer_number** | **str** |  | [optional] 
 
 ## Example
 

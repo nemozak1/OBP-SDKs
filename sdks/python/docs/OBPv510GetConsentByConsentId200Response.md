@@ -5,8 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510GetConsentByConsentId200ResponseProperties**](OBPv510GetConsentByConsentId200ResponseProperties.md) |  | 
+**scopes** | [**List[OBPv510CreateConsentImplicitRequestEntitlementsInner]**](OBPv510CreateConsentImplicitRequestEntitlementsInner.md) |  | [optional] 
+**jwt** | **str** |  | [optional] 
+**consent_request_id** | **str** |  | [optional] 
+**status** | **str** |  | [optional] 
+**consumer_id** | **str** |  | [optional] 
+**consent_id** | **str** |  | [optional] 
 
 ## Example
 

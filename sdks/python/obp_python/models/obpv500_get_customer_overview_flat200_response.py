@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,11 @@ import pprint
 import re  # noqa: F401
 import json
 
+from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv500_get_customer_overview_flat200_response_properties import OBPv500GetCustomerOverviewFlat200ResponseProperties
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv400_get_customer_attributes200_response_customer_attributes_inner import OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner
+from obp_python.models.obpv500_get_customer_overview_flat200_response_accounts_inner import OBPv500GetCustomerOverviewFlat200ResponseAccountsInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +30,19 @@ class OBPv500GetCustomerOverviewFlat200Response(BaseModel):
     """
     OBPv500GetCustomerOverviewFlat200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv500GetCustomerOverviewFlat200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    customer_id: Optional[StrictStr] = None
+    name_suffix: Optional[StrictStr] = None
+    email: Optional[StrictStr] = None
+    branch_id: Optional[StrictStr] = None
+    mobile_phone_number: Optional[StrictStr] = None
+    customer_number: Optional[StrictStr] = None
+    customer_attributes: Optional[List[OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner]] = None
+    bank_id: Optional[StrictStr] = None
+    date_of_birth: Optional[datetime] = None
+    legal_name: Optional[StrictStr] = None
+    title: Optional[StrictStr] = None
+    accounts: Optional[List[OBPv500GetCustomerOverviewFlat200ResponseAccountsInner]] = None
+    __properties: ClassVar[List[str]] = ["customer_id", "name_suffix", "email", "branch_id", "mobile_phone_number", "customer_number", "customer_attributes", "bank_id", "date_of_birth", "legal_name", "title", "accounts"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +83,20 @@ class OBPv500GetCustomerOverviewFlat200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in customer_attributes (list)
+        _items = []
+        if self.customer_attributes:
+            for _item_customer_attributes in self.customer_attributes:
+                if _item_customer_attributes:
+                    _items.append(_item_customer_attributes.to_dict())
+            _dict['customer_attributes'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in accounts (list)
+        _items = []
+        if self.accounts:
+            for _item_accounts in self.accounts:
+                if _item_accounts:
+                    _items.append(_item_accounts.to_dict())
+            _dict['accounts'] = _items
         return _dict
 
     @classmethod
@@ -86,8 +109,18 @@ class OBPv500GetCustomerOverviewFlat200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv500GetCustomerOverviewFlat200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "customer_id": obj.get("customer_id"),
+            "name_suffix": obj.get("name_suffix"),
+            "email": obj.get("email"),
+            "branch_id": obj.get("branch_id"),
+            "mobile_phone_number": obj.get("mobile_phone_number"),
+            "customer_number": obj.get("customer_number"),
+            "customer_attributes": [OBPv400GetCustomerAttributes200ResponseCustomerAttributesInner.from_dict(_item) for _item in obj["customer_attributes"]] if obj.get("customer_attributes") is not None else None,
+            "bank_id": obj.get("bank_id"),
+            "date_of_birth": obj.get("date_of_birth"),
+            "legal_name": obj.get("legal_name"),
+            "title": obj.get("title"),
+            "accounts": [OBPv500GetCustomerOverviewFlat200ResponseAccountsInner.from_dict(_item) for _item in obj["accounts"]] if obj.get("accounts") is not None else None
         })
         return _obj
 

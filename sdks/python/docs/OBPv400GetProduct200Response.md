@@ -5,8 +5,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400GetProduct200ResponseProperties**](OBPv400GetProduct200ResponseProperties.md) |  | 
+**name** | **str** |  | [optional] 
+**description** | **str** |  | [optional] 
+**terms_and_conditions_url** | **str** |  | [optional] 
+**more_info_url** | **str** |  | [optional] 
+**attributes** | [**List[OBPv400GetProduct200ResponseAttributesInner]**](OBPv400GetProduct200ResponseAttributesInner.md) |  | [optional] 
+**product_code** | **str** |  | [optional] 
+**bank_id** | **str** |  | [optional] 
+**meta** | [**OBPv310GetProductTree200ResponseParentProductParentProductMeta**](OBPv310GetProductTree200ResponseParentProductParentProductMeta.md) |  | [optional] 
+**fees** | [**List[OBPv400GetProduct200ResponseFeesInner]**](OBPv400GetProduct200ResponseFeesInner.md) |  | [optional] 
+**parent_product_code** | **str** |  | [optional] 
 
 ## Example
 

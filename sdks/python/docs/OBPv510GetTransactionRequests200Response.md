@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510GetTransactionRequests200ResponseProperties**](OBPv510GetTransactionRequests200ResponseProperties.md) |  | 
+**transaction_requests_with_charges** | [**List[OBPv510GetTransactionRequestById200Response]**](OBPv510GetTransactionRequestById200Response.md) |  | [optional] 
 
 ## Example
 

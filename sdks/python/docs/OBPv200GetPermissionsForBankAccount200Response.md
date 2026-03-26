@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv200GetPermissionsForBankAccount200ResponseProperties**](OBPv200GetPermissionsForBankAccount200ResponseProperties.md) |  | 
+**permissions** | [**List[OBPv200GetPermissionsForBankAccount200ResponsePermissionsInner]**](OBPv200GetPermissionsForBankAccount200ResponsePermissionsInner.md) |  | [optional] 
 
 ## Example
 

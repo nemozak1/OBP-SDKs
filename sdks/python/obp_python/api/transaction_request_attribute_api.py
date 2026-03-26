@@ -1,7 +1,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -19,11 +19,11 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
 from obp_python.models.obpv400_create_or_update_transaction_request_attribute_definition_request import OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
-from obp_python.models.obpv400_create_transaction_request_counterparty_request_properties_attributes_items import OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems
+from obp_python.models.obpv400_create_transaction_request_counterparty_request_attributes_inner import OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner
 from obp_python.models.obpv400_delete_system_level_endpoint_tag200_response import OBPv400DeleteSystemLevelEndpointTag200Response
 from obp_python.models.obpv400_get_transaction_request_attribute_by_id200_response import OBPv400GetTransactionRequestAttributeById200Response
 from obp_python.models.obpv400_get_transaction_request_attribute_definition200_response import OBPv400GetTransactionRequestAttributeDefinition200Response
-from obp_python.models.obpv400_get_transaction_request_attribute_definition200_response_properties_attributes_items import OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
+from obp_python.models.obpv400_get_transaction_request_attribute_definition200_response_attributes_inner import OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner
 from obp_python.models.obpv400_get_transaction_request_attributes200_response import OBPv400GetTransactionRequestAttributes200Response
 
 from obp_python.api_client import ApiClient, RequestSerialized
@@ -61,7 +61,7 @@ class TransactionRequestAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems:
+    ) -> OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner:
         """Create or Update Transaction Request Attribute Definition
 
         <p>Create or Update Transaction Request Attribute Definition</p> <p>The category field must be TransactionRequest</p> <p>The type field must be one of: DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
@@ -102,7 +102,7 @@ class TransactionRequestAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems",
+            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
             '404': None,
             '500': None,
         }
@@ -134,7 +134,7 @@ class TransactionRequestAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems]:
+    ) -> ApiResponse[OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner]:
         """Create or Update Transaction Request Attribute Definition
 
         <p>Create or Update Transaction Request Attribute Definition</p> <p>The category field must be TransactionRequest</p> <p>The type field must be one of: DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
@@ -175,7 +175,7 @@ class TransactionRequestAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems",
+            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
             '404': None,
             '500': None,
         }
@@ -248,7 +248,7 @@ class TransactionRequestAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems",
+            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
             '404': None,
             '500': None,
         }
@@ -347,7 +347,7 @@ class TransactionRequestAttributeApi:
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         transactionrequestid: Annotated[StrictStr, Field(description="The TRANSACTIONREQUESTID identifier")],
-        obpv400_create_transaction_request_counterparty_request_properties_attributes_items: Annotated[OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems, Field(description="Request body")],
+        obpv400_create_transaction_request_counterparty_request_attributes_inner: Annotated[OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -371,8 +371,8 @@ class TransactionRequestAttributeApi:
         :type accountid: str
         :param transactionrequestid: The TRANSACTIONREQUESTID identifier (required)
         :type transactionrequestid: str
-        :param obpv400_create_transaction_request_counterparty_request_properties_attributes_items: Request body (required)
-        :type obpv400_create_transaction_request_counterparty_request_properties_attributes_items: OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems
+        :param obpv400_create_transaction_request_counterparty_request_attributes_inner: Request body (required)
+        :type obpv400_create_transaction_request_counterparty_request_attributes_inner: OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -399,7 +399,7 @@ class TransactionRequestAttributeApi:
             bankid=bankid,
             accountid=accountid,
             transactionrequestid=transactionrequestid,
-            obpv400_create_transaction_request_counterparty_request_properties_attributes_items=obpv400_create_transaction_request_counterparty_request_properties_attributes_items,
+            obpv400_create_transaction_request_counterparty_request_attributes_inner=obpv400_create_transaction_request_counterparty_request_attributes_inner,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -428,7 +428,7 @@ class TransactionRequestAttributeApi:
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         transactionrequestid: Annotated[StrictStr, Field(description="The TRANSACTIONREQUESTID identifier")],
-        obpv400_create_transaction_request_counterparty_request_properties_attributes_items: Annotated[OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems, Field(description="Request body")],
+        obpv400_create_transaction_request_counterparty_request_attributes_inner: Annotated[OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -452,8 +452,8 @@ class TransactionRequestAttributeApi:
         :type accountid: str
         :param transactionrequestid: The TRANSACTIONREQUESTID identifier (required)
         :type transactionrequestid: str
-        :param obpv400_create_transaction_request_counterparty_request_properties_attributes_items: Request body (required)
-        :type obpv400_create_transaction_request_counterparty_request_properties_attributes_items: OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems
+        :param obpv400_create_transaction_request_counterparty_request_attributes_inner: Request body (required)
+        :type obpv400_create_transaction_request_counterparty_request_attributes_inner: OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -480,7 +480,7 @@ class TransactionRequestAttributeApi:
             bankid=bankid,
             accountid=accountid,
             transactionrequestid=transactionrequestid,
-            obpv400_create_transaction_request_counterparty_request_properties_attributes_items=obpv400_create_transaction_request_counterparty_request_properties_attributes_items,
+            obpv400_create_transaction_request_counterparty_request_attributes_inner=obpv400_create_transaction_request_counterparty_request_attributes_inner,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -509,7 +509,7 @@ class TransactionRequestAttributeApi:
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         transactionrequestid: Annotated[StrictStr, Field(description="The TRANSACTIONREQUESTID identifier")],
-        obpv400_create_transaction_request_counterparty_request_properties_attributes_items: Annotated[OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems, Field(description="Request body")],
+        obpv400_create_transaction_request_counterparty_request_attributes_inner: Annotated[OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -533,8 +533,8 @@ class TransactionRequestAttributeApi:
         :type accountid: str
         :param transactionrequestid: The TRANSACTIONREQUESTID identifier (required)
         :type transactionrequestid: str
-        :param obpv400_create_transaction_request_counterparty_request_properties_attributes_items: Request body (required)
-        :type obpv400_create_transaction_request_counterparty_request_properties_attributes_items: OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems
+        :param obpv400_create_transaction_request_counterparty_request_attributes_inner: Request body (required)
+        :type obpv400_create_transaction_request_counterparty_request_attributes_inner: OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -561,7 +561,7 @@ class TransactionRequestAttributeApi:
             bankid=bankid,
             accountid=accountid,
             transactionrequestid=transactionrequestid,
-            obpv400_create_transaction_request_counterparty_request_properties_attributes_items=obpv400_create_transaction_request_counterparty_request_properties_attributes_items,
+            obpv400_create_transaction_request_counterparty_request_attributes_inner=obpv400_create_transaction_request_counterparty_request_attributes_inner,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -585,7 +585,7 @@ class TransactionRequestAttributeApi:
         bankid,
         accountid,
         transactionrequestid,
-        obpv400_create_transaction_request_counterparty_request_properties_attributes_items,
+        obpv400_create_transaction_request_counterparty_request_attributes_inner,
         _request_auth,
         _content_type,
         _headers,
@@ -617,8 +617,8 @@ class TransactionRequestAttributeApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_create_transaction_request_counterparty_request_properties_attributes_items is not None:
-            _body_params = obpv400_create_transaction_request_counterparty_request_properties_attributes_items
+        if obpv400_create_transaction_request_counterparty_request_attributes_inner is not None:
+            _body_params = obpv400_create_transaction_request_counterparty_request_attributes_inner
 
 
         # set the HTTP header `Accept`
@@ -1841,7 +1841,7 @@ class TransactionRequestAttributeApi:
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         transactionrequestid: Annotated[StrictStr, Field(description="The TRANSACTIONREQUESTID identifier")],
         attributeid: Annotated[StrictStr, Field(description="The ATTRIBUTEID identifier")],
-        obpv400_create_transaction_request_counterparty_request_properties_attributes_items: Annotated[OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems, Field(description="Request body")],
+        obpv400_create_transaction_request_counterparty_request_attributes_inner: Annotated[OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1867,8 +1867,8 @@ class TransactionRequestAttributeApi:
         :type transactionrequestid: str
         :param attributeid: The ATTRIBUTEID identifier (required)
         :type attributeid: str
-        :param obpv400_create_transaction_request_counterparty_request_properties_attributes_items: Request body (required)
-        :type obpv400_create_transaction_request_counterparty_request_properties_attributes_items: OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems
+        :param obpv400_create_transaction_request_counterparty_request_attributes_inner: Request body (required)
+        :type obpv400_create_transaction_request_counterparty_request_attributes_inner: OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1896,7 +1896,7 @@ class TransactionRequestAttributeApi:
             accountid=accountid,
             transactionrequestid=transactionrequestid,
             attributeid=attributeid,
-            obpv400_create_transaction_request_counterparty_request_properties_attributes_items=obpv400_create_transaction_request_counterparty_request_properties_attributes_items,
+            obpv400_create_transaction_request_counterparty_request_attributes_inner=obpv400_create_transaction_request_counterparty_request_attributes_inner,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1926,7 +1926,7 @@ class TransactionRequestAttributeApi:
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         transactionrequestid: Annotated[StrictStr, Field(description="The TRANSACTIONREQUESTID identifier")],
         attributeid: Annotated[StrictStr, Field(description="The ATTRIBUTEID identifier")],
-        obpv400_create_transaction_request_counterparty_request_properties_attributes_items: Annotated[OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems, Field(description="Request body")],
+        obpv400_create_transaction_request_counterparty_request_attributes_inner: Annotated[OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1952,8 +1952,8 @@ class TransactionRequestAttributeApi:
         :type transactionrequestid: str
         :param attributeid: The ATTRIBUTEID identifier (required)
         :type attributeid: str
-        :param obpv400_create_transaction_request_counterparty_request_properties_attributes_items: Request body (required)
-        :type obpv400_create_transaction_request_counterparty_request_properties_attributes_items: OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems
+        :param obpv400_create_transaction_request_counterparty_request_attributes_inner: Request body (required)
+        :type obpv400_create_transaction_request_counterparty_request_attributes_inner: OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1981,7 +1981,7 @@ class TransactionRequestAttributeApi:
             accountid=accountid,
             transactionrequestid=transactionrequestid,
             attributeid=attributeid,
-            obpv400_create_transaction_request_counterparty_request_properties_attributes_items=obpv400_create_transaction_request_counterparty_request_properties_attributes_items,
+            obpv400_create_transaction_request_counterparty_request_attributes_inner=obpv400_create_transaction_request_counterparty_request_attributes_inner,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2011,7 +2011,7 @@ class TransactionRequestAttributeApi:
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         transactionrequestid: Annotated[StrictStr, Field(description="The TRANSACTIONREQUESTID identifier")],
         attributeid: Annotated[StrictStr, Field(description="The ATTRIBUTEID identifier")],
-        obpv400_create_transaction_request_counterparty_request_properties_attributes_items: Annotated[OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems, Field(description="Request body")],
+        obpv400_create_transaction_request_counterparty_request_attributes_inner: Annotated[OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2037,8 +2037,8 @@ class TransactionRequestAttributeApi:
         :type transactionrequestid: str
         :param attributeid: The ATTRIBUTEID identifier (required)
         :type attributeid: str
-        :param obpv400_create_transaction_request_counterparty_request_properties_attributes_items: Request body (required)
-        :type obpv400_create_transaction_request_counterparty_request_properties_attributes_items: OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems
+        :param obpv400_create_transaction_request_counterparty_request_attributes_inner: Request body (required)
+        :type obpv400_create_transaction_request_counterparty_request_attributes_inner: OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2066,7 +2066,7 @@ class TransactionRequestAttributeApi:
             accountid=accountid,
             transactionrequestid=transactionrequestid,
             attributeid=attributeid,
-            obpv400_create_transaction_request_counterparty_request_properties_attributes_items=obpv400_create_transaction_request_counterparty_request_properties_attributes_items,
+            obpv400_create_transaction_request_counterparty_request_attributes_inner=obpv400_create_transaction_request_counterparty_request_attributes_inner,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2091,7 +2091,7 @@ class TransactionRequestAttributeApi:
         accountid,
         transactionrequestid,
         attributeid,
-        obpv400_create_transaction_request_counterparty_request_properties_attributes_items,
+        obpv400_create_transaction_request_counterparty_request_attributes_inner,
         _request_auth,
         _content_type,
         _headers,
@@ -2125,8 +2125,8 @@ class TransactionRequestAttributeApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_create_transaction_request_counterparty_request_properties_attributes_items is not None:
-            _body_params = obpv400_create_transaction_request_counterparty_request_properties_attributes_items
+        if obpv400_create_transaction_request_counterparty_request_attributes_inner is not None:
+            _body_params = obpv400_create_transaction_request_counterparty_request_attributes_inner
 
 
         # set the HTTP header `Accept`

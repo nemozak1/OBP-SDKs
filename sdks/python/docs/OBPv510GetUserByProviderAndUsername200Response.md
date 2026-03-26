@@ -5,8 +5,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510GetUserByProviderAndUsername200ResponseProperties**](OBPv510GetUserByProviderAndUsername200ResponseProperties.md) |  | 
+**first_name** | **str** |  | [optional] 
+**provider** | **str** |  | [optional] 
+**email** | **str** |  | [optional] 
+**username** | **str** |  | [optional] 
+**is_deleted** | **bool** |  | [optional] 
+**provider_id** | **str** |  | [optional] 
+**user_id** | **str** |  | [optional] 
+**last_name** | **str** |  | [optional] 
+**views** | [**OBPv510GetUserByProviderAndUsername200ResponseViews**](OBPv510GetUserByProviderAndUsername200ResponseViews.md) |  | [optional] 
+**is_locked** | **bool** |  | [optional] 
+**entitlements** | [**OBPv510GetUserByProviderAndUsername200ResponseEntitlements**](OBPv510GetUserByProviderAndUsername200ResponseEntitlements.md) |  | [optional] 
+**last_marketing_agreement_signed_date** | **datetime** |  | [optional] 
+**agreements** | [**List[OBPv510GetUserByProviderAndUsername200ResponseAgreementsInner]**](OBPv510GetUserByProviderAndUsername200ResponseAgreementsInner.md) |  | [optional] 
 
 ## Example
 

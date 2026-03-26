@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510CreateConsumerDynamicRegistrationRequestProperties**](OBPv510CreateConsumerDynamicRegistrationRequestProperties.md) |  | 
+**jwt** | **str** |  | [optional] 
 
 ## Example
 

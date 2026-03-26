@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetUsers200ResponseProperties**](OBPv600GetUsers200ResponseProperties.md) |  | 
+**users** | [**List[OBPv600GetUsers200ResponseUsersInner]**](OBPv600GetUsers200ResponseUsersInner.md) |  | [optional] 
 
 ## Example
 

@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400GetTagsForViewOnAccount200ResponseProperties**](OBPv400GetTagsForViewOnAccount200ResponseProperties.md) |  | 
+**tags** | [**List[OBPv400GetTagsForViewOnAccount200ResponseTagsInner]**](OBPv400GetTagsForViewOnAccount200ResponseTagsInner.md) |  | [optional] 
 
 ## Example
 

@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetAccountDirectory200ResponseProperties**](OBPv600GetAccountDirectory200ResponseProperties.md) |  | 
+**accounts** | [**List[OBPv600GetAccountDirectory200ResponseAccountsInner]**](OBPv600GetAccountDirectory200ResponseAccountsInner.md) |  | [optional] 
 
 ## Example
 

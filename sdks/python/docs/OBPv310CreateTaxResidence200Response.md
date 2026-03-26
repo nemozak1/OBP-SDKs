@@ -5,8 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310CreateTaxResidence200ResponseProperties**](OBPv310CreateTaxResidence200ResponseProperties.md) |  | 
+**tax_number** | **str** |  | [optional] 
+**domain** | **str** |  | [optional] 
+**tax_residence_id** | **str** |  | [optional] 
 
 ## Example
 

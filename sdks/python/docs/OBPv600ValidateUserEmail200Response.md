@@ -5,8 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600ValidateUserEmail200ResponseProperties**](OBPv600ValidateUserEmail200ResponseProperties.md) |  | 
+**provider** | **str** |  | [optional] 
+**email** | **str** |  | [optional] 
+**username** | **str** |  | [optional] 
+**validated** | **bool** |  | [optional] 
+**user_id** | **str** |  | [optional] 
+**message** | **str** |  | [optional] 
 
 ## Example
 

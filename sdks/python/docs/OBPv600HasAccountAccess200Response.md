@@ -5,8 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600HasAccountAccess200ResponseProperties**](OBPv600HasAccountAccess200ResponseProperties.md) |  | 
+**abac_rule_id** | **str** |  | [optional] 
+**has_account_access** | **bool** |  | [optional] 
+**access_source** | **str** |  | [optional] 
+**account_access_id** | **str** |  | [optional] 
 
 ## Example
 

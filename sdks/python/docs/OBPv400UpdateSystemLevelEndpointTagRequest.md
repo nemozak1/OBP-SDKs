@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400UpdateSystemLevelEndpointTagRequestProperties**](OBPv400UpdateSystemLevelEndpointTagRequestProperties.md) |  | 
+**tag_name** | **str** |  | [optional] 
 
 ## Example
 

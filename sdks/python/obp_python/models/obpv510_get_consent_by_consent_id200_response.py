@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -19,8 +19,8 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv510_get_consent_by_consent_id200_response_properties import OBPv510GetConsentByConsentId200ResponseProperties
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv510_create_consent_implicit_request_entitlements_inner import OBPv510CreateConsentImplicitRequestEntitlementsInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,13 @@ class OBPv510GetConsentByConsentId200Response(BaseModel):
     """
     OBPv510GetConsentByConsentId200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv510GetConsentByConsentId200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    scopes: Optional[List[OBPv510CreateConsentImplicitRequestEntitlementsInner]] = None
+    jwt: Optional[StrictStr] = None
+    consent_request_id: Optional[StrictStr] = None
+    status: Optional[StrictStr] = None
+    consumer_id: Optional[StrictStr] = None
+    consent_id: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["scopes", "jwt", "consent_request_id", "status", "consumer_id", "consent_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +75,13 @@ class OBPv510GetConsentByConsentId200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in scopes (list)
+        _items = []
+        if self.scopes:
+            for _item_scopes in self.scopes:
+                if _item_scopes:
+                    _items.append(_item_scopes.to_dict())
+            _dict['scopes'] = _items
         return _dict
 
     @classmethod
@@ -86,8 +94,12 @@ class OBPv510GetConsentByConsentId200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv510GetConsentByConsentId200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "scopes": [OBPv510CreateConsentImplicitRequestEntitlementsInner.from_dict(_item) for _item in obj["scopes"]] if obj.get("scopes") is not None else None,
+            "jwt": obj.get("jwt"),
+            "consent_request_id": obj.get("consent_request_id"),
+            "status": obj.get("status"),
+            "consumer_id": obj.get("consumer_id"),
+            "consent_id": obj.get("consent_id")
         })
         return _obj
 

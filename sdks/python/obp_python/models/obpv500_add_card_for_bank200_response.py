@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,11 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv500_add_card_for_bank200_response_properties import OBPv500AddCardForBank200ResponseProperties
+from datetime import datetime
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv310_get_cards_for_bank200_response_cards_inner_account import OBPv310GetCardsForBank200ResponseCardsInnerAccount
+from obp_python.models.obpv310_get_cards_for_bank200_response_cards_inner_replacement import OBPv310GetCardsForBank200ResponseCardsInnerReplacement
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +30,30 @@ class OBPv500AddCardForBank200Response(BaseModel):
     """
     OBPv500AddCardForBank200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv500AddCardForBank200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    allows: Optional[List[StrictStr]] = None
+    cvv: Optional[StrictStr] = None
+    expires_date: Optional[datetime] = None
+    networks: Optional[List[StrictStr]] = None
+    customer_id: Optional[StrictStr] = None
+    issue_number: Optional[StrictStr] = None
+    replacement: Optional[OBPv310GetCardsForBank200ResponseCardsInnerReplacement] = None
+    enabled: Optional[StrictBool] = None
+    collected: Optional[datetime] = None
+    brand: Optional[StrictStr] = None
+    card_number: Optional[StrictStr] = None
+    technology: Optional[StrictStr] = None
+    cancelled: Optional[StrictBool] = None
+    bank_id: Optional[StrictStr] = None
+    card_id: Optional[StrictStr] = None
+    pin_reset: Optional[List[OBPv310GetCardsForBank200ResponseCardsInnerReplacement]] = None
+    serial_number: Optional[StrictStr] = None
+    account: Optional[OBPv310GetCardsForBank200ResponseCardsInnerAccount] = None
+    valid_from_date: Optional[datetime] = None
+    name_on_card: Optional[StrictStr] = None
+    posted: Optional[datetime] = None
+    card_type: Optional[StrictStr] = None
+    on_hot_list: Optional[StrictBool] = None
+    __properties: ClassVar[List[str]] = ["allows", "cvv", "expires_date", "networks", "customer_id", "issue_number", "replacement", "enabled", "collected", "brand", "card_number", "technology", "cancelled", "bank_id", "card_id", "pin_reset", "serial_number", "account", "valid_from_date", "name_on_card", "posted", "card_type", "on_hot_list"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +94,19 @@ class OBPv500AddCardForBank200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of replacement
+        if self.replacement:
+            _dict['replacement'] = self.replacement.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in pin_reset (list)
+        _items = []
+        if self.pin_reset:
+            for _item_pin_reset in self.pin_reset:
+                if _item_pin_reset:
+                    _items.append(_item_pin_reset.to_dict())
+            _dict['pin_reset'] = _items
+        # override the default output from pydantic by calling `to_dict()` of account
+        if self.account:
+            _dict['account'] = self.account.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +119,29 @@ class OBPv500AddCardForBank200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv500AddCardForBank200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "allows": obj.get("allows"),
+            "cvv": obj.get("cvv"),
+            "expires_date": obj.get("expires_date"),
+            "networks": obj.get("networks"),
+            "customer_id": obj.get("customer_id"),
+            "issue_number": obj.get("issue_number"),
+            "replacement": OBPv310GetCardsForBank200ResponseCardsInnerReplacement.from_dict(obj["replacement"]) if obj.get("replacement") is not None else None,
+            "enabled": obj.get("enabled"),
+            "collected": obj.get("collected"),
+            "brand": obj.get("brand"),
+            "card_number": obj.get("card_number"),
+            "technology": obj.get("technology"),
+            "cancelled": obj.get("cancelled"),
+            "bank_id": obj.get("bank_id"),
+            "card_id": obj.get("card_id"),
+            "pin_reset": [OBPv310GetCardsForBank200ResponseCardsInnerReplacement.from_dict(_item) for _item in obj["pin_reset"]] if obj.get("pin_reset") is not None else None,
+            "serial_number": obj.get("serial_number"),
+            "account": OBPv310GetCardsForBank200ResponseCardsInnerAccount.from_dict(obj["account"]) if obj.get("account") is not None else None,
+            "valid_from_date": obj.get("valid_from_date"),
+            "name_on_card": obj.get("name_on_card"),
+            "posted": obj.get("posted"),
+            "card_type": obj.get("card_type"),
+            "on_hot_list": obj.get("on_hot_list")
         })
         return _obj
 

@@ -5,8 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv500GetUserAuthContexts200ResponseProperties**](OBPv500GetUserAuthContexts200ResponseProperties.md) |  | 
+**time_stamp** | **datetime** |  | [optional] 
+**user_id** | **str** |  | [optional] 
+**key** | **str** |  | [optional] 
+**consumer_id** | **str** |  | [optional] 
+**user_auth_context_id** | **str** |  | [optional] 
+**value** | **str** |  | [optional] 
 
 ## Example
 

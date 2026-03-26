@@ -5,8 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310UpdateCustomerIdentityRequestProperties**](OBPv310UpdateCustomerIdentityRequestProperties.md) |  | 
+**date_of_birth** | **datetime** |  | [optional] 
+**name_suffix** | **str** |  | [optional] 
+**legal_name** | **str** |  | [optional] 
+**title** | **str** |  | [optional] 
 
 ## Example
 

@@ -1,6 +1,6 @@
 # obp_python.TransactionMetadataApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -24,7 +24,7 @@ Method | HTTP request | Description
 
 
 # **o_bpv1_2_1_add_comment_for_view_on_transaction**
-> OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems o_bpv1_2_1_add_comment_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv400_delete_system_level_endpoint_tag200_response)
+> OBPv400GetTagsForViewOnAccount200ResponseTagsInner o_bpv1_2_1_add_comment_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv200_get_transaction_types200_response_transaction_types_inner_id)
 
 Add a Transaction Comment
 
@@ -56,15 +56,15 @@ Add a Transaction Comment
 
 ```python
 import obp_python
-from obp_python.models.obpv400_delete_system_level_endpoint_tag200_response import OBPv400DeleteSystemLevelEndpointTag200Response
-from obp_python.models.obpv400_get_tags_for_view_on_account200_response_properties_tags_items import OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
+from obp_python.models.obpv200_get_transaction_types200_response_transaction_types_inner_id import OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId
+from obp_python.models.obpv400_get_tags_for_view_on_account200_response_tags_inner import OBPv400GetTagsForViewOnAccount200ResponseTagsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -94,11 +94,11 @@ with obp_python.ApiClient(configuration) as api_client:
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
     transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
-    obpv400_delete_system_level_endpoint_tag200_response = {type=object, properties={value={type=string}}} # OBPv400DeleteSystemLevelEndpointTag200Response | Request body
+    obpv200_get_transaction_types200_response_transaction_types_inner_id = {type=object, properties={value={type=string}}} # OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
 
     try:
         # Add a Transaction Comment
-        api_response = api_instance.o_bpv1_2_1_add_comment_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv400_delete_system_level_endpoint_tag200_response)
+        api_response = api_instance.o_bpv1_2_1_add_comment_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv200_get_transaction_types200_response_transaction_types_inner_id)
         print("The response of TransactionMetadataApi->o_bpv1_2_1_add_comment_for_view_on_transaction:\n")
         pprint(api_response)
     except Exception as e:
@@ -116,11 +116,11 @@ Name | Type | Description  | Notes
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
  **transactionid** | **str**| The TRANSACTIONID identifier | 
- **obpv400_delete_system_level_endpoint_tag200_response** | [**OBPv400DeleteSystemLevelEndpointTag200Response**](OBPv400DeleteSystemLevelEndpointTag200Response.md)| Request body | 
+ **obpv200_get_transaction_types200_response_transaction_types_inner_id** | [**OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId**](OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
+[**OBPv400GetTagsForViewOnAccount200ResponseTagsInner**](OBPv400GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 ### Authorization
 
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv1_2_1_add_image_for_view_on_transaction**
-> OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems o_bpv1_2_1_add_image_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv121_add_image_for_view_on_transaction_request)
+> OBPv310GetTransactionByIdForBankAccount200ResponseMetadataImagesInner o_bpv1_2_1_add_image_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv121_add_image_for_view_on_transaction_request)
 
 Add a Transaction Image
 
@@ -176,14 +176,14 @@ Add a Transaction Image
 ```python
 import obp_python
 from obp_python.models.obpv121_add_image_for_view_on_transaction_request import OBPv121AddImageForViewOnTransactionRequest
-from obp_python.models.obpv310_get_transaction_by_id_for_bank_account200_response_properties_metadata_properties_images_items import OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems
+from obp_python.models.obpv310_get_transaction_by_id_for_bank_account200_response_metadata_images_inner import OBPv310GetTransactionByIdForBankAccount200ResponseMetadataImagesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems**](OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems.md)
+[**OBPv310GetTransactionByIdForBankAccount200ResponseMetadataImagesInner**](OBPv310GetTransactionByIdForBankAccount200ResponseMetadataImagesInner.md)
 
 ### Authorization
 
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv1_2_1_add_tag_for_view_on_transaction**
-> OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems o_bpv1_2_1_add_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv400_delete_system_level_endpoint_tag200_response)
+> OBPv400GetTagsForViewOnAccount200ResponseTagsInner o_bpv1_2_1_add_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv200_get_transaction_types200_response_transaction_types_inner_id)
 
 Add a Transaction Tag
 
@@ -292,15 +292,15 @@ Add a Transaction Tag
 
 ```python
 import obp_python
-from obp_python.models.obpv400_delete_system_level_endpoint_tag200_response import OBPv400DeleteSystemLevelEndpointTag200Response
-from obp_python.models.obpv400_get_tags_for_view_on_account200_response_properties_tags_items import OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
+from obp_python.models.obpv200_get_transaction_types200_response_transaction_types_inner_id import OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId
+from obp_python.models.obpv400_get_tags_for_view_on_account200_response_tags_inner import OBPv400GetTagsForViewOnAccount200ResponseTagsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -330,11 +330,11 @@ with obp_python.ApiClient(configuration) as api_client:
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
     transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
-    obpv400_delete_system_level_endpoint_tag200_response = {type=object, properties={value={type=string}}} # OBPv400DeleteSystemLevelEndpointTag200Response | Request body
+    obpv200_get_transaction_types200_response_transaction_types_inner_id = {type=object, properties={value={type=string}}} # OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
 
     try:
         # Add a Transaction Tag
-        api_response = api_instance.o_bpv1_2_1_add_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv400_delete_system_level_endpoint_tag200_response)
+        api_response = api_instance.o_bpv1_2_1_add_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv200_get_transaction_types200_response_transaction_types_inner_id)
         print("The response of TransactionMetadataApi->o_bpv1_2_1_add_tag_for_view_on_transaction:\n")
         pprint(api_response)
     except Exception as e:
@@ -352,11 +352,11 @@ Name | Type | Description  | Notes
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
  **transactionid** | **str**| The TRANSACTIONID identifier | 
- **obpv400_delete_system_level_endpoint_tag200_response** | [**OBPv400DeleteSystemLevelEndpointTag200Response**](OBPv400DeleteSystemLevelEndpointTag200Response.md)| Request body | 
+ **obpv200_get_transaction_types200_response_transaction_types_inner_id** | [**OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId**](OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
+[**OBPv400GetTagsForViewOnAccount200ResponseTagsInner**](OBPv400GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 ### Authorization
 
@@ -411,10 +411,10 @@ from obp_python.models.obpv121_update_transaction_narrative200_response import O
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -525,10 +525,10 @@ from obp_python.models.obpv121_update_where_tag_for_view_on_transaction_request 
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -633,10 +633,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -739,10 +739,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -843,10 +843,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -930,10 +930,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1033,10 +1033,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1144,10 +1144,10 @@ from obp_python.models.obpv121_get_comments_for_view_on_transaction200_response 
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1258,10 +1258,10 @@ from obp_python.models.obpv121_get_images_for_view_on_transaction200_response im
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1337,7 +1337,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv1_2_1_get_tags_for_view_on_transaction**
-> OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems o_bpv1_2_1_get_tags_for_view_on_transaction(bankid, accountid, viewid, transactionid)
+> OBPv400GetTagsForViewOnAccount200ResponseTagsInner o_bpv1_2_1_get_tags_for_view_on_transaction(bankid, accountid, viewid, transactionid)
 
 Get Transaction Tags
 
@@ -1363,14 +1363,14 @@ Authentication via OAuth is required if the view is not public.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_tags_for_view_on_account200_response_properties_tags_items import OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
+from obp_python.models.obpv400_get_tags_for_view_on_account200_response_tags_inner import OBPv400GetTagsForViewOnAccount200ResponseTagsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -1406,7 +1406,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
+[**OBPv400GetTagsForViewOnAccount200ResponseTagsInner**](OBPv400GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 ### Authorization
 
@@ -1453,10 +1453,10 @@ from obp_python.models.obpv121_get_transaction_narrative200_response import OBPv
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -1547,10 +1547,10 @@ from obp_python.models.obpv121_get_where_tag_for_view_on_transaction200_response
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -1634,10 +1634,10 @@ from obp_python.models.obpv121_update_transaction_narrative200_response import O
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -1726,10 +1726,10 @@ from obp_python.models.obpv121_update_where_tag_for_view_on_transaction_request 
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters

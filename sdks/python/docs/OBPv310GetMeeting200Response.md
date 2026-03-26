@@ -5,8 +5,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310GetMeeting200ResponseProperties**](OBPv310GetMeeting200ResponseProperties.md) |  | 
+**present** | [**OBPv310GetMeeting200ResponsePresent**](OBPv310GetMeeting200ResponsePresent.md) |  | [optional] 
+**provider_id** | **str** |  | [optional] 
+**creator** | [**OBPv310GetMeeting200ResponseCreator**](OBPv310GetMeeting200ResponseCreator.md) |  | [optional] 
+**invitees** | [**List[OBPv310GetMeeting200ResponseInviteesInner]**](OBPv310GetMeeting200ResponseInviteesInner.md) |  | [optional] 
+**bank_id** | **str** |  | [optional] 
+**purpose_id** | **str** |  | [optional] 
+**when** | **datetime** |  | [optional] 
+**meeting_id** | **str** |  | [optional] 
+**keys** | [**OBPv310GetMeeting200ResponseKeys**](OBPv310GetMeeting200ResponseKeys.md) |  | [optional] 
 
 ## Example
 

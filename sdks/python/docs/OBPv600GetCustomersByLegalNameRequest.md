@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetCustomersByLegalNameRequestProperties**](OBPv600GetCustomersByLegalNameRequestProperties.md) |  | 
+**legal_name** | **str** |  | [optional] 
 
 ## Example
 

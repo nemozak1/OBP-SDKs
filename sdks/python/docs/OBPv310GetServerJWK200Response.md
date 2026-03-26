@@ -5,8 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310GetServerJWK200ResponseProperties**](OBPv310GetServerJWK200ResponseProperties.md) |  | 
+**e** | **str** |  | [optional] 
+**n** | **str** |  | [optional] 
+**kty** | **str** |  | [optional] 
+**use** | **str** |  | [optional] 
+**kid** | **str** |  | [optional] 
 
 ## Example
 

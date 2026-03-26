@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,11 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv510_create_vrp_consent_request_request_properties import OBPv510CreateVRPConsentRequestRequestProperties
+from datetime import datetime
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv510_create_vrp_consent_request_request_from_account import OBPv510CreateVRPConsentRequestRequestFromAccount
+from obp_python.models.obpv510_create_vrp_consent_request_request_to_account import OBPv510CreateVRPConsentRequestRequestToAccount
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +30,13 @@ class OBPv510CreateVRPConsentRequestRequest(BaseModel):
     """
     OBPv510CreateVRPConsentRequestRequest
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv510CreateVRPConsentRequestRequestProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    phone_number: Optional[StrictStr] = None
+    time_to_live: Optional[StrictInt] = None
+    email: Optional[StrictStr] = None
+    from_account: Optional[OBPv510CreateVRPConsentRequestRequestFromAccount] = None
+    valid_from: Optional[datetime] = None
+    to_account: Optional[OBPv510CreateVRPConsentRequestRequestToAccount] = None
+    __properties: ClassVar[List[str]] = ["phone_number", "time_to_live", "email", "from_account", "valid_from", "to_account"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +77,12 @@ class OBPv510CreateVRPConsentRequestRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of from_account
+        if self.from_account:
+            _dict['from_account'] = self.from_account.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of to_account
+        if self.to_account:
+            _dict['to_account'] = self.to_account.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +95,12 @@ class OBPv510CreateVRPConsentRequestRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv510CreateVRPConsentRequestRequestProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "phone_number": obj.get("phone_number"),
+            "time_to_live": obj.get("time_to_live"),
+            "email": obj.get("email"),
+            "from_account": OBPv510CreateVRPConsentRequestRequestFromAccount.from_dict(obj["from_account"]) if obj.get("from_account") is not None else None,
+            "valid_from": obj.get("valid_from"),
+            "to_account": OBPv510CreateVRPConsentRequestRequestToAccount.from_dict(obj["to_account"]) if obj.get("to_account") is not None else None
         })
         return _obj
 

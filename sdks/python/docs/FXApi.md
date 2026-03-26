@@ -1,6 +1,6 @@
 # obp_python.FXApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -47,10 +47,10 @@ from obp_python.models.obpv220_create_fx_request import OBPv220CreateFxRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -77,7 +77,7 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.FXApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
-    obpv220_create_fx_request = {"type":"object","properties":{"effective_date":{"type":"string","format":"date-time"},"conversion_value":{"type":"number"},"from_currency_code":{"type":"string"},"bank_id":{"type":"string"},"inverse_conversion_value":{"type":"number"},"to_currency_code":{"type":"string"}}} # OBPv220CreateFxRequest | Request body
+    obpv220_create_fx_request = {"type":"object","properties":{"conversion_value":{"type":"number"},"from_currency_code":{"type":"string"},"bank_id":{"type":"string"},"inverse_conversion_value":{"type":"number"},"to_currency_code":{"type":"string"},"effective_date":{"type":"string","format":"date-time"}}} # OBPv220CreateFxRequest | Request body
 
     try:
         # Create Fx
@@ -162,10 +162,10 @@ from obp_python.models.obpv220_create_fx_request import OBPv220CreateFxRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -263,10 +263,10 @@ from obp_python.models.obpv510_get_currencies_at_bank200_response import OBPv510
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters

@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv310_get_tax_residence200_response_properties import OBPv310GetTaxResidence200ResponseProperties
+from pydantic import BaseModel, ConfigDict
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv310_create_tax_residence200_response import OBPv310CreateTaxResidence200Response
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,8 @@ class OBPv310GetTaxResidence200Response(BaseModel):
     """
     OBPv310GetTaxResidence200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv310GetTaxResidence200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    tax_residence: Optional[List[OBPv310CreateTaxResidence200Response]] = None
+    __properties: ClassVar[List[str]] = ["tax_residence"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +70,13 @@ class OBPv310GetTaxResidence200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in tax_residence (list)
+        _items = []
+        if self.tax_residence:
+            for _item_tax_residence in self.tax_residence:
+                if _item_tax_residence:
+                    _items.append(_item_tax_residence.to_dict())
+            _dict['tax_residence'] = _items
         return _dict
 
     @classmethod
@@ -86,8 +89,7 @@ class OBPv310GetTaxResidence200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv310GetTaxResidence200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "tax_residence": [OBPv310CreateTaxResidence200Response.from_dict(_item) for _item in obj["tax_residence"]] if obj.get("tax_residence") is not None else None
         })
         return _obj
 

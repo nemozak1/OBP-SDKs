@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv500GetViewsForBankAccount200ResponseProperties**](OBPv500GetViewsForBankAccount200ResponseProperties.md) |  | 
+**views** | [**List[OBPv500GetViewsForBankAccount200ResponseViewsInner]**](OBPv500GetViewsForBankAccount200ResponseViewsInner.md) |  | [optional] 
 
 ## Example
 

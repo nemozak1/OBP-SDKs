@@ -5,8 +5,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600BackupBankLevelDynamicEntity200ResponseProperties**](OBPv600BackupBankLevelDynamicEntity200ResponseProperties.md) |  | 
+**personal_requires_role** | **bool** |  | [optional] 
+**user_id** | **str** |  | [optional] 
+**entity_name** | **str** |  | [optional] 
+**bank_id** | **str** |  | [optional] 
+**dynamic_entity_id** | **str** |  | [optional] 
+**var_schema** | [**OBPv600BackupBankLevelDynamicEntity200ResponseSchema**](OBPv600BackupBankLevelDynamicEntity200ResponseSchema.md) |  | [optional] 
+**has_public_access** | **bool** |  | [optional] 
+**has_community_access** | **bool** |  | [optional] 
+**has_personal_entity** | **bool** |  | [optional] 
 
 ## Example
 

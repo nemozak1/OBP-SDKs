@@ -5,8 +5,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600CreateCallLimits200ResponseProperties**](OBPv600CreateCallLimits200ResponseProperties.md) |  | 
+**per_month_call_limit** | **str** |  | [optional] 
+**rate_limiting_id** | **str** |  | [optional] 
+**per_week_call_limit** | **str** |  | [optional] 
+**api_version** | **str** |  | [optional] 
+**per_hour_call_limit** | **str** |  | [optional] 
+**per_second_call_limit** | **str** |  | [optional] 
+**created_at** | **datetime** |  | [optional] 
+**from_date** | **datetime** |  | [optional] 
+**api_name** | **str** |  | [optional] 
+**updated_at** | **datetime** |  | [optional] 
+**per_minute_call_limit** | **str** |  | [optional] 
+**per_day_call_limit** | **str** |  | [optional] 
+**to_date** | **datetime** |  | [optional] 
 
 ## Example
 

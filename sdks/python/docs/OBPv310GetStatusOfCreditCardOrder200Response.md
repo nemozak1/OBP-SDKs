@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310GetStatusOfCreditCardOrder200ResponseProperties**](OBPv310GetStatusOfCreditCardOrder200ResponseProperties.md) |  | 
+**cards** | [**List[OBPv310GetStatusOfCreditCardOrder200ResponseCardsInner]**](OBPv310GetStatusOfCreditCardOrder200ResponseCardsInner.md) |  | [optional] 
 
 ## Example
 

@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510UpdateAgentStatusRequestProperties**](OBPv510UpdateAgentStatusRequestProperties.md) |  | 
+**is_pending_agent** | **bool** |  | [optional] 
+**is_confirmed_agent** | **bool** |  | [optional] 
 
 ## Example
 

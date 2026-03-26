@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400GetCounterpartiesForAnyAccount200ResponseProperties**](OBPv400GetCounterpartiesForAnyAccount200ResponseProperties.md) |  | 
+**counterparties** | [**List[OBPv400GetCounterpartiesForAnyAccount200ResponseCounterpartiesInner]**](OBPv400GetCounterpartiesForAnyAccount200ResponseCounterpartiesInner.md) |  | [optional] 
 
 ## Example
 

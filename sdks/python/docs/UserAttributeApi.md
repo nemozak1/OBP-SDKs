@@ -1,6 +1,6 @@
 # obp_python.UserAttributeApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **o_bpv6_0_0_create_personal_data_field**
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems o_bpv6_0_0_create_personal_data_field(obpv600_create_personal_data_field_request)
+> OBPv600GetPersonalDataFields200ResponseUserAttributesInner o_bpv6_0_0_create_personal_data_field(obpv600_create_personal_data_field_request)
 
 Create Personal Data Field
 
@@ -49,14 +49,14 @@ This data is not available in ABAC rules for privacy reasons.</p>
 ```python
 import obp_python
 from obp_python.models.obpv600_create_personal_data_field_request import OBPv600CreatePersonalDataFieldRequest
-from obp_python.models.obpv600_get_personal_data_fields200_response_properties_user_attributes_items import OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+from obp_python.models.obpv600_get_personal_data_fields200_response_user_attributes_inner import OBPv600GetPersonalDataFields200ResponseUserAttributesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**OBPv600GetPersonalDataFields200ResponseUserAttributesInner**](OBPv600GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -125,7 +125,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv6_0_0_create_user_attribute**
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems o_bpv6_0_0_create_user_attribute(userid, obpv600_create_personal_data_field_request)
+> OBPv600GetPersonalDataFields200ResponseUserAttributesInner o_bpv6_0_0_create_user_attribute(userid, obpv600_create_personal_data_field_request)
 
 Create User Attribute
 
@@ -159,14 +159,14 @@ They require a role to set, similar to Customer Attributes, Account Attributes, 
 ```python
 import obp_python
 from obp_python.models.obpv600_create_personal_data_field_request import OBPv600CreatePersonalDataFieldRequest
-from obp_python.models.obpv600_get_personal_data_fields200_response_properties_user_attributes_items import OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+from obp_python.models.obpv600_get_personal_data_fields200_response_user_attributes_inner import OBPv600GetPersonalDataFields200ResponseUserAttributesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**OBPv600GetPersonalDataFields200ResponseUserAttributesInner**](OBPv600GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -260,10 +260,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -354,10 +354,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -427,7 +427,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv6_0_0_get_personal_data_field_by_id**
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems o_bpv6_0_0_get_personal_data_field_by_id(userattributeid)
+> OBPv600GetPersonalDataFields200ResponseUserAttributesInner o_bpv6_0_0_get_personal_data_field_by_id(userattributeid)
 
 Get Personal Data Field By Id
 
@@ -452,14 +452,14 @@ Get Personal Data Field By Id
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_personal_data_fields200_response_properties_user_attributes_items import OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+from obp_python.models.obpv600_get_personal_data_fields200_response_user_attributes_inner import OBPv600GetPersonalDataFields200ResponseUserAttributesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -507,7 +507,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**OBPv600GetPersonalDataFields200ResponseUserAttributesInner**](OBPv600GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -558,10 +558,10 @@ from obp_python.models.obpv600_get_personal_data_fields200_response import OBPv6
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -626,7 +626,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv6_0_0_get_user_attribute_by_id**
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems o_bpv6_0_0_get_user_attribute_by_id(userid, userattributeid)
+> OBPv600GetPersonalDataFields200ResponseUserAttributesInner o_bpv6_0_0_get_user_attribute_by_id(userid, userattributeid)
 
 Get User Attribute By Id
 
@@ -652,14 +652,14 @@ Get User Attribute By Id
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_personal_data_fields200_response_properties_user_attributes_items import OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+from obp_python.models.obpv600_get_personal_data_fields200_response_user_attributes_inner import OBPv600GetPersonalDataFields200ResponseUserAttributesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -709,7 +709,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**OBPv600GetPersonalDataFields200ResponseUserAttributesInner**](OBPv600GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -762,10 +762,10 @@ from obp_python.models.obpv600_get_personal_data_fields200_response import OBPv6
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -835,7 +835,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv6_0_0_update_personal_data_field**
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems o_bpv6_0_0_update_personal_data_field(userattributeid, obpv600_create_personal_data_field_request)
+> OBPv600GetPersonalDataFields200ResponseUserAttributesInner o_bpv6_0_0_update_personal_data_field(userattributeid, obpv600_create_personal_data_field_request)
 
 Update Personal Data Field
 
@@ -861,14 +861,14 @@ Update Personal Data Field
 ```python
 import obp_python
 from obp_python.models.obpv600_create_personal_data_field_request import OBPv600CreatePersonalDataFieldRequest
-from obp_python.models.obpv600_get_personal_data_fields200_response_properties_user_attributes_items import OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+from obp_python.models.obpv600_get_personal_data_fields200_response_user_attributes_inner import OBPv600GetPersonalDataFields200ResponseUserAttributesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -918,7 +918,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**OBPv600GetPersonalDataFields200ResponseUserAttributesInner**](OBPv600GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -940,7 +940,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv6_0_0_update_user_attribute**
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems o_bpv6_0_0_update_user_attribute(userid, userattributeid, obpv600_create_personal_data_field_request)
+> OBPv600GetPersonalDataFields200ResponseUserAttributesInner o_bpv6_0_0_update_user_attribute(userid, userattributeid, obpv600_create_personal_data_field_request)
 
 Update User Attribute
 
@@ -967,14 +967,14 @@ Update User Attribute
 ```python
 import obp_python
 from obp_python.models.obpv600_create_personal_data_field_request import OBPv600CreatePersonalDataFieldRequest
-from obp_python.models.obpv600_get_personal_data_fields200_response_properties_user_attributes_items import OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+from obp_python.models.obpv600_get_personal_data_fields200_response_user_attributes_inner import OBPv600GetPersonalDataFields200ResponseUserAttributesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1026,7 +1026,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**OBPv600GetPersonalDataFields200ResponseUserAttributesInner**](OBPv600GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 

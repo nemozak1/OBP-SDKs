@@ -5,8 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310CreateCardAttribute200ResponseProperties**](OBPv310CreateCardAttribute200ResponseProperties.md) |  | 
+**name** | **str** |  | [optional] 
+**attribute_type** | **str** |  | [optional] 
+**card_attribute_id** | **str** |  | [optional] 
+**bank_id** | [**OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId**](OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId.md) |  | [optional] 
+**card_id** | **str** |  | [optional] 
+**value** | **str** |  | [optional] 
 
 ## Example
 

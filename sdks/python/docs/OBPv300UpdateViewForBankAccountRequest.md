@@ -5,8 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv300UpdateViewForBankAccountRequestProperties**](OBPv300UpdateViewForBankAccountRequestProperties.md) |  | 
+**description** | **str** |  | [optional] 
+**is_public** | **bool** |  | [optional] 
+**hide_metadata_if_alias_used** | **bool** |  | [optional] 
+**which_alias_to_use** | **str** |  | [optional] 
+**metadata_view** | **str** |  | [optional] 
+**allowed_actions** | **List[str]** |  | [optional] 
 
 ## Example
 

@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310CreateProductCollection200ResponseProperties**](OBPv310CreateProductCollection200ResponseProperties.md) |  | 
+**product_collection** | [**List[OBPv310CreateProductCollection200ResponseProductCollectionInner]**](OBPv310CreateProductCollection200ResponseProductCollectionInner.md) |  | [optional] 
 
 ## Example
 

@@ -1,7 +1,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -20,7 +20,7 @@ from pydantic import Field, StrictStr
 from typing_extensions import Annotated
 from obp_python.models.obpv400_create_connector_method_request import OBPv400CreateConnectorMethodRequest
 from obp_python.models.obpv400_get_all_connector_methods200_response import OBPv400GetAllConnectorMethods200Response
-from obp_python.models.obpv400_get_all_connector_methods200_response_properties_connectors_methods_items import OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems
+from obp_python.models.obpv400_get_all_connector_methods200_response_connectors_methods_inner import OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner
 from obp_python.models.obpv400_update_connector_method_request import OBPv400UpdateConnectorMethodRequest
 from obp_python.models.obpv600_get_connector_method_names200_response import OBPv600GetConnectorMethodNames200Response
 
@@ -58,7 +58,7 @@ class ConnectorMethodApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems:
+    ) -> OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner:
         """Create Connector Method
 
         <p>Create an internal connector.</p> <p>The method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><strong>JSON response body fields:</strong></p> 
@@ -96,7 +96,7 @@ class ConnectorMethodApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems",
+            '200': "OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -126,7 +126,7 @@ class ConnectorMethodApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems]:
+    ) -> ApiResponse[OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner]:
         """Create Connector Method
 
         <p>Create an internal connector.</p> <p>The method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><strong>JSON response body fields:</strong></p> 
@@ -164,7 +164,7 @@ class ConnectorMethodApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems",
+            '200': "OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -232,7 +232,7 @@ class ConnectorMethodApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems",
+            '200': "OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -588,7 +588,7 @@ class ConnectorMethodApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems:
+    ) -> OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner:
         """Get Connector Method by Id
 
         <p>Get an internal connector by CONNECTOR_METHOD_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONNECTOR_METHOD_ID</a>: ace0352a-9a0f-4bfa-b30b-9003aa467f51</p> <p><strong>JSON response body fields:</strong></p> 
@@ -626,7 +626,7 @@ class ConnectorMethodApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems",
+            '200': "OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -656,7 +656,7 @@ class ConnectorMethodApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems]:
+    ) -> ApiResponse[OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner]:
         """Get Connector Method by Id
 
         <p>Get an internal connector by CONNECTOR_METHOD_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONNECTOR_METHOD_ID</a>: ace0352a-9a0f-4bfa-b30b-9003aa467f51</p> <p><strong>JSON response body fields:</strong></p> 
@@ -694,7 +694,7 @@ class ConnectorMethodApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems",
+            '200': "OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -762,7 +762,7 @@ class ConnectorMethodApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems",
+            '200': "OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -855,7 +855,7 @@ class ConnectorMethodApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems:
+    ) -> OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner:
         """Update Connector Method
 
         <p>Update an internal connector.</p> <p>The method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONNECTOR_METHOD_ID</a>: ace0352a-9a0f-4bfa-b30b-9003aa467f51</p> <p><strong>JSON response body fields:</strong></p> 
@@ -896,7 +896,7 @@ class ConnectorMethodApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems",
+            '200': "OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -927,7 +927,7 @@ class ConnectorMethodApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems]:
+    ) -> ApiResponse[OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner]:
         """Update Connector Method
 
         <p>Update an internal connector.</p> <p>The method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONNECTOR_METHOD_ID</a>: ace0352a-9a0f-4bfa-b30b-9003aa467f51</p> <p><strong>JSON response body fields:</strong></p> 
@@ -968,7 +968,7 @@ class ConnectorMethodApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems",
+            '200': "OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1040,7 +1040,7 @@ class ConnectorMethodApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems",
+            '200': "OBPv400GetAllConnectorMethods200ResponseConnectorsMethodsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(

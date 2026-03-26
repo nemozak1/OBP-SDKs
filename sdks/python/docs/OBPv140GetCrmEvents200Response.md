@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv140GetCrmEvents200ResponseProperties**](OBPv140GetCrmEvents200ResponseProperties.md) |  | 
+**crm_events** | [**List[OBPv140GetCrmEvents200ResponseCrmEventsInner]**](OBPv140GetCrmEvents200ResponseCrmEventsInner.md) |  | [optional] 
 
 ## Example
 

@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv210GetTransactionRequestTypesSupportedByBank200ResponseProperties**](OBPv210GetTransactionRequestTypesSupportedByBank200ResponseProperties.md) |  | 
+**transaction_request_types** | [**List[OBPv210GetTransactionRequestTypesSupportedByBank200ResponseTransactionRequestTypesInner]**](OBPv210GetTransactionRequestTypesSupportedByBank200ResponseTransactionRequestTypesInner.md) |  | [optional] 
 
 ## Example
 

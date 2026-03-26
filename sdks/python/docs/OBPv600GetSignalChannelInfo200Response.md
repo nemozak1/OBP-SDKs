@@ -5,8 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetSignalChannelInfo200ResponseProperties**](OBPv600GetSignalChannelInfo200ResponseProperties.md) |  | 
+**ttl_seconds** | **int** |  | [optional] 
+**message_count** | **int** |  | [optional] 
+**channel_name** | **str** |  | [optional] 
 
 ## Example
 

@@ -5,8 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetSignalStats200ResponseProperties**](OBPv600GetSignalStats200ResponseProperties.md) |  | 
+**total_channels** | **int** |  | [optional] 
+**channels** | [**List[OBPv600GetSignalChannelInfo200Response]**](OBPv600GetSignalChannelInfo200Response.md) |  | [optional] 
+**total_messages** | **int** |  | [optional] 
 
 ## Example
 

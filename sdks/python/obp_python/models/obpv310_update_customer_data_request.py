@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv310_update_customer_data_request_properties import OBPv310UpdateCustomerDataRequestProperties
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv500_get_my_customers_at_bank200_response_customers_inner_face_image import OBPv500GetMyCustomersAtBank200ResponseCustomersInnerFaceImage
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,12 @@ class OBPv310UpdateCustomerDataRequest(BaseModel):
     """
     OBPv310UpdateCustomerDataRequest
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv310UpdateCustomerDataRequestProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    highest_education_attained: Optional[StrictStr] = None
+    employment_status: Optional[StrictStr] = None
+    face_image: Optional[OBPv500GetMyCustomersAtBank200ResponseCustomersInnerFaceImage] = None
+    dependants: Optional[StrictInt] = None
+    relationship_status: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["highest_education_attained", "employment_status", "face_image", "dependants", "relationship_status"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +74,9 @@ class OBPv310UpdateCustomerDataRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of face_image
+        if self.face_image:
+            _dict['face_image'] = self.face_image.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +89,11 @@ class OBPv310UpdateCustomerDataRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv310UpdateCustomerDataRequestProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "highest_education_attained": obj.get("highest_education_attained"),
+            "employment_status": obj.get("employment_status"),
+            "face_image": OBPv500GetMyCustomersAtBank200ResponseCustomersInnerFaceImage.from_dict(obj["face_image"]) if obj.get("face_image") is not None else None,
+            "dependants": obj.get("dependants"),
+            "relationship_status": obj.get("relationship_status")
         })
         return _obj
 

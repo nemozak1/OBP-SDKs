@@ -5,8 +5,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600Root200ResponseProperties**](OBPv600Root200ResponseProperties.md) |  | 
+**local_identity_provider** | **str** |  | [optional] 
+**resource_docs_requires_role** | **bool** |  | [optional] 
+**hostname** | **str** |  | [optional] 
+**version_status** | **str** |  | [optional] 
+**version** | **str** |  | [optional] 
+**hosted_at** | [**OBPv600Root200ResponseHostedAt**](OBPv600Root200ResponseHostedAt.md) |  | [optional] 
+**connector** | **str** |  | [optional] 
+**energy_source** | [**OBPv600Root200ResponseHostedAt**](OBPv600Root200ResponseHostedAt.md) |  | [optional] 
+**hosted_by** | [**OBPv600Root200ResponseHostedBy**](OBPv600Root200ResponseHostedBy.md) |  | [optional] 
+**git_commit** | **str** |  | [optional] 
 
 ## Example
 

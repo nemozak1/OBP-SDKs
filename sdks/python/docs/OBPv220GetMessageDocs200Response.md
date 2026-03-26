@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv220GetMessageDocs200ResponseProperties**](OBPv220GetMessageDocs200ResponseProperties.md) |  | 
+**message_docs** | [**List[OBPv220GetMessageDocs200ResponseMessageDocsInner]**](OBPv220GetMessageDocs200ResponseMessageDocsInner.md) |  | [optional] 
 
 ## Example
 

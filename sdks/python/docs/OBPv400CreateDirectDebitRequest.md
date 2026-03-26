@@ -5,8 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400CreateDirectDebitRequestProperties**](OBPv400CreateDirectDebitRequestProperties.md) |  | 
+**date_starts** | **datetime** |  | [optional] 
+**customer_id** | **str** |  | [optional] 
+**date_signed** | **datetime** |  | [optional] 
+**user_id** | **str** |  | [optional] 
+**date_expires** | **datetime** |  | [optional] 
+**counterparty_id** | **str** |  | [optional] 
 
 ## Example
 

@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv310_create_card_attribute200_response_properties import OBPv310CreateCardAttribute200ResponseProperties
+from pydantic import BaseModel, ConfigDict, StrictStr, field_validator
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv200_get_transaction_types200_response_transaction_types_inner_id import OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,23 @@ class OBPv310CreateCardAttribute200Response(BaseModel):
     """
     OBPv310CreateCardAttribute200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv310CreateCardAttribute200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    name: Optional[StrictStr] = None
+    attribute_type: Optional[StrictStr] = None
+    card_attribute_id: Optional[StrictStr] = None
+    bank_id: Optional[OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId] = None
+    card_id: Optional[StrictStr] = None
+    value: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["name", "attribute_type", "card_attribute_id", "bank_id", "card_id", "value"]
+
+    @field_validator('attribute_type')
+    def attribute_type_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['STRING', 'INTEGER', 'DOUBLE', 'DATE_WITH_DAY']):
+            raise ValueError("must be one of enum values ('STRING', 'INTEGER', 'DOUBLE', 'DATE_WITH_DAY')")
+        return value
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +85,9 @@ class OBPv310CreateCardAttribute200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of bank_id
+        if self.bank_id:
+            _dict['bank_id'] = self.bank_id.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +100,12 @@ class OBPv310CreateCardAttribute200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv310CreateCardAttribute200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "name": obj.get("name"),
+            "attribute_type": obj.get("attribute_type"),
+            "card_attribute_id": obj.get("card_attribute_id"),
+            "bank_id": OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId.from_dict(obj["bank_id"]) if obj.get("bank_id") is not None else None,
+            "card_id": obj.get("card_id"),
+            "value": obj.get("value")
         })
         return _obj
 

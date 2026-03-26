@@ -5,8 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400CreateTransactionRequestSepaRequestProperties**](OBPv400CreateTransactionRequestSepaRequestProperties.md) |  | 
+**description** | **str** |  | [optional] 
+**future_date** | **str** |  | [optional] 
+**to** | [**OBPv400CreateTransactionRequestCounterparty200ResponseDetailsToSepaCreditTransfersDebtorAccount**](OBPv400CreateTransactionRequestCounterparty200ResponseDetailsToSepaCreditTransfersDebtorAccount.md) |  | [optional] 
+**charge_policy** | **str** |  | [optional] 
+**value** | [**OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit**](OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit.md) |  | [optional] 
+**reasons** | [**List[OBPv400CreateTransactionRequestSepaRequestReasonsInner]**](OBPv400CreateTransactionRequestSepaRequestReasonsInner.md) |  | [optional] 
 
 ## Example
 

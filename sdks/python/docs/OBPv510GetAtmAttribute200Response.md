@@ -5,8 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510GetAtmAttribute200ResponseProperties**](OBPv510GetAtmAttribute200ResponseProperties.md) |  | 
+**name** | **str** |  | [optional] 
+**is_active** | **bool** |  | [optional] 
+**atm_id** | **str** |  | [optional] 
+**bank_id** | **str** |  | [optional] 
+**type** | **str** |  | [optional] 
+**atm_attribute_id** | **str** |  | [optional] 
+**value** | **str** |  | [optional] 
 
 ## Example
 

@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv300GetBranches200ResponseProperties**](OBPv300GetBranches200ResponseProperties.md) |  | 
+**branches** | [**List[OBPv300GetBranches200ResponseBranchesInner]**](OBPv300GetBranches200ResponseBranchesInner.md) |  | [optional] 
 
 ## Example
 

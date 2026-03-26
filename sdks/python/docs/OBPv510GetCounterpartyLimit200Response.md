@@ -5,8 +5,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510GetCounterpartyLimit200ResponseProperties**](OBPv510GetCounterpartyLimit200ResponseProperties.md) |  | 
+**counterparty_limit_id** | **str** |  | [optional] 
+**max_monthly_amount** | **str** |  | [optional] 
+**max_number_of_monthly_transactions** | **int** |  | [optional] 
+**max_single_amount** | **str** |  | [optional] 
+**view_id** | **str** |  | [optional] 
+**bank_id** | **str** |  | [optional] 
+**account_id** | **str** |  | [optional] 
+**max_number_of_transactions** | **int** |  | [optional] 
+**currency** | **str** |  | [optional] 
+**max_number_of_yearly_transactions** | **int** |  | [optional] 
+**max_yearly_amount** | **str** |  | [optional] 
+**counterparty_id** | **str** |  | [optional] 
+**max_total_amount** | **str** |  | [optional] 
 
 ## Example
 

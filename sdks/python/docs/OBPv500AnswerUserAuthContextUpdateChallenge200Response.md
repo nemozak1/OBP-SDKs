@@ -5,8 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv500AnswerUserAuthContextUpdateChallenge200ResponseProperties**](OBPv500AnswerUserAuthContextUpdateChallenge200ResponseProperties.md) |  | 
+**user_auth_context_update_id** | **datetime** |  | [optional] 
+**user_id** | **str** |  | [optional] 
+**key** | **str** |  | [optional] 
+**status** | **str** |  | [optional] 
+**consumer_id** | **str** |  | [optional] 
+**value** | **str** |  | [optional] 
 
 ## Example
 

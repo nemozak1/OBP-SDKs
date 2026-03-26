@@ -5,8 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310CreateMethodRoutingRequestProperties**](OBPv310CreateMethodRoutingRequestProperties.md) |  | 
+**connector_name** | **str** |  | [optional] 
+**bank_id_pattern** | **str** |  | [optional] 
+**is_bank_id_exact_match** | **bool** |  | [optional] 
+**method_name** | **str** |  | [optional] 
+**parameters** | [**List[OBPv400GetExplicitCounterpartyById200ResponseBespokeInner]**](OBPv400GetExplicitCounterpartyById200ResponseBespokeInner.md) |  | [optional] 
 
 ## Example
 

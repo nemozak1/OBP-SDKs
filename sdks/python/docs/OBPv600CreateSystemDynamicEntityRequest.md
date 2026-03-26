@@ -5,8 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600CreateSystemDynamicEntityRequestProperties**](OBPv600CreateSystemDynamicEntityRequestProperties.md) |  | 
+**personal_requires_role** | **bool** |  | [optional] 
+**entity_name** | **str** |  | [optional] 
+**var_schema** | [**OBPv600CreateSystemDynamicEntityRequestSchema**](OBPv600CreateSystemDynamicEntityRequestSchema.md) |  | [optional] 
+**has_public_access** | **bool** |  | [optional] 
+**has_community_access** | **bool** |  | [optional] 
+**has_personal_entity** | **bool** |  | [optional] 
 
 ## Example
 

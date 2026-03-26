@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv400_get_user_customer_links_by_customer_id200_response_properties import OBPv400GetUserCustomerLinksByCustomerId200ResponseProperties
+from pydantic import BaseModel, ConfigDict
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv400_get_user_customer_links_by_customer_id200_response_user_customer_links_inner import OBPv400GetUserCustomerLinksByCustomerId200ResponseUserCustomerLinksInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,8 @@ class OBPv400GetUserCustomerLinksByCustomerId200Response(BaseModel):
     """
     OBPv400GetUserCustomerLinksByCustomerId200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv400GetUserCustomerLinksByCustomerId200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    user_customer_links: Optional[List[OBPv400GetUserCustomerLinksByCustomerId200ResponseUserCustomerLinksInner]] = None
+    __properties: ClassVar[List[str]] = ["user_customer_links"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +70,13 @@ class OBPv400GetUserCustomerLinksByCustomerId200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in user_customer_links (list)
+        _items = []
+        if self.user_customer_links:
+            for _item_user_customer_links in self.user_customer_links:
+                if _item_user_customer_links:
+                    _items.append(_item_user_customer_links.to_dict())
+            _dict['user_customer_links'] = _items
         return _dict
 
     @classmethod
@@ -86,8 +89,7 @@ class OBPv400GetUserCustomerLinksByCustomerId200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv400GetUserCustomerLinksByCustomerId200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "user_customer_links": [OBPv400GetUserCustomerLinksByCustomerId200ResponseUserCustomerLinksInner.from_dict(_item) for _item in obj["user_customer_links"]] if obj.get("user_customer_links") is not None else None
         })
         return _obj
 

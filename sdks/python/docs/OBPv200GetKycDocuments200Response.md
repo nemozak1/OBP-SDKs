@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv200GetKycDocuments200ResponseProperties**](OBPv200GetKycDocuments200ResponseProperties.md) |  | 
+**documents** | [**List[OBPv200AddKycDocument200Response]**](OBPv200AddKycDocument200Response.md) |  | [optional] 
 
 ## Example
 

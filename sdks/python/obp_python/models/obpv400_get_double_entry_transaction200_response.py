@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv400_get_double_entry_transaction200_response_properties import OBPv400GetDoubleEntryTransaction200ResponseProperties
+from pydantic import BaseModel, ConfigDict
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv400_get_double_entry_transaction200_response_debit_transaction import OBPv400GetDoubleEntryTransaction200ResponseDebitTransaction
+from obp_python.models.obpv400_get_double_entry_transaction200_response_transaction_request import OBPv400GetDoubleEntryTransaction200ResponseTransactionRequest
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +29,10 @@ class OBPv400GetDoubleEntryTransaction200Response(BaseModel):
     """
     OBPv400GetDoubleEntryTransaction200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv400GetDoubleEntryTransaction200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    debit_transaction: Optional[OBPv400GetDoubleEntryTransaction200ResponseDebitTransaction] = None
+    credit_transaction: Optional[OBPv400GetDoubleEntryTransaction200ResponseDebitTransaction] = None
+    transaction_request: Optional[OBPv400GetDoubleEntryTransaction200ResponseTransactionRequest] = None
+    __properties: ClassVar[List[str]] = ["debit_transaction", "credit_transaction", "transaction_request"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +73,15 @@ class OBPv400GetDoubleEntryTransaction200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of debit_transaction
+        if self.debit_transaction:
+            _dict['debit_transaction'] = self.debit_transaction.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of credit_transaction
+        if self.credit_transaction:
+            _dict['credit_transaction'] = self.credit_transaction.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of transaction_request
+        if self.transaction_request:
+            _dict['transaction_request'] = self.transaction_request.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +94,9 @@ class OBPv400GetDoubleEntryTransaction200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv400GetDoubleEntryTransaction200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "debit_transaction": OBPv400GetDoubleEntryTransaction200ResponseDebitTransaction.from_dict(obj["debit_transaction"]) if obj.get("debit_transaction") is not None else None,
+            "credit_transaction": OBPv400GetDoubleEntryTransaction200ResponseDebitTransaction.from_dict(obj["credit_transaction"]) if obj.get("credit_transaction") is not None else None,
+            "transaction_request": OBPv400GetDoubleEntryTransaction200ResponseTransactionRequest.from_dict(obj["transaction_request"]) if obj.get("transaction_request") is not None else None
         })
         return _obj
 

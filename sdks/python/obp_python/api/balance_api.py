@@ -1,7 +1,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -20,7 +20,7 @@ from pydantic import Field, StrictStr
 from typing_extensions import Annotated
 from obp_python.models.obpv510_create_bank_account_balance_request import OBPv510CreateBankAccountBalanceRequest
 from obp_python.models.obpv510_get_all_bank_account_balances200_response import OBPv510GetAllBankAccountBalances200Response
-from obp_python.models.obpv510_get_all_bank_account_balances200_response_properties_balances_items import OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
+from obp_python.models.obpv510_get_all_bank_account_balances200_response_balances_inner import OBPv510GetAllBankAccountBalances200ResponseBalancesInner
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -58,7 +58,7 @@ class BalanceApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems:
+    ) -> OBPv510GetAllBankAccountBalances200ResponseBalancesInner:
         """Create Bank Account Balance
 
         <p>Create a new Balance for a Bank Account.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>balance_amount</strong></a>: 50.89</p> <p><a href=\"/glossary#balance_type\"><strong>balance_type</strong></a>: openingBooked</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>balance_amount</strong></a>: 50.89</p> <p><a href=\"/glossary#balance_id\"><strong>balance_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#balance_type\"><strong>balance_type</strong></a>: openingBooked</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> 
@@ -102,7 +102,7 @@ class BalanceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems",
+            '200': "OBPv510GetAllBankAccountBalances200ResponseBalancesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -134,7 +134,7 @@ class BalanceApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems]:
+    ) -> ApiResponse[OBPv510GetAllBankAccountBalances200ResponseBalancesInner]:
         """Create Bank Account Balance
 
         <p>Create a new Balance for a Bank Account.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>balance_amount</strong></a>: 50.89</p> <p><a href=\"/glossary#balance_type\"><strong>balance_type</strong></a>: openingBooked</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>balance_amount</strong></a>: 50.89</p> <p><a href=\"/glossary#balance_id\"><strong>balance_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#balance_type\"><strong>balance_type</strong></a>: openingBooked</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> 
@@ -178,7 +178,7 @@ class BalanceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems",
+            '200': "OBPv510GetAllBankAccountBalances200ResponseBalancesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -254,7 +254,7 @@ class BalanceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems",
+            '200': "OBPv510GetAllBankAccountBalances200ResponseBalancesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -937,7 +937,7 @@ class BalanceApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems:
+    ) -> OBPv510GetAllBankAccountBalances200ResponseBalancesInner:
         """Get Bank Account Balance By ID
 
         <p>Get a specific Bank Account Balance by its BALANCE_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#balance_id\">BALANCE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>balance_amount</strong></a>: 50.89</p> <p><a href=\"/glossary#balance_id\"><strong>balance_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#balance_type\"><strong>balance_type</strong></a>: openingBooked</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> 
@@ -981,7 +981,7 @@ class BalanceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems",
+            '200': "OBPv510GetAllBankAccountBalances200ResponseBalancesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1013,7 +1013,7 @@ class BalanceApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems]:
+    ) -> ApiResponse[OBPv510GetAllBankAccountBalances200ResponseBalancesInner]:
         """Get Bank Account Balance By ID
 
         <p>Get a specific Bank Account Balance by its BALANCE_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#balance_id\">BALANCE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>balance_amount</strong></a>: 50.89</p> <p><a href=\"/glossary#balance_id\"><strong>balance_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#balance_type\"><strong>balance_type</strong></a>: openingBooked</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> 
@@ -1057,7 +1057,7 @@ class BalanceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems",
+            '200': "OBPv510GetAllBankAccountBalances200ResponseBalancesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1133,7 +1133,7 @@ class BalanceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems",
+            '200': "OBPv510GetAllBankAccountBalances200ResponseBalancesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1234,7 +1234,7 @@ class BalanceApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems:
+    ) -> OBPv510GetAllBankAccountBalances200ResponseBalancesInner:
         """Update Bank Account Balance
 
         <p>Update an existing Bank Account Balance specified by BALANCE_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#balance_id\">BALANCE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>balance_amount</strong></a>: 50.89</p> <p><a href=\"/glossary#balance_id\"><strong>balance_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#balance_type\"><strong>balance_type</strong></a>: openingBooked</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> 
@@ -1281,7 +1281,7 @@ class BalanceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems",
+            '200': "OBPv510GetAllBankAccountBalances200ResponseBalancesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1314,7 +1314,7 @@ class BalanceApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems]:
+    ) -> ApiResponse[OBPv510GetAllBankAccountBalances200ResponseBalancesInner]:
         """Update Bank Account Balance
 
         <p>Update an existing Bank Account Balance specified by BALANCE_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#balance_id\">BALANCE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>balance_amount</strong></a>: 50.89</p> <p><a href=\"/glossary#balance_id\"><strong>balance_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#balance_type\"><strong>balance_type</strong></a>: openingBooked</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> 
@@ -1361,7 +1361,7 @@ class BalanceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems",
+            '200': "OBPv510GetAllBankAccountBalances200ResponseBalancesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1441,7 +1441,7 @@ class BalanceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems",
+            '200': "OBPv510GetAllBankAccountBalances200ResponseBalancesInner",
             '500': None,
         }
         response_data = self.api_client.call_api(

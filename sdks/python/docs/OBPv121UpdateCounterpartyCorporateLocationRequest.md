@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv121UpdateCounterpartyCorporateLocationRequestProperties**](OBPv121UpdateCounterpartyCorporateLocationRequestProperties.md) |  | 
+**corporate_location** | [**OBPv300GetBranches200ResponseBranchesInnerLocation**](OBPv300GetBranches200ResponseBranchesInnerLocation.md) |  | [optional] 
 
 ## Example
 

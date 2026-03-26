@@ -1,6 +1,6 @@
 # obp_python.WebUiPropsApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **o_bpv3_1_0_create_web_ui_props**
-> OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems o_bpv3_1_0_create_web_ui_props(obpv400_create_transaction_request_counterparty200_response_properties_attributes_items)
+> OBPv310GetWebUiProps200ResponseWebuiPropsInner o_bpv3_1_0_create_web_ui_props(obpv400_create_transaction_request_counterparty200_response_attributes_inner)
 
 Create WebUiProps
 
@@ -65,15 +65,15 @@ have &quot;line break&quot; and double quotations.&quot;}
 
 ```python
 import obp_python
-from obp_python.models.obpv310_get_web_ui_props200_response_properties_webui_props_items import OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems
-from obp_python.models.obpv400_create_transaction_request_counterparty200_response_properties_attributes_items import OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems
+from obp_python.models.obpv310_get_web_ui_props200_response_webui_props_inner import OBPv310GetWebUiProps200ResponseWebuiPropsInner
+from obp_python.models.obpv400_create_transaction_request_counterparty200_response_attributes_inner import OBPv400CreateTransactionRequestCounterparty200ResponseAttributesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -99,11 +99,11 @@ configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
 with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.WebUiPropsApi(api_client)
-    obpv400_create_transaction_request_counterparty200_response_properties_attributes_items = {"type":"object","properties":{"name":{"type":"string"},"value":{"type":"string"}}} # OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems | Request body
+    obpv400_create_transaction_request_counterparty200_response_attributes_inner = {"type":"object","properties":{"name":{"type":"string"},"value":{"type":"string"}}} # OBPv400CreateTransactionRequestCounterparty200ResponseAttributesInner | Request body
 
     try:
         # Create WebUiProps
-        api_response = api_instance.o_bpv3_1_0_create_web_ui_props(obpv400_create_transaction_request_counterparty200_response_properties_attributes_items)
+        api_response = api_instance.o_bpv3_1_0_create_web_ui_props(obpv400_create_transaction_request_counterparty200_response_attributes_inner)
         print("The response of WebUiPropsApi->o_bpv3_1_0_create_web_ui_props:\n")
         pprint(api_response)
     except Exception as e:
@@ -117,11 +117,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obpv400_create_transaction_request_counterparty200_response_properties_attributes_items** | [**OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems**](OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems.md)| Request body | 
+ **obpv400_create_transaction_request_counterparty200_response_attributes_inner** | [**OBPv400CreateTransactionRequestCounterparty200ResponseAttributesInner**](OBPv400CreateTransactionRequestCounterparty200ResponseAttributesInner.md)| Request body | 
 
 ### Return type
 
-[**OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems**](OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems.md)
+[**OBPv310GetWebUiProps200ResponseWebuiPropsInner**](OBPv310GetWebUiProps200ResponseWebuiPropsInner.md)
 
 ### Authorization
 
@@ -164,10 +164,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -262,9 +262,9 @@ Get WebUiProps
 </ul>
 <p><strong>Examples:</strong></p>
 <p>Get only database-stored props:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v3.1.0/management/webui_props">https://apisandbox.openbankproject.com/obp/v3.1.0/management/webui_props</a></p>
+<a href="http://127.0.0.1:8080/obp/v3.1.0/management/webui_props">http://127.0.0.1:8080/obp/v3.1.0/management/webui_props</a></p>
 <p>Get database props combined with defaults:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v3.1.0/management/webui_props?active=true">https://apisandbox.openbankproject.com/obp/v3.1.0/management/webui_props?active=true</a></p>
+<a href="http://127.0.0.1:8080/obp/v3.1.0/management/webui_props?active=true">http://127.0.0.1:8080/obp/v3.1.0/management/webui_props?active=true</a></p>
 <p>For more details about WebUI Props, including how to set config file defaults and precedence order, see <a href="/glossary#webui_props">here</a>.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 <p><strong>JSON response body fields:</strong></p>
@@ -285,10 +285,10 @@ from obp_python.models.obpv310_get_web_ui_props200_response import OBPv310GetWeb
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -353,7 +353,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv6_0_0_create_or_update_web_ui_props**
-> OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems o_bpv6_0_0_create_or_update_web_ui_props(webuipropname, obpv400_delete_system_level_endpoint_tag200_response)
+> OBPv310GetWebUiProps200ResponseWebuiPropsInner o_bpv6_0_0_create_or_update_web_ui_props(webuipropname, obpv200_get_transaction_types200_response_transaction_types_inner_id)
 
 Create or Update WebUiProps
 
@@ -404,15 +404,15 @@ have &quot;line break&quot; and double quotations.&quot;}
 
 ```python
 import obp_python
-from obp_python.models.obpv310_get_web_ui_props200_response_properties_webui_props_items import OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems
-from obp_python.models.obpv400_delete_system_level_endpoint_tag200_response import OBPv400DeleteSystemLevelEndpointTag200Response
+from obp_python.models.obpv200_get_transaction_types200_response_transaction_types_inner_id import OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId
+from obp_python.models.obpv310_get_web_ui_props200_response_webui_props_inner import OBPv310GetWebUiProps200ResponseWebuiPropsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -439,11 +439,11 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.WebUiPropsApi(api_client)
     webuipropname = 'webuipropname_example' # str | The WEBUIPROPNAME identifier
-    obpv400_delete_system_level_endpoint_tag200_response = {type=object, properties={value={type=string}}} # OBPv400DeleteSystemLevelEndpointTag200Response | Request body
+    obpv200_get_transaction_types200_response_transaction_types_inner_id = {type=object, properties={value={type=string}}} # OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
 
     try:
         # Create or Update WebUiProps
-        api_response = api_instance.o_bpv6_0_0_create_or_update_web_ui_props(webuipropname, obpv400_delete_system_level_endpoint_tag200_response)
+        api_response = api_instance.o_bpv6_0_0_create_or_update_web_ui_props(webuipropname, obpv200_get_transaction_types200_response_transaction_types_inner_id)
         print("The response of WebUiPropsApi->o_bpv6_0_0_create_or_update_web_ui_props:\n")
         pprint(api_response)
     except Exception as e:
@@ -458,11 +458,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **webuipropname** | **str**| The WEBUIPROPNAME identifier | 
- **obpv400_delete_system_level_endpoint_tag200_response** | [**OBPv400DeleteSystemLevelEndpointTag200Response**](OBPv400DeleteSystemLevelEndpointTag200Response.md)| Request body | 
+ **obpv200_get_transaction_types200_response_transaction_types_inner_id** | [**OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId**](OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId.md)| Request body | 
 
 ### Return type
 
-[**OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems**](OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems.md)
+[**OBPv310GetWebUiProps200ResponseWebuiPropsInner**](OBPv310GetWebUiProps200ResponseWebuiPropsInner.md)
 
 ### Authorization
 
@@ -509,10 +509,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -579,7 +579,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv6_0_0_get_web_ui_prop**
-> OBPv600GetWebUiProps200ResponsePropertiesWebuiPropsItems o_bpv6_0_0_get_web_ui_prop(webuipropname)
+> OBPv600GetWebUiProps200ResponseWebuiPropsInner o_bpv6_0_0_get_web_ui_prop(webuipropname)
 
 Get WebUiProp by Name
 
@@ -609,9 +609,9 @@ Get WebUiProp by Name
 </ul>
 <p><strong>Examples:</strong></p>
 <p>Get database-stored prop only:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props/webui_api_explorer_url">https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props/webui_api_explorer_url</a></p>
+<a href="http://127.0.0.1:8080/obp/v6.0.0/webui-props/webui_api_explorer_url">http://127.0.0.1:8080/obp/v6.0.0/webui-props/webui_api_explorer_url</a></p>
 <p>Get database prop or fallback to default:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props/webui_api_explorer_url?active=true">https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props/webui_api_explorer_url?active=true</a></p>
+<a href="http://127.0.0.1:8080/obp/v6.0.0/webui-props/webui_api_explorer_url?active=true">http://127.0.0.1:8080/obp/v6.0.0/webui-props/webui_api_explorer_url?active=true</a></p>
 <p>User Authentication is Optional. The User need not be logged in.</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#">WEBUI_PROP_NAME</a>: WEBUI_PROP_NAME</p>
@@ -626,14 +626,14 @@ Get WebUiProp by Name
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_web_ui_props200_response_properties_webui_props_items import OBPv600GetWebUiProps200ResponsePropertiesWebuiPropsItems
+from obp_python.models.obpv600_get_web_ui_props200_response_webui_props_inner import OBPv600GetWebUiProps200ResponseWebuiPropsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -663,7 +663,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetWebUiProps200ResponsePropertiesWebuiPropsItems**](OBPv600GetWebUiProps200ResponsePropertiesWebuiPropsItems.md)
+[**OBPv600GetWebUiProps200ResponseWebuiPropsInner**](OBPv600GetWebUiProps200ResponseWebuiPropsInner.md)
 
 ### Authorization
 
@@ -721,12 +721,12 @@ Get WebUiProps
 </ul>
 <p><strong>Examples:</strong></p>
 <p>Get active props (database overrides config, one value per prop):<br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props">https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what=active">https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what=active</a></p>
+<a href="http://127.0.0.1:8080/obp/v6.0.0/webui-props">http://127.0.0.1:8080/obp/v6.0.0/webui-props</a><br />
+<a href="http://127.0.0.1:8080/obp/v6.0.0/webui-props?what=active">http://127.0.0.1:8080/obp/v6.0.0/webui-props?what=active</a></p>
 <p>Get only database-stored props:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what=database">https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what=database</a></p>
+<a href="http://127.0.0.1:8080/obp/v6.0.0/webui-props?what=database">http://127.0.0.1:8080/obp/v6.0.0/webui-props?what=database</a></p>
 <p>Get only default props from configuration:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what=config">https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what=config</a></p>
+<a href="http://127.0.0.1:8080/obp/v6.0.0/webui-props?what=config">http://127.0.0.1:8080/obp/v6.0.0/webui-props?what=config</a></p>
 <p>For more details about WebUI Props, including how to set config file defaults and precedence order, see <a href="/glossary#webui_props">here</a>.</p>
 <p>User Authentication is Optional. The User need not be logged in.</p>
 <p><strong>JSON response body fields:</strong></p>
@@ -744,10 +744,10 @@ from obp_python.models.obpv600_get_web_ui_props200_response import OBPv600GetWeb
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 

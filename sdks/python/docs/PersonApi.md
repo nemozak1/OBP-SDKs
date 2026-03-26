@@ -1,6 +1,6 @@
 # obp_python.PersonApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -42,10 +42,10 @@ from obp_python.models.obpv140_add_customer_message_request import OBPv140AddCus
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -149,10 +149,10 @@ from obp_python.models.obpv400_create_customer_message_request import OBPv400Cre
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -262,10 +262,10 @@ from obp_python.models.obpv510_get_agent200_response import OBPv510GetAgent200Re
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -369,10 +369,10 @@ from obp_python.models.obpv510_update_agent_status_request import OBPv510UpdateA
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -446,7 +446,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv6_0_0_create_customer**
-> OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems o_bpv6_0_0_create_customer(bankid, obpv600_create_customer_request)
+> OBPv600GetCustomerChildren200ResponseCustomersInner o_bpv6_0_0_create_customer(bankid, obpv600_create_customer_request)
 
 Create Customer
 
@@ -505,12 +505,12 @@ Dates are stored with time set to midnight (00:00:00) UTC for consistency.</p>
 <p><a href="/glossary#">date_of_birth</a>: 2018-03-09</p>
 <p><a href="/glossary#">dependants</a>: 1</p>
 <p><a href="/glossary#dob_of_dependants">dob_of_dependants</a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#">email</a>: <a href="&#x6d;a&#105;&#108;to&#58;&#102;e&#108;&#x69;&#120;&#x73;&#x6d;&#x69;t&#x68;&#64;&#101;&#120;&#97;&#x6d;&#112;&#108;&#101;.c&#111;m">&#x66;&#101;&#108;i&#120;s&#x6d;&#x69;&#116;h&#x40;&#101;&#x78;&#x61;mpl&#101;&#x2e;c&#x6f;m</a></p>
+<p><a href="/glossary#">email</a>: <a href="&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#x3a;&#x66;&#x65;&#x6c;&#x69;x&#x73;&#x6d;&#x69;&#116;h&#64;&#x65;&#x78;&#x61;&#109;&#x70;&#x6c;&#101;&#46;&#x63;&#x6f;&#x6d;">&#x66;&#101;&#108;&#x69;&#x78;&#115;&#109;&#105;&#116;h&#64;&#x65;&#120;&#97;mp&#x6c;&#x65;&#46;&#x63;&#x6f;&#x6d;</a></p>
 <p><a href="/glossary#">employment_status</a>: worker</p>
 <p><a href="/glossary#face_image">face_image</a>:</p>
 <p><a href="/glossary#">highest_education_attained</a>: Master</p>
 <p><a href="/glossary#">kyc_status</a>: false</p>
-<p><a href="/glossary#last_ok_date">last_ok_date</a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date">last_ok_date</a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#">name_suffix</a>: Sr</p>
 <p><a href="/glossary#">parent_customer_id</a>:</p>
 <p><a href="/glossary#">relationship_status</a>: single</p>
@@ -527,12 +527,12 @@ Dates are stored with time set to midnight (00:00:00) UTC for consistency.</p>
 <p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
 <p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
 <p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;ail&#116;&#111;&#58;&#102;&#101;&#x6c;&#105;x&#x73;&#109;it&#x68;&#x40;&#101;x&#97;&#109;&#112;&#108;&#x65;.&#99;&#111;&#x6d;">&#102;&#x65;&#108;&#105;&#x78;&#x73;&#x6d;&#x69;&#116;&#x68;&#x40;&#x65;&#120;&#97;&#x6d;&#112;&#x6c;&#x65;&#x2e;&#99;&#x6f;&#109;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#x61;&#105;&#x6c;&#x74;&#111;&#58;&#x66;&#101;l&#x69;&#x78;&#115;&#x6d;&#x69;&#x74;&#104;@&#101;&#x78;a&#109;&#x70;&#x6c;&#101;&#46;c&#111;&#109;">&#102;&#x65;&#x6c;&#105;&#120;&#x73;&#109;&#x69;&#116;h@&#101;&#x78;&#x61;mp&#x6c;&#x65;&#x2e;&#x63;&#111;&#109;</a></p>
 <p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
 <p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
 <p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
 <p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
 <p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
 <p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
 <p><a href="/glossary#"><strong>name_suffix</strong></a>: Sr</p>
@@ -555,14 +555,14 @@ Dates are stored with time set to midnight (00:00:00) UTC for consistency.</p>
 ```python
 import obp_python
 from obp_python.models.obpv600_create_customer_request import OBPv600CreateCustomerRequest
-from obp_python.models.obpv600_get_customer_children200_response_properties_customers_items import OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems
+from obp_python.models.obpv600_get_customer_children200_response_customers_inner import OBPv600GetCustomerChildren200ResponseCustomersInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -589,7 +589,7 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.PersonApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
-    obpv600_create_customer_request = {"type":"object","properties":{"relationship_status":{"type":"string"},"name_suffix":{"type":"string"},"highest_education_attained":{"type":"string"},"credit_limit":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"date_of_birth":{"type":"string","format":"date-time"},"title":{"type":"string"},"face_image":{"type":"object","properties":{"url":{"type":"string"},"date":{"type":"string","format":"date-time"}}},"dob_of_dependants":{"type":"array","items":{"type":"string"}},"last_ok_date":{"type":"string","format":"date-time"},"credit_rating":{"type":"object","properties":{"rating":{"type":"string"},"source":{"type":"string"}}},"email":{"type":"string"},"customer_number":{"type":"string"},"kyc_status":{"type":"boolean"},"customer_type":{"type":"string"},"legal_name":{"type":"string"},"branch_id":{"type":"string"},"employment_status":{"type":"string"},"mobile_phone_number":{"type":"string"},"dependants":{"type":"integer"}}} # OBPv600CreateCustomerRequest | Request body
+    obpv600_create_customer_request = {"type":"object","properties":{"relationship_status":{"type":"string"},"name_suffix":{"type":"string"},"highest_education_attained":{"type":"string"},"last_ok_date":{"type":"string","format":"date-time"},"credit_limit":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"date_of_birth":{"type":"string","format":"date-time"},"title":{"type":"string"},"face_image":{"type":"object","properties":{"url":{"type":"string"},"date":{"type":"string","format":"date-time"}}},"dob_of_dependants":{"type":"array","items":{"type":"string"}},"credit_rating":{"type":"object","properties":{"rating":{"type":"string"},"source":{"type":"string"}}},"email":{"type":"string"},"customer_number":{"type":"string"},"kyc_status":{"type":"boolean"},"customer_type":{"type":"string"},"legal_name":{"type":"string"},"branch_id":{"type":"string"},"employment_status":{"type":"string"},"mobile_phone_number":{"type":"string"},"dependants":{"type":"integer"}}} # OBPv600CreateCustomerRequest | Request body
 
     try:
         # Create Customer
@@ -612,7 +612,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems**](OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems.md)
+[**OBPv600GetCustomerChildren200ResponseCustomersInner**](OBPv600GetCustomerChildren200ResponseCustomersInner.md)
 
 ### Authorization
 

@@ -1,6 +1,6 @@
 # obp_python.OIDCApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -32,10 +32,10 @@ from obp_python.models.obpv310_get_o_auth2_server_jwks_uris200_response import O
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -106,10 +106,10 @@ from obp_python.models.obpv310_get_obp_connector_loopback200_response import OBP
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -182,6 +182,12 @@ Get OIDC Client
 <p>Returns client information including name, consumer_id, redirect_uris, and enabled status.<br />
 This endpoint does not verify the client secret - use POST /oidc/clients/verify for authentication.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br />
+See [here](/glossary#API.Endpoint Auth Modes) for more information.</p>
+<p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br />
+See [here](/glossary#API.Endpoint Auth Modes) for more information.</p>
+<p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br />
+See [here](/glossary#API.Endpoint Auth Modes) for more information.</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#">CLIENT_ID</a>: CLIENT_ID</p>
 <p><strong>JSON response body fields:</strong></p>
@@ -204,10 +210,10 @@ from obp_python.models.obpv600_get_oidc_client200_response import OBPv600GetOidc
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -284,6 +290,12 @@ Verify OIDC Client
 <p>Returns <code>valid: true</code> if the client_id and client_secret match an active consumer.<br />
 Also returns the consumer_id and redirect_uris for use by the OIDC provider.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br />
+See [here](/glossary#API.Endpoint Auth Modes) for more information.</p>
+<p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br />
+See [here](/glossary#API.Endpoint Auth Modes) for more information.</p>
+<p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br />
+See [here](/glossary#API.Endpoint Auth Modes) for more information.</p>
 <p><strong>JSON request body fields:</strong></p>
 <p><a href="/glossary#"><strong>client_id</strong></a>: client_id</p>
 <p><a href="/glossary#"><strong>client_secret</strong></a>: client_secret</p>
@@ -307,10 +319,10 @@ from obp_python.models.obpv600_verify_oidc_client_request import OBPv600VerifyOi
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters

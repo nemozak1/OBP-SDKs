@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -19,8 +19,8 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv400_create_endpoint_mapping_request_properties import OBPv400CreateEndpointMappingRequestProperties
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv400_get_all_endpoint_mappings200_response_endpoint_mappings_inner_response_mapping import OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInnerResponseMapping
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,10 @@ class OBPv400CreateEndpointMappingRequest(BaseModel):
     """
     OBPv400CreateEndpointMappingRequest
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv400CreateEndpointMappingRequestProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    operation_id: Optional[StrictStr] = None
+    request_mapping: Optional[Dict[str, Any]] = None
+    response_mapping: Optional[OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInnerResponseMapping] = None
+    __properties: ClassVar[List[str]] = ["operation_id", "request_mapping", "response_mapping"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +72,9 @@ class OBPv400CreateEndpointMappingRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of response_mapping
+        if self.response_mapping:
+            _dict['response_mapping'] = self.response_mapping.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +87,9 @@ class OBPv400CreateEndpointMappingRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv400CreateEndpointMappingRequestProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "operation_id": obj.get("operation_id"),
+            "request_mapping": obj.get("request_mapping"),
+            "response_mapping": OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInnerResponseMapping.from_dict(obj["response_mapping"]) if obj.get("response_mapping") is not None else None
         })
         return _obj
 

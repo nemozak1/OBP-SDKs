@@ -5,8 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600VerifyOidcClient200ResponseProperties**](OBPv600VerifyOidcClient200ResponseProperties.md) |  | 
+**client_id** | **str** |  | [optional] 
+**redirect_uris** | **List[str]** |  | [optional] 
+**valid** | **bool** |  | [optional] 
+**consumer_id** | **str** |  | [optional] 
 
 ## Example
 

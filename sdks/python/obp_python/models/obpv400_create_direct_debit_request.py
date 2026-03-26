@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
+from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv400_create_direct_debit_request_properties import OBPv400CreateDirectDebitRequestProperties
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,13 @@ class OBPv400CreateDirectDebitRequest(BaseModel):
     """
     OBPv400CreateDirectDebitRequest
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv400CreateDirectDebitRequestProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    date_starts: Optional[datetime] = None
+    customer_id: Optional[StrictStr] = None
+    date_signed: Optional[datetime] = None
+    user_id: Optional[StrictStr] = None
+    date_expires: Optional[datetime] = None
+    counterparty_id: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["date_starts", "customer_id", "date_signed", "user_id", "date_expires", "counterparty_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +75,6 @@ class OBPv400CreateDirectDebitRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +87,12 @@ class OBPv400CreateDirectDebitRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv400CreateDirectDebitRequestProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "date_starts": obj.get("date_starts"),
+            "customer_id": obj.get("customer_id"),
+            "date_signed": obj.get("date_signed"),
+            "user_id": obj.get("user_id"),
+            "date_expires": obj.get("date_expires"),
+            "counterparty_id": obj.get("counterparty_id")
         })
         return _obj
 

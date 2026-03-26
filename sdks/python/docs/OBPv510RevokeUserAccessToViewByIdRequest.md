@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510RevokeUserAccessToViewByIdRequestProperties**](OBPv510RevokeUserAccessToViewByIdRequestProperties.md) |  | 
+**view_id** | **str** |  | [optional] 
+**user_id** | **str** |  | [optional] 
 
 ## Example
 

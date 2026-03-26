@@ -1,7 +1,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -19,8 +19,8 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
 from obp_python.models.obpv400_get_dynamic_endpoints200_response import OBPv400GetDynamicEndpoints200Response
-from obp_python.models.obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items import OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
-from obp_python.models.obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string import OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString
+from obp_python.models.obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner import OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner
+from obp_python.models.obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string import OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString
 from obp_python.models.obpv400_update_bank_level_dynamic_endpoint_host_request import OBPv400UpdateBankLevelDynamicEndpointHostRequest
 
 from obp_python.api_client import ApiClient, RequestSerialized
@@ -45,7 +45,7 @@ class DynamicEndpointManageApi:
     def o_bpv4_0_0_create_bank_level_dynamic_endpoint(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string: Annotated[OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, Field(description="Request body")],
+        obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string: Annotated[OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -58,15 +58,15 @@ class DynamicEndpointManageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems:
+    ) -> OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner:
         """Create Bank Level Dynamic Endpoint
 
         <p>Create dynamic endpoints.</p> <p>Create dynamic endpoints with one json format swagger content.</p> <p>If the host of swagger is <code>dynamic_entity</code>, then you need link the swagger fields to the dynamic entity fields,<br /> please check <code>Endpoint Mapping</code> endpoints.</p> <p>If the host of swagger is <code>obp_mock</code>, every dynamic endpoint will return example response of swagger,</p> <p>when create MethodRouting for given dynamic endpoint, it will be routed to given url.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string: Request body (required)
-        :type obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString
+        :param obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string: Request body (required)
+        :type obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string: OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -91,7 +91,7 @@ class DynamicEndpointManageApi:
 
         _param = self._o_bpv4_0_0_create_bank_level_dynamic_endpoint_serialize(
             bankid=bankid,
-            obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string=obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string,
+            obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string=obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -99,7 +99,7 @@ class DynamicEndpointManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems",
+            '200': "OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner",
             '404': None,
             '500': None,
         }
@@ -118,7 +118,7 @@ class DynamicEndpointManageApi:
     def o_bpv4_0_0_create_bank_level_dynamic_endpoint_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string: Annotated[OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, Field(description="Request body")],
+        obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string: Annotated[OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -131,15 +131,15 @@ class DynamicEndpointManageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems]:
+    ) -> ApiResponse[OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner]:
         """Create Bank Level Dynamic Endpoint
 
         <p>Create dynamic endpoints.</p> <p>Create dynamic endpoints with one json format swagger content.</p> <p>If the host of swagger is <code>dynamic_entity</code>, then you need link the swagger fields to the dynamic entity fields,<br /> please check <code>Endpoint Mapping</code> endpoints.</p> <p>If the host of swagger is <code>obp_mock</code>, every dynamic endpoint will return example response of swagger,</p> <p>when create MethodRouting for given dynamic endpoint, it will be routed to given url.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string: Request body (required)
-        :type obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString
+        :param obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string: Request body (required)
+        :type obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string: OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -164,7 +164,7 @@ class DynamicEndpointManageApi:
 
         _param = self._o_bpv4_0_0_create_bank_level_dynamic_endpoint_serialize(
             bankid=bankid,
-            obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string=obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string,
+            obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string=obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -172,7 +172,7 @@ class DynamicEndpointManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems",
+            '200': "OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner",
             '404': None,
             '500': None,
         }
@@ -191,7 +191,7 @@ class DynamicEndpointManageApi:
     def o_bpv4_0_0_create_bank_level_dynamic_endpoint_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string: Annotated[OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, Field(description="Request body")],
+        obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string: Annotated[OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -211,8 +211,8 @@ class DynamicEndpointManageApi:
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string: Request body (required)
-        :type obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString
+        :param obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string: Request body (required)
+        :type obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string: OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -237,7 +237,7 @@ class DynamicEndpointManageApi:
 
         _param = self._o_bpv4_0_0_create_bank_level_dynamic_endpoint_serialize(
             bankid=bankid,
-            obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string=obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string,
+            obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string=obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -245,7 +245,7 @@ class DynamicEndpointManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems",
+            '200': "OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner",
             '404': None,
             '500': None,
         }
@@ -259,7 +259,7 @@ class DynamicEndpointManageApi:
     def _o_bpv4_0_0_create_bank_level_dynamic_endpoint_serialize(
         self,
         bankid,
-        obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string,
+        obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string,
         _request_auth,
         _content_type,
         _headers,
@@ -287,8 +287,8 @@ class DynamicEndpointManageApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string is not None:
-            _body_params = obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string
+        if obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string is not None:
+            _body_params = obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string
 
 
         # set the HTTP header `Accept`
@@ -341,7 +341,7 @@ class DynamicEndpointManageApi:
     @validate_call
     def o_bpv4_0_0_create_dynamic_endpoint(
         self,
-        obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string: Annotated[OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, Field(description="Request body")],
+        obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string: Annotated[OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -354,13 +354,13 @@ class DynamicEndpointManageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems:
+    ) -> OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner:
         """Create Dynamic Endpoint
 
         <p>Create dynamic endpoints.</p> <p>Create dynamic endpoints with one json format swagger content.</p> <p>If the host of swagger is <code>dynamic_entity</code>, then you need link the swagger fields to the dynamic entity fields,<br /> please check <code>Endpoint Mapping</code> endpoints.</p> <p>If the host of swagger is <code>obp_mock</code>, every dynamic endpoint will return example response of swagger,</p> <p>when create MethodRouting for given dynamic endpoint, it will be routed to given url.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
 
-        :param obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string: Request body (required)
-        :type obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString
+        :param obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string: Request body (required)
+        :type obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string: OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -384,7 +384,7 @@ class DynamicEndpointManageApi:
         """ # noqa: E501
 
         _param = self._o_bpv4_0_0_create_dynamic_endpoint_serialize(
-            obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string=obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string,
+            obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string=obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -392,7 +392,7 @@ class DynamicEndpointManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems",
+            '200': "OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -409,7 +409,7 @@ class DynamicEndpointManageApi:
     @validate_call
     def o_bpv4_0_0_create_dynamic_endpoint_with_http_info(
         self,
-        obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string: Annotated[OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, Field(description="Request body")],
+        obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string: Annotated[OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -422,13 +422,13 @@ class DynamicEndpointManageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems]:
+    ) -> ApiResponse[OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner]:
         """Create Dynamic Endpoint
 
         <p>Create dynamic endpoints.</p> <p>Create dynamic endpoints with one json format swagger content.</p> <p>If the host of swagger is <code>dynamic_entity</code>, then you need link the swagger fields to the dynamic entity fields,<br /> please check <code>Endpoint Mapping</code> endpoints.</p> <p>If the host of swagger is <code>obp_mock</code>, every dynamic endpoint will return example response of swagger,</p> <p>when create MethodRouting for given dynamic endpoint, it will be routed to given url.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
 
-        :param obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string: Request body (required)
-        :type obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString
+        :param obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string: Request body (required)
+        :type obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string: OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -452,7 +452,7 @@ class DynamicEndpointManageApi:
         """ # noqa: E501
 
         _param = self._o_bpv4_0_0_create_dynamic_endpoint_serialize(
-            obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string=obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string,
+            obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string=obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -460,7 +460,7 @@ class DynamicEndpointManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems",
+            '200': "OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -477,7 +477,7 @@ class DynamicEndpointManageApi:
     @validate_call
     def o_bpv4_0_0_create_dynamic_endpoint_without_preload_content(
         self,
-        obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string: Annotated[OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, Field(description="Request body")],
+        obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string: Annotated[OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -495,8 +495,8 @@ class DynamicEndpointManageApi:
 
         <p>Create dynamic endpoints.</p> <p>Create dynamic endpoints with one json format swagger content.</p> <p>If the host of swagger is <code>dynamic_entity</code>, then you need link the swagger fields to the dynamic entity fields,<br /> please check <code>Endpoint Mapping</code> endpoints.</p> <p>If the host of swagger is <code>obp_mock</code>, every dynamic endpoint will return example response of swagger,</p> <p>when create MethodRouting for given dynamic endpoint, it will be routed to given url.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
 
-        :param obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string: Request body (required)
-        :type obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString
+        :param obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string: Request body (required)
+        :type obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string: OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -520,7 +520,7 @@ class DynamicEndpointManageApi:
         """ # noqa: E501
 
         _param = self._o_bpv4_0_0_create_dynamic_endpoint_serialize(
-            obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string=obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string,
+            obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string=obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -528,7 +528,7 @@ class DynamicEndpointManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems",
+            '200': "OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -540,7 +540,7 @@ class DynamicEndpointManageApi:
 
     def _o_bpv4_0_0_create_dynamic_endpoint_serialize(
         self,
-        obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string,
+        obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string,
         _request_auth,
         _content_type,
         _headers,
@@ -566,8 +566,8 @@ class DynamicEndpointManageApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string is not None:
-            _body_params = obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string
+        if obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string is not None:
+            _body_params = obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string
 
 
         # set the HTTP header `Accept`
@@ -1435,7 +1435,7 @@ class DynamicEndpointManageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems:
+    ) -> OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner:
         """ Get Bank Level Dynamic Endpoint
 
         <p>Get a Bank Level Dynamic Endpoint.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
@@ -1476,7 +1476,7 @@ class DynamicEndpointManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems",
+            '200': "OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner",
             '404': None,
             '500': None,
         }
@@ -1508,7 +1508,7 @@ class DynamicEndpointManageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems]:
+    ) -> ApiResponse[OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner]:
         """ Get Bank Level Dynamic Endpoint
 
         <p>Get a Bank Level Dynamic Endpoint.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
@@ -1549,7 +1549,7 @@ class DynamicEndpointManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems",
+            '200': "OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner",
             '404': None,
             '500': None,
         }
@@ -1622,7 +1622,7 @@ class DynamicEndpointManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems",
+            '200': "OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner",
             '404': None,
             '500': None,
         }
@@ -1987,7 +1987,7 @@ class DynamicEndpointManageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems:
+    ) -> OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner:
         """Get Dynamic Endpoint
 
         <p>Get a Dynamic Endpoint.</p> <p>Get one DynamicEndpoint,</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
@@ -2025,7 +2025,7 @@ class DynamicEndpointManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems",
+            '200': "OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner",
             '404': None,
             '500': None,
         }
@@ -2056,7 +2056,7 @@ class DynamicEndpointManageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems]:
+    ) -> ApiResponse[OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner]:
         """Get Dynamic Endpoint
 
         <p>Get a Dynamic Endpoint.</p> <p>Get one DynamicEndpoint,</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
@@ -2094,7 +2094,7 @@ class DynamicEndpointManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems",
+            '200': "OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner",
             '404': None,
             '500': None,
         }
@@ -2163,7 +2163,7 @@ class DynamicEndpointManageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems",
+            '200': "OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner",
             '404': None,
             '500': None,
         }

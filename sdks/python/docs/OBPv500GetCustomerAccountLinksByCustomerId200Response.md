@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv500GetCustomerAccountLinksByCustomerId200ResponseProperties**](OBPv500GetCustomerAccountLinksByCustomerId200ResponseProperties.md) |  | 
+**links** | [**List[OBPv500GetCustomerAccountLinksByCustomerId200ResponseLinksInner]**](OBPv500GetCustomerAccountLinksByCustomerId200ResponseLinksInner.md) |  | [optional] 
 
 ## Example
 

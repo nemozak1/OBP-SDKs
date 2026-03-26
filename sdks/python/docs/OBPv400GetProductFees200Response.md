@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400GetProductFees200ResponseProperties**](OBPv400GetProductFees200ResponseProperties.md) |  | 
+**product_fees** | [**List[OBPv400GetProductFee200Response]**](OBPv400GetProductFee200Response.md) |  | [optional] 
 
 ## Example
 

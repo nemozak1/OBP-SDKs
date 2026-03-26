@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetCustomerChildren200ResponseProperties**](OBPv600GetCustomerChildren200ResponseProperties.md) |  | 
+**customers** | [**List[OBPv600GetCustomerChildren200ResponseCustomersInner]**](OBPv600GetCustomerChildren200ResponseCustomersInner.md) |  | [optional] 
 
 ## Example
 

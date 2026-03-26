@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv600_reject_account_access_request200_response_properties import OBPv600RejectAccountAccessRequest200ResponseProperties
+from datetime import datetime
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,20 @@ class OBPv600RejectAccountAccessRequest200Response(BaseModel):
     """
     OBPv600RejectAccountAccessRequest200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv600RejectAccountAccessRequest200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    requestor_user_id: Optional[StrictStr] = None
+    is_system_view: Optional[StrictBool] = None
+    checker_user_id: Optional[StrictStr] = None
+    business_justification: Optional[StrictStr] = None
+    view_id: Optional[StrictStr] = None
+    bank_id: Optional[StrictStr] = None
+    account_id: Optional[StrictStr] = None
+    updated: Optional[datetime] = None
+    status: Optional[StrictStr] = None
+    target_user_id: Optional[StrictStr] = None
+    account_access_request_id: Optional[StrictStr] = None
+    created: Optional[datetime] = None
+    checker_comment: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["requestor_user_id", "is_system_view", "checker_user_id", "business_justification", "view_id", "bank_id", "account_id", "updated", "status", "target_user_id", "account_access_request_id", "created", "checker_comment"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +82,6 @@ class OBPv600RejectAccountAccessRequest200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +94,19 @@ class OBPv600RejectAccountAccessRequest200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv600RejectAccountAccessRequest200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "requestor_user_id": obj.get("requestor_user_id"),
+            "is_system_view": obj.get("is_system_view"),
+            "checker_user_id": obj.get("checker_user_id"),
+            "business_justification": obj.get("business_justification"),
+            "view_id": obj.get("view_id"),
+            "bank_id": obj.get("bank_id"),
+            "account_id": obj.get("account_id"),
+            "updated": obj.get("updated"),
+            "status": obj.get("status"),
+            "target_user_id": obj.get("target_user_id"),
+            "account_access_request_id": obj.get("account_access_request_id"),
+            "created": obj.get("created"),
+            "checker_comment": obj.get("checker_comment")
         })
         return _obj
 

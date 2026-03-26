@@ -5,8 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetCurrentConsumer200ResponseProperties**](OBPv600GetCurrentConsumer200ResponseProperties.md) |  | 
+**app_type** | **str** |  | [optional] 
+**active_rate_limits** | [**OBPv600GetActiveRateLimitsAtDate200Response**](OBPv600GetActiveRateLimitsAtDate200Response.md) |  | [optional] 
+**description** | **str** |  | [optional] 
+**consumer_id** | **str** |  | [optional] 
+**app_name** | **str** |  | [optional] 
+**call_counters** | [**OBPv600GetCurrentConsumer200ResponseCallCounters**](OBPv600GetCurrentConsumer200ResponseCallCounters.md) |  | [optional] 
 
 ## Example
 

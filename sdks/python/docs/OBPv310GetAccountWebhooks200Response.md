@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310GetAccountWebhooks200ResponseProperties**](OBPv310GetAccountWebhooks200ResponseProperties.md) |  | 
+**web_hooks** | [**List[OBPv310EnableDisableAccountWebhook200Response]**](OBPv310EnableDisableAccountWebhook200Response.md) |  | [optional] 
 
 ## Example
 

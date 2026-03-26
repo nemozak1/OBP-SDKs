@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,11 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv121_get_other_account_for_transaction200_response_properties import OBPv121GetOtherAccountForTransaction200ResponseProperties
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv121_get_other_account_for_transaction200_response_bank import OBPv121GetOtherAccountForTransaction200ResponseBank
+from obp_python.models.obpv121_get_other_account_metadata200_response import OBPv121GetOtherAccountMetadata200Response
+from obp_python.models.obpv300_get_core_transactions_for_bank_account200_response_transactions_inner_this_account_holders_inner import OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerThisAccountHoldersInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +30,15 @@ class OBPv121GetOtherAccountForTransaction200Response(BaseModel):
     """
     OBPv121GetOtherAccountForTransaction200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv121GetOtherAccountForTransaction200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    number: Optional[StrictStr] = None
+    iban: Optional[StrictStr] = Field(default=None, alias="IBAN")
+    swift_bic: Optional[StrictStr] = None
+    holder: Optional[OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerThisAccountHoldersInner] = None
+    bank: Optional[OBPv121GetOtherAccountForTransaction200ResponseBank] = None
+    id: Optional[StrictStr] = None
+    metadata: Optional[OBPv121GetOtherAccountMetadata200Response] = None
+    kind: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["number", "IBAN", "swift_bic", "holder", "bank", "id", "metadata", "kind"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +79,15 @@ class OBPv121GetOtherAccountForTransaction200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of holder
+        if self.holder:
+            _dict['holder'] = self.holder.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of bank
+        if self.bank:
+            _dict['bank'] = self.bank.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of metadata
+        if self.metadata:
+            _dict['metadata'] = self.metadata.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +100,14 @@ class OBPv121GetOtherAccountForTransaction200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv121GetOtherAccountForTransaction200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "number": obj.get("number"),
+            "IBAN": obj.get("IBAN"),
+            "swift_bic": obj.get("swift_bic"),
+            "holder": OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerThisAccountHoldersInner.from_dict(obj["holder"]) if obj.get("holder") is not None else None,
+            "bank": OBPv121GetOtherAccountForTransaction200ResponseBank.from_dict(obj["bank"]) if obj.get("bank") is not None else None,
+            "id": obj.get("id"),
+            "metadata": OBPv121GetOtherAccountMetadata200Response.from_dict(obj["metadata"]) if obj.get("metadata") is not None else None,
+            "kind": obj.get("kind")
         })
         return _obj
 

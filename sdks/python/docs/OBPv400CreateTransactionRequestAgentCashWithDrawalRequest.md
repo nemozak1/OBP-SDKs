@@ -5,8 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400CreateTransactionRequestAgentCashWithDrawalRequestProperties**](OBPv400CreateTransactionRequestAgentCashWithDrawalRequestProperties.md) |  | 
+**description** | **str** |  | [optional] 
+**future_date** | **str** |  | [optional] 
+**to** | [**OBPv400CreateTransactionRequestCounterparty200ResponseDetailsToAgent**](OBPv400CreateTransactionRequestCounterparty200ResponseDetailsToAgent.md) |  | [optional] 
+**charge_policy** | **str** |  | [optional] 
+**value** | [**OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit**](OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit.md) |  | [optional] 
 
 ## Example
 

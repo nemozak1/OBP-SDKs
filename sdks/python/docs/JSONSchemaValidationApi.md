@@ -1,6 +1,6 @@
 # obp_python.JSONSchemaValidationApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **o_bpv4_0_0_create_json_schema_validation**
-> OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems o_bpv4_0_0_create_json_schema_validation(operationid, obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema)
+> OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner o_bpv4_0_0_create_json_schema_validation(operationid, obpv400_get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema)
 
 Create a JSON Schema Validation
 
@@ -68,15 +68,15 @@ Create a JSON Schema Validation
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items import OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems
-from obp_python.models.obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema import OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema
+from obp_python.models.obpv400_get_all_json_schema_validations_public200_response_json_schema_validations_inner import OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner
+from obp_python.models.obpv400_get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema import OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -103,11 +103,11 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.JSONSchemaValidationApi(api_client)
     operationid = 'operationid_example' # str | The OPERATIONID identifier
-    obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema = {type=object, properties={title={type=string}, required={type=array, items={type=string}}, $schema={type=string}, description={type=string}, type={type=string}, properties={type=object, properties={xxx_id={type=object, properties={minLength={type=integer}, maxLength={type=integer}, type={type=string}, examples={type=array, items={type=string}}}}}}, additionalProperties={type=boolean}}} # OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema | Request body
+    obpv400_get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema = {type=object, properties={title={type=string}, required={type=array, items={type=string}}, $schema={type=string}, description={type=string}, type={type=string}, properties={type=object, properties={xxx_id={type=object, properties={minLength={type=integer}, maxLength={type=integer}, type={type=string}, examples={type=array, items={type=string}}}}}}, additionalProperties={type=boolean}}} # OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema | Request body
 
     try:
         # Create a JSON Schema Validation
-        api_response = api_instance.o_bpv4_0_0_create_json_schema_validation(operationid, obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema)
+        api_response = api_instance.o_bpv4_0_0_create_json_schema_validation(operationid, obpv400_get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema)
         print("The response of JSONSchemaValidationApi->o_bpv4_0_0_create_json_schema_validation:\n")
         pprint(api_response)
     except Exception as e:
@@ -122,11 +122,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **operationid** | **str**| The OPERATIONID identifier | 
- **obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema** | [**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema.md)| Request body | 
+ **obpv400_get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema** | [**OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema**](OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems.md)
+[**OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner**](OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)
 
 ### Authorization
 
@@ -169,10 +169,10 @@ import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -273,10 +273,10 @@ from obp_python.models.obpv400_get_all_json_schema_validations_public200_respons
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -372,10 +372,10 @@ from obp_python.models.obpv400_get_all_json_schema_validations_public200_respons
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 
@@ -422,7 +422,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_get_json_schema_validation**
-> OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems o_bpv4_0_0_get_json_schema_validation(operationid)
+> OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner o_bpv4_0_0_get_json_schema_validation(operationid)
 
 Get a JSON Schema Validation
 
@@ -454,14 +454,14 @@ Get a JSON Schema Validation
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items import OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems
+from obp_python.models.obpv400_get_all_json_schema_validations_public200_response_json_schema_validations_inner import OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -509,7 +509,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems.md)
+[**OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner**](OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)
 
 ### Authorization
 
@@ -530,7 +530,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **o_bpv4_0_0_update_json_schema_validation**
-> OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems o_bpv4_0_0_update_json_schema_validation(operationid, obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema)
+> OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner o_bpv4_0_0_update_json_schema_validation(operationid, obpv400_get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema)
 
 Update a JSON Schema Validation
 
@@ -572,15 +572,15 @@ Update a JSON Schema Validation
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items import OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems
-from obp_python.models.obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema import OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema
+from obp_python.models.obpv400_get_all_json_schema_validations_public200_response_json_schema_validations_inner import OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner
+from obp_python.models.obpv400_get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema import OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema
 from obp_python.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apisandbox.openbankproject.com
+# Defining the host is optional and defaults to http://127.0.0.1:8080
 # See configuration.py for a list of all supported configuration parameters.
 configuration = obp_python.Configuration(
-    host = "https://apisandbox.openbankproject.com"
+    host = "http://127.0.0.1:8080"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -607,11 +607,11 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.JSONSchemaValidationApi(api_client)
     operationid = 'operationid_example' # str | The OPERATIONID identifier
-    obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema = {"type":"object","properties":{"title":{"type":"string"},"required":{"type":"array","items":{"type":"string"}},"$schema":{"type":"string"},"description":{"type":"string"},"type":{"type":"string"},"properties":{"type":"object","properties":{"xxx_id":{"type":"object","properties":{"minLength":{"type":"integer"},"maxLength":{"type":"integer"},"type":{"type":"string"},"examples":{"type":"array","items":{"type":"string"}}}}}},"additionalProperties":{"type":"boolean"}}} # OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema | Request body
+    obpv400_get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema = {"type":"object","properties":{"title":{"type":"string"},"required":{"type":"array","items":{"type":"string"}},"$schema":{"type":"string"},"description":{"type":"string"},"type":{"type":"string"},"properties":{"type":"object","properties":{"xxx_id":{"type":"object","properties":{"minLength":{"type":"integer"},"maxLength":{"type":"integer"},"type":{"type":"string"},"examples":{"type":"array","items":{"type":"string"}}}}}},"additionalProperties":{"type":"boolean"}}} # OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema | Request body
 
     try:
         # Update a JSON Schema Validation
-        api_response = api_instance.o_bpv4_0_0_update_json_schema_validation(operationid, obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema)
+        api_response = api_instance.o_bpv4_0_0_update_json_schema_validation(operationid, obpv400_get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema)
         print("The response of JSONSchemaValidationApi->o_bpv4_0_0_update_json_schema_validation:\n")
         pprint(api_response)
     except Exception as e:
@@ -626,11 +626,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **operationid** | **str**| The OPERATIONID identifier | 
- **obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema** | [**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema.md)| Request body | 
+ **obpv400_get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema** | [**OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema**](OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems.md)
+[**OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner**](OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)
 
 ### Authorization
 

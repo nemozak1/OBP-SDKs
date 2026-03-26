@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv300GetApiGlossary200ResponseProperties**](OBPv300GetApiGlossary200ResponseProperties.md) |  | 
+**glossary_items** | [**List[OBPv300GetApiGlossary200ResponseGlossaryItemsInner]**](OBPv300GetApiGlossary200ResponseGlossaryItemsInner.md) |  | [optional] 
 
 ## Example
 

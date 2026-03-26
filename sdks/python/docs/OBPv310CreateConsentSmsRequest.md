@@ -5,8 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310CreateConsentSmsRequestProperties**](OBPv310CreateConsentSmsRequestProperties.md) |  | 
+**phone_number** | **str** |  | [optional] 
+**time_to_live** | **int** |  | [optional] 
+**everything** | **bool** |  | [optional] 
+**consumer_id** | **str** |  | [optional] 
+**valid_from** | **datetime** |  | [optional] 
+**views** | [**List[OBPv510GetApiTags200ResponseAccountsInner]**](OBPv510GetApiTags200ResponseAccountsInner.md) |  | [optional] 
+**entitlements** | [**List[OBPv510CreateConsentImplicitRequestEntitlementsInner]**](OBPv510CreateConsentImplicitRequestEntitlementsInner.md) |  | [optional] 
 
 ## Example
 

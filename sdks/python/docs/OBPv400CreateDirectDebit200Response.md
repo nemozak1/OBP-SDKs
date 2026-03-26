@@ -5,8 +5,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400CreateDirectDebit200ResponseProperties**](OBPv400CreateDirectDebit200ResponseProperties.md) |  | 
+**date_starts** | **datetime** |  | [optional] 
+**customer_id** | **str** |  | [optional] 
+**date_cancelled** | **datetime** |  | [optional] 
+**date_signed** | **datetime** |  | [optional] 
+**user_id** | **str** |  | [optional] 
+**bank_id** | **str** |  | [optional] 
+**account_id** | **str** |  | [optional] 
+**date_expires** | **datetime** |  | [optional] 
+**counterparty_id** | **str** |  | [optional] 
+**direct_debit_id** | **str** |  | [optional] 
+**active** | **bool** |  | [optional] 
 
 ## Example
 

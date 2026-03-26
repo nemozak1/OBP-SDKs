@@ -5,8 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600UpdateGroupRequestProperties**](OBPv600UpdateGroupRequestProperties.md) |  | 
+**group_name** | **str** |  | [optional] 
+**group_description** | **str** |  | [optional] 
+**list_of_roles** | **List[str]** |  | [optional] 
+**is_enabled** | **bool** |  | [optional] 
 
 ## Example
 

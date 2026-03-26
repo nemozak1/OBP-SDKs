@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600VerifyOidcClientRequestProperties**](OBPv600VerifyOidcClientRequestProperties.md) |  | 
+**client_id** | **str** |  | [optional] 
+**client_secret** | **str** |  | [optional] 
 
 ## Example
 

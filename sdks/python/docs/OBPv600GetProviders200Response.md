@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetProviders200ResponseProperties**](OBPv600GetProviders200ResponseProperties.md) |  | 
+**providers** | **List[str]** |  | [optional] 
 
 ## Example
 

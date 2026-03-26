@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,11 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv310_create_meeting_request_properties import OBPv310CreateMeetingRequestProperties
+from datetime import datetime
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv310_get_meeting200_response_creator import OBPv310GetMeeting200ResponseCreator
+from obp_python.models.obpv310_get_meeting200_response_invitees_inner import OBPv310GetMeeting200ResponseInviteesInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +30,12 @@ class OBPv310CreateMeetingRequest(BaseModel):
     """
     OBPv310CreateMeetingRequest
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv310CreateMeetingRequestProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    provider_id: Optional[StrictStr] = None
+    creator: Optional[OBPv310GetMeeting200ResponseCreator] = None
+    invitees: Optional[List[OBPv310GetMeeting200ResponseInviteesInner]] = None
+    var_date: Optional[datetime] = Field(default=None, alias="date")
+    purpose_id: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["provider_id", "creator", "invitees", "date", "purpose_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +76,16 @@ class OBPv310CreateMeetingRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of creator
+        if self.creator:
+            _dict['creator'] = self.creator.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in invitees (list)
+        _items = []
+        if self.invitees:
+            for _item_invitees in self.invitees:
+                if _item_invitees:
+                    _items.append(_item_invitees.to_dict())
+            _dict['invitees'] = _items
         return _dict
 
     @classmethod
@@ -86,8 +98,11 @@ class OBPv310CreateMeetingRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv310CreateMeetingRequestProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "provider_id": obj.get("provider_id"),
+            "creator": OBPv310GetMeeting200ResponseCreator.from_dict(obj["creator"]) if obj.get("creator") is not None else None,
+            "invitees": [OBPv310GetMeeting200ResponseInviteesInner.from_dict(_item) for _item in obj["invitees"]] if obj.get("invitees") is not None else None,
+            "date": obj.get("date"),
+            "purpose_id": obj.get("purpose_id")
         })
         return _obj
 

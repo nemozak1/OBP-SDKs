@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -19,8 +19,10 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv400_create_transaction_request_counterparty_request_properties import OBPv400CreateTransactionRequestCounterpartyRequestProperties
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv400_create_transaction_request_counterparty_request_attributes_inner import OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner
+from obp_python.models.obpv400_create_transaction_request_counterparty_request_to import OBPv400CreateTransactionRequestCounterpartyRequestTo
+from obp_python.models.obpv500_get_my_customers_at_bank200_response_customers_inner_credit_limit import OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +30,13 @@ class OBPv400CreateTransactionRequestCounterpartyRequest(BaseModel):
     """
     OBPv400CreateTransactionRequestCounterpartyRequest
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv400CreateTransactionRequestCounterpartyRequestProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    description: Optional[StrictStr] = None
+    future_date: Optional[StrictStr] = None
+    attributes: Optional[List[OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner]] = None
+    to: Optional[OBPv400CreateTransactionRequestCounterpartyRequestTo] = None
+    charge_policy: Optional[StrictStr] = None
+    value: Optional[OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit] = None
+    __properties: ClassVar[List[str]] = ["description", "future_date", "attributes", "to", "charge_policy", "value"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +77,19 @@ class OBPv400CreateTransactionRequestCounterpartyRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in attributes (list)
+        _items = []
+        if self.attributes:
+            for _item_attributes in self.attributes:
+                if _item_attributes:
+                    _items.append(_item_attributes.to_dict())
+            _dict['attributes'] = _items
+        # override the default output from pydantic by calling `to_dict()` of to
+        if self.to:
+            _dict['to'] = self.to.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of value
+        if self.value:
+            _dict['value'] = self.value.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +102,12 @@ class OBPv400CreateTransactionRequestCounterpartyRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv400CreateTransactionRequestCounterpartyRequestProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "description": obj.get("description"),
+            "future_date": obj.get("future_date"),
+            "attributes": [OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner.from_dict(_item) for _item in obj["attributes"]] if obj.get("attributes") is not None else None,
+            "to": OBPv400CreateTransactionRequestCounterpartyRequestTo.from_dict(obj["to"]) if obj.get("to") is not None else None,
+            "charge_policy": obj.get("charge_policy"),
+            "value": OBPv500GetMyCustomersAtBank200ResponseCustomersInnerCreditLimit.from_dict(obj["value"]) if obj.get("value") is not None else None
         })
         return _obj
 

@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv500GetSystemViewsIds200ResponseProperties**](OBPv500GetSystemViewsIds200ResponseProperties.md) |  | 
+**views** | [**List[OBPv500GetSystemViewsIds200ResponseViewsInner]**](OBPv500GetSystemViewsIds200ResponseViewsInner.md) |  | [optional] 
 
 ## Example
 

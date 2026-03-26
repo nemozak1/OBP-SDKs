@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600ResetPasswordUrl200ResponseProperties**](OBPv600ResetPasswordUrl200ResponseProperties.md) |  | 
+**reset_password_url** | **str** |  | [optional] 
 
 ## Example
 

@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetMetrics200ResponseProperties**](OBPv600GetMetrics200ResponseProperties.md) |  | 
+**metrics** | [**List[OBPv600GetMetrics200ResponseMetricsInner]**](OBPv600GetMetrics200ResponseMetricsInner.md) |  | [optional] 
 
 ## Example
 

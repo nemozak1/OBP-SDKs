@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv220GetConnectorMetrics200ResponseProperties**](OBPv220GetConnectorMetrics200ResponseProperties.md) |  | 
+**metrics** | [**List[OBPv220GetConnectorMetrics200ResponseMetricsInner]**](OBPv220GetConnectorMetrics200ResponseMetricsInner.md) |  | [optional] 
 
 ## Example
 

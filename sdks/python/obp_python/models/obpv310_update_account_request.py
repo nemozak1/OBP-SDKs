@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -19,8 +19,8 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv310_update_account_request_properties import OBPv310UpdateAccountRequestProperties
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv310_get_checkbook_orders200_response_account_account_routings_inner import OBPv310GetCheckbookOrders200ResponseAccountAccountRoutingsInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,11 @@ class OBPv310UpdateAccountRequest(BaseModel):
     """
     OBPv310UpdateAccountRequest
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv310UpdateAccountRequestProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    account_routings: Optional[List[OBPv310GetCheckbookOrders200ResponseAccountAccountRoutingsInner]] = None
+    branch_id: Optional[StrictStr] = None
+    label: Optional[StrictStr] = None
+    type: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["account_routings", "branch_id", "label", "type"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +73,13 @@ class OBPv310UpdateAccountRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in account_routings (list)
+        _items = []
+        if self.account_routings:
+            for _item_account_routings in self.account_routings:
+                if _item_account_routings:
+                    _items.append(_item_account_routings.to_dict())
+            _dict['account_routings'] = _items
         return _dict
 
     @classmethod
@@ -86,8 +92,10 @@ class OBPv310UpdateAccountRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv310UpdateAccountRequestProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "account_routings": [OBPv310GetCheckbookOrders200ResponseAccountAccountRoutingsInner.from_dict(_item) for _item in obj["account_routings"]] if obj.get("account_routings") is not None else None,
+            "branch_id": obj.get("branch_id"),
+            "label": obj.get("label"),
+            "type": obj.get("type")
         })
         return _obj
 

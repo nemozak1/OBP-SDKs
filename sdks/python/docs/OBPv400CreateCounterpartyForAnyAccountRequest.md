@@ -5,8 +5,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400CreateCounterpartyForAnyAccountRequestProperties**](OBPv400CreateCounterpartyForAnyAccountRequestProperties.md) |  | 
+**other_account_routing_address** | **str** |  | [optional] 
+**other_account_routing_scheme** | **str** |  | [optional] 
+**name** | **str** |  | [optional] 
+**other_account_secondary_routing_address** | **str** |  | [optional] 
+**is_beneficiary** | **bool** |  | [optional] 
+**description** | **str** |  | [optional] 
+**other_branch_routing_address** | **str** |  | [optional] 
+**bespoke** | [**List[OBPv400GetExplicitCounterpartyById200ResponseBespokeInner]**](OBPv400GetExplicitCounterpartyById200ResponseBespokeInner.md) |  | [optional] 
+**other_bank_routing_scheme** | **str** |  | [optional] 
+**other_branch_routing_scheme** | **str** |  | [optional] 
+**currency** | **str** |  | [optional] 
+**other_bank_routing_address** | **str** |  | [optional] 
+**other_account_secondary_routing_scheme** | **str** |  | [optional] 
 
 ## Example
 

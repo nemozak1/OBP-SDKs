@@ -5,8 +5,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400CreateTransactionRequestCounterparty200ResponseProperties**](OBPv400CreateTransactionRequestCounterparty200ResponseProperties.md) |  | 
+**start_date** | **datetime** |  | [optional] 
+**attributes** | [**List[OBPv400CreateTransactionRequestCounterparty200ResponseAttributesInner]**](OBPv400CreateTransactionRequestCounterparty200ResponseAttributesInner.md) |  | [optional] 
+**id** | **str** |  | [optional] 
+**end_date** | **datetime** |  | [optional] 
+**status** | **str** |  | [optional] 
+**var_from** | [**OBPv400CreateTransactionRequestCounterparty200ResponseFrom**](OBPv400CreateTransactionRequestCounterparty200ResponseFrom.md) |  | [optional] 
+**details** | [**OBPv400CreateTransactionRequestCounterparty200ResponseDetails**](OBPv400CreateTransactionRequestCounterparty200ResponseDetails.md) |  | [optional] 
+**charge** | [**OBPv400CreateTransactionRequestCounterparty200ResponseCharge**](OBPv400CreateTransactionRequestCounterparty200ResponseCharge.md) |  | [optional] 
+**type** | **str** |  | [optional] 
+**transaction_ids** | **List[str]** |  | [optional] 
+**challenges** | [**List[OBPv400CreateTransactionRequestCounterparty200ResponseChallengesInner]**](OBPv400CreateTransactionRequestCounterparty200ResponseChallengesInner.md) |  | [optional] 
 
 ## Example
 

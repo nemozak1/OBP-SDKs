@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400GetAllEndpointMappings200ResponseProperties**](OBPv400GetAllEndpointMappings200ResponseProperties.md) |  | 
+**endpoint_mappings** | [**List[OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner]**](OBPv400GetAllEndpointMappings200ResponseEndpointMappingsInner.md) |  | [optional] 
 
 ## Example
 

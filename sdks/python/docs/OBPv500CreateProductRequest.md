@@ -5,8 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv500CreateProductRequestProperties**](OBPv500CreateProductRequestProperties.md) |  | 
+**name** | **str** |  | [optional] 
+**description** | **str** |  | [optional] 
+**terms_and_conditions_url** | **str** |  | [optional] 
+**more_info_url** | **str** |  | [optional] 
+**meta** | [**OBPv310GetProductTree200ResponseParentProductParentProductMeta**](OBPv310GetProductTree200ResponseParentProductParentProductMeta.md) |  | [optional] 
+**parent_product_code** | **str** |  | [optional] 
 
 ## Example
 

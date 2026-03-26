@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
+from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv310_create_customer_address200_response_properties import OBPv310CreateCustomerAddress200ResponseProperties
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,20 @@ class OBPv310CreateCustomerAddress200Response(BaseModel):
     """
     OBPv310CreateCustomerAddress200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv310CreateCustomerAddress200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    city: Optional[StrictStr] = None
+    line_2: Optional[StrictStr] = None
+    customer_id: Optional[StrictStr] = None
+    state: Optional[StrictStr] = None
+    insert_date: Optional[datetime] = None
+    tags: Optional[List[StrictStr]] = None
+    customer_address_id: Optional[StrictStr] = None
+    postcode: Optional[StrictStr] = None
+    county: Optional[StrictStr] = None
+    country_code: Optional[StrictStr] = None
+    status: Optional[StrictStr] = None
+    line_3: Optional[StrictStr] = None
+    line_1: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["city", "line_2", "customer_id", "state", "insert_date", "tags", "customer_address_id", "postcode", "county", "country_code", "status", "line_3", "line_1"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +82,6 @@ class OBPv310CreateCustomerAddress200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
         return _dict
 
     @classmethod
@@ -86,8 +94,19 @@ class OBPv310CreateCustomerAddress200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv310CreateCustomerAddress200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "city": obj.get("city"),
+            "line_2": obj.get("line_2"),
+            "customer_id": obj.get("customer_id"),
+            "state": obj.get("state"),
+            "insert_date": obj.get("insert_date"),
+            "tags": obj.get("tags"),
+            "customer_address_id": obj.get("customer_address_id"),
+            "postcode": obj.get("postcode"),
+            "county": obj.get("county"),
+            "country_code": obj.get("country_code"),
+            "status": obj.get("status"),
+            "line_3": obj.get("line_3"),
+            "line_1": obj.get("line_1")
         })
         return _obj
 

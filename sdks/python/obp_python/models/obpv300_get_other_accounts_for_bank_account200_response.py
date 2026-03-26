@@ -3,7 +3,7 @@
 """
     Open Bank Project API v6.0.0
 
-    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+    The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
     The version of the OpenAPI document: 6.0.0
     Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
-from obp_python.models.obpv300_get_other_accounts_for_bank_account200_response_properties import OBPv300GetOtherAccountsForBankAccount200ResponseProperties
+from pydantic import BaseModel, ConfigDict
+from typing import Any, ClassVar, Dict, List, Optional
+from obp_python.models.obpv310_get_transaction_by_id_for_bank_account200_response_other_account import OBPv310GetTransactionByIdForBankAccount200ResponseOtherAccount
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,8 @@ class OBPv300GetOtherAccountsForBankAccount200Response(BaseModel):
     """
     OBPv300GetOtherAccountsForBankAccount200Response
     """ # noqa: E501
-    type: StrictStr
-    properties: OBPv300GetOtherAccountsForBankAccount200ResponseProperties
-    __properties: ClassVar[List[str]] = ["type", "properties"]
+    other_accounts: Optional[List[OBPv310GetTransactionByIdForBankAccount200ResponseOtherAccount]] = None
+    __properties: ClassVar[List[str]] = ["other_accounts"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +70,13 @@ class OBPv300GetOtherAccountsForBankAccount200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of properties
-        if self.properties:
-            _dict['properties'] = self.properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in other_accounts (list)
+        _items = []
+        if self.other_accounts:
+            for _item_other_accounts in self.other_accounts:
+                if _item_other_accounts:
+                    _items.append(_item_other_accounts.to_dict())
+            _dict['other_accounts'] = _items
         return _dict
 
     @classmethod
@@ -86,8 +89,7 @@ class OBPv300GetOtherAccountsForBankAccount200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "properties": OBPv300GetOtherAccountsForBankAccount200ResponseProperties.from_dict(obj["properties"]) if obj.get("properties") is not None else None
+            "other_accounts": [OBPv310GetTransactionByIdForBankAccount200ResponseOtherAccount.from_dict(_item) for _item in obj["other_accounts"]] if obj.get("other_accounts") is not None else None
         })
         return _obj
 

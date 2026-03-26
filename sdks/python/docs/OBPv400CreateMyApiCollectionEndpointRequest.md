@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv400CreateMyApiCollectionEndpointRequestProperties**](OBPv400CreateMyApiCollectionEndpointRequestProperties.md) |  | 
+**operation_id** | **str** |  | [optional] 
 
 ## Example
 

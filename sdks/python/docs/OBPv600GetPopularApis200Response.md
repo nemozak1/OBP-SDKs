@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv600GetPopularApis200ResponseProperties**](OBPv600GetPopularApis200ResponseProperties.md) |  | 
+**operation_ids** | **List[str]** |  | [optional] 
 
 ## Example
 

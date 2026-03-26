@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510WaitingForGodot200ResponseProperties**](OBPv510WaitingForGodot200ResponseProperties.md) |  | 
+**sleep_in_milliseconds** | **int** |  | [optional] 
 
 ## Example
 

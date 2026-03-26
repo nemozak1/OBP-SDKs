@@ -5,8 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv310GetTransactionByIdForBankAccount200ResponseProperties**](OBPv310GetTransactionByIdForBankAccount200ResponseProperties.md) |  | 
+**this_account** | [**OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerThisAccount**](OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerThisAccount.md) |  | [optional] 
+**id** | **str** |  | [optional] 
+**details** | [**OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerDetails**](OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerDetails.md) |  | [optional] 
+**metadata** | [**OBPv310GetTransactionByIdForBankAccount200ResponseMetadata**](OBPv310GetTransactionByIdForBankAccount200ResponseMetadata.md) |  | [optional] 
+**other_account** | [**OBPv310GetTransactionByIdForBankAccount200ResponseOtherAccount**](OBPv310GetTransactionByIdForBankAccount200ResponseOtherAccount.md) |  | [optional] 
+**transaction_attributes** | [**List[OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner]**](OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner.md) |  | [optional] 
 
 ## Example
 

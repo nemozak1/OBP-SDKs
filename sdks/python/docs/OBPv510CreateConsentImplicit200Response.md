@@ -5,8 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**properties** | [**OBPv510CreateConsentImplicit200ResponseProperties**](OBPv510CreateConsentImplicit200ResponseProperties.md) |  | 
+**consent_id** | **str** |  | [optional] 
+**status** | **str** |  | [optional] 
+**jwt** | **str** |  | [optional] 
 
 ## Example
 
